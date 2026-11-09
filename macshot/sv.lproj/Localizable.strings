@@ -109,7 +109,6 @@
 "QR Code" = "QR-kod";
 "QR Codes" = "QR-koder";
 "Open Link" = "\U00D6ppna l\U00E4nk";
-"Upload" = "Ladda upp";
 "Share" = "Dela";
 "Undo" = "\U00C5ngra";
 "Redo" = "G\U00F6r om";
@@ -158,7 +157,6 @@
 "PII" = "PII";
 "Faces" = "Ansikten";
 "People" = "Personer";
-"Confirm before upload" = "Bekr\U00E4fta f\U00F6re uppladdning";
 "Flip" = "V\U00E4nd";
 "Smooth" = "Mjuk";
 "Refined" = "Förfinad";
@@ -213,7 +211,6 @@
 "Recording" = "Inspelning";
 "About" = "Om";
 "Shortcuts" = "Genv\U00E4gar";
-"Uploads" = "Uppladdningar";
 "Language" = "Spr\U00E5k";
 "Language:" = "Spr\U00E5k:";
 "Restart the app to fully apply the new language." = "Starta om appen f\U00F6r att till\U00E4mpa det nya spr\U00E5ket.";
@@ -331,14 +328,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Uppladdningstj\U00E4nst";
-"Upload Provider" = "Uppladdningsleverant\U00F6r";
 "Provider:" = "Leverant\U00F6r:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (bilder + videor)";
-"imgbb (images only)" = "imgbb (endast bilder)";
-"S3-Compatible (images + videos)" = "S3-kompatibel (bilder + videor)";
-"S3-Compatible Storage" = "S3-kompatibel lagring";
 "Sign In with Google" = "Logga in med Google";
 "Sign Out" = "Logga ut";
 "Signed in" = "Inloggad";
@@ -357,17 +347,7 @@
 "Secret Key:" = "Hemlig nyckel:";
 "Public URL:" = "Publik URL:";
 "Path Prefix:" = "S\U00F6kv\U00E4gsprefix:";
-"Make uploads publicly readable" = "G\U00F6r uppladdningar publikt l\U00E4sbara";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "Skickar public-read ACL s\U00E5 att uppladdade filer kan ses av alla med l\U00E4nken. Kr\U00E4vs f\U00F6r AWS S3, DigitalOcean Spaces, MinIO och Backblaze B2, som lagrar objekt privat som standard. L\U00E4mna av f\U00F6r Cloudflare R2, som saknar ACL och avvisar headern.";
 "API key:" = "API-nyckel:";
-"Upload History" = "Uppladdningshistorik";
-"No uploads yet." = "Inga uppladdningar \U00E4nnu.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Bas-URL f\U00F6r publik \U00E5tkomst. Om tomt anv\U00E4nds S3-endpointens URL (kanske inte publikt tillg\U00E4nglig).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "En delad nyckel ingår, skaffa din egen gratis nyckel på imgbb.com/api om du når hastighetsgränsen. Endast bilder (inget videostöd).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Fungerar med AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 och andra S3-kompatibla tj\U00E4nster. St\U00F6der bilder och videor.";
-"Configure S3 in Preferences" = "Konfigurera S3 i Inst\U00E4llningar";
-"Sign in to Google Drive in Preferences" = "Logga in p\U00E5 Google Drive i Inst\U00E4llningar";
-"Video upload requires Google Drive or S3" = "Videouppladdning kr\U00E4ver Google Drive eller S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -389,10 +369,6 @@
 "Cancel" = "Avbryt";
 "Microphone Access Required" = "Mikrofon\U00E5tkomst kr\U00E4vs";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot beh\U00F6ver mikrofonbeh\U00F6righet f\U00F6r att spela in r\U00F6stljud. \U00D6ppna Systeminst\U00E4llningar f\U00F6r att ge \U00E5tkomst.";
-"Upload to Google Drive?" = "Ladda upp till Google Drive?";
-"Upload to S3?" = "Ladda upp till S3?";
-"Upload to imgbb.com?" = "Ladda upp till imgbb.com?";
-"Your screenshot will be uploaded." = "Din sk\U00E4rmbild kommer att laddas upp.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "V\U00E4lkommen till macshot";
@@ -411,7 +387,6 @@
 "Translate to:" = "\U00D6vers\U00E4tt till:";
 "%d chars \U00B7 %d words" = "%d tecken \U00B7 %d ord";
 "Copy  \U2318\U21A9" = "Kopiera  \U2318\U21A9";
-"AI Search" = "AI-s\U00F6kning";
 "Show Original" = "Visa original";
 "Translation Failed" = "\U00D6vers\U00E4ttning misslyckades";
 "Translation" = "\U00D6vers\U00E4ttning";
@@ -419,10 +394,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL kopierad till urklipp";
-"Uploading... %d%%" = "Laddar upp... %d%%";
-"Upload failed: %@" = "Uppladdning misslyckades: %@";
-"Uploaded! Link copied." = "Uppladdat! L\U00E4nk kopierad.";
-"Uploading to %@... %d%%" = "Laddar upp till %@... %d%%";
 "Open" = "\U00D6ppna";
 
 /* Recording Toast */
@@ -481,13 +452,9 @@
 
 /* Recording \U2014 Input Monitoring Permission */
 "Input Monitoring Required" = "Inmatnings\U00F6vervakning kr\U00E4vs";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot behöver behörighet för inmatningsövervakning för att markera musklick eller visa tangenttryckningar under inspelning. Ge åtkomst i Systeminställningar och försök igen.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot behöver behörighet för Tillgänglighet för att fästa mot enskilda gränssnittselement. Ge åtkomst i Systeminställningar och försök igen.";
 
 /* Recording \U2014 Keystroke Overlay */
-"Show Keystrokes" = "Visa tangenttryckningar";
-"Shortcuts Only" = "Endast genv\U00E4gar";
-"All Keystrokes" = "Alla tangenttryckningar";
 
 /* Recording \U2014 Settings Popover */
 "Delay:" = "F\U00F6rdr\U00F6jning:";
@@ -557,13 +524,9 @@
 "Pause" = "Pausa";
 "Resume" = "\U00C5teruppta";
 "Engine:" = "Motor:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (p\U00E5 enheten)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple-\U00F6vers\U00E4ttning \U00E4r snabbare och fungerar offline. Google Translate st\U00F6der fler spr\U00E5k.";
 "Download language packs in System Settings\U2026" = "Ladda ner spr\U00E5kpaket i Systeminst\U00E4llningar\U2026";
-"Configure S3 in Settings" = "Konfigurera S3 i Inst\U00E4llningar";
-"Sign in to Google Drive in Settings" = "Logga in p\U00E5 Google Drive i Inst\U00E4llningar";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Offline-version: integrationer för uppladdning och molnlagring är borttagna. Sökning efter uppdateringar kan fortfarande ansluta till MacShots uppdateringsserver. Skärmbilder och inspelningar förblir lokala om du inte delar eller sparar dem själv.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Position:";
 "Size:" = "Storlek:";
 "Shape:" = "Form:";
@@ -576,7 +539,6 @@
 "Clear History?" = "Rensa historik?";
 "This will permanently delete all screenshots from history." = "Detta kommer permanent att ta bort alla skärmdumpar från historiken.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Klicka på \"Ange\" och tryck på en tangentkombination med minst en modifierare (⌘, ⌥, ⌃, ⇧) för att ange en genväg.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "Filer laddas upp till den här mappen i din Google Drive. Lämna tomt för att använda \"macshot\". macshot kan bara använda mappar som det själv har skapat, så en mapp med samma namn som du har skapat i Drive återanvänds inte, en ny skapas i stället. Allt förblir privat, inget delas offentligt.";
 
 "Pressure" = "Tryck";
 
@@ -666,7 +628,7 @@
 "Export Settings…" = "Exportera inställningar…";
 "Import Settings…" = "Importera inställningar…";
 "Reveal Settings File in Finder" = "Visa inställningsfilen i Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "Exportera dina inställningar till en fil för att flytta dem till en annan Mac eller en ren installation. Uppladdningsuppgifter, din sparmapp och skärmbildshistorik ingår inte. Inställningarna lagras i macshots appcontainer.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "Exportera inställningar";
 "Import Settings" = "Importera inställningar";
 "Import failed" = "Importen misslyckades";
@@ -676,7 +638,7 @@
 "Later" = "Senare";
 "Relaunch Now" = "Starta om nu";
 "Replace your current settings?" = "Ersätt dina nuvarande inställningar?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Importen ersätter dina nuvarande inställningar med de i den här filen. Din sparmapp, uppladdningsuppgifter och skärmbildshistorik behålls. Detta kan inte ångras.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d inställningar tillämpades. Starta om macshot för att verkställa alla ändringar.";
 "A few large items were too big to include. Everything else was saved." = "Några stora objekt var för stora för att inkluderas. Allt annat sparades.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Din anpassade Beautify-bakgrundsbild var för stor för att inkluderas. Allt annat sparades.";
@@ -758,7 +720,7 @@
 "Duration" = "Varaktighet";
 "Edge highlight" = "Kantljus";
 "Edit Text" = "Redigera text";
-"Editable pointer, clicks and keystrokes" = "Redigerbar pekare, klick och tangenttryckningar";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Redigeringar";
 "Export" = "Exportera";
 "Export Subtitles (.srt)…" = "Exportera undertexter (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "Håll fokus";
 "Idle delay" = "Inaktivitetsfördröjning";
 "Image" = "Bild";
-"Keystrokes" = "Tangenttryckningar";
-"Keystrokes in this recording are part of the video pixels." = "Tangenttryckningarna i den här inspelningen är en del av videons pixlar.";
 "Light appearance" = "Ljust utseende";
 "Makes looping GIFs seamless" = "Gör loopande GIF:ar sömlösa";
 "Mirror" = "Spegelvänd";
@@ -820,10 +780,8 @@
 "Ripple" = "Krusning";
 "Save As…" = "Spara som…";
 "Shape" = "Form";
-"Shortcuts only" = "Endast kortkommandon";
 "Show camera" = "Visa kamera";
 "Show captions" = "Visa undertexter";
-"Show keystrokes" = "Visa tangenttryckningar";
 "Show pointer" = "Visa pekare";
 "Shrink during zooms" = "Krymp vid zoomning";
 "Smoothing" = "Utjämning";
@@ -842,7 +800,6 @@
 "Title" = "Rubrik";
 "Transcribing…" = "Transkriberar…";
 "Transition" = "Övergång";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "Slå på Visa tangenttryckningar före inspelningen. macshot spelar då in dem separat så att du kan ändra deras stil här.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Slå på kameran före inspelningen. macshot spelar in den separat så att du kan flytta, ändra storlek på, ändra stil på eller dölja den här, och krympa den vid zoomning.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Använd Solid för att dölja känslig information: oskärpa och pixelering kan ibland återställas.";
 "Visibility" = "Synlighet";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "Fäst webbkameran i hörnen när den flyttas";
 "Search emoji" = "Sök emoji";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

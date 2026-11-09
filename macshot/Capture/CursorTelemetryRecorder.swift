@@ -101,8 +101,7 @@ nonisolated struct PointerSampler {
 ///
 /// Position and buttons are polled on a background queue with Core Graphics
 /// calls that need no Input Monitoring permission. The cursor image is read on
-/// the main thread (AppKit) at a lower rate and deduplicated. Keystrokes arrive
-/// from the existing keystroke overlay's event tap when that feature is on.
+/// the main thread (AppKit) at a lower rate and deduplicated.
 final class CursorTelemetryRecorder {
     private let queue = DispatchQueue(label: "macshot.cursor-telemetry", qos: .userInitiated)
     nonisolated(unsafe) private var writer: CursorTelemetryWriter?
@@ -179,15 +178,6 @@ final class CursorTelemetryRecorder {
             self.paused = false
             self.writer?.append(.resume(time: now, pausedDuration: pausedDuration))
             self.writer?.flush()
-        }
-    }
-
-    /// Keystrokes are recorded only when the user enabled keystroke display.
-    nonisolated func recordKey(down: Bool, keyCode: UInt16, modifiers: UInt32, characters: String) {
-        let now = Self.hostNow()
-        queue.async { [weak self] in
-            guard let self, !self.paused else { return }
-            self.writer?.append(.key(time: now, down: down, keyCode: keyCode, modifiers: modifiers, characters: characters))
         }
     }
 

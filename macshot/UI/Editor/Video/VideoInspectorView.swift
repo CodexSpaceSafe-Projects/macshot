@@ -5,14 +5,13 @@ import UniformTypeIdentifiers
 /// itself. Selecting a timeline item shows that item's settings instead.
 final class VideoInspectorView: NSView {
     enum Section: Int, CaseIterable {
-        case background, cursor, zoom, keystrokes, camera, captions
+        case background, cursor, zoom, camera, captions
 
         var symbol: String {
             switch self {
             case .background: return "photo.on.rectangle.angled"
             case .cursor: return "cursorarrow.rays"
             case .zoom: return "plus.magnifyingglass"
-            case .keystrokes: return "keyboard"
             case .camera: return "person.crop.square"
             case .captions: return "captions.bubble"
             }
@@ -23,7 +22,6 @@ final class VideoInspectorView: NSView {
             case .background: return L("Background")
             case .cursor: return L("Pointer")
             case .zoom: return L("Zoom")
-            case .keystrokes: return L("Keystrokes")
             case .camera: return L("Camera")
             case .captions: return L("Captions")
             }
@@ -164,7 +162,6 @@ final class VideoInspectorView: NSView {
             case .background: buildBackgroundPanel()
             case .cursor: buildCursorPanel()
             case .zoom: buildZoomPanel()
-            case .keystrokes: buildKeystrokePanel()
             case .camera: buildCameraPanel()
             case .captions: buildCaptionsPanel()
             }
@@ -479,8 +476,6 @@ final class VideoInspectorView: NSView {
             toggle(L("Hide when idle"), get: { [unowned self] in self.look.cursor.hideWhenIdle }) { p, on in p.look.cursor.hideWhenIdle = on },
             slider(L("Idle delay"), 0.5...10, get: { [unowned self] in self.look.cursor.idleDelay },
                    format: { String(format: "%.1fs", $0) }) { p, v in p.look.cursor.idleDelay = v },
-            toggle(L("Hide while typing"), get: { [unowned self] in self.look.cursor.hideWhileTyping }) { p, on in
-                p.look.cursor.hideWhileTyping = on },
             toggle(L("Return to start at the end"), subtitle: L("Makes looping GIFs seamless"),
                    get: { [unowned self] in self.look.cursor.loopToStart }) { p, on in p.look.cursor.loopToStart = on },
         ]))
@@ -533,28 +528,6 @@ final class VideoInspectorView: NSView {
         document.edit([.render, .segments]) { p in
             for zoom in p.zooms { zoom.zoomLevel = CGFloat(p.look.zoom.defaultLevel) }
         }
-    }
-
-    // MARK: Keystrokes
-
-    private func buildKeystrokePanel() {
-        guard document.hasKeystrokes, document.overlaysAreEditable else {
-            add(note(document.hasKeystrokes
-                ? L("Keystrokes in this recording are part of the video pixels.")
-                : L("Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here.")))
-            return
-        }
-        add(toggle(L("Show keystrokes"), get: { [unowned self] in self.look.keystrokes.show }) { p, on in p.look.keystrokes.show = on })
-        add(toggle(L("Shortcuts only"), subtitle: L("Hide ordinary typing, show key combinations"),
-                   get: { [unowned self] in self.look.keystrokes.shortcutsOnly }) { p, on in p.look.keystrokes.shortcutsOnly = on })
-        add(InspectorCard([
-            slider(L("Size"), 0.5...2.5, get: { [unowned self] in self.look.keystrokes.size },
-                   format: { String(format: "%.1f×", $0) }) { p, v in p.look.keystrokes.size = v },
-            toggle(L("Light appearance"), get: { [unowned self] in self.look.keystrokes.lightAppearance }) { p, on in
-                p.look.keystrokes.lightAppearance = on },
-        ]))
-        add(InspectorSectionHeader(L("Position")))
-        add(positionGrid(get: { [unowned self] in self.look.keystrokes.position }) { p, pos in p.look.keystrokes.position = pos })
     }
 
     private func positionGrid(get: @escaping () -> VideoOverlayPosition,

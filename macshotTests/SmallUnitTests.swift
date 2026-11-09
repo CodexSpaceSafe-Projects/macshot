@@ -234,7 +234,7 @@ final class ClipboardTextPinRendererTests: XCTestCase {
     }
 }
 
-/// Build-variant flags decide whether upload UI exists at all.
+/// Build variants retain distinct names and update feeds.
 final class BuildVariantTests: XCTestCase {
 
     func testTheVariantIsSelfConsistent() {
@@ -247,11 +247,4 @@ final class BuildVariantTests: XCTestCase {
         }
     }
 
-    func testUploadSettingsOnlyExistInTheOnlineBuild() {
-        #if OFFLINE
-        XCTAssertTrue(BuildVariant.isOffline)
-        #else
-        XCTAssertFalse(BuildVariant.isOffline)
-        #endif
-    }
 }

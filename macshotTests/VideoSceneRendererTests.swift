@@ -27,7 +27,7 @@ final class VideoSceneRendererTests: XCTestCase {
             ? CIImage(color: CIColor(red: 0, green: 1, blue: 0)).cropped(to: CGRect(origin: .zero, size: layout.canvasSize))
             : nil
         return VideoSceneSnapshot(layout: layout, background: background, foreground: nil, camera: camera,
-                                  cameraMotionBlur: 0, cursor: cursor, keystrokes: [], keystrokeStyle: VideoKeystrokeStyle(),
+                                  cameraMotionBlur: 0, cursor: cursor,
                                   captions: [], captionStyle: VideoCaptionStyle(), webcam: nil)
     }
 
@@ -87,7 +87,7 @@ final class VideoSceneRendererTests: XCTestCase {
             .init(start: 1.1, end: 3, level: 3, center: CGPoint(x: 0.9, y: 0.9), follows: false, rampIn: 0, rampOut: 0),
         ], layout: layout, cursor: nil, connect: true)
         let snapshot = VideoSceneSnapshot(layout: layout, background: nil, foreground: nil, camera: path,
-                                          cameraMotionBlur: 1, cursor: nil, keystrokes: [], keystrokeStyle: VideoKeystrokeStyle(),
+                                          cameraMotionBlur: 1, cursor: nil,
                                           captions: [], captionStyle: VideoCaptionStyle(), webcam: nil)
         let image = VideoSceneRenderer.render(content: solid, time: 1.2, scene: snapshot, censors: [], texts: [])
         assertColor(pixel(image, 200, 100), 204, 102, 51)
@@ -118,7 +118,7 @@ final class VideoSceneRendererTests: XCTestCase {
         style.clickEffect = .none
         func cursorLayer(_ style: VideoCursorStyle) -> VideoCursorLayer {
             VideoCursorLayer(track: track, shapeTimes: [], shapeIDs: [], sprites: [:], fallback: sprite, style: style,
-                             pixelsPerPoint: 1, clicks: [], keyTimes: [], rippleSprite: white, ringSprite: white,
+                             pixelsPerPoint: 1, clicks: [], rippleSprite: white, ringSprite: white,
                              loopRange: nil)
         }
         let image = VideoSceneRenderer.render(content: content, time: 1, scene: scene(layout, cursor: cursorLayer(style)),
@@ -130,19 +130,6 @@ final class VideoSceneRendererTests: XCTestCase {
         let hidden = VideoSceneRenderer.render(content: content, time: 1, scene: scene(layout, cursor: cursorLayer(style)),
                                                censors: [], texts: [])
         assertColor(pixel(hidden, 204, 104), 255, 0, 0)
-    }
-
-    func testKeystrokeLabelRendersOnScreen() {
-        let layout = layout(enabled: false)
-        let snapshot = VideoSceneSnapshot(layout: layout, background: nil, foreground: nil, camera: .empty,
-                                          cameraMotionBlur: 0, cursor: nil,
-                                          keystrokes: [.init(start: 0, end: 5, text: "⌘ C")],
-                                          keystrokeStyle: VideoKeystrokeStyle(), captions: [],
-                                          captionStyle: VideoCaptionStyle(), webcam: nil)
-        let image = VideoSceneRenderer.render(content: content, time: 1, scene: snapshot, censors: [], texts: [])
-        // The pill darkens the bottom center of the red frame.
-        let bottom = pixel(image, 200, Int(layout.canvasSize.height) - 16)
-        XCTAssertLessThan(Int(bottom[0]), 200)
     }
 
     func testTextCacheReturnsSameImageForSameLabel() {

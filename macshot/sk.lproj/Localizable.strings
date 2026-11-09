@@ -121,7 +121,6 @@
 "Open With" = "Otvoriť pomocou";
 "No Apps Available" = "Žiadne dostupné aplikácie";
 "No Share Services" = "Žiadne služby zdieľania";
-"Upload" = "Nahrať";
 "Share" = "Zdieľať";
 "Undo" = "Späť";
 "Redo" = "Znovu";
@@ -167,7 +166,6 @@
 "PII" = "Osobné údaje";
 "Faces" = "Tváre";
 "People" = "Ľudia";
-"Confirm before upload" = "Potvrdiť pred nahraním";
 "Flip" = "Preklopiť";
 "Smooth" = "Vyhladenie";
 "Refined" = "Zjemnené";
@@ -219,7 +217,6 @@
 "Recording" = "Nahrávanie";
 "About" = "O aplikácii";
 "Shortcuts" = "Skratky";
-"Uploads" = "Nahrávania";
 "Language" = "Jazyk";
 "Language:" = "Jazyk:";
 "Restart the app to fully apply the new language." = "Reštartujte aplikáciu pre úplné použitie nového jazyka.";
@@ -333,14 +330,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Služba nahrávania";
-"Upload Provider" = "Poskytovateľ nahrávania";
 "Provider:" = "Poskytovateľ:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (obrázky + videa)";
-"imgbb (images only)" = "imgbb (len obrázky)";
-"S3-Compatible (images + videos)" = "S3-Compatible (obrázky + videa)";
-"S3-Compatible Storage" = "S3-Compatible úložisko";
 "Sign In with Google" = "Prihlásiť sa cez Google";
 "Sign Out" = "Odhlásiť sa";
 "Signed in" = "Prihlásený";
@@ -359,17 +349,7 @@
 "Secret Key:" = "Tajný kľúč:";
 "Public URL:" = "Verejná URL:";
 "Path Prefix:" = "Prefix cesty:";
-"Make uploads publicly readable" = "Sprístupniť nahrávania verejne na čítanie";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "Odošle ACL public-read, aby nahrané súbory boli prístupné komukoľvek s odkazom. Potrebné pre AWS S3, DigitalOcean Spaces, MinIO a Backblaze B2, ktoré predvolene ukladajú objekty ako súkromné. Ponechajte vypnuté pre Cloudflare R2, ktoré nepodporuje ACL a túto hlavičku odmietne.";
 "API key:" = "API kľúč:";
-"Upload History" = "História nahrávaní";
-"No uploads yet." = "Zatiaľ žiadne nahrávania.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Základná URL pre verejný prístup. Ak je prázdna, použije sa S3 endpoint URL (nemusí byť verejne prístupná).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Zdieľaný kľúč je zahrnutý, získajte vlastný bezplatný kľúč na imgbb.com/api, ak narazíte na limity. Len obrázky (bez podpory videa).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Funguje s AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 a ďalšími S3-compatible službami. Podporuje obrázky a videa.";
-"Configure S3 in Preferences" = "Nastaviť S3 v Predvoľbách";
-"Sign in to Google Drive in Preferences" = "Prihláste sa do Google Drive v Predvoľbách";
-"Video upload requires Google Drive or S3" = "Nahrávanie videa vyžaduje Google Drive alebo S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -391,10 +371,6 @@
 "Cancel" = "Zrušiť";
 "Microphone Access Required" = "Vyžaduje sa prístup k mikrofónu";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot potrebuje povolenie mikrofónu na nahrávanie hlasového zvuku. Otvorte Nastavenia systému pre udelenie prístupu.";
-"Upload to Google Drive?" = "Nahrať na Google Drive?";
-"Upload to S3?" = "Nahrať na S3?";
-"Upload to imgbb.com?" = "Nahrať na imgbb.com?";
-"Your screenshot will be uploaded." = "Vaša snímka obrazovky bude nahraná.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "Vitajte v macshot";
@@ -413,7 +389,6 @@
 "Translate to:" = "Preložiť do:";
 "%d chars · %d words" = "%d znakov · %d slov";
 "Copy  ⌘↩" = "Kopírovať  ⌘↩";
-"AI Search" = "AI vyhľadávanie";
 "Show Original" = "Zobraziť originál";
 "Translation Failed" = "Preklad zlyhal";
 "Translation" = "Preklad";
@@ -421,10 +396,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL skopírovaná do schránky";
-"Uploading... %d%%" = "Nahrávanie... %d%%";
-"Upload failed: %@" = "Nahrávanie zlyhalo: %@";
-"Uploaded! Link copied." = "Nahrané! Odkaz skopírovaný.";
-"Uploading to %@... %d%%" = "Nahrávanie na %@... %d%%";
 "Open" = "Otvoriť";
 
 /* Recording Toast */
@@ -483,13 +454,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Vyžaduje sa monitorovanie vstupu";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot potrebuje povolenie na monitorovanie vstupu na zvýraznenie kliknutí myšou alebo zobrazenie stlačení klávesov počas nahrávania. Udeľte prístup v Systémových nastaveniach a skúste to znova.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot potrebuje povolenie Prístupnosti pre prichytávanie k jednotlivým prvkom rozhrania. Udeľte prístup v Nastaveniach systému a skúste to znova.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "Zobraziť stlačenia kláves";
-"Shortcuts Only" = "Len skratky";
-"All Keystrokes" = "Všetky stlačenia kláves";
 
 /* Recording — Settings Popover */
 "Delay:" = "Oneskorenie:";
@@ -556,13 +523,9 @@
 "Pause" = "Pozastaviť";
 "Resume" = "Pokračovať";
 "Engine:" = "Engine:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (na zariadení)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Preklad Apple je rýchlejší a funguje offline. Google Translate podporuje viac jazykov.";
 "Download language packs in System Settings…" = "Stiahnite jazykové balíčky v Nastaveniach systému…";
-"Configure S3 in Settings" = "Nastavte S3 v Nastaveniach";
-"Sign in to Google Drive in Settings" = "Prihláste sa do Google Drive v Nastaveniach";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Offline zostava: integrácie nahrávania a cloudového úložiska sú odstránené. Kontrola aktualizácií sa stále môže pripájať k aktualizačnému serveru MacShotu. Snímky obrazovky a nahrávky zostávajú lokálne, kým ich sami nezdieľate alebo neuložíte.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Pozícia:";
 "  Position:" = "  Pozícia:";
 "Size:" = "Veľkosť:";
@@ -576,7 +539,6 @@
 "Clear History?" = "Vymazať históriu?";
 "This will permanently delete all screenshots from history." = "Týmto sa natrvalo odstránia všetky snímky obrazovky z histórie.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Kliknite na \"Nastaviť\" a stlačte kombináciu klávesov s aspoň jedným modifikátorom (⌘, ⌥, ⌃, ⇧) na nastavenie skratky.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "Súbory sa nahrajú do tohto priečinka na vašom Google Drive. Ak pole necháte prázdne, použije sa \"macshot\". macshot môže používať iba priečinky, ktoré sám vytvoril, takže priečinok s rovnakým názvom, ktorý ste vytvorili na Disku, sa nepoužije, namiesto neho sa vytvorí nový. Všetko zostáva súkromné, nič nie je verejne zdieľané.";
 
 "Pressure" = "Tlak";
 
@@ -666,7 +628,7 @@
 "Export Settings…" = "Exportovať nastavenia…";
 "Import Settings…" = "Importovať nastavenia…";
 "Reveal Settings File in Finder" = "Zobraziť súbor nastavení vo Finderi";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "Exportujte svoje predvoľby do súboru, aby ste ich preniesli na iný Mac alebo do čistej inštalácie. Prihlasovacie údaje na nahrávanie, priečinok na ukladanie a história snímok obrazovky nie sú zahrnuté. Nastavenia sú uložené v kontajneri aplikácie macshot.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "Exportovať nastavenia";
 "Import Settings" = "Importovať nastavenia";
 "Import failed" = "Import zlyhal";
@@ -676,7 +638,7 @@
 "Later" = "Neskôr";
 "Relaunch Now" = "Reštartovať teraz";
 "Replace your current settings?" = "Nahradiť aktuálne nastavenia?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Import nahradí vaše aktuálne predvoľby tými zo súboru. Priečinok na ukladanie, prihlasovacie údaje na nahrávanie a história snímok obrazovky zostanú zachované. Túto akciu nie je možné vrátiť späť.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "Počet použitých nastavení: %d. Reštartujte macshot, aby sa prejavili všetky zmeny.";
 "A few large items were too big to include. Everything else was saved." = "Niekoľko veľkých položiek bolo príliš veľkých na zahrnutie. Všetko ostatné bolo uložené.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Váš vlastný obrázok pozadia Beautify bol príliš veľký na zahrnutie. Všetko ostatné bolo uložené.";
@@ -758,7 +720,7 @@
 "Duration" = "Trvanie";
 "Edge highlight" = "Zvýraznenie okraja";
 "Edit Text" = "Upraviť text";
-"Editable pointer, clicks and keystrokes" = "Upraviteľný ukazovateľ, kliknutia a stlačenia klávesov";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Úpravy";
 "Export" = "Exportovať";
 "Export Subtitles (.srt)…" = "Exportovať titulky (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "Držať zameranie";
 "Idle delay" = "Oneskorenie nečinnosti";
 "Image" = "Obrázok";
-"Keystrokes" = "Stlačenia klávesov";
-"Keystrokes in this recording are part of the video pixels." = "Stlačenia klávesov sú v tejto nahrávke súčasťou obrazu videa.";
 "Light appearance" = "Svetlý vzhľad";
 "Makes looping GIFs seamless" = "Zaistí plynulú slučku GIF";
 "Mirror" = "Zrkadliť";
@@ -820,10 +780,8 @@
 "Ripple" = "Vlnenie";
 "Save As…" = "Uložiť ako…";
 "Shape" = "Tvar";
-"Shortcuts only" = "Len skratky";
 "Show camera" = "Zobraziť kameru";
 "Show captions" = "Zobraziť titulky";
-"Show keystrokes" = "Zobraziť stlačenia klávesov";
 "Show pointer" = "Zobraziť ukazovateľ";
 "Shrink during zooms" = "Zmenšiť pri priblížení";
 "Smoothing" = "Vyhladzovanie";
@@ -842,7 +800,6 @@
 "Title" = "Nadpis";
 "Transcribing…" = "Prepisuje sa…";
 "Transition" = "Prechod";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "Pred nahrávaním zapnite Zobraziť stlačenia klávesov. macshot ich potom zaznamená samostatne, aby ste im tu mohli upraviť štýl.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Pred nahrávaním zapnite kameru. macshot ju zaznamená samostatne, takže ju tu môžete presúvať, meniť jej veľkosť a štýl, skryť ju, a zmenšiť ju počas priblížení.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Na skrytie citlivých údajov použite Plná: rozostrenie a pixelovanie sa niekedy dá zvrátiť.";
 "Visibility" = "Viditeľnosť";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "Prichytiť webkameru k rohom pri presúvaní";
 "Search emoji" = "Hľadať emoji";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

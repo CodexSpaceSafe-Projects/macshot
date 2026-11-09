@@ -1,15 +1,12 @@
 import Cocoa
 
-class UploadToastController {
+class StatusToastController {
 
     private var window: NSPanel?
     private var statusLabel: NSTextField?
-    private var linkLabel: NSTextField?
-    private var openButton: NSButton?
     private var iconView: NSImageView?
     private var spinner: NSProgressIndicator?
     private var dismissTask: DispatchWorkItem?
-    private var currentLink: String?
     var onDismiss: (() -> Void)?
 
     private let toastWidth: CGFloat = 380
@@ -53,7 +50,7 @@ class UploadToastController {
         contentView.addSubview(icon)
         self.iconView = icon
 
-        // Spinner (overlays the icon area during upload)
+        // Spinner (overlays the icon area while preparing the status)
         let spinnerView = NSProgressIndicator(frame: NSRect(x: 14, y: (toastHeight - 20) / 2, width: 20, height: 20))
         spinnerView.style = .spinning
         spinnerView.controlSize = .small
@@ -86,88 +83,9 @@ class UploadToastController {
         }
     }
 
-    func updateProgress(_ fraction: Double) {
-        statusLabel?.stringValue = String(format: L("Uploading... %d%%"), Int(fraction * 100))
-    }
 
-    func showSuccess(link: String, deleteURL: String) {
-        guard let window = window, let contentView = window.contentView else { return }
-        self.currentLink = link
 
-        // Remove spinner, show icon
-        spinner?.stopAnimation(nil)
-        spinner?.removeFromSuperview()
-        spinner = nil
-        iconView?.isHidden = false
-
-        // Remove old status label
-        statusLabel?.removeFromSuperview()
-        statusLabel = nil
-
-        // Compute height based on link text length
-        let linkFont = NSFont.systemFont(ofSize: 11)
-        let maxLinkW = toastWidth - 140
-        let linkTextSize = (link as NSString).boundingRect(
-            with: NSSize(width: maxLinkW, height: 200),
-            options: [.usesLineFragmentOrigin],
-            attributes: [.font: linkFont]
-        ).size
-        let linkH = max(16, ceil(linkTextSize.height))
-        let toastHeight = max(64, linkH + 42)
-
-        // Resize and reposition (stay top-center)
-        guard let screen = NSScreen.preferred else { return }
-        let visibleFrame = screen.visibleFrame
-        let topPadding: CGFloat = 12
-        let x = screen.frame.midX - toastWidth / 2
-        let y = visibleFrame.maxY - toastHeight - topPadding
-
-        NSAnimationContext.runAnimationGroup { ctx in
-            ctx.duration = 0.15
-            window.animator().setFrame(NSRect(x: x, y: y, width: toastWidth, height: toastHeight), display: true)
-        }
-        contentView.frame = NSRect(origin: .zero, size: NSSize(width: toastWidth, height: toastHeight))
-        contentView.needsDisplay = true
-
-        // Reposition icon
-        iconView?.frame = NSRect(x: 14, y: (toastHeight - 28) / 2, width: 28, height: 28)
-
-        // Title
-        let titleLabel = NSTextField(labelWithString: L("URL copied to the clipboard"))
-        titleLabel.frame = NSRect(x: 50, y: toastHeight - 28, width: toastWidth - 140, height: 18)
-        titleLabel.font = NSFont.systemFont(ofSize: 13, weight: .semibold)
-        titleLabel.textColor = .labelColor
-        titleLabel.lineBreakMode = .byTruncatingTail
-        contentView.addSubview(titleLabel)
-        self.statusLabel = titleLabel
-
-        // Link (subtitle)
-        let linkLabel = NSTextField(wrappingLabelWithString: link)
-        linkLabel.frame = NSRect(x: 50, y: 10, width: toastWidth - 140, height: linkH)
-        linkLabel.font = linkFont
-        linkLabel.textColor = .secondaryLabelColor
-        linkLabel.isSelectable = false
-        contentView.addSubview(linkLabel)
-        self.linkLabel = linkLabel
-
-        // "Open" button (native-looking, right side)
-        let btn = NSButton(frame: NSRect(x: toastWidth - 76, y: (toastHeight - 28) / 2, width: 62, height: 28))
-        btn.title = L("Open")
-        btn.bezelStyle = .rounded
-        btn.font = NSFont.systemFont(ofSize: 12, weight: .medium)
-        btn.target = self
-        btn.action = #selector(openLink)
-        contentView.addSubview(btn)
-        self.openButton = btn
-
-        // Auto-dismiss after 8 seconds
-        scheduleDismiss(seconds: 8)
-    }
-
-    /// `asUploadFailure` prefixes the message with "Upload failed:". Failures
-    /// that aren't uploads (a save that couldn't be written, a recording that
-    /// produced nothing) pass false and supply their own wording.
-    func showError(message: String, asUploadFailure: Bool = true) {
+    func showError(message: String) {
         spinner?.stopAnimation(nil)
         spinner?.removeFromSuperview()
         spinner = nil
@@ -175,7 +93,7 @@ class UploadToastController {
 
         guard let panel = window, let contentView = panel.contentView else { return }
 
-        let fullMessage = asUploadFailure ? String(format: L("Upload failed: %@"), message) : message
+        let fullMessage = message
         let labelFont = NSFont.systemFont(ofSize: 13, weight: .medium)
         let maxLabelW = toastWidth - 66  // 50 left pad + 16 right pad
         let textSize = (fullMessage as NSString).boundingRect(
@@ -222,11 +140,6 @@ class UploadToastController {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: task)
     }
 
-    @objc private func openLink() {
-        guard let link = currentLink, let url = URL(string: link) else { return }
-        NSWorkspace.shared.open(url)
-        dismiss()
-    }
 
     func dismiss() {
         dismissTask?.cancel()
@@ -235,8 +148,6 @@ class UploadToastController {
         window?.close()
         window = nil
         statusLabel = nil
-        linkLabel = nil
-        openButton = nil
         iconView = nil
         spinner = nil
         onDismiss?()

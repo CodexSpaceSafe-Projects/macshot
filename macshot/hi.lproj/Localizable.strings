@@ -105,7 +105,6 @@
 "OCR" = "OCR";
 "OCR Text" = "OCR पाठ";
 "OCR (extract text)" = "OCR (पाठ निकालें)";
-"Upload" = "अपलोड";
 "Share" = "साझा करें";
 "Undo" = "पूर्ववत करें";
 "Redo" = "फिर से करें";
@@ -147,7 +146,6 @@
 "PII" = "PII";
 "Faces" = "चेहरे";
 "People" = "लोग";
-"Confirm before upload" = "अपलोड से पहले पुष्टि करें";
 "Flip" = "पलटें";
 "Smooth" = "चिकना";
 "Refined" = "परिष्कृत";
@@ -200,7 +198,6 @@
 "Recording" = "रिकॉर्डिंग";
 "About" = "बारे में";
 "Shortcuts" = "शॉर्टकट";
-"Uploads" = "अपलोड";
 "Language" = "भाषा";
 "Language:" = "भाषा:";
 "Restart the app to fully apply the new language." = "नई भाषा पूरी तरह लागू करने के लिए ऐप पुनः आरंभ करें।";
@@ -331,14 +328,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "अपलोड सेवा";
-"Upload Provider" = "अपलोड प्रदाता";
 "Provider:" = "प्रदाता:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (चित्र + वीडियो)";
-"imgbb (images only)" = "imgbb (केवल चित्र)";
-"S3-Compatible (images + videos)" = "S3-संगत (चित्र + वीडियो)";
-"S3-Compatible Storage" = "S3-संगत भंडारण";
 "Sign In with Google" = "Google से साइन इन करें";
 "Sign Out" = "साइन आउट";
 "Signed in" = "साइन इन किया हुआ";
@@ -357,19 +347,9 @@
 "Secret Key:" = "सीक्रेट कुंजी:";
 "Public URL:" = "सार्वजनिक URL:";
 "Path Prefix:" = "पथ उपसर्ग:";
-"Make uploads publicly readable" = "अपलोड को सार्वजनिक रूप से पठनीय बनाएं";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "public-read ACL भेजता है ताकि अपलोड की गई फ़ाइलें लिंक रखने वाले किसी भी व्यक्ति को दिखाई दें। AWS S3, DigitalOcean Spaces, MinIO और Backblaze B2 के लिए आवश्यक है जो डिफ़ॉल्ट रूप से ऑब्जेक्ट्स को निजी रखते हैं। Cloudflare R2 के लिए बंद रखें जो ACLs का समर्थन नहीं करता और हेडर अस्वीकार करता है।";
 "API key:" = "API कुंजी:";
-"Upload History" = "अपलोड इतिहास";
-"No uploads yet." = "अभी तक कोई अपलोड नहीं।";
 "No Apps Available" = "कोई ऐप उपलब्ध नहीं";
 "No Share Services" = "कोई साझा सेवा नहीं";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "सार्वजनिक पहुँच के लिए बेस URL। यदि खाली है, तो S3 एंडपॉइंट URL उपयोग होता है (सार्वजनिक रूप से सुलभ नहीं हो सकता)।";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "एक साझा कुंजी शामिल है, यदि दर सीमा तक पहुँचें तो imgbb.com/api पर अपनी मुफ़्त कुंजी प्राप्त करें। केवल चित्र (वीडियो समर्थन नहीं)।";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, और अन्य S3-संगत सेवाओं के साथ काम करता है। चित्र और वीडियो समर्थित हैं।";
-"Configure S3 in Preferences" = "प्राथमिकताओं में S3 कॉन्फ़िगर करें";
-"Sign in to Google Drive in Preferences" = "प्राथमिकताओं में Google Drive से साइन इन करें";
-"Video upload requires Google Drive or S3" = "वीडियो अपलोड के लिए Google Drive या S3 आवश्यक है";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -391,10 +371,6 @@
 "Cancel" = "रद्द करें";
 "Microphone Access Required" = "माइक्रोफ़ोन पहुँच आवश्यक";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot को ध्वनि ऑडियो रिकॉर्ड करने के लिए माइक्रोफ़ोन अनुमति चाहिए। पहुँच प्रदान करने के लिए सिस्टम सेटिंग्स खोलें।";
-"Upload to Google Drive?" = "Google Drive पर अपलोड करें?";
-"Upload to S3?" = "S3 पर अपलोड करें?";
-"Upload to imgbb.com?" = "imgbb.com पर अपलोड करें?";
-"Your screenshot will be uploaded." = "आपका स्क्रीनशॉट अपलोड किया जाएगा।";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "macshot में आपका स्वागत है";
@@ -414,7 +390,6 @@
 "Translate to:" = "अनुवाद करें:";
 "%d chars · %d words" = "%d अक्षर · %d शब्द";
 "Copy  ⌘↩" = "कॉपी  ⌘↩";
-"AI Search" = "AI खोज";
 "Show Original" = "मूल दिखाएँ";
 "Translation Failed" = "अनुवाद विफल";
 "Translation" = "अनुवाद";
@@ -422,10 +397,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL क्लिपबोर्ड पर कॉपी किया गया";
-"Uploading... %d%%" = "अपलोड हो रहा है... %d%%";
-"Upload failed: %@" = "अपलोड विफल: %@";
-"Uploaded! Link copied." = "अपलोड हो गया! लिंक कॉपी किया गया।";
-"Uploading to %@... %d%%" = "%@ पर अपलोड हो रहा है... %d%%";
 "Open" = "खोलें";
 
 /* Recording Toast */
@@ -484,13 +455,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "इनपुट मॉनिटरिंग आवश्यक";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "रिकॉर्डिंग के दौरान माउस क्लिक हाइलाइट करने या कीस्ट्रोक दिखाने के लिए macshot को इनपुट मॉनिटरिंग की अनुमति चाहिए। सिस्टम सेटिंग्स में ऐक्सेस की अनुमति दें, फिर दोबारा कोशिश करें।";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "अलग-अलग इंटरफ़ेस तत्वों पर स्नैप करने के लिए macshot को एक्सेसिबिलिटी अनुमति चाहिए। कृपया सिस्टम सेटिंग्स में एक्सेस दें, फिर पुनः प्रयास करें।";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "कीस्ट्रोक दिखाएँ";
-"Shortcuts Only" = "केवल शॉर्टकट";
-"All Keystrokes" = "सभी कीस्ट्रोक";
 
 /* Recording — Settings Popover */
 "Delay:" = "विलंब:";
@@ -558,12 +525,8 @@
 "Pause" = "विराम";
 "Resume" = "फिर से शुरू करें";
 "Engine:" = "इंजन:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (डिवाइस पर)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple अनुवाद तेज़ है और ऑफ़लाइन काम करता है। Google Translate अधिक भाषाओं का समर्थन करता है।";
 "Download language packs in System Settings…" = "सिस्टम सेटिंग्स में भाषा पैक डाउनलोड करें…";
-"Configure S3 in Settings" = "सेटिंग्स में S3 कॉन्फ़िगर करें";
-"Sign in to Google Drive in Settings" = "सेटिंग्स में Google Drive में साइन इन करें";
 "Position:" = "स्थिति:";
 "Size:" = "आकार:";
 "Shape:" = "आकृति:";
@@ -576,7 +539,6 @@
 "Clear History?" = "इतिहास साफ़ करें?";
 "This will permanently delete all screenshots from history." = "यह इतिहास से सभी स्क्रीनशॉट स्थायी रूप से हटा देगा।";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "\"सेट\" पर क्लिक करें और कम से कम एक मॉडिफ़ायर (⌘, ⌥, ⌃, ⇧) के साथ एक कुंजी संयोजन दबाएं।";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "फ़ाइलें आपके Google Drive में इस फ़ोल्डर में अपलोड की जाती हैं। \"macshot\" का उपयोग करने के लिए खाली छोड़ें। macshot केवल उन्हीं फ़ोल्डरों का उपयोग कर सकता है जिन्हें उसने स्वयं बनाया है, इसलिए Drive में आपके द्वारा उसी नाम से बनाया गया फ़ोल्डर दोबारा उपयोग नहीं किया जाएगा, इसके बजाय एक नया फ़ोल्डर बनाया जाता है। सब कुछ निजी रहता है, कुछ भी सार्वजनिक रूप से साझा नहीं किया जाता।";
 
 "Pressure" = "दबाव";
 
@@ -661,14 +623,14 @@
 "URL scheme info" = "URL स्कीम जानकारी";
 "sec (0 = never)" = "से. (0 = कभी नहीं)";
 "Settings" = "सेटिंग्स";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "ऑफ़लाइन बिल्ड: अपलोड और क्लाउड स्टोरेज इंटीग्रेशन हटा दिए गए हैं। अपडेट जाँच अब भी MacShot के अपडेट सर्वर से कनेक्ट हो सकती है। स्क्रीनशॉट और रिकॉर्डिंग स्थानीय रहते हैं जब तक कि आप उन्हें स्वयं साझा या सहेज न लें।";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "सेटिंग्स बैकअप";
 "Export Settings…" = "सेटिंग्स एक्सपोर्ट करें…";
 "Import Settings…" = "सेटिंग्स इम्पोर्ट करें…";
 "Reveal Settings File in Finder" = "सेटिंग्स फ़ाइल को Finder में दिखाएँ";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "अपनी प्राथमिकताओं को किसी फ़ाइल में एक्सपोर्ट करें ताकि उन्हें किसी दूसरे Mac पर या नई इंस्टॉल में ले जा सकें। अपलोड क्रेडेंशियल्स, आपका सेव फ़ोल्डर और स्क्रीनशॉट इतिहास शामिल नहीं हैं। सेटिंग्स macshot के ऐप कंटेनर के अंदर संग्रहीत होती हैं।";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "सेटिंग्स एक्सपोर्ट करें";
 "Import Settings" = "सेटिंग्स इम्पोर्ट करें";
 "Import failed" = "इम्पोर्ट विफल रहा";
@@ -678,7 +640,7 @@
 "Later" = "बाद में";
 "Relaunch Now" = "अभी पुनः लॉन्च करें";
 "Replace your current settings?" = "अपनी वर्तमान सेटिंग्स बदलें?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "इम्पोर्ट करने से आपकी वर्तमान प्राथमिकताएँ इस फ़ाइल की प्राथमिकताओं से बदल जाएँगी। आपका सेव फ़ोल्डर, अपलोड क्रेडेंशियल्स और स्क्रीनशॉट इतिहास बना रहेगा। इसे पूर्ववत नहीं किया जा सकता।";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d सेटिंग्स लागू की गईं। सभी बदलाव लागू करने के लिए macshot को पुनः लॉन्च करें।";
 "A few large items were too big to include. Everything else was saved." = "कुछ बड़ी वस्तुएँ शामिल करने के लिए बहुत बड़ी थीं। बाकी सब कुछ सहेज लिया गया।";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "आपकी कस्टम Beautify बैकग्राउंड छवि शामिल करने के लिए बहुत बड़ी थी। बाकी सब कुछ सहेज लिया गया।";
@@ -760,7 +722,7 @@
 "Duration" = "अवधि";
 "Edge highlight" = "किनारा हाइलाइट";
 "Edit Text" = "पाठ संपादित करें";
-"Editable pointer, clicks and keystrokes" = "संपादन योग्य पॉइंटर, क्लिक और कीस्ट्रोक";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "संपादन";
 "Export" = "निर्यात करें";
 "Export Subtitles (.srt)…" = "सबटाइटल निर्यात करें (.srt)…";
@@ -788,8 +750,6 @@
 "Hold Focus" = "फ़ोकस स्थिर रखें";
 "Idle delay" = "निष्क्रियता विलंब";
 "Image" = "छवि";
-"Keystrokes" = "कीस्ट्रोक";
-"Keystrokes in this recording are part of the video pixels." = "इस रिकॉर्डिंग में कीस्ट्रोक वीडियो के पिक्सेल का हिस्सा हैं।";
 "Light appearance" = "हल्का रूप";
 "Makes looping GIFs seamless" = "लूप होने वाले GIF को निर्बाध बनाता है";
 "Mirror" = "मिरर";
@@ -822,10 +782,8 @@
 "Ripple" = "लहर";
 "Save As…" = "इस रूप में सहेजें…";
 "Shape" = "आकृति";
-"Shortcuts only" = "केवल शॉर्टकट";
 "Show camera" = "कैमरा दिखाएँ";
 "Show captions" = "कैप्शन दिखाएँ";
-"Show keystrokes" = "कीस्ट्रोक दिखाएँ";
 "Show pointer" = "पॉइंटर दिखाएँ";
 "Shrink during zooms" = "ज़ूम के दौरान छोटा करें";
 "Smoothing" = "स्मूदिंग";
@@ -844,7 +802,6 @@
 "Title" = "शीर्षक";
 "Transcribing…" = "ट्रांसक्राइब हो रहा है…";
 "Transition" = "ट्रांज़िशन";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "रिकॉर्डिंग से पहले \"कीस्ट्रोक दिखाएँ\" चालू करें। तब macshot उन्हें अलग से रिकॉर्ड करता है ताकि आप उन्हें यहाँ स्टाइल कर सकें।";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "रिकॉर्डिंग से पहले कैमरा चालू करें। macshot इसे अलग से रिकॉर्ड करता है ताकि आप इसे यहाँ खिसका सकें, आकार बदल सकें, शैली बदल सकें या छिपा सकें, और ज़ूम के दौरान छोटा कर सकें।";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "संवेदनशील जानकारी छिपाने के लिए ठोस का उपयोग करें: ब्लर और पिक्सलेशन को कभी-कभी उलटा जा सकता है।";
 "Visibility" = "दृश्यता";
@@ -861,3 +818,5 @@
 
 "Snap webcam to corners when moved" = "वेबकैम को खिसकाते समय कोनों से चिपकाएँ";
 "Search emoji" = "इमोजी खोजें";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

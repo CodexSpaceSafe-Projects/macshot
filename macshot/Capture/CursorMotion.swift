@@ -168,18 +168,6 @@ nonisolated enum CursorMotion {
 
     /// Opacity while typing: the pointer hides from a key press until it
     /// next moves (common screen-recorder behavior that keeps text visible).
-    static func typingOpacity(at t: Double, keyTimes: [Double], track: CursorTrack, fade: Double = 0.15) -> CGFloat {
-        guard let k = CursorRecording.index(in: keyTimes, atOrBefore: t) else { return 1 }
-        let keyTime = keyTimes[k]
-        // Movement after the key press brings the pointer back.
-        if let b = CursorRecording.index(in: track.burstStarts, atOrBefore: t), track.burstStarts[b] > keyTime {
-            return CGFloat(min(1, (t - track.burstStarts[b]) / fade))
-        }
-        if let b = CursorRecording.index(in: track.burstStarts, atOrBefore: t), track.burstEnds[b] > keyTime {
-            return 1
-        }
-        return CGFloat(max(0, 1 - (t - keyTime) / fade))
-    }
 }
 
 /// Pointer tilt from horizontal speed ("sway").

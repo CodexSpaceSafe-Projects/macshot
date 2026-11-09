@@ -111,7 +111,6 @@
 "No Share Services" = "ไม่มีบริการแชร์";
 "QR Code" = "รหัส QR";
 "QR Codes" = "รหัส QR";
-"Upload" = "อัปโหลด";
 "Share" = "แชร์";
 "Undo" = "เลิกทำ";
 "Redo" = "ทำซ้ำ";
@@ -153,7 +152,6 @@
 "PII" = "ข้อมูลส่วนบุคคล";
 "Faces" = "ใบหน้า";
 "People" = "ผู้คน";
-"Confirm before upload" = "ยืนยันก่อนอัปโหลด";
 "Flip" = "พลิก";
 "Smooth" = "เรียบ";
 "Refined" = "ประณีต";
@@ -216,7 +214,6 @@
 "Recording" = "การบันทึก";
 "About" = "เกี่ยวกับ";
 "Shortcuts" = "ปุ่มลัด";
-"Uploads" = "อัปโหลด";
 "Language" = "ภาษา";
 "Language:" = "ภาษา:";
 "Restart the app to fully apply the new language." = "เริ่มแอปใหม่เพื่อใช้ภาษาใหม่อย่างสมบูรณ์";
@@ -332,14 +329,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "บริการอัปโหลด";
-"Upload Provider" = "ผู้ให้บริการอัปโหลด";
 "Provider:" = "ผู้ให้บริการ:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (รูปภาพ + วิดีโอ)";
-"imgbb (images only)" = "imgbb (รูปภาพเท่านั้น)";
-"S3-Compatible (images + videos)" = "S3-Compatible (รูปภาพ + วิดีโอ)";
-"S3-Compatible Storage" = "พื้นที่จัดเก็บ S3-Compatible";
 "Sign In with Google" = "ลงชื่อเข้าใช้ด้วย Google";
 "Sign Out" = "ออกจากระบบ";
 "Signed in" = "เข้าสู่ระบบแล้ว";
@@ -358,17 +348,7 @@
 "Secret Key:" = "Secret Key:";
 "Public URL:" = "Public URL:";
 "Path Prefix:" = "Path Prefix:";
-"Make uploads publicly readable" = "ทำให้ไฟล์ที่อัปโหลดเป็นสาธารณะ";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "ส่ง ACL แบบ public-read เพื่อให้ไฟล์ที่อัปโหลดสามารถดูได้โดยทุกคนที่มีลิงก์ จำเป็นสำหรับ AWS S3, DigitalOcean Spaces, MinIO และ Backblaze B2 ซึ่งจัดเก็บอ็อบเจกต์แบบส่วนตัวโดยค่าเริ่มต้น ปิดไว้สำหรับ Cloudflare R2 ซึ่งไม่มี ACL และจะปฏิเสธ header";
 "API key:" = "API key:";
-"Upload History" = "ประวัติการอัปโหลด";
-"No uploads yet." = "ยังไม่มีการอัปโหลด";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL พื้นฐานสำหรับการเข้าถึงสาธารณะ หากปล่อยว่าง จะใช้ URL ของ S3 endpoint (อาจไม่สามารถเข้าถึงแบบสาธารณะได้)";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "มีคีย์สาธารณะให้ใช้, รับคีย์ฟรีของคุณเองที่ imgbb.com/api หากถึงขีดจำกัดอัตรา รองรับเฉพาะรูปภาพ (ไม่รองรับวิดีโอ)";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "ใช้งานได้กับ AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 และบริการอื่นที่เข้ากันได้กับ S3 รองรับรูปภาพและวิดีโอ";
-"Configure S3 in Preferences" = "ตั้งค่า S3 ในการตั้งค่า";
-"Sign in to Google Drive in Preferences" = "ลงชื่อเข้าใช้ Google Drive ในการตั้งค่า";
-"Video upload requires Google Drive or S3" = "การอัปโหลดวิดีโอต้องใช้ Google Drive หรือ S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -390,10 +370,6 @@
 "Cancel" = "ยกเลิก";
 "Microphone Access Required" = "ต้องการสิทธิ์ไมโครโฟน";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot ต้องการสิทธิ์ไมโครโฟนเพื่อบันทึกเสียง เปิดการตั้งค่าระบบเพื่ออนุญาต";
-"Upload to Google Drive?" = "อัปโหลดไปยัง Google Drive?";
-"Upload to S3?" = "อัปโหลดไปยัง S3?";
-"Upload to imgbb.com?" = "อัปโหลดไปยัง imgbb.com?";
-"Your screenshot will be uploaded." = "ภาพหน้าจอของคุณจะถูกอัปโหลด";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "ยินดีต้อนรับสู่ macshot";
@@ -413,7 +389,6 @@
 "Translate to:" = "แปลเป็น:";
 "%d chars · %d words" = "%d ตัวอักษร · %d คำ";
 "Copy  ⌘↩" = "คัดลอก  ⌘↩";
-"AI Search" = "ค้นหา AI";
 "Show Original" = "แสดงต้นฉบับ";
 "Translation Failed" = "แปลภาษาล้มเหลว";
 "Translation" = "การแปลภาษา";
@@ -421,10 +396,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "คัดลอก URL ไปยังคลิปบอร์ดแล้ว";
-"Uploading... %d%%" = "กำลังอัปโหลด... %d%%";
-"Upload failed: %@" = "อัปโหลดล้มเหลว: %@";
-"Uploaded! Link copied." = "อัปโหลดแล้ว! คัดลอกลิงก์แล้ว";
-"Uploading to %@... %d%%" = "กำลังอัปโหลดไปยัง %@... %d%%";
 "Open" = "เปิด";
 
 /* Recording Toast */
@@ -483,13 +454,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "ต้องการสิทธิ์การตรวจสอบอินพุต";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot ต้องการสิทธิ์การตรวจสอบอินพุตเพื่อไฮไลต์การคลิกเมาส์หรือแสดงการกดปุ่มขณะบันทึก โปรดอนุญาตการเข้าถึงในการตั้งค่าระบบ แล้วลองอีกครั้ง";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot ต้องการสิทธิ์การช่วยการเข้าถึงเพื่อสแนปไปยังองค์ประกอบอินเทอร์เฟซแต่ละรายการ กรุณาให้สิทธิ์ในการตั้งค่าระบบ แล้วลองอีกครั้ง";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "แสดงการกดปุ่ม";
-"Shortcuts Only" = "เฉพาะปุ่มลัด";
-"All Keystrokes" = "การกดปุ่มทั้งหมด";
 
 /* Recording — Settings Popover */
 "Delay:" = "หน่วงเวลา:";
@@ -556,13 +523,9 @@
 "Pause" = "หยุดชั่วคราว";
 "Resume" = "ดำเนินการต่อ";
 "Engine:" = "เครื่องมือ:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (บนอุปกรณ์)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "การแปลของ Apple เร็วกว่าและใช้งานได้แบบออฟไลน์ Google Translate รองรับภาษาได้มากกว่า";
 "Download language packs in System Settings…" = "ดาวน์โหลดชุดภาษาในการตั้งค่าระบบ…";
-"Configure S3 in Settings" = "ตั้งค่า S3 ในการตั้งค่า";
-"Sign in to Google Drive in Settings" = "ลงชื่อเข้าใช้ Google Drive ในการตั้งค่า";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "บิลด์ออฟไลน์: การเชื่อมต่อการอัปโหลดและที่เก็บข้อมูลบนคลาวด์ถูกนำออกแล้ว การตรวจสอบอัปเดตอาจยังเชื่อมต่อกับเซิร์ฟเวอร์อัปเดตของ MacShot ภาพหน้าจอและการบันทึกจะยังคงอยู่ในเครื่อง เว้นแต่คุณจะแชร์หรือบันทึกด้วยตนเอง";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "ตำแหน่ง:";
 "  Position:" = "  ตำแหน่ง:";
 "Size:" = "ขนาด:";
@@ -576,7 +539,6 @@
 "Clear History?" = "ล้างประวัติ?";
 "This will permanently delete all screenshots from history." = "การดำเนินการนี้จะลบภาพหน้าจอทั้งหมดออกจากประวัติอย่างถาวร";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "คลิก \"ตั้งค่า\" แล้วกดคีย์ผสมที่มีปุ่มตัวแก้ไขอย่างน้อยหนึ่งปุ่ม (⌘, ⌥, ⌃, ⇧) เพื่อตั้งค่าทางลัด";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "ไฟล์จะถูกอัปโหลดไปยังโฟลเดอร์นี้ใน Google Drive ของคุณ เว้นว่างไว้เพื่อใช้ \"macshot\" macshot สามารถใช้ได้เฉพาะโฟลเดอร์ที่ตัวเองสร้างขึ้นเท่านั้น ดังนั้นโฟลเดอร์ชื่อเดียวกันที่คุณสร้างเองใน Drive จะไม่ถูกนำมาใช้ซ้ำ, แต่จะสร้างโฟลเดอร์ใหม่แทน ทุกอย่างเป็นส่วนตัว, ไม่มีการแชร์สาธารณะ";
 
 "Pressure" = "แรงกด";
 
@@ -666,7 +628,7 @@
 "Export Settings…" = "ส่งออกการตั้งค่า…";
 "Import Settings…" = "นำเข้าการตั้งค่า…";
 "Reveal Settings File in Finder" = "แสดงไฟล์การตั้งค่าใน Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "ส่งออกการกำหนดค่าของคุณไปยังไฟล์เพื่อย้ายไปยัง Mac เครื่องอื่นหรือการติดตั้งใหม่ ข้อมูลรับรองการอัปโหลด โฟลเดอร์บันทึก และประวัติภาพหน้าจอจะไม่รวมอยู่ด้วย การตั้งค่าจะถูกจัดเก็บไว้ภายในคอนเทนเนอร์แอปของ macshot";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "ส่งออกการตั้งค่า";
 "Import Settings" = "นำเข้าการตั้งค่า";
 "Import failed" = "นำเข้าไม่สำเร็จ";
@@ -676,7 +638,7 @@
 "Later" = "ภายหลัง";
 "Relaunch Now" = "เปิดใหม่ตอนนี้";
 "Replace your current settings?" = "แทนที่การตั้งค่าปัจจุบันของคุณหรือไม่?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "การนำเข้าจะแทนที่การกำหนดค่าปัจจุบันของคุณด้วยค่าในไฟล์นี้ โฟลเดอร์บันทึก ข้อมูลรับรองการอัปโหลด และประวัติภาพหน้าจอของคุณจะยังคงอยู่ การดำเนินการนี้ไม่สามารถเลิกทำได้";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "นำการตั้งค่า %d รายการไปใช้แล้ว เปิด macshot ใหม่เพื่อนำการเปลี่ยนแปลงทั้งหมดไปใช้";
 "A few large items were too big to include. Everything else was saved." = "รายการขนาดใหญ่บางรายการมีขนาดเกินกว่าที่จะรวมได้ ส่วนอื่นทั้งหมดถูกบันทึกแล้ว";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "ภาพพื้นหลัง Beautify ที่คุณกำหนดเองมีขนาดใหญ่เกินกว่าที่จะรวมได้ ส่วนอื่นทั้งหมดถูกบันทึกแล้ว";
@@ -758,7 +720,7 @@
 "Duration" = "ระยะเวลา";
 "Edge highlight" = "ไฮไลต์ขอบ";
 "Edit Text" = "แก้ไขข้อความ";
-"Editable pointer, clicks and keystrokes" = "ตัวชี้ การคลิก และการกดปุ่มที่แก้ไขได้";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "การแก้ไข";
 "Export" = "ส่งออก";
 "Export Subtitles (.srt)…" = "ส่งออกคำบรรยาย (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "คงโฟกัส";
 "Idle delay" = "หน่วงเวลาไม่ใช้งาน";
 "Image" = "ภาพ";
-"Keystrokes" = "การกดปุ่ม";
-"Keystrokes in this recording are part of the video pixels." = "การกดปุ่มในการบันทึกนี้เป็นส่วนหนึ่งของพิกเซลวิดีโอ";
 "Light appearance" = "ลักษณะสว่าง";
 "Makes looping GIFs seamless" = "ทำให้ GIF แบบวนซ้ำต่อเนื่องไร้รอยต่อ";
 "Mirror" = "กลับด้าน";
@@ -820,10 +780,8 @@
 "Ripple" = "ระลอกคลื่น";
 "Save As…" = "บันทึกเป็น…";
 "Shape" = "รูปทรง";
-"Shortcuts only" = "เฉพาะคีย์ลัด";
 "Show camera" = "แสดงกล้อง";
 "Show captions" = "แสดงคำบรรยาย";
-"Show keystrokes" = "แสดงการกดปุ่ม";
 "Show pointer" = "แสดงตัวชี้";
 "Shrink during zooms" = "ย่อขณะซูม";
 "Smoothing" = "ความเรียบ";
@@ -842,7 +800,6 @@
 "Title" = "ชื่อเรื่อง";
 "Transcribing…" = "กำลังถอดความ…";
 "Transition" = "การเปลี่ยนผ่าน";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "เปิด “แสดงการกดปุ่ม” ก่อนบันทึก จากนั้น macshot จะบันทึกการกดปุ่มแยกต่างหากเพื่อให้คุณปรับสไตล์ได้ที่นี่";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "เปิดกล้องก่อนบันทึก macshot จะบันทึกกล้องแยกต่างหากเพื่อให้คุณย้าย ปรับขนาด เปลี่ยนสไตล์ หรือซ่อนได้ที่นี่, และย่อลงขณะซูม";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "ใช้ “ทึบ” เพื่อซ่อนข้อมูลที่ละเอียดอ่อน: การเบลอและการทำพิกเซลบางครั้งสามารถย้อนกลับได้";
 "Visibility" = "การแสดงผล";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "จัดเว็บแคมให้ชิดมุมเมื่อย้าย";
 "Search emoji" = "ค้นหาอีโมจิ";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

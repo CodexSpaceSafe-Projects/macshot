@@ -5,7 +5,7 @@ import XCTest
 final class RecordingSetupTests: XCTestCase {
     private func withOverlay(_ body: (RecordingSetupOverlay, RecordingSetupDelegate) -> Void) {
         withDefaults([
-            "recordMouseHighlight": false, "recordKeystroke": false,
+            "recordMouseHighlight": false,
             "recordMicAudio": false, "recordWebcam": false,
             "overlayToolShortcuts": nil,
         ]) {
@@ -21,11 +21,10 @@ final class RecordingSetupTests: XCTestCase {
         }
     }
 
-    func testBothInputOverlayButtonsRequestPermissionBeforeEnabling() {
+    func testMouseHighlightRequestsPermissionBeforeEnabling() {
         withOverlay { view, delegate in
             view.permissionGranted = false
-            for (action, key) in [(ToolbarButtonAction.mouseHighlight, "recordMouseHighlight"),
-                                  (.showKeystrokes, "recordKeystroke")] {
+            for (action, key) in [(ToolbarButtonAction.mouseHighlight, "recordMouseHighlight")] {
                 let previousRequests = delegate.inputPermissionRequests
                 view.handleToolbarAction(action)
                 XCTAssertFalse(UserDefaults.standard.bool(forKey: key))
@@ -36,8 +35,7 @@ final class RecordingSetupTests: XCTestCase {
 
     func testInputOverlayCanBeEnabledAfterPermissionAndDisabledAfterRevocation() {
         withOverlay { view, delegate in
-            for (action, key) in [(ToolbarButtonAction.mouseHighlight, "recordMouseHighlight"),
-                                  (.showKeystrokes, "recordKeystroke")] {
+            for (action, key) in [(ToolbarButtonAction.mouseHighlight, "recordMouseHighlight")] {
                 view.permissionGranted = true
                 view.handleToolbarAction(action)
                 XCTAssertTrue(UserDefaults.standard.bool(forKey: key))
@@ -55,7 +53,6 @@ final class RecordingSetupTests: XCTestCase {
             UserDefaults.standard.set(true, forKey: "recordMouseHighlight")
             view.isRecording = true
             XCTAssertFalse(UserDefaults.standard.bool(forKey: "recordMouseHighlight"))
-            XCTAssertFalse(UserDefaults.standard.bool(forKey: "recordKeystroke"))
             XCTAssertEqual(delegate.inputPermissionRequests, 0)
 
             // A fresh capture must also keep unavailable options off without
@@ -68,21 +65,18 @@ final class RecordingSetupTests: XCTestCase {
             XCTAssertEqual(delegate.inputPermissionRequests, 0)
             let buttons = ToolbarLayout.rightButtons(isRecording: true)
             XCTAssertEqual(buttons.first { if case .mouseHighlight = $0.action { return true }; return false }?.isSelected, false)
-            XCTAssertEqual(buttons.first { if case .showKeystrokes = $0.action { return true }; return false }?.isSelected, false)
             reopened.handleToolbarAction(.mouseHighlight)
             XCTAssertEqual(delegate.inputPermissionRequests, 1)
             XCTAssertFalse(UserDefaults.standard.bool(forKey: "recordMouseHighlight"))
         }
     }
 
-    func testRecordingSetupDisablesBothUnavailableSavedOptionsWithoutPrompting() {
+    func testRecordingSetupDisablesUnavailableSavedOptionsWithoutPrompting() {
         withOverlay { view, delegate in
             view.permissionGranted = false
             UserDefaults.standard.set(true, forKey: "recordMouseHighlight")
-            UserDefaults.standard.set(true, forKey: "recordKeystroke")
             view.isRecording = true
             XCTAssertFalse(UserDefaults.standard.bool(forKey: "recordMouseHighlight"))
-            XCTAssertFalse(UserDefaults.standard.bool(forKey: "recordKeystroke"))
             XCTAssertEqual(delegate.inputPermissionRequests, 0)
         }
     }
@@ -95,10 +89,8 @@ final class RecordingSetupTests: XCTestCase {
             view.isRecording = false
             view.permissionGranted = true
             UserDefaults.standard.set(true, forKey: "recordMouseHighlight")
-            UserDefaults.standard.set(true, forKey: "recordKeystroke")
             view.isRecording = true
             XCTAssertTrue(UserDefaults.standard.bool(forKey: "recordMouseHighlight"))
-            XCTAssertTrue(UserDefaults.standard.bool(forKey: "recordKeystroke"))
             XCTAssertEqual(delegate.inputPermissionRequests, 0)
         }
     }
@@ -189,7 +181,6 @@ private final class RecordingSetupDelegate: OverlayViewDelegate {
     func overlayViewDidRequestPin() {}
     func overlayViewDidRequestOCR() {}
     func overlayViewDidRequestFileSave() {}
-    func overlayViewDidRequestUpload() {}
     func overlayViewDidRequestShare(anchorView: NSView?) {}
     func overlayViewDidRequestRemoveBackground() {}
     func overlayViewDidRequestEnterRecordingMode() {}

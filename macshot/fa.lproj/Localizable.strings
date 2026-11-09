@@ -105,7 +105,6 @@
 "OCR" = "OCR";
 "OCR Text" = "متن OCR";
 "OCR (extract text)" = "OCR (استخراج متن)";
-"Upload" = "بارگذاری";
 "Share" = "اشتراک‌گذاری";
 "Undo" = "برگردان";
 "Redo" = "بازانجام";
@@ -147,7 +146,6 @@
 "PII" = "PII";
 "Faces" = "چهره‌ها";
 "People" = "افراد";
-"Confirm before upload" = "تایید قبل از بارگذاری";
 "Flip" = "وارونه";
 "Smooth" = "هموار";
 "Refined" = "پالایش‌شده";
@@ -200,7 +198,6 @@
 "Recording" = "ضبط ویدیو";
 "About" = "درباره";
 "Shortcuts" = "میانبرها";
-"Uploads" = "بارگذاری‌ها";
 "Language" = "زبان";
 "Language:" = "زبان:";
 "Restart the app to fully apply the new language." = "برنامه را مجددا راه‌اندازی کنید تا زبان جدید به طور کامل اعمال شود.";
@@ -326,14 +323,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "سرویس بارگذاری";
-"Upload Provider" = "ارائه‌دهنده بارگذاری";
 "Provider:" = "ارائه‌دهنده:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (تصاویر + ویدیوها)";
-"imgbb (images only)" = "imgbb (فقط تصاویر)";
-"S3-Compatible (images + videos)" = "S3-Compatible (تصاویر + ویدیوها)";
-"S3-Compatible Storage" = "فضای ذخیره‌سازی S3-Compatible";
 "Sign In with Google" = "ورود با Google";
 "Sign Out" = "خروج از حساب";
 "Signed in" = "وارد شده";
@@ -352,17 +342,7 @@
 "Secret Key:" = "کلید محرمانه:";
 "Public URL:" = "آدرس عمومی:";
 "Path Prefix:" = "پیشوند مسیر:";
-"Make uploads publicly readable" = "قابل خواندن عمومی کردن بارگذاری‌ها";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "ACL از نوع public-read ارسال می‌کند تا فایل‌های بارگذاری‌شده برای هر کسی که لینک را دارد قابل مشاهده باشند. برای AWS S3، DigitalOcean Spaces، MinIO و Backblaze B2 که اشیاء را به صورت خصوصی ذخیره می‌کنند لازم است. برای Cloudflare R2 که ACLs ندارد و هدر را رد می‌کند، خاموش بگذارید.";
 "API key:" = "کلید API:";
-"Upload History" = "تاریخچه بارگذاری";
-"No uploads yet." = "هنوز بارگذاری‌ای انجام نشده.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "آدرس پایه برای دسترسی عمومی. اگر خالی باشد، آدرس S3 استفاده می‌شود (ممکن است به صورت عمومی قابل دسترسی نباشد).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "یک کلید مشترک موجود است, اگر به محدودیت نرخ رسیدید، کلید رایگان خود را از imgbb.com/api دریافت کنید. فقط تصاویر (بدون پشتیبانی ویدیو).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "با AWS S3، Cloudflare R2، MinIO، DigitalOcean Spaces، Backblaze B2 و سایر سرویس‌های سازگار با S3 کار می‌کند. از تصاویر و ویدیوها پشتیبانی می‌کند.";
-"Configure S3 in Preferences" = "پیکربندی S3 در تنظیمات";
-"Sign in to Google Drive in Preferences" = "ورود به Google Drive در تنظیمات";
-"Video upload requires Google Drive or S3" = "بارگذاری ویدیو نیاز به Google Drive یا S3 دارد";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -384,10 +364,6 @@
 "Cancel" = "لغو";
 "Microphone Access Required" = "دسترسی به میکروفون لازم است";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot برای ضبط صدای میکروفون به مجوز میکروفون نیاز دارد. تنظیمات سیستم را باز کنید تا دسترسی اعطا شود.";
-"Upload to Google Drive?" = "بارگذاری به Google Drive؟";
-"Upload to S3?" = "بارگذاری به S3؟";
-"Upload to imgbb.com?" = "بارگذاری به imgbb.com؟";
-"Your screenshot will be uploaded." = "تصویر صفحه شما بارگذاری خواهد شد.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "به macshot خوش آمدید";
@@ -406,7 +382,6 @@
 "Translate to:" = "ترجمه به:";
 "%d chars · %d words" = "%d نویسه · %d کلمه";
 "Copy  ⌘↩" = "کپی  ⌘↩";
-"AI Search" = "جستجوی هوش مصنوعی";
 "Show Original" = "نمایش اصلی";
 "Translation Failed" = "ترجمه ناموفق بود";
 "Translation" = "ترجمه";
@@ -414,10 +389,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "آدرس به کلیپ‌بورد کپی شد";
-"Uploading... %d%%" = "در حال بارگذاری... %d%%";
-"Upload failed: %@" = "بارگذاری ناموفق: %@";
-"Uploaded! Link copied." = "بارگذاری شد! لینک کپی شد.";
-"Uploading to %@... %d%%" = "در حال بارگذاری به %@... %d%%";
 "Open" = "باز کردن";
 
 /* Recording Toast */
@@ -476,13 +447,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "نظارت بر ورودی لازم است";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot برای برجسته کردن کلیک‌های ماوس یا نمایش کلیدهای فشرده‌شده هنگام ضبط به مجوز نظارت بر ورودی نیاز دارد. لطفاً دسترسی را در تنظیمات سیستم اعطا کنید و دوباره تلاش کنید.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot برای چسبیدن به عناصر جداگانهٔ رابط کاربری به مجوز دسترس‌پذیری نیاز دارد. لطفاً در تنظیمات سیستم دسترسی بدهید و دوباره امتحان کنید.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "نمایش کلیدهای فشرده‌شده";
-"Shortcuts Only" = "فقط میانبرها";
-"All Keystrokes" = "همه کلیدها";
 
 /* Recording — Settings Popover */
 "Delay:" = "تاخیر:";
@@ -550,12 +517,8 @@
 "Pause" = "مکث";
 "Resume" = "ادامه";
 "Engine:" = "موتور:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (روی دستگاه)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "ترجمه Apple سریع‌تر است و بدون اینترنت کار می‌کند. Google Translate از زبان‌های بیشتری پشتیبانی می‌کند.";
 "Download language packs in System Settings…" = "بسته‌های زبان را در تنظیمات سیستم دانلود کنید…";
-"Configure S3 in Settings" = "پیکربندی S3 در تنظیمات";
-"Sign in to Google Drive in Settings" = "ورود به Google Drive در تنظیمات";
 "Position:" = "موقعیت:";
 "Size:" = "اندازه:";
 "Shape:" = "شکل:";
@@ -568,7 +531,6 @@
 "Clear History?" = "پاک کردن تاریخچه؟";
 "This will permanently delete all screenshots from history." = "این کار تمام اسکرین‌شات‌ها را به‌طور دائمی از تاریخچه حذف می‌کند.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "روی \"تنظیم\" کلیک کنید و یک ترکیب کلید با حداقل یک کلید تغییردهنده (⌘, ⌥, ⌃, ⇧) را برای تعیین میانبر فشار دهید.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "فایل‌ها در این پوشه در Google Drive شما بارگذاری می‌شوند. برای استفاده از \"macshot\" خالی بگذارید. macshot فقط می‌تواند از پوشه‌هایی استفاده کند که خودش ساخته است، بنابراین پوشه‌ای که خودتان با همین نام در Drive ساخته‌اید دوباره استفاده نمی‌شود, به‌جای آن یک پوشهٔ جدید ساخته می‌شود. همه چیز خصوصی می‌ماند, هیچ چیز به‌صورت عمومی به اشتراک گذاشته نمی‌شود.";
 
 "Pressure" = "فشار";
 
@@ -661,14 +623,14 @@
 "URL scheme info" = "اطلاعات طرح URL";
 "sec (0 = never)" = "ثانیه (0 = هرگز)";
 "Settings" = "تنظیمات";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "نسخهٔ آفلاین: یکپارچه‌سازی‌های بارگذاری و فضای ابری حذف شده‌اند. بررسی به‌روزرسانی‌ها ممکن است همچنان به سرور به‌روزرسانی MacShot متصل شود. اسکرین‌شات‌ها و ضبط‌ها محلی می‌مانند مگر اینکه خودتان آن‌ها را به اشتراک بگذارید یا ذخیره کنید.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "پشتیبان‌گیری تنظیمات";
 "Export Settings…" = "برون‌بری تنظیمات…";
 "Import Settings…" = "درون‌ری تنظیمات…";
 "Reveal Settings File in Finder" = "نمایش فایل تنظیمات در Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "ترجیحات خود را به یک فایل برون‌بری کنید تا آن‌ها را به Mac دیگری یا یک نصب تازه منتقل کنید. اطلاعات ورود بارگذاری، پوشه‌ی ذخیره و تاریخچه‌ی اسکرین‌شات‌ها گنجانده نمی‌شوند. تنظیمات درون کانتینر برنامه‌ی macshot ذخیره می‌شوند.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "برون‌بری تنظیمات";
 "Import Settings" = "درون‌ری تنظیمات";
 "Import failed" = "درون‌ری ناموفق بود";
@@ -678,7 +640,7 @@
 "Later" = "بعداً";
 "Relaunch Now" = "اکنون راه‌اندازی مجدد";
 "Replace your current settings?" = "تنظیمات فعلی خود را جایگزین می‌کنید؟";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "درون‌ری، ترجیحات فعلی شما را با ترجیحات موجود در این فایل جایگزین می‌کند. پوشه‌ی ذخیره، اطلاعات ورود بارگذاری و تاریخچه‌ی اسکرین‌شات‌های شما حفظ می‌شوند. این عمل قابل بازگردانی نیست.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d تنظیم اعمال شد. برای اعمال همه‌ی تغییرات، macshot را دوباره راه‌اندازی کنید.";
 "A few large items were too big to include. Everything else was saved." = "چند مورد حجیم برای گنجاندن بسیار بزرگ بودند. باقی موارد ذخیره شدند.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "تصویر پس‌زمینه‌ی سفارشی Beautify شما برای گنجاندن بسیار بزرگ بود. باقی موارد ذخیره شدند.";
@@ -760,7 +722,7 @@
 "Duration" = "مدت";
 "Edge highlight" = "برجسته‌سازی لبه";
 "Edit Text" = "ویرایش متن";
-"Editable pointer, clicks and keystrokes" = "نشانگر، کلیک‌ها و کلیدهای قابل ویرایش";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "ویرایش‌ها";
 "Export" = "خروجی";
 "Export Subtitles (.srt)…" = "خروجی زیرنویس (.srt)…";
@@ -788,8 +750,6 @@
 "Hold Focus" = "حفظ تمرکز";
 "Idle delay" = "تأخیر بیکاری";
 "Image" = "تصویر";
-"Keystrokes" = "کلیدهای فشرده‌شده";
-"Keystrokes in this recording are part of the video pixels." = "کلیدهای فشرده‌شده در این ضبط بخشی از پیکسل‌های ویدیو هستند.";
 "Light appearance" = "ظاهر روشن";
 "Makes looping GIFs seamless" = "تکرار GIFها را یکپارچه می‌کند";
 "Mirror" = "قرینه";
@@ -822,10 +782,8 @@
 "Ripple" = "موج";
 "Save As…" = "ذخیره با نام…";
 "Shape" = "شکل";
-"Shortcuts only" = "فقط میان‌برها";
 "Show camera" = "نمایش دوربین";
 "Show captions" = "نمایش زیرنویس‌ها";
-"Show keystrokes" = "نمایش کلیدهای فشرده‌شده";
 "Show pointer" = "نمایش نشانگر";
 "Shrink during zooms" = "کوچک شدن هنگام بزرگ‌نمایی";
 "Smoothing" = "هموارسازی";
@@ -844,7 +802,6 @@
 "Title" = "عنوان";
 "Transcribing…" = "در حال رونویسی…";
 "Transition" = "گذار";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "پیش از ضبط «نمایش کلیدهای فشرده‌شده» را روشن کنید. سپس macshot آن‌ها را جداگانه ضبط می‌کند تا بتوانید در اینجا سبکشان را تنظیم کنید.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "پیش از ضبط دوربین را روشن کنید. macshot آن را جداگانه ضبط می‌کند تا بتوانید آن را در اینجا جابه‌جا کنید، اندازه یا سبکش را تغییر دهید یا پنهانش کنید, و هنگام بزرگ‌نمایی کوچکش کنید.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "برای پنهان کردن اطلاعات حساس از «توپر» استفاده کنید: تاری و پیکسلی کردن گاهی قابل بازگردانی هستند.";
 "Visibility" = "نمایان بودن";
@@ -861,3 +818,5 @@
 
 "Snap webcam to corners when moved" = "چسباندن وب‌کم به گوشه‌ها هنگام جابه‌جایی";
 "Search emoji" = "جستجوی ایموجی";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

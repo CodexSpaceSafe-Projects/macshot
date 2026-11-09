@@ -27,7 +27,6 @@ nonisolated final class VideoCursorLayer: @unchecked Sendable {
     /// Source-video pixels per cursor point.
     let pixelsPerPoint: CGFloat
     let clicks: [CursorRecording.Click]
-    let keyTimes: [Double]
     let rippleSprite: CIImage
     let ringSprite: CIImage
     /// Source-time range whose end glides back to its start (loop mode).
@@ -35,7 +34,7 @@ nonisolated final class VideoCursorLayer: @unchecked Sendable {
 
     init(track: CursorTrack, shapeTimes: [Double], shapeIDs: [UInt32], sprites: [UInt32: CursorSprite],
          fallback: CursorSprite, style: VideoCursorStyle, pixelsPerPoint: CGFloat, clicks: [CursorRecording.Click],
-         keyTimes: [Double], rippleSprite: CIImage, ringSprite: CIImage, loopRange: ClosedRange<Double>?) {
+         rippleSprite: CIImage, ringSprite: CIImage, loopRange: ClosedRange<Double>?) {
         self.track = track
         self.shapeTimes = shapeTimes
         self.shapeIDs = shapeIDs
@@ -44,7 +43,6 @@ nonisolated final class VideoCursorLayer: @unchecked Sendable {
         self.style = style
         self.pixelsPerPoint = pixelsPerPoint
         self.clicks = clicks
-        self.keyTimes = keyTimes
         self.rippleSprite = rippleSprite
         self.ringSprite = ringSprite
         self.loopRange = loopRange
@@ -75,7 +73,6 @@ nonisolated final class VideoCursorLayer: @unchecked Sendable {
     func opacity(at t: Double) -> CGFloat {
         var alpha: CGFloat = 1
         if style.hideWhenIdle { alpha = min(alpha, track.idleOpacity(at: t, delay: style.idleDelay)) }
-        if style.hideWhileTyping { alpha = min(alpha, CursorMotion.typingOpacity(at: t, keyTimes: keyTimes, track: track)) }
         return alpha
     }
 }
@@ -110,16 +107,14 @@ nonisolated final class VideoSceneSnapshot: @unchecked Sendable {
     let camera: CameraPath
     let cameraMotionBlur: CGFloat
     let cursor: VideoCursorLayer?
-    let keystrokes: [KeystrokeTimeline.Label]
-    let keystrokeStyle: VideoKeystrokeStyle
     let captions: [VideoCaptionSegment]
     let captionStyle: VideoCaptionStyle
     let webcam: VideoWebcamLayer?
     let textCache = OverlayTextCache()
 
     init(layout: VideoSceneLayout, background: CIImage?, foreground: CIImage?, camera: CameraPath,
-         cameraMotionBlur: CGFloat, cursor: VideoCursorLayer?, keystrokes: [KeystrokeTimeline.Label],
-         keystrokeStyle: VideoKeystrokeStyle, captions: [VideoCaptionSegment], captionStyle: VideoCaptionStyle,
+         cameraMotionBlur: CGFloat, cursor: VideoCursorLayer?,
+         captions: [VideoCaptionSegment], captionStyle: VideoCaptionStyle,
          webcam: VideoWebcamLayer?) {
         self.layout = layout
         self.background = background
@@ -127,8 +122,6 @@ nonisolated final class VideoSceneSnapshot: @unchecked Sendable {
         self.camera = camera
         self.cameraMotionBlur = cameraMotionBlur
         self.cursor = cursor
-        self.keystrokes = keystrokes
-        self.keystrokeStyle = keystrokeStyle
         self.captions = captions
         self.captionStyle = captionStyle
         self.webcam = webcam
@@ -223,12 +216,9 @@ nonisolated enum VideoSceneRenderer {
             composed = drawCursor(on: composed, cursor: cursor, time: time, scene: scene, camera: camera)
         }
 
-        // 6. Camera bubble, keystrokes, captions — fixed to the screen.
+        // 6. Camera bubble and captions — fixed to the screen.
         if let webcam = scene.webcam, let webcamFrame, webcam.style.show {
             composed = drawWebcam(webcamFrame, on: composed, layer: webcam, layout: layout, camera: camera, time: time)
-        }
-        if scene.keystrokeStyle.show, let (label, opacity) = KeystrokeTimeline.active(at: time, in: scene.keystrokes) {
-            composed = drawKeystroke(label.text, opacity: opacity, on: composed, scene: scene)
         }
         if scene.captionStyle.show, let (caption, opacity) = CaptionTimeline.active(at: time, in: scene.captions) {
             composed = drawCaption(caption.text, opacity: opacity, on: composed, scene: scene)
@@ -517,18 +507,7 @@ nonisolated enum VideoSceneRenderer {
         return bubble
     }
 
-    // MARK: Keystrokes and captions
-
-    private static func drawKeystroke(_ text: String, opacity: CGFloat, on image: CIImage,
-                                      scene: VideoSceneSnapshot) -> CIImage {
-        let layout = scene.layout
-        let short = min(layout.canvasSize.width, layout.canvasSize.height)
-        let fontSize = short / 1080 * 34 * CGFloat(scene.keystrokeStyle.size)
-        let light = scene.keystrokeStyle.lightAppearance
-        guard let label = scene.textCache.pill(text: text, fontSize: fontSize, maxWidth: layout.canvasSize.width * 0.8,
-                                               light: light, weight: .semibold) else { return image }
-        return place(label, opacity: opacity, position: scene.keystrokeStyle.position, on: image, layout: layout)
-    }
+    // MARK: Captions
 
     private static func drawCaption(_ text: String, opacity: CGFloat, on image: CIImage,
                                     scene: VideoSceneSnapshot) -> CIImage {
@@ -582,7 +561,7 @@ nonisolated enum VideoCensorRenderer {
     }
 }
 
-// MARK: - Text for keystrokes and captions
+// MARK: - Text for captions
 
 /// Rasterizes short labels with Core Text (thread-safe) and caches them, so
 /// playback draws each distinct label once.
@@ -591,18 +570,6 @@ nonisolated final class OverlayTextCache: @unchecked Sendable {
     private let cache = NSCache<NSString, CIImage>()
 
     init() { cache.countLimit = 64 }
-
-    func pill(text: String, fontSize: CGFloat, maxWidth: CGFloat, light: Bool, weight: Weight) -> CIImage? {
-        let key = "pill|\(light)|\(Int(fontSize * 10))|\(text)" as NSString
-        if let cached = cache.object(forKey: key) { return cached }
-        let fg: CGColor = light ? CGColor(gray: 0.08, alpha: 1) : CGColor(gray: 1, alpha: 1)
-        let bg: CGColor = light ? CGColor(gray: 1, alpha: 0.92) : CGColor(red: 0.08, green: 0.08, blue: 0.09, alpha: 0.82)
-        let image = OverlayTextCache.render(text: text, fontSize: fontSize, weight: weight, color: fg,
-                                            background: bg, padding: CGSize(width: fontSize * 0.7, height: fontSize * 0.42),
-                                            radius: fontSize * 0.55, maxWidth: maxWidth, border: !light)
-        if let image { cache.setObject(image, forKey: key) }
-        return image
-    }
 
     func caption(text: String, fontSize: CGFloat, maxWidth: CGFloat, background: Bool) -> CIImage? {
         let key = "caption|\(background)|\(Int(fontSize * 10))|\(text)" as NSString

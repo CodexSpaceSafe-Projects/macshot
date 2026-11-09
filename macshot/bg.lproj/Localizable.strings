@@ -121,7 +121,6 @@
 "Open With" = "Отваряне с";
 "No Apps Available" = "Няма налични приложения";
 "No Share Services" = "Няма услуги за споделяне";
-"Upload" = "Качване";
 "Share" = "Споделяне";
 "Undo" = "Отмяна";
 "Redo" = "Повтаряне";
@@ -167,7 +166,6 @@
 "PII" = "PII";
 "Faces" = "Лица";
 "People" = "Хора";
-"Confirm before upload" = "Потвърждение преди качване";
 "Flip" = "Обръщане";
 "Smooth" = "Изглаждане";
 "Refined" = "Прецизно";
@@ -219,7 +217,6 @@
 "Recording" = "Запис";
 "About" = "Относно";
 "Shortcuts" = "Клавишни комбинации";
-"Uploads" = "Качвания";
 "Language" = "Език";
 "Language:" = "Език:";
 "Restart the app to fully apply the new language." = "Рестартирайте приложението, за да приложите изцяло новия език.";
@@ -333,14 +330,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Услуга за качване";
-"Upload Provider" = "Доставчик за качване";
 "Provider:" = "Доставчик:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (изображения + видеа)";
-"imgbb (images only)" = "imgbb (само изображения)";
-"S3-Compatible (images + videos)" = "S3-съвместимо (изображения + видеа)";
-"S3-Compatible Storage" = "S3-съвместимо хранилище";
 "Sign In with Google" = "Вход с Google";
 "Sign Out" = "Изход";
 "Signed in" = "Влезли сте";
@@ -359,17 +349,7 @@
 "Secret Key:" = "Таен ключ:";
 "Public URL:" = "Публичен URL:";
 "Path Prefix:" = "Префикс на пътя:";
-"Make uploads publicly readable" = "Направи качванията публично достъпни за четене";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "Изпраща ACL public-read, за да бъдат качените файлове достъпни за всеки с връзката. Необходимо за AWS S3, DigitalOcean Spaces, MinIO и Backblaze B2, които по подразбиране съхраняват обектите като частни. Оставете изключено за Cloudflare R2, който не поддържа ACL и отхвърля заглавието.";
 "API key:" = "API ключ:";
-"Upload History" = "История на качванията";
-"No uploads yet." = "Все още няма качвания.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Базов URL за публичен достъп. Ако е празно, се използва URL адресът на S3 (може да не е публично достъпен).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Включен е споделен ключ, вземете собствен безплатен ключ от imgbb.com/api, ако достигнете лимита. Само изображения (без поддръжка на видео).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Работи с AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 и други S3-съвместими услуги. Поддържа изображения и видеа.";
-"Configure S3 in Preferences" = "Конфигурирайте S3 в Настройки";
-"Sign in to Google Drive in Preferences" = "Влезте в Google Drive от Настройки";
-"Video upload requires Google Drive or S3" = "Качването на видео изисква Google Drive или S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -391,10 +371,6 @@
 "Cancel" = "Отказ";
 "Microphone Access Required" = "Необходим е достъп до микрофон";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot се нуждае от разрешение за микрофон, за да записва гласово аудио. Отворете Системни настройки, за да дадете достъп.";
-"Upload to Google Drive?" = "Качване в Google Drive?";
-"Upload to S3?" = "Качване в S3?";
-"Upload to imgbb.com?" = "Качване в imgbb.com?";
-"Your screenshot will be uploaded." = "Вашата екранна снимка ще бъде качена.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "Добре дошли в macshot";
@@ -413,7 +389,6 @@
 "Translate to:" = "Превод на:";
 "%d chars · %d words" = "%d знака · %d думи";
 "Copy  ⌘↩" = "Копиране  ⌘↩";
-"AI Search" = "AI търсене";
 "Show Original" = "Показване на оригинала";
 "Translation Failed" = "Преводът е неуспешен";
 "Translation" = "Превод";
@@ -421,10 +396,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL адресът е копиран в клипборда";
-"Uploading... %d%%" = "Качване... %d%%";
-"Upload failed: %@" = "Качването е неуспешно: %@";
-"Uploaded! Link copied." = "Качено! Линкът е копиран.";
-"Uploading to %@... %d%%" = "Качване в %@... %d%%";
 "Open" = "Отваряне";
 
 /* Recording Toast */
@@ -483,13 +454,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Необходим е мониторинг на въвеждането";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot се нуждае от разрешение за мониторинг на въвеждането, за да откроява щракванията с мишката или да показва натисканията на клавиши по време на запис. Дайте достъп в системните настройки и опитайте отново.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot се нуждае от разрешение за достъпност за прилепване към отделни елементи на интерфейса. Моля, разрешете достъпа в Системни настройки и опитайте отново.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "Показване на натискания";
-"Shortcuts Only" = "Само комбинации";
-"All Keystrokes" = "Всички натискания";
 
 /* Recording — Settings Popover */
 "Delay:" = "Забавяне:";
@@ -556,13 +523,9 @@
 "Pause" = "Пауза";
 "Resume" = "Продължаване";
 "Engine:" = "Двигател:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (на устройството)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Преводът на Apple е по-бърз и работи офлайн. Google Translate поддържа повече езици.";
 "Download language packs in System Settings…" = "Изтеглете езикови пакети в Системни настройки…";
-"Configure S3 in Settings" = "Конфигурирайте S3 в Настройки";
-"Sign in to Google Drive in Settings" = "Влезте в Google Drive от Настройки";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Офлайн версия: интеграциите за качване и облачно съхранение са премахнати. Проверките за актуализации все още може да се свързват със сървъра за актуализации на MacShot. Екранните снимки и записите остават локални, освен ако не ги споделите или запазите сами.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Позиция:";
 "  Position:" = "  Позиция:";
 "Size:" = "Размер:";
@@ -576,7 +539,6 @@
 "Clear History?" = "Изчисти историята?";
 "This will permanently delete all screenshots from history." = "Това ще изтрие окончателно всички екранни снимки от историята.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Кликнете върху \"Set\" и натиснете комбинация от клавиши с поне един модификатор (⌘, ⌥, ⌃, ⇧), за да зададете пряк път.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "Файловете се качват в тази папка във вашия Google Drive. Оставете празно, за да се използва \"macshot\". macshot може да използва само папки, които сам е създал, затова папка със същото име, създадена от вас в Drive, няма да бъде използвана, вместо нея ще бъде създадена нова. Всичко остава поверително, нищо не се споделя публично.";
 
 "Pressure" = "Натиск";
 
@@ -666,7 +628,7 @@
 "Export Settings…" = "Експортиране на настройките…";
 "Import Settings…" = "Импортиране на настройките…";
 "Reveal Settings File in Finder" = "Показване на файла с настройки във Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "Експортирайте предпочитанията си във файл, за да ги пренесете на друг Mac или на чиста инсталация. Данните за качване, папката ви за запазване и историята на екранните снимки не се включват. Настройките се съхраняват в контейнера на приложението macshot.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "Експортиране на настройките";
 "Import Settings" = "Импортиране на настройките";
 "Import failed" = "Импортирането е неуспешно";
@@ -676,7 +638,7 @@
 "Later" = "По-късно";
 "Relaunch Now" = "Рестартиране сега";
 "Replace your current settings?" = "Да се заменят ли текущите настройки?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Импортирането ще замени текущите ви предпочитания с тези във файла. Папката за запазване, данните за качване и историята на екранните снимки се запазват. Това действие не може да бъде отменено.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "Приложени са %d настройки. Рестартирайте macshot, за да се приложат всички промени.";
 "A few large items were too big to include. Everything else was saved." = "Няколко големи елемента бяха твърде големи, за да бъдат включени. Всичко останало беше запазено.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Персонализираното ви фоново изображение за Beautify беше твърде голямо, за да бъде включено. Всичко останало беше запазено.";
@@ -758,7 +720,7 @@
 "Duration" = "Продължителност";
 "Edge highlight" = "Осветен ръб";
 "Edit Text" = "Редактиране на текста";
-"Editable pointer, clicks and keystrokes" = "Редактируеми показалец, щраквания и клавиши";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Редакции";
 "Export" = "Експортиране";
 "Export Subtitles (.srt)…" = "Експортиране на субтитри (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "Задържане на фокуса";
 "Idle delay" = "Забавяне при бездействие";
 "Image" = "Изображение";
-"Keystrokes" = "Натискания на клавиши";
-"Keystrokes in this recording are part of the video pixels." = "Натисканията на клавиши в този запис са част от картината на видеото.";
 "Light appearance" = "Светъл вид";
 "Makes looping GIFs seamless" = "Прави зациклените GIF безпроблемни";
 "Mirror" = "Огледално";
@@ -820,10 +780,8 @@
 "Ripple" = "Вълна";
 "Save As…" = "Запазване като…";
 "Shape" = "Форма";
-"Shortcuts only" = "Само комбинации";
 "Show camera" = "Показване на камерата";
 "Show captions" = "Показване на субтитрите";
-"Show keystrokes" = "Показване на клавишите";
 "Show pointer" = "Показване на показалеца";
 "Shrink during zooms" = "Смаляване при мащабиране";
 "Smoothing" = "Изглаждане";
@@ -842,7 +800,6 @@
 "Title" = "Заглавие";
 "Transcribing…" = "Разпознаване…";
 "Transition" = "Преход";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "Включете „Показване на клавишите“ преди записа. Тогава macshot ще ги запише отделно, за да можете да ги оформите тук.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Включете камерата преди записа. macshot я записва отделно, така че тук можете да я местите, преоразмерявате, променяте стила ѝ, скривате, и смалявате по време на мащабиране.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Използвайте „Плътно“, за да скриете чувствителна информация: размазването и пикселизирането понякога могат да бъдат обърнати.";
 "Visibility" = "Видимост";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "Прилепване на уебкамерата към ъглите при преместване";
 "Search emoji" = "Търсене на емоджи";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

@@ -1,7 +1,7 @@
 import Foundation
 import CoreGraphics
 
-/// Pointer, click and keystroke data recorded next to a take so the editor can
+/// Pointer and click data recorded next to a take so the editor can
 /// draw a sharp, restyleable cursor instead of the one baked into the pixels.
 ///
 /// The file is append-only binary, written while recording. Every record is
@@ -25,14 +25,13 @@ nonisolated enum CursorTelemetry {
     /// unbounded allocation.
     static let maxHeaderBytes: UInt32 = 64 * 1024
     static let maxShapeBytes: UInt32 = 4 * 1024 * 1024
-    static let maxKeyTextBytes = 64
 
     enum Tag: UInt8 {
         case move = 1
         case button = 2
         case shape = 3
         case shapeDefinition = 4
-        case key = 5
+        case legacyInput = 5 // Reserved wire tag; skipped, never retained or written.
         case start = 6
         case pause = 7
         case resume = 8
@@ -50,7 +49,7 @@ nonisolated enum CursorTelemetry {
         /// false the pixels already contain a cursor and the editor must not
         /// draw a second one by default.
         var cursorHiddenInVideo: Bool
-        /// Whether click-highlight and keystroke overlays were excluded from
+        /// Whether click-highlight overlays were excluded from
         /// the video and are therefore rendered by the editor.
         var overlaysInTelemetry: Bool
 
@@ -97,7 +96,6 @@ nonisolated enum CursorTelemetry {
         case button(time: Double, button: Button, down: Bool, x: Float, y: Float)
         case shape(time: Double, id: UInt32)
         case shapeDefinition(Shape)
-        case key(time: Double, down: Bool, keyCode: UInt16, modifiers: UInt32, characters: String)
         case start(time: Double)
         case pause(time: Double)
         case resume(time: Double, pausedDuration: Double)
@@ -138,13 +136,6 @@ nonisolated enum CursorTelemetry {
             data.appendLE(Float(shape.size.width).bitPattern); data.appendLE(Float(shape.size.height).bitPattern)
             data.appendLE(UInt32(shape.png.count))
             data.append(shape.png)
-        case let .key(time, down, keyCode, modifiers, characters):
-            var text = Data(characters.utf8)
-            if text.count > maxKeyTextBytes { text = Data(characters.utf8Prefix(maxBytes: maxKeyTextBytes).utf8) }
-            data.append(Tag.key.rawValue)
-            data.appendLE(time.bitPattern); data.append(down ? 1 : 0)
-            data.appendLE(keyCode); data.appendLE(modifiers)
-            data.append(UInt8(text.count)); data.append(text)
         case let .start(time):
             data.append(Tag.start.rawValue); data.appendLE(time.bitPattern)
         case let .pause(time):
@@ -204,12 +195,11 @@ nonisolated enum CursorTelemetry {
             guard [hx, hy, w, h].allSatisfy({ $0.isFinite }), w > 0, h > 0 else { return .some(nil) }
             return .shapeDefinition(Shape(id: id, hotspot: CGPoint(x: CGFloat(hx), y: CGFloat(hy)),
                                           size: CGSize(width: CGFloat(w), height: CGFloat(h)), png: Data(png)))
-        case .key:
-            guard let t = r.f64(), let d = r.u8(), let code = r.u16(), let mods = r.u32(),
-                  let length = r.u8(), let text = r.bytes(Int(length)) else { return nil }
-            guard t.isFinite else { return .some(nil) }
-            return .key(time: t, down: d != 0, keyCode: code, modifiers: mods,
-                        characters: String(decoding: text, as: UTF8.self))
+        case .legacyInput:
+            // Older files carry a fixed 15-byte prefix followed by length-prefixed text.
+            // Discard the whole record so no typed content reaches the model or renderer.
+            guard r.bytes(15) != nil, let length = r.u8(), r.bytes(Int(length)) != nil else { return nil }
+            return .some(nil)
         case .start:
             guard let t = r.f64() else { return nil }
             return t.isFinite ? .start(time: t) : .some(nil)
@@ -235,21 +225,12 @@ nonisolated struct CursorRecording: Sendable {
         var position: CGPoint
     }
 
-    struct Key: Equatable, Sendable {
-        var time: Double
-        var keyCode: UInt16
-        var modifiers: UInt32
-        var characters: String
-    }
-
     var header: CursorTelemetry.Header
     /// Sorted, strictly increasing media times with matching positions.
     var times: [Double] = []
     var xs: [Float] = []
     var ys: [Float] = []
     var clicks: [Click] = []
-    /// Key-down events only; releases carry no display information.
-    var keys: [Key] = []
     var shapeTimes: [Double] = []
     var shapeIDs: [UInt32] = []
     var shapes: [UInt32: CursorTelemetry.Shape] = [:]
@@ -321,15 +302,11 @@ nonisolated struct CursorRecording: Sendable {
                 } else {
                     shapeTimes.append(t); shapeIDs.append(id)
                 }
-            case let .key(time, down, keyCode, modifiers, characters):
-                guard down else { continue }
-                keys.append(Key(time: max(0, media(time)), keyCode: keyCode, modifiers: modifiers, characters: characters))
             default:
                 continue
             }
         }
-        // Keys and clicks are queried by binary search.
-        if !keys.isSorted(by: { $0.time <= $1.time }) { keys.sort { $0.time < $1.time } }
+        // Clicks are queried by binary search.
         if !clicks.isSorted(by: { $0.time <= $1.time }) { clicks.sort { $0.time < $1.time } }
     }
 
@@ -405,22 +382,6 @@ nonisolated extension Data {
     }
 }
 
-nonisolated extension String {
-    /// The longest prefix whose UTF-8 encoding fits in `maxBytes`, never
-    /// splitting a character.
-    func utf8Prefix(maxBytes: Int) -> String {
-        var used = 0
-        var end = startIndex
-        for index in indices {
-            let size = String(self[index]).utf8.count
-            guard used + size <= maxBytes else { break }
-            used += size
-            end = self.index(after: index)
-        }
-        return String(self[startIndex..<end])
-    }
-}
-
 nonisolated struct ByteReader {
     let data: Data
     var offset = 0
@@ -447,7 +408,6 @@ nonisolated struct ByteReader {
     }
 
     mutating func u8() -> UInt8? { integer(UInt8.self) }
-    mutating func u16() -> UInt16? { integer(UInt16.self) }
     mutating func u32() -> UInt32? { integer(UInt32.self) }
     mutating func f32() -> Float? { integer(UInt32.self).map(Float.init(bitPattern:)) }
     mutating func f64() -> Double? { integer(UInt64.self).map(Double.init(bitPattern:)) }

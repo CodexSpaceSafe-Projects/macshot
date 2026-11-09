@@ -111,7 +111,6 @@
 "No Share Services" = "Không có dịch vụ chia sẻ";
 "QR Code" = "Mã QR";
 "QR Codes" = "Mã QR";
-"Upload" = "Tải lên";
 "Share" = "Chia sẻ";
 "Undo" = "Hoàn tác";
 "Redo" = "Làm lại";
@@ -153,7 +152,6 @@
 "PII" = "PII";
 "Faces" = "Khuôn mặt";
 "People" = "Người";
-"Confirm before upload" = "Xác nhận trước khi tải lên";
 "Flip" = "Lật";
 "Smooth" = "Mượt";
 "Refined" = "Tinh chỉnh";
@@ -216,7 +214,6 @@
 "Recording" = "Quay phim";
 "About" = "Giới thiệu";
 "Shortcuts" = "Phím tắt";
-"Uploads" = "Tải lên";
 "Language" = "Ngôn ngữ";
 "Language:" = "Ngôn ngữ:";
 "Restart the app to fully apply the new language." = "Khởi động lại ứng dụng để áp dụng đầy đủ ngôn ngữ mới.";
@@ -332,14 +329,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Dịch vụ tải lên";
-"Upload Provider" = "Nhà cung cấp tải lên";
 "Provider:" = "Nhà cung cấp:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (ảnh + video)";
-"imgbb (images only)" = "imgbb (chỉ ảnh)";
-"S3-Compatible (images + videos)" = "S3-Compatible (ảnh + video)";
-"S3-Compatible Storage" = "Lưu trữ tương thích S3";
 "Sign In with Google" = "Đăng nhập bằng Google";
 "Sign Out" = "Đăng xuất";
 "Signed in" = "Đã đăng nhập";
@@ -358,17 +348,7 @@
 "Secret Key:" = "Khóa bí mật:";
 "Public URL:" = "URL công khai:";
 "Path Prefix:" = "Tiền tố đường dẫn:";
-"Make uploads publicly readable" = "Cho phép đọc công khai các tệp tải lên";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "Gửi ACL public-read để các tệp đã tải lên có thể xem được bởi bất kỳ ai có liên kết. Cần thiết cho AWS S3, DigitalOcean Spaces, MinIO và Backblaze B2 vì các dịch vụ này lưu trữ đối tượng ở chế độ riêng tư theo mặc định. Tắt cho Cloudflare R2 vì không hỗ trợ ACL và sẽ từ chối header.";
 "API key:" = "Khóa API:";
-"Upload History" = "Lịch sử tải lên";
-"No uploads yet." = "Chưa có tải lên nào.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL cơ sở để truy cập công khai. Nếu để trống, URL endpoint S3 sẽ được sử dụng (có thể không truy cập được công khai).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Đã bao gồm khóa dùng chung, lấy khóa miễn phí riêng tại imgbb.com/api nếu bạn bị giới hạn tốc độ. Chỉ hỗ trợ ảnh (không hỗ trợ video).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Hoạt động với AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 và các dịch vụ tương thích S3 khác. Hỗ trợ ảnh và video.";
-"Configure S3 in Preferences" = "Cấu hình S3 trong Tùy chọn";
-"Sign in to Google Drive in Preferences" = "Đăng nhập Google Drive trong Tùy chọn";
-"Video upload requires Google Drive or S3" = "Tải video lên yêu cầu Google Drive hoặc S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -390,10 +370,6 @@
 "Cancel" = "Hủy";
 "Microphone Access Required" = "Yêu cầu quyền Micro";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot cần quyền micro để ghi âm giọng nói. Mở Cài đặt hệ thống để cấp quyền.";
-"Upload to Google Drive?" = "Tải lên Google Drive?";
-"Upload to S3?" = "Tải lên S3?";
-"Upload to imgbb.com?" = "Tải lên imgbb.com?";
-"Your screenshot will be uploaded." = "Ảnh chụp của bạn sẽ được tải lên.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "Chào mừng đến với macshot";
@@ -413,7 +389,6 @@
 "Translate to:" = "Dịch sang:";
 "%d chars · %d words" = "%d ký tự · %d từ";
 "Copy  ⌘↩" = "Sao chép  ⌘↩";
-"AI Search" = "Tìm kiếm AI";
 "Show Original" = "Hiện bản gốc";
 "Translation Failed" = "Dịch thất bại";
 "Translation" = "Bản dịch";
@@ -421,10 +396,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "Đã sao chép URL vào bộ nhớ tạm";
-"Uploading... %d%%" = "Đang tải lên... %d%%";
-"Upload failed: %@" = "Tải lên thất bại: %@";
-"Uploaded! Link copied." = "Đã tải lên! Đã sao chép liên kết.";
-"Uploading to %@... %d%%" = "Đang tải lên %@... %d%%";
 "Open" = "Mở";
 
 /* Recording Toast */
@@ -483,13 +454,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Yêu cầu quyền Giám sát đầu vào";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot cần quyền Giám sát đầu vào để làm nổi bật thao tác nhấp chuột hoặc hiển thị phím bấm trong khi ghi. Hãy cấp quyền truy cập trong Cài đặt hệ thống rồi thử lại.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot cần quyền Trợ năng để bám vào từng thành phần giao diện. Vui lòng cấp quyền trong Cài đặt Hệ thống, rồi thử lại.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "Hiển thị phím bấm";
-"Shortcuts Only" = "Chỉ phím tắt";
-"All Keystrokes" = "Tất cả phím bấm";
 
 /* Recording — Settings Popover */
 "Delay:" = "Trì hoãn:";
@@ -556,13 +523,9 @@
 "Pause" = "Tạm dừng";
 "Resume" = "Tiếp tục";
 "Engine:" = "Công cụ:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (trên thiết bị)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Bản dịch Apple nhanh hơn và hoạt động ngoại tuyến. Google Translate hỗ trợ nhiều ngôn ngữ hơn.";
 "Download language packs in System Settings…" = "Tải gói ngôn ngữ trong Cài đặt hệ thống…";
-"Configure S3 in Settings" = "Cấu hình S3 trong Cài đặt";
-"Sign in to Google Drive in Settings" = "Đăng nhập Google Drive trong Cài đặt";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Bản dựng ngoại tuyến: các tích hợp tải lên và lưu trữ đám mây đã bị loại bỏ. Việc kiểm tra cập nhật vẫn có thể kết nối đến máy chủ cập nhật của MacShot. Ảnh chụp màn hình và bản ghi vẫn được lưu cục bộ trừ khi bạn tự chia sẻ hoặc lưu chúng.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Vị trí:";
 "  Position:" = "  Vị trí:";
 "Size:" = "Kích thước:";
@@ -576,7 +539,6 @@
 "Clear History?" = "Xóa lịch sử?";
 "This will permanently delete all screenshots from history." = "Thao tác này sẽ xóa vĩnh viễn tất cả ảnh chụp màn hình khỏi lịch sử.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Nhấp vào \"Đặt\" và nhấn tổ hợp phím có ít nhất một phím bổ trợ (⌘, ⌥, ⌃, ⇧) để đặt phím tắt.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "Các tệp được tải lên thư mục này trong Google Drive của bạn. Để trống để dùng \"macshot\". macshot chỉ có thể dùng các thư mục do chính nó tạo ra, vì vậy thư mục cùng tên mà bạn tự tạo trong Drive sẽ không được dùng lại, thay vào đó một thư mục mới sẽ được tạo. Mọi thứ đều được giữ bí mật, không có gì được chia sẻ công khai.";
 
 "Pressure" = "Lực nhấn";
 
@@ -666,7 +628,7 @@
 "Export Settings…" = "Xuất cài đặt…";
 "Import Settings…" = "Nhập cài đặt…";
 "Reveal Settings File in Finder" = "Hiện tệp cài đặt trong Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "Xuất tùy chọn của bạn ra tệp để chuyển sang một máy Mac khác hoặc bản cài đặt mới. Thông tin đăng nhập tải lên, thư mục lưu và lịch sử ảnh chụp màn hình không được bao gồm. Cài đặt được lưu bên trong app container của macshot.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "Xuất cài đặt";
 "Import Settings" = "Nhập cài đặt";
 "Import failed" = "Nhập thất bại";
@@ -676,7 +638,7 @@
 "Later" = "Để sau";
 "Relaunch Now" = "Khởi động lại ngay";
 "Replace your current settings?" = "Thay thế cài đặt hiện tại của bạn?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Việc nhập sẽ thay thế tùy chọn hiện tại của bạn bằng những tùy chọn trong tệp này. Thư mục lưu, thông tin đăng nhập tải lên và lịch sử ảnh chụp màn hình được giữ lại. Thao tác này không thể hoàn tác.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "Đã áp dụng %d cài đặt. Khởi động lại macshot để áp dụng tất cả thay đổi.";
 "A few large items were too big to include. Everything else was saved." = "Một vài mục lớn quá dung lượng nên không được bao gồm. Mọi thứ còn lại đã được lưu.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Ảnh nền Beautify tùy chỉnh của bạn quá lớn nên không được bao gồm. Mọi thứ còn lại đã được lưu.";
@@ -758,7 +720,7 @@
 "Duration" = "Thời lượng";
 "Edge highlight" = "Viền sáng";
 "Edit Text" = "Sửa văn bản";
-"Editable pointer, clicks and keystrokes" = "Con trỏ, lần nhấp và phím bấm có thể chỉnh sửa";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Chỉnh sửa";
 "Export" = "Xuất";
 "Export Subtitles (.srt)…" = "Xuất phụ đề (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "Giữ tiêu điểm";
 "Idle delay" = "Độ trễ không hoạt động";
 "Image" = "Hình ảnh";
-"Keystrokes" = "Phím bấm";
-"Keystrokes in this recording are part of the video pixels." = "Phím bấm trong bản quay này là một phần điểm ảnh của video.";
 "Light appearance" = "Giao diện sáng";
 "Makes looping GIFs seamless" = "Giúp GIF lặp liền mạch";
 "Mirror" = "Lật gương";
@@ -820,10 +780,8 @@
 "Ripple" = "Gợn sóng";
 "Save As…" = "Lưu thành…";
 "Shape" = "Hình dạng";
-"Shortcuts only" = "Chỉ phím tắt";
 "Show camera" = "Hiện camera";
 "Show captions" = "Hiện phụ đề";
-"Show keystrokes" = "Hiện phím bấm";
 "Show pointer" = "Hiện con trỏ";
 "Shrink during zooms" = "Thu nhỏ khi thu phóng";
 "Smoothing" = "Làm mượt";
@@ -842,7 +800,6 @@
 "Title" = "Tiêu đề";
 "Transcribing…" = "Đang chép lời…";
 "Transition" = "Chuyển tiếp";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "Hãy bật Hiển thị phím bấm trước khi quay. Khi đó macshot sẽ ghi lại phím bấm riêng để bạn có thể tùy chỉnh kiểu tại đây.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Hãy bật camera trước khi quay. macshot ghi camera riêng để bạn có thể di chuyển, đổi kích thước, đổi kiểu hoặc ẩn nó tại đây, và thu nhỏ nó khi thu phóng.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Hãy dùng Đặc để che thông tin nhạy cảm: làm mờ và khảm đôi khi có thể bị đảo ngược.";
 "Visibility" = "Hiển thị";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "Bám webcam vào các góc khi di chuyển";
 "Search emoji" = "Tìm biểu tượng cảm xúc";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

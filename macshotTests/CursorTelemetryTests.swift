@@ -22,8 +22,6 @@ final class CursorTelemetryTests: XCTestCase {
             .move(time: 100.5, x: 0.1, y: 0.2),
             .button(time: 101, button: .left, down: true, x: 0.3, y: 0.4),
             .button(time: 101.1, button: .left, down: false, x: 0.3, y: 0.4),
-            .key(time: 101.5, down: true, keyCode: 0, modifiers: KeystrokeTimeline.commandMask, characters: "a"),
-            .key(time: 101.6, down: false, keyCode: 0, modifiers: 0, characters: "a"),
         ]
     }
 
@@ -131,13 +129,19 @@ final class CursorTelemetryTests: XCTestCase {
         XCTAssertEqual((attributes[.posixPermissions] as? NSNumber)?.intValue, 0o600)
     }
 
-    func testKeyTextIsBoundedWithoutSplittingCharacters() throws {
-        let long = String(repeating: "é", count: 100)
-        let decoded = try CursorTelemetry.decode(try encode([.key(time: 1, down: true, keyCode: 1, modifiers: 0,
-                                                                  characters: long)]))
-        guard case let .key(_, _, _, _, text)? = decoded.events.first else { return XCTFail("missing key") }
-        XCTAssertLessThanOrEqual(text.utf8.count, CursorTelemetry.maxKeyTextBytes)
-        XCTAssertTrue(text.allSatisfy { $0 == "é" })
+    func testLegacyInputRecordsAreDiscardedAndFollowingPointerEventsSurvive() throws {
+        var data = try encode([.start(time: 100)])
+        data.append(5) // Obsolete record tag, intentionally not part of the writable event model.
+        data.appendLE(Double(101).bitPattern)
+        data.append(1)
+        data.appendLE(UInt16(0))
+        data.appendLE(UInt32(0))
+        let text = Data("private text".utf8)
+        data.append(UInt8(text.count))
+        data.append(text)
+        CursorTelemetry.encode(.move(time: 102, x: 0.25, y: 0.5), into: &data)
+        let decoded = try CursorTelemetry.decode(data)
+        XCTAssertEqual(decoded.events, [.start(time: 100), .move(time: 102, x: 0.25, y: 0.5)])
     }
 
     func testGlobalRegionConvertsAppKitRectsToCoreGraphics() {
@@ -152,10 +156,9 @@ final class CursorTelemetryTests: XCTestCase {
 }
 
 final class CursorMotionTests: XCTestCase {
-    private func recording(_ samples: [(Double, Float, Float)], keys: [Double] = []) -> CursorRecording {
+    private func recording(_ samples: [(Double, Float, Float)]) -> CursorRecording {
         var events: [CursorTelemetry.Event] = [.start(time: 0)]
         events += samples.map { .move(time: $0.0, x: $0.1, y: $0.2) }
-        events += keys.map { .key(time: $0, down: true, keyCode: 0, modifiers: 0, characters: "a") }
         let header = CursorTelemetry.Header(sourcePointSize: CGSize(width: 100, height: 100),
                                             pixelSize: CGSize(width: 200, height: 200), frameRate: 30,
                                             cursorHiddenInVideo: true, overlaysInTelemetry: true)
@@ -198,14 +201,6 @@ final class CursorMotionTests: XCTestCase {
         XCTAssertEqual(track.idleOpacity(at: 0.5, delay: 2), 1)
         XCTAssertEqual(track.idleOpacity(at: 4, delay: 2), 0)
         XCTAssertEqual(track.idleOpacity(at: 6.5, delay: 2), 1)
-    }
-
-    func testTypingHidesPointerUntilItMoves() {
-        let rec = recording([(0, 0, 0), (0.1, 0.5, 0.5), (4, 0.5, 0.5), (4.1, 0.7, 0.7)], keys: [2])
-        let track = CursorMotion.buildTrack(from: rec, smoothing: 0)
-        XCTAssertEqual(CursorMotion.typingOpacity(at: 1, keyTimes: [2], track: track), 1)
-        XCTAssertEqual(CursorMotion.typingOpacity(at: 3, keyTimes: [2], track: track), 0)
-        XCTAssertEqual(CursorMotion.typingOpacity(at: 4.5, keyTimes: [2], track: track), 1)
     }
 
     func testClickEffectTiming() {
@@ -399,32 +394,7 @@ final class VideoSceneGeometryTests: XCTestCase {
     }
 }
 
-final class KeystrokeAndCaptionTimelineTests: XCTestCase {
-    private func key(_ t: Double, _ c: String, _ mods: UInt32 = 0) -> CursorRecording.Key {
-        CursorRecording.Key(time: t, keyCode: 0, modifiers: mods, characters: c)
-    }
-
-    func testShortcutsStandAloneAndTypingAccumulates() {
-        let labels = KeystrokeTimeline.labels(from: [key(0, "h"), key(0.2, "i"), key(0.4, "Space"), key(0.6, "x"),
-                                                     key(1, "s", KeystrokeTimeline.commandMask | KeystrokeTimeline.shiftMask)],
-                                              shortcutsOnly: false)
-        XCTAssertEqual(labels.map(\.text), ["h", "hi", "hi ", "hi x", "⇧ ⌘ S"], "typing grows key by key")
-        XCTAssertEqual(labels[0].start, 0, accuracy: 0.0001)
-        XCTAssertEqual(labels[3].end, 1, accuracy: 0.0001, "a new label replaces the previous one")
-    }
-
-    func testShortcutsOnlyHidesTyping() {
-        let labels = KeystrokeTimeline.labels(from: [key(0, "h"), key(1, "↩"), key(2, "c", KeystrokeTimeline.commandMask)],
-                                              shortcutsOnly: true)
-        XCTAssertEqual(labels.map(\.text), ["⌘ C"])
-    }
-
-    func testActiveLabelFades() {
-        let labels = [KeystrokeTimeline.Label(start: 1, end: 2, text: "⌘ C")]
-        XCTAssertNil(KeystrokeTimeline.active(at: 0.5, in: labels))
-        XCTAssertEqual(KeystrokeTimeline.active(at: 1.5, in: labels)?.1 ?? 0, 1)
-        XCTAssertLessThan(KeystrokeTimeline.active(at: 1.95, in: labels)?.1 ?? 1, 1)
-    }
+final class CaptionTimelineTests: XCTestCase {
 
     func testCaptionSegmentationAndSubRip() {
         let words = ["Hello", "there.", "This", "is", "a", "long", "caption", "line"].enumerated().map { i, w in
@@ -528,15 +498,6 @@ final class CaptionOrderingTests: XCTestCase {
         XCTAssertEqual(CaptionTimeline.active(at: 6, in: [late, early].sorted { $0.startTime < $1.startTime })?.0.text, "late")
         let srt = CaptionTimeline.srt([late, early]) { $0 }
         XCTAssertLessThan(srt.range(of: "early")!.lowerBound, srt.range(of: "late")!.lowerBound)
-    }
-}
-
-final class KeystrokeFadeTests: XCTestCase {
-    func testTypingContinuationsDoNotFlicker() {
-        let labels = [KeystrokeTimeline.Label(start: 0, end: 0.2, text: "h"),
-                      KeystrokeTimeline.Label(start: 0.2, end: 1.6, text: "hi")]
-        XCTAssertEqual(KeystrokeTimeline.active(at: 0.21, in: labels)?.1 ?? 0, 1, "continuation shows at full opacity")
-        XCTAssertLessThan(KeystrokeTimeline.active(at: 0.02, in: labels)?.1 ?? 1, 1, "the first label still fades in")
     }
 }
 

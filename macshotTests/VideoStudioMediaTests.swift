@@ -175,7 +175,7 @@ final class VideoStudioMediaTests: XCTestCase {
                                                              crop: CGRect(x: 0, y: 0, width: 1, height: 1), frame: frame))
         let background = CIImage(color: CIColor(red: 0, green: 0, blue: 1)).cropped(to: CGRect(origin: .zero, size: layout.canvasSize))
         let scene = VideoSceneSnapshot(layout: layout, background: background, foreground: nil, camera: .empty,
-                                       cameraMotionBlur: 0, cursor: nil, keystrokes: [], keystrokeStyle: VideoKeystrokeStyle(),
+                                       cameraMotionBlur: 0, cursor: nil,
                                        captions: [], captionStyle: VideoCaptionStyle(), webcam: nil)
         let composition = try VideoCompositionRendering.sceneComposition(asset: source, track: track,
             frameDuration: CMTime(value: 1, timescale: 30),

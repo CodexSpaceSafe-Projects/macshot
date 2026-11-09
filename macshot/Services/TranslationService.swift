@@ -4,23 +4,7 @@ import Combine
 import SwiftUI
 @preconcurrency import Translation
 
-enum TranslationProvider: String {
-    case apple = "apple"
-    case google = "google"
-}
-
 enum TranslationService {
-
-    // MARK: - Provider
-
-    static var provider: TranslationProvider {
-        get {
-            if let raw = UserDefaults.standard.string(forKey: "translationProvider"),
-               let p = TranslationProvider(rawValue: raw) { return p }
-            return .google  // Google by default — Apple requires language pack downloads
-        }
-        set { UserDefaults.standard.set(newValue.rawValue, forKey: "translationProvider") }
-    }
 
     /// Whether Apple Translation is available on this system.
     static var appleTranslationAvailable: Bool {
@@ -139,7 +123,7 @@ enum TranslationService {
 
     // MARK: - Translate a batch of strings (auto-detect source)
 
-    /// Translates multiple strings using the selected provider.
+    /// Translates text on this Mac using Apple Translation; never falls back to a network service.
     /// Calls completion on the main queue.
     static func translateBatch(
         texts: [String],
@@ -151,98 +135,13 @@ enum TranslationService {
             return
         }
 
-        if #available(macOS 15.0, *), provider == .apple {
+        if #available(macOS 15.0, *) {
             translateBatchApple(texts: texts, targetLang: targetLang, completion: completion)
         } else {
-            translateBatchGoogle(texts: texts, targetLang: targetLang, completion: completion)
-        }
-    }
-
-    // MARK: - Google Translate (unofficial endpoint)
-
-    private static func translateBatchGoogle(
-        texts: [String],
-        targetLang: String,
-        completion: @escaping (Result<[String], Error>) -> Void
-    ) {
-        var results = Array(repeating: "", count: texts.count)
-        let group = DispatchGroup()
-        var firstError: Error?
-        let lock = NSLock()
-
-        for (i, text) in texts.enumerated() {
-            let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !trimmed.isEmpty else {
-                results[i] = text
-                continue
-            }
-            group.enter()
-            translateOneGoogle(text: trimmed, targetLang: targetLang) { result in
-                lock.lock()
-                switch result {
-                case .success(let translated):
-                    results[i] = translated
-                case .failure(let error):
-                    if firstError == nil { firstError = error }
-                    results[i] = ""
-                }
-                lock.unlock()
-                group.leave()
+            DispatchQueue.main.async {
+                completion(.failure(TranslationError.appleTranslation("On-device translation requires macOS 15 or later.")))
             }
         }
-
-        group.notify(queue: .main) {
-            if let error = firstError {
-                completion(.failure(error))
-            } else {
-                completion(.success(results))
-            }
-        }
-    }
-
-    private static func translateOneGoogle(
-        text: String,
-        targetLang: String,
-        completion: @escaping (Result<String, Error>) -> Void
-    ) {
-        var components = URLComponents(string: "https://translate.googleapis.com/translate_a/single")!
-        components.queryItems = [
-            URLQueryItem(name: "client", value: "gtx"),
-            URLQueryItem(name: "sl",     value: "auto"),
-            URLQueryItem(name: "tl",     value: targetLang),
-            URLQueryItem(name: "dt",     value: "t"),
-            URLQueryItem(name: "q",      value: text),
-        ]
-        guard let url = components.url else {
-            completion(.failure(TranslationError.badURL))
-            return
-        }
-
-        var request = URLRequest(url: url)
-        request.setValue("Mozilla/5.0", forHTTPHeaderField: "User-Agent")
-        request.timeoutInterval = 10
-
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            guard let data = data else {
-                completion(.failure(TranslationError.noData))
-                return
-            }
-            guard let json = try? JSONSerialization.jsonObject(with: data) as? [Any],
-                  let outer = json.first as? [[Any]] else {
-                completion(.failure(TranslationError.parseError))
-                return
-            }
-            let translated = outer.compactMap { $0.first as? String }.joined()
-            guard !translated.isEmpty else {
-                completion(.failure(TranslationError.emptyResult))
-                return
-            }
-            completion(.success(translated))
-        }.resume()
     }
 
     // MARK: - Apple Translation (macOS 15.0+ via SwiftUI bridge)
@@ -273,9 +172,15 @@ enum TranslationService {
 
         let source = Locale.Language(identifier: detected.rawValue)
         let config = TranslationSession.Configuration(source: source, target: target)
-        // Must dispatch to main — TranslationBridge adds a SwiftUI view which requires main thread
-        DispatchQueue.main.async {
-            TranslationBridge.shared.translate(texts: texts, configuration: config, completion: completion)
+        Task {
+            let status = await LanguageAvailability().status(from: source, to: target)
+            await MainActor.run {
+                guard status == .installed else {
+                    completion(.failure(TranslationError.appleTranslation("Install the required language packs in System Settings before using on-device translation.")))
+                    return
+                }
+                TranslationBridge.shared.translate(texts: texts, configuration: config, completion: completion)
+            }
         }
     }
 
@@ -374,7 +279,7 @@ final class TranslationBridge: ObservableObject {
                     guard self.translationID == activeID else { return }
                     self.cleanup()
                     let desc = error.localizedDescription
-                    let msg = "Apple Translation failed: \(desc). You can switch to Google Translate in Settings."
+                    let msg = "Apple Translation failed: \(desc). Check the installed language packs in System Settings."
                     completion?(.failure(TranslationError.appleTranslation(msg)))
                 }
             }
@@ -406,15 +311,10 @@ private struct TranslationBridgeView: View {
 }
 
 enum TranslationError: LocalizedError {
-    case badURL, noData, parseError, emptyResult
     case appleTranslation(String)
     var errorDescription: String? {
         switch self {
-        case .badURL:      return "Invalid translation URL"
-        case .noData:      return "No response from translation service"
-        case .parseError:  return "Could not parse translation response"
-        case .emptyResult: return "Translation returned empty result"
-        case .appleTranslation(let msg): return msg
+        case .appleTranslation(let message): return message
         }
     }
 }

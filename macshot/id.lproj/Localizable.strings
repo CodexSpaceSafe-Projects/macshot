@@ -109,7 +109,6 @@
 "QR Code" = "Kode QR";
 "QR Codes" = "Kode QR";
 "Open Link" = "Buka Tautan";
-"Upload" = "Unggah";
 "Share" = "Bagikan";
 "Open With" = "Buka Dengan";
 "No Apps Available" = "Tidak Ada Aplikasi Tersedia";
@@ -154,7 +153,6 @@
 "PII" = "PII";
 "Faces" = "Wajah";
 "People" = "Orang";
-"Confirm before upload" = "Konfirmasi sebelum mengunggah";
 "Flip" = "Balik";
 "Smooth" = "Halus";
 "Refined" = "Diperhalus";
@@ -217,7 +215,6 @@
 "Recording" = "Rekaman";
 "About" = "Tentang";
 "Shortcuts" = "Pintasan";
-"Uploads" = "Unggahan";
 "Language" = "Bahasa";
 "Language:" = "Bahasa:";
 "Restart the app to fully apply the new language." = "Mulai ulang aplikasi untuk menerapkan bahasa baru sepenuhnya.";
@@ -333,14 +330,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Layanan Unggah";
-"Upload Provider" = "Penyedia Unggahan";
 "Provider:" = "Penyedia:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (gambar + video)";
-"imgbb (images only)" = "imgbb (gambar saja)";
-"S3-Compatible (images + videos)" = "S3-Compatible (gambar + video)";
-"S3-Compatible Storage" = "Penyimpanan S3-Compatible";
 "Sign In with Google" = "Masuk dengan Google";
 "Sign Out" = "Keluar";
 "Signed in" = "Sudah masuk";
@@ -359,17 +349,7 @@
 "Secret Key:" = "Secret Key:";
 "Public URL:" = "URL Publik:";
 "Path Prefix:" = "Prefiks Path:";
-"Make uploads publicly readable" = "Jadikan unggahan dapat dibaca publik";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "Mengirim ACL public-read agar file yang diunggah dapat dilihat oleh siapa saja yang memiliki tautan. Diperlukan untuk AWS S3, DigitalOcean Spaces, MinIO, dan Backblaze B2 yang menyimpan objek secara pribadi secara default. Nonaktifkan untuk Cloudflare R2 yang tidak memiliki ACL dan menolak header ini.";
 "API key:" = "Kunci API:";
-"Upload History" = "Riwayat Unggahan";
-"No uploads yet." = "Belum ada unggahan.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL dasar untuk akses publik. Jika kosong, URL endpoint S3 yang digunakan (mungkin tidak dapat diakses publik).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Kunci bersama sudah disertakan, dapatkan kunci gratis Anda sendiri di imgbb.com/api jika mencapai batas penggunaan. Gambar saja (tidak mendukung video).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Berfungsi dengan AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, dan layanan S3-compatible lainnya. Mendukung gambar dan video.";
-"Configure S3 in Preferences" = "Konfigurasikan S3 di Preferensi";
-"Sign in to Google Drive in Preferences" = "Masuk ke Google Drive di Preferensi";
-"Video upload requires Google Drive or S3" = "Unggahan video memerlukan Google Drive atau S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -391,10 +371,6 @@
 "Cancel" = "Batal";
 "Microphone Access Required" = "Akses Mikrofon Diperlukan";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot memerlukan izin mikrofon untuk merekam audio suara. Buka Pengaturan Sistem untuk memberikan akses.";
-"Upload to Google Drive?" = "Unggah ke Google Drive?";
-"Upload to S3?" = "Unggah ke S3?";
-"Upload to imgbb.com?" = "Unggah ke imgbb.com?";
-"Your screenshot will be uploaded." = "Tangkapan layar Anda akan diunggah.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "Selamat datang di macshot";
@@ -413,7 +389,6 @@
 "Translate to:" = "Terjemahkan ke:";
 "%d chars · %d words" = "%d karakter · %d kata";
 "Copy  ⌘↩" = "Salin  ⌘↩";
-"AI Search" = "Pencarian AI";
 "Show Original" = "Tampilkan Asli";
 "Translation Failed" = "Terjemahan Gagal";
 "Translation" = "Terjemahan";
@@ -421,10 +396,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL disalin ke papan klip";
-"Uploading... %d%%" = "Mengunggah... %d%%";
-"Upload failed: %@" = "Unggahan gagal: %@";
-"Uploaded! Link copied." = "Terunggah! Tautan disalin.";
-"Uploading to %@... %d%%" = "Mengunggah ke %@... %d%%";
 "Open" = "Buka";
 
 /* Recording Toast */
@@ -483,13 +454,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Pemantauan Input Diperlukan";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot memerlukan izin Pemantauan Input untuk menyorot klik mouse atau menampilkan penekanan tombol selama perekaman. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot memerlukan izin Aksesibilitas untuk menempel ke elemen antarmuka individual. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "Tampilkan Ketukan Tombol";
-"Shortcuts Only" = "Pintasan Saja";
-"All Keystrokes" = "Semua Ketukan Tombol";
 
 /* Recording — Settings Popover */
 "Delay:" = "Tunda:";
@@ -520,7 +487,7 @@
 
 /* New Strings */
 "Settings" = "Pengaturan";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Versi offline: integrasi unggah dan penyimpanan cloud dihapus. Pemeriksaan pembaruan mungkin masih terhubung ke server pembaruan MacShot. Tangkapan layar dan rekaman tetap lokal kecuali Anda membagikan atau menyimpannya sendiri.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Settings..." = "Pengaturan...";
 "macshot Settings" = "Pengaturan macshot";
 "Also open in Editor" = "Buka juga di Editor";
@@ -557,12 +524,8 @@
 "Pause" = "Jeda";
 "Resume" = "Lanjutkan";
 "Engine:" = "Mesin:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (di perangkat)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Terjemahan Apple lebih cepat dan berfungsi secara offline. Google Translate mendukung lebih banyak bahasa.";
 "Download language packs in System Settings…" = "Unduh paket bahasa di Pengaturan Sistem…";
-"Configure S3 in Settings" = "Konfigurasikan S3 di Pengaturan";
-"Sign in to Google Drive in Settings" = "Masuk ke Google Drive di Pengaturan";
 "Position:" = "Posisi:";
 "  Position:" = "  Posisi:";
 "Size:" = "Ukuran:";
@@ -576,7 +539,6 @@
 "Clear History?" = "Hapus Riwayat?";
 "This will permanently delete all screenshots from history." = "Ini akan menghapus semua tangkapan layar dari riwayat secara permanen.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Klik \"Atur\" dan tekan kombinasi tombol dengan setidaknya satu modifier (⌘, ⌥, ⌃, ⇧) untuk menetapkan pintasan.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "File diunggah ke folder ini di Google Drive Anda. Biarkan kosong untuk menggunakan \"macshot\". macshot hanya dapat menggunakan folder yang dibuatnya sendiri, jadi folder dengan nama yang sama yang Anda buat di Drive tidak akan digunakan, folder baru akan dibuat sebagai gantinya. Semuanya tetap privat, tidak ada yang dibagikan secara publik.";
 
 "Pressure" = "Tekanan";
 
@@ -666,7 +628,7 @@
 "Export Settings…" = "Ekspor Pengaturan…";
 "Import Settings…" = "Impor Pengaturan…";
 "Reveal Settings File in Finder" = "Tampilkan Berkas Pengaturan di Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "Ekspor preferensi Anda ke sebuah berkas untuk memindahkannya ke Mac lain atau instalasi baru. Kredensial unggah, folder penyimpanan, dan riwayat tangkapan layar tidak disertakan. Pengaturan disimpan di dalam wadah aplikasi macshot.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "Ekspor Pengaturan";
 "Import Settings" = "Impor Pengaturan";
 "Import failed" = "Impor gagal";
@@ -676,7 +638,7 @@
 "Later" = "Nanti";
 "Relaunch Now" = "Luncurkan Ulang Sekarang";
 "Replace your current settings?" = "Ganti pengaturan Anda saat ini?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Mengimpor akan mengganti preferensi Anda saat ini dengan yang ada di berkas ini. Folder penyimpanan, kredensial unggah, dan riwayat tangkapan layar Anda tetap dipertahankan. Tindakan ini tidak dapat dibatalkan.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d pengaturan telah diterapkan. Luncurkan ulang macshot untuk menerapkan semua perubahan.";
 "A few large items were too big to include. Everything else was saved." = "Beberapa item besar terlalu besar untuk disertakan. Selebihnya telah disimpan.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Gambar latar Beautify khusus Anda terlalu besar untuk disertakan. Selebihnya telah disimpan.";
@@ -758,7 +720,7 @@
 "Duration" = "Durasi";
 "Edge highlight" = "Sorotan tepi";
 "Edit Text" = "Edit Teks";
-"Editable pointer, clicks and keystrokes" = "Penunjuk, klik, dan ketukan tombol yang dapat diedit";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Editan";
 "Export" = "Ekspor";
 "Export Subtitles (.srt)…" = "Ekspor Subtitel (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "Tahan Fokus";
 "Idle delay" = "Jeda diam";
 "Image" = "Gambar";
-"Keystrokes" = "Ketukan Tombol";
-"Keystrokes in this recording are part of the video pixels." = "Ketukan tombol dalam rekaman ini adalah bagian dari piksel video.";
 "Light appearance" = "Tampilan terang";
 "Makes looping GIFs seamless" = "Membuat GIF berulang menyambung mulus";
 "Mirror" = "Cermin";
@@ -820,10 +780,8 @@
 "Ripple" = "Riak";
 "Save As…" = "Simpan Sebagai…";
 "Shape" = "Bentuk";
-"Shortcuts only" = "Hanya pintasan";
 "Show camera" = "Tampilkan kamera";
 "Show captions" = "Tampilkan takarir";
-"Show keystrokes" = "Tampilkan ketukan tombol";
 "Show pointer" = "Tampilkan penunjuk";
 "Shrink during zooms" = "Perkecil saat zoom";
 "Smoothing" = "Penghalusan";
@@ -842,7 +800,6 @@
 "Title" = "Judul";
 "Transcribing…" = "Mentranskripsi…";
 "Transition" = "Transisi";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "Aktifkan Tampilkan Ketukan Tombol sebelum merekam. macshot kemudian merekamnya secara terpisah agar Anda dapat mengatur gayanya di sini.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Aktifkan kamera sebelum merekam. macshot merekamnya secara terpisah agar Anda dapat memindahkan, mengubah ukuran, mengubah gaya, atau menyembunyikannya di sini, dan memperkecilnya saat zoom.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Gunakan Solid untuk menyembunyikan informasi sensitif: blur dan pikselasi terkadang dapat dikembalikan.";
 "Visibility" = "Visibilitas";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "Tempelkan webcam ke sudut saat dipindahkan";
 "Search emoji" = "Cari emoji";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

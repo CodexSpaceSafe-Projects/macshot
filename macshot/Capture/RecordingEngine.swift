@@ -50,12 +50,9 @@ final class RecordingEngine: NSObject {
 
     // MARK: - Pointer data
 
-    /// Pointer, click and keystroke data recorded beside the take for the
+    /// Pointer and click data recorded beside the take for the
     /// editor. Optional: a failure here never affects the video.
     private(set) var cursorTelemetry: CursorTelemetryRecorder?
-    /// Invoked (main actor) once pointer recording is running, so callers
-    /// can route keystrokes into it.
-    var onTelemetryStarted: ((CursorTelemetryRecorder) -> Void)?
     /// Separate camera recording, already receiving frames (set by the caller
     /// before starting). Finished before the take completes.
     var cameraRecorder: VideoCameraRecorder?
@@ -71,7 +68,6 @@ final class RecordingEngine: NSObject {
     var onPauseChanged: ((Bool) -> Void)?
 
     // MARK: - Cursor highlight
-
 
     // MARK: - Public API
 
@@ -251,7 +247,7 @@ final class RecordingEngine: NSObject {
             }
 
             // Exclude specific macshot UI chrome windows (selection border, HUD)
-            // but NOT recording overlays (webcam, mouse highlight, keystrokes)
+            // but NOT recording overlays (webcam, mouse highlight)
             // which are intentionally part of the recording.
             let excludeIDs = configuration.excludedWindows
             let excludeWindows = excludeIDs.compactMap { wid in
@@ -403,7 +399,6 @@ final class RecordingEngine: NSObject {
             recordingClock.start(at: ProcessInfo.processInfo.systemUptime)
             if let telemetry = cursorTelemetry {
                 telemetry.start()
-                onTelemetryStarted?(telemetry)
             }
 
             startProgressTimer()

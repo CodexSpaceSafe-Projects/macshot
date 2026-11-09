@@ -105,7 +105,6 @@
 "OCR (extract text)" = "OCR (텍스트 추출)";
 "OCR & QR" = "OCR & QR";
 "Run OCR & QR" = "OCR & QR 실행";
-"Upload" = "업로드";
 "Share" = "공유";
 "Undo" = "실행 취소";
 "Redo" = "다시 실행";
@@ -147,7 +146,6 @@
 "PII" = "개인정보";
 "Faces" = "얼굴";
 "People" = "사람";
-"Confirm before upload" = "업로드 전 확인";
 "Flip" = "뒤집기";
 "Smooth" = "부드럽게";
 "Refined" = "정밀";
@@ -199,7 +197,6 @@
 "Recording" = "녹화";
 "About" = "정보";
 "Shortcuts" = "단축키";
-"Uploads" = "업로드";
 "Language" = "언어";
 "Language:" = "언어:";
 "Restart the app to fully apply the new language." = "새 언어를 완전히 적용하려면 앱을 재시작하세요.";
@@ -315,14 +312,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "업로드 서비스";
-"Upload Provider" = "업로드 제공자";
 "Provider:" = "제공자:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (이미지 + 동영상)";
-"imgbb (images only)" = "imgbb (이미지만)";
-"S3-Compatible (images + videos)" = "S3 호환 (이미지 + 동영상)";
-"S3-Compatible Storage" = "S3 호환 저장소";
 "Sign In with Google" = "Google로 로그인";
 "Sign Out" = "로그아웃";
 "Signed in" = "로그인됨";
@@ -341,17 +331,7 @@
 "Secret Key:" = "시크릿 키:";
 "Public URL:" = "공개 URL:";
 "Path Prefix:" = "경로 접두사:";
-"Make uploads publicly readable" = "업로드를 공개 읽기 가능으로 설정";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "public-read ACL을 전송하여 업로드된 파일을 링크가 있는 누구나 볼 수 있게 합니다. 기본적으로 객체를 비공개로 저장하는 AWS S3, DigitalOcean Spaces, MinIO, Backblaze B2에 필요합니다. ACL이 없고 헤더를 거부하는 Cloudflare R2에서는 끄세요.";
 "API key:" = "API 키:";
-"Upload History" = "업로드 기록";
-"No uploads yet." = "아직 업로드가 없습니다.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "공개 접근용 기본 URL입니다. 비어 있으면 S3 엔드포인트 URL이 사용됩니다 (공개 접근이 불가능할 수 있음).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "공유 키가 포함되어 있습니다. 요청 제한에 도달하면 imgbb.com/api에서 무료 키를 받으세요. 이미지만 지원됩니다 (동영상 미지원).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 및 기타 S3 호환 서비스와 사용할 수 있습니다. 이미지와 동영상을 지원합니다.";
-"Configure S3 in Preferences" = "환경설정에서 S3 구성";
-"Sign in to Google Drive in Preferences" = "환경설정에서 Google Drive에 로그인";
-"Video upload requires Google Drive or S3" = "동영상 업로드에는 Google Drive 또는 S3가 필요합니다";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -373,10 +353,6 @@
 "Cancel" = "취소";
 "Microphone Access Required" = "마이크 접근 권한 필요";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot이 음성을 녹음하려면 마이크 권한이 필요합니다. 시스템 설정을 열어 권한을 허용하세요.";
-"Upload to Google Drive?" = "Google Drive에 업로드하시겠습니까?";
-"Upload to S3?" = "S3에 업로드하시겠습니까?";
-"Upload to imgbb.com?" = "imgbb.com에 업로드하시겠습니까?";
-"Your screenshot will be uploaded." = "스크린샷이 업로드됩니다.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "macshot에 오신 것을 환영합니다";
@@ -398,7 +374,6 @@
 "Translate to:" = "번역 대상:";
 "%d chars · %d words" = "%d자 · %d단어";
 "Copy  ⌘↩" = "복사  ⌘↩";
-"AI Search" = "AI 검색";
 "Show Original" = "원본 보기";
 "Translation Failed" = "번역 실패";
 "Translation" = "번역";
@@ -406,10 +381,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL이 클립보드에 복사되었습니다";
-"Uploading... %d%%" = "업로드 중... %d%%";
-"Upload failed: %@" = "업로드 실패: %@";
-"Uploaded! Link copied." = "업로드 완료! 링크가 복사되었습니다.";
-"Uploading to %@... %d%%" = "%@에 업로드 중... %d%%";
 "Open" = "열기";
 "Open Link" = "링크 열기";
 "Open With" = "다음으로 열기";
@@ -472,13 +443,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "입력 모니터링 권한 필요";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot이 녹화 중 마우스 클릭을 강조하거나 키 입력을 표시하려면 입력 모니터링 권한이 필요합니다. 시스템 설정에서 접근 권한을 부여한 후 다시 시도하세요.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "개별 인터페이스 요소에 스냅하려면 macshot에 손쉬운 사용 권한이 필요합니다. 시스템 설정에서 접근 권한을 부여한 후 다시 시도해 주세요.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "키 입력 표시";
-"Shortcuts Only" = "단축키만";
-"All Keystrokes" = "모든 키 입력";
 
 /* Recording — Settings Popover */
 "Delay:" = "지연:";
@@ -509,7 +476,7 @@
 
 /* New Strings */
 "Settings" = "설정";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "오프라인 빌드: 업로드 및 클라우드 저장소 연동이 제거되었습니다. 업데이트 확인은 여전히 MacShot의 업데이트 서버에 연결할 수 있습니다. 스크린샷과 녹화는 직접 공유하거나 저장하지 않는 한 로컬에 유지됩니다.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Settings..." = "설정...";
 "macshot Settings" = "macshot 설정";
 "Also open in Editor" = "편집기에서도 열기";
@@ -548,12 +515,8 @@
 "Pause" = "일시정지";
 "Resume" = "재개";
 "Engine:" = "엔진:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (기기 내)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple 번역은 더 빠르고 오프라인에서 작동합니다. Google Translate는 더 많은 언어를 지원합니다.";
 "Download language packs in System Settings…" = "시스템 설정에서 언어 팩 다운로드…";
-"Configure S3 in Settings" = "설정에서 S3 구성";
-"Sign in to Google Drive in Settings" = "설정에서 Google Drive에 로그인";
 "Position:" = "위치:";
 "  Position:" = "  위치:";
 "Size:" = "크기:";
@@ -567,7 +530,6 @@
 "Clear History?" = "기록을 지우시겠습니까?";
 "This will permanently delete all screenshots from history." = "기록에서 모든 스크린샷이 영구적으로 삭제됩니다.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "\"설정\" 을 클릭하고 적어도 하나의 수정 키 (⌘, ⌥, ⌃, ⇧) 가 포함된 키 조합을 눌러 단축키를 설정하세요.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "파일은 Google Drive의 이 폴더에 업로드됩니다. 비워 두면 \"macshot\" 폴더를 사용합니다. macshot은 직접 생성한 폴더만 사용할 수 있으므로, Drive에서 직접 만든 같은 이름의 폴더는 재사용되지 않고 새 폴더가 생성됩니다. 모든 것은 비공개로 유지되며 공개적으로 공유되지 않습니다.";
 
 "Pressure" = "필압";
 
@@ -668,7 +630,7 @@
 "Export Settings…" = "설정 내보내기…";
 "Import Settings…" = "설정 가져오기…";
 "Reveal Settings File in Finder" = "Finder에서 설정 파일 보기";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "환경설정을 파일로 내보내 다른 Mac이나 새로 설치한 환경으로 옮길 수 있습니다. 업로드 자격 증명, 저장 폴더, 스크린샷 기록은 포함되지 않습니다. 설정은 macshot의 앱 컨테이너 안에 저장됩니다.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "설정 내보내기";
 "Import Settings" = "설정 가져오기";
 "Import failed" = "가져오기 실패";
@@ -678,7 +640,7 @@
 "Later" = "나중에";
 "Relaunch Now" = "지금 다시 실행";
 "Replace your current settings?" = "현재 설정을 대체하시겠습니까?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "가져오면 현재 환경설정이 이 파일의 설정으로 대체됩니다. 저장 폴더, 업로드 자격 증명, 스크린샷 기록은 유지됩니다. 이 작업은 실행 취소할 수 없습니다.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d개의 설정이 적용되었습니다. 모든 변경 사항을 적용하려면 macshot을 다시 실행하십시오.";
 "A few large items were too big to include. Everything else was saved." = "일부 큰 항목은 크기가 너무 커서 포함되지 않았습니다. 나머지는 모두 저장되었습니다.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "사용자 지정 Beautify 배경 이미지가 너무 커서 포함되지 않았습니다. 나머지는 모두 저장되었습니다.";
@@ -760,7 +722,7 @@
 "Duration" = "지속 시간";
 "Edge highlight" = "가장자리 강조";
 "Edit Text" = "텍스트 편집";
-"Editable pointer, clicks and keystrokes" = "편집 가능한 포인터, 클릭 및 키 입력";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "편집";
 "Export" = "내보내기";
 "Export Subtitles (.srt)…" = "자막 내보내기(.srt)…";
@@ -788,8 +750,6 @@
 "Hold Focus" = "초점 고정";
 "Idle delay" = "유휴 지연";
 "Image" = "이미지";
-"Keystrokes" = "키 입력";
-"Keystrokes in this recording are part of the video pixels." = "이 녹화의 키 입력은 비디오 픽셀의 일부입니다.";
 "Light appearance" = "밝은 모양";
 "Makes looping GIFs seamless" = "반복 GIF를 매끄럽게 연결합니다";
 "Mirror" = "좌우 반전";
@@ -822,10 +782,8 @@
 "Ripple" = "물결";
 "Save As…" = "다른 이름으로 저장…";
 "Shape" = "모양";
-"Shortcuts only" = "단축키만";
 "Show camera" = "카메라 표시";
 "Show captions" = "자막 표시";
-"Show keystrokes" = "키 입력 표시";
 "Show pointer" = "포인터 표시";
 "Shrink during zooms" = "줌 중에 축소";
 "Smoothing" = "스무딩";
@@ -844,7 +802,6 @@
 "Title" = "제목";
 "Transcribing…" = "변환 중…";
 "Transition" = "전환";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "녹화 전에 키 입력 표시를 켜세요. 그러면 macshot이 키 입력을 별도로 기록하여 여기에서 스타일을 지정할 수 있습니다.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "녹화 전에 카메라를 켜세요. macshot이 카메라를 별도로 녹화하므로 여기에서 이동, 크기 조정, 스타일 변경 또는 숨기기를 할 수 있으며, 줌 중에 축소할 수도 있습니다.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "민감한 정보를 숨기려면 단색을 사용하세요. 흐리게와 모자이크는 복원될 수 있습니다.";
 "Visibility" = "표시 여부";
@@ -861,3 +818,5 @@
 
 "Snap webcam to corners when moved" = "이동할 때 웹캠을 모서리에 맞추기";
 "Search emoji" = "이모티콘 검색";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

@@ -10,6 +10,7 @@ test_result="$test_directory/results.xcresult"
 test_log="$test_directory/xcodebuild.log"
 test_args=(
   -scheme macshotTests
+  -onlyUsePackageVersionsFromResolvedFile
   -configuration "${CONFIGURATION:-Debug}"
   -destination 'platform=macOS'
   -resultBundlePath "$test_result"

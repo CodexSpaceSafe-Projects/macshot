@@ -127,7 +127,6 @@ nonisolated struct VideoCursorStyle: Codable, Equatable, Sendable {
     var smoothing: Double = 0.5
     var hideWhenIdle = false
     var idleDelay: Double = 2.0
-    var hideWhileTyping = false
     var clickEffect: ClickEffect = .ripple
     var clickColor: VideoRGBA = .clickDefault
     var pressBounce = true
@@ -143,7 +142,7 @@ nonisolated struct VideoCursorStyle: Codable, Equatable, Sendable {
     init() {}
 
     private enum CodingKeys: String, CodingKey {
-        case show, appearance, size, smoothing, hideWhenIdle, idleDelay, hideWhileTyping
+        case show, appearance, size, smoothing, hideWhenIdle, idleDelay
         case clickEffect, clickColor, pressBounce, motionBlur, loopToStart, sway
     }
     init(from decoder: Decoder) throws {
@@ -154,7 +153,6 @@ nonisolated struct VideoCursorStyle: Codable, Equatable, Sendable {
         smoothing = VideoProjectLimits.unit(c.decode(.smoothing, or: 0.5))
         hideWhenIdle = c.decode(.hideWhenIdle, or: false)
         idleDelay = VideoProjectLimits.clamp(c.decode(.idleDelay, or: 2), 0.5...10, 2)
-        hideWhileTyping = c.decode(.hideWhileTyping, or: false)
         clickEffect = c.decode(.clickEffect, or: .ripple)
         clickColor = c.decode(.clickColor, or: .clickDefault)
         pressBounce = c.decode(.pressBounce, or: true)
@@ -219,27 +217,6 @@ nonisolated enum VideoOverlayPosition: String, Codable, CaseIterable, Sendable {
         case .bottomCenter: return CGPoint(x: 0.5, y: 1)
         case .bottomRight: return CGPoint(x: 1, y: 1)
         }
-    }
-}
-
-nonisolated struct VideoKeystrokeStyle: Codable, Equatable, Sendable {
-    var show = true
-    var shortcutsOnly = false
-    var position: VideoOverlayPosition = .bottomCenter
-    /// Size multiplier.
-    var size: Double = 1
-    var lightAppearance = false
-
-    init() {}
-
-    private enum CodingKeys: String, CodingKey { case show, shortcutsOnly, position, size, lightAppearance }
-    init(from decoder: Decoder) throws {
-        let c = try decoder.container(keyedBy: CodingKeys.self)
-        show = c.decode(.show, or: true)
-        shortcutsOnly = c.decode(.shortcutsOnly, or: false)
-        position = c.decode(.position, or: .bottomCenter)
-        size = VideoProjectLimits.clamp(c.decode(.size, or: 1), 0.5...2.5, 1)
-        lightAppearance = c.decode(.lightAppearance, or: false)
     }
 }
 
@@ -324,19 +301,17 @@ nonisolated struct VideoLook: Codable, Equatable, Sendable {
     var frame = VideoFrameStyle()
     var cursor = VideoCursorStyle()
     var zoom = VideoZoomStyle()
-    var keystrokes = VideoKeystrokeStyle()
     var camera = VideoCameraStyle()
     var captions = VideoCaptionStyle()
 
     init() {}
 
-    private enum CodingKeys: String, CodingKey { case frame, cursor, zoom, keystrokes, camera, captions }
+    private enum CodingKeys: String, CodingKey { case frame, cursor, zoom, camera, captions }
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         frame = c.decode(.frame, or: VideoFrameStyle())
         cursor = c.decode(.cursor, or: VideoCursorStyle())
         zoom = c.decode(.zoom, or: VideoZoomStyle())
-        keystrokes = c.decode(.keystrokes, or: VideoKeystrokeStyle())
         camera = c.decode(.camera, or: VideoCameraStyle())
         captions = c.decode(.captions, or: VideoCaptionStyle())
     }

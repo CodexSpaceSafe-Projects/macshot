@@ -206,14 +206,11 @@ enum VideoSceneBuilder {
             cursorLayer = VideoCursorLayer(track: track, shapeTimes: recording.shapeTimes, shapeIDs: recording.shapeIDs,
                                            sprites: assets.sprites, fallback: fallback, style: look.cursor,
                                            pixelsPerPoint: recording.pixelsPerPoint, clicks: clicks,
-                                           keyTimes: recording.keys.map(\.time), rippleSprite: ripple,
+                                           rippleSprite: ripple,
                                            ringSprite: ringPulse, loopRange: loop)
         }
-        let keystrokes = rendersOverlays && recording != nil
-            ? KeystrokeTimeline.labels(from: recording?.keys ?? [], shortcutsOnly: look.keystrokes.shortcutsOnly) : []
         return VideoSceneSnapshot(layout: layout, background: background, foreground: foreground, camera: camera,
                                   cameraMotionBlur: CGFloat(look.zoom.motionBlur), cursor: cursorLayer,
-                                  keystrokes: keystrokes, keystrokeStyle: look.keystrokes,
                                   captions: project.captions.sorted { $0.startTime < $1.startTime },
                                   captionStyle: look.captions, webcam: webcam)
     }

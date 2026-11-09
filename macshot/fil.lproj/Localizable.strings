@@ -109,7 +109,6 @@
 "QR Code" = "QR Code";
 "QR Codes" = "Mga QR Code";
 "Open Link" = "Buksan ang Link";
-"Upload" = "I-upload";
 "Share" = "Ibahagi";
 "Open With" = "Buksan Gamit ang";
 "No Apps Available" = "Walang Available na App";
@@ -154,7 +153,6 @@
 "PII" = "PII";
 "Faces" = "Mga Mukha";
 "People" = "Mga Tao";
-"Confirm before upload" = "Kumpirmahin bago i-upload";
 "Flip" = "I-flip";
 "Smooth" = "Makinis";
 "Refined" = "Pinong-pino";
@@ -217,7 +215,6 @@
 "Recording" = "Pag-record";
 "About" = "Tungkol sa";
 "Shortcuts" = "Mga Shortcut";
-"Uploads" = "Mga Upload";
 "Language" = "Wika";
 "Language:" = "Wika:";
 "Restart the app to fully apply the new language." = "I-restart ang app upang ganap na mailapat ang bagong wika.";
@@ -333,14 +330,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Serbisyo ng Pag-upload";
-"Upload Provider" = "Tagapagbigay ng Upload";
 "Provider:" = "Tagapagbigay:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (mga larawan + video)";
-"imgbb (images only)" = "imgbb (mga larawan lamang)";
-"S3-Compatible (images + videos)" = "S3-Compatible (mga larawan + video)";
-"S3-Compatible Storage" = "S3-Compatible Storage";
 "Sign In with Google" = "Mag-sign In gamit ang Google";
 "Sign Out" = "Mag-sign Out";
 "Signed in" = "Naka-sign in";
@@ -359,17 +349,7 @@
 "Secret Key:" = "Secret Key:";
 "Public URL:" = "Public URL:";
 "Path Prefix:" = "Path Prefix:";
-"Make uploads publicly readable" = "Gawing pampublikong nababasa ang mga upload";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "Nagpapadala ng public-read ACL para makita ng kahit sino na may link ang mga na-upload na file. Kailangan para sa AWS S3, DigitalOcean Spaces, MinIO at Backblaze B2 na nag-iimbak ng mga object nang pribado bilang default. I-off para sa Cloudflare R2 na walang ACL at tinatanggihan ang header.";
 "API key:" = "API key:";
-"Upload History" = "Kasaysayan ng Pag-upload";
-"No uploads yet." = "Wala pang mga upload.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Base URL para sa pampublikong access. Kung walang laman, ang S3 endpoint URL ang gagamitin (maaaring hindi pampublikong ma-access).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "May kasamang shared key, kumuha ng sariling libreng key sa imgbb.com/api kung naabot ang rate limit. Mga larawan lamang (walang suporta sa video).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Gumagana sa AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, at iba pang S3-compatible na serbisyo. Sumusuporta sa mga larawan at video.";
-"Configure S3 in Preferences" = "I-configure ang S3 sa Mga Kagustuhan";
-"Sign in to Google Drive in Preferences" = "Mag-sign in sa Google Drive sa Mga Kagustuhan";
-"Video upload requires Google Drive or S3" = "Ang pag-upload ng video ay nangangailangan ng Google Drive o S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -391,10 +371,6 @@
 "Cancel" = "Kanselahin";
 "Microphone Access Required" = "Kinakailangan ang Access sa Mikropono";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "Kailangan ng macshot ang microphone permission upang mag-record ng boses. Buksan ang System Settings upang bigyan ng access.";
-"Upload to Google Drive?" = "I-upload sa Google Drive?";
-"Upload to S3?" = "I-upload sa S3?";
-"Upload to imgbb.com?" = "I-upload sa imgbb.com?";
-"Your screenshot will be uploaded." = "Ia-upload ang iyong screenshot.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "Maligayang pagdating sa macshot";
@@ -413,7 +389,6 @@
 "Translate to:" = "Isalin sa:";
 "%d chars · %d words" = "%d karakter · %d salita";
 "Copy  ⌘↩" = "Kopyahin  ⌘↩";
-"AI Search" = "AI Search";
 "Show Original" = "Ipakita ang Orihinal";
 "Translation Failed" = "Nabigo ang Pagsasalin";
 "Translation" = "Pagsasalin";
@@ -421,10 +396,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "Nakopya ang URL sa clipboard";
-"Uploading... %d%%" = "Ina-upload... %d%%";
-"Upload failed: %@" = "Nabigo ang pag-upload: %@";
-"Uploaded! Link copied." = "Na-upload na! Nakopya ang link.";
-"Uploading to %@... %d%%" = "Ina-upload sa %@... %d%%";
 "Open" = "Buksan";
 
 /* Recording Toast */
@@ -483,13 +454,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Kinakailangan ang Input Monitoring";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "Kailangan ng macshot ang pahintulot sa Input Monitoring upang i-highlight ang mga pag-click ng mouse o ipakita ang mga keystroke habang nagre-record. Magbigay ng access sa System Settings, pagkatapos ay subukang muli.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "Kailangan ng macshot ang Accessibility permission para sa pag-snap sa mga indibidwal na elemento ng interface. Mangyaring bigyan ng access sa System Settings, pagkatapos subukan muli.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "Ipakita ang mga Keystroke";
-"Shortcuts Only" = "Mga Shortcut Lamang";
-"All Keystrokes" = "Lahat ng Keystroke";
 
 /* Recording — Settings Popover */
 "Delay:" = "Pagkaantala:";
@@ -557,12 +524,8 @@
 "Pause" = "I-pause";
 "Resume" = "Ipagpatuloy";
 "Engine:" = "Engine:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (sa device)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Mas mabilis ang pagsasalin ng Apple at gumagana offline. Mas maraming wika ang sinusuportahan ng Google Translate.";
 "Download language packs in System Settings…" = "Mag-download ng mga language pack sa System Settings…";
-"Configure S3 in Settings" = "I-configure ang S3 sa Mga Setting";
-"Sign in to Google Drive in Settings" = "Mag-sign in sa Google Drive sa Mga Setting";
 "Position:" = "Posisyon:";
 "  Position:" = "  Posisyon:";
 "Size:" = "Laki:";
@@ -576,7 +539,6 @@
 "Clear History?" = "I-clear ang History?";
 "This will permanently delete all screenshots from history." = "Permanenteng mabubura ang lahat ng screenshot mula sa history.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "I-click ang \"Set\" at pindutin ang kombinasyon ng key na may kahit isang modifier (⌘, ⌥, ⌃, ⇧) upang magtakda ng shortcut.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "Ina-upload ang mga file sa folder na ito sa iyong Google Drive. Iwanang blangko para gamitin ang \"macshot\". Maaari lamang gamitin ng macshot ang mga folder na nilikha nito, kaya ang folder na may parehong pangalan na ginawa mo sa Drive ay hindi gagamitin muli, sa halip ay lilikha ng bagong folder. Nananatiling pribado ang lahat, walang ibinabahagi nang publiko.";
 
 "Pressure" = "Pressure";
 
@@ -661,14 +623,14 @@
 "Enable macshot:// URL scheme" = "I-enable ang macshot:// URL scheme";
 "sec (0 = never)" = "seg (0 = hindi kailanman)";
 "Settings" = "Settings";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Offline build: inalis ang mga integrasyon para sa pag-upload at cloud storage. Maaaring kumonekta pa rin ang mga pagsusuri sa update sa update server ng MacShot. Nananatiling lokal ang mga screenshot at recording maliban kung ibabahagi o ise-save mo mismo ang mga ito.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "Backup ng Mga Setting";
 "Export Settings…" = "I-export ang Mga Setting…";
 "Import Settings…" = "Mag-import ng Mga Setting…";
 "Reveal Settings File in Finder" = "Ipakita ang Settings File sa Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "I-export ang iyong mga kagustuhan sa isang file para ilipat ang mga ito sa ibang Mac o sa isang malinis na install. Hindi kasama ang upload credentials, ang iyong save folder, at ang history ng mga screenshot. Naka-store ang mga setting sa loob ng app container ng macshot.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "I-export ang Mga Setting";
 "Import Settings" = "Mag-import ng Mga Setting";
 "Import failed" = "Nabigo ang pag-import";
@@ -678,7 +640,7 @@
 "Later" = "Mamaya";
 "Relaunch Now" = "I-relaunch Ngayon";
 "Replace your current settings?" = "Palitan ang iyong kasalukuyang mga setting?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Papalitan ng pag-import ang iyong kasalukuyang mga kagustuhan ng mga nasa file na ito. Mananatili ang iyong save folder, upload credentials, at history ng mga screenshot. Hindi ito maaaring i-undo.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d na setting ang na-apply. I-relaunch ang macshot para i-apply ang lahat ng pagbabago.";
 "A few large items were too big to include. Everything else was saved." = "May ilang malalaking item na masyadong malaki para isama. Na-save ang lahat ng iba pa.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Masyadong malaki ang iyong custom na Beautify background image para isama. Na-save ang lahat ng iba pa.";
@@ -760,7 +722,7 @@
 "Duration" = "Tagal";
 "Edge highlight" = "Highlight sa gilid";
 "Edit Text" = "I-edit ang Teksto";
-"Editable pointer, clicks and keystrokes" = "Nae-edit na pointer, mga click at keystroke";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Mga Edit";
 "Export" = "I-export";
 "Export Subtitles (.srt)…" = "I-export ang Subtitles (.srt)…";
@@ -788,8 +750,6 @@
 "Hold Focus" = "Panatilihin ang Focus";
 "Idle delay" = "Delay bago ma-idle";
 "Image" = "Larawan";
-"Keystrokes" = "Mga Keystroke";
-"Keystrokes in this recording are part of the video pixels." = "Bahagi na ng mga pixel ng video ang mga keystroke sa recording na ito.";
 "Light appearance" = "Maliwanag na itsura";
 "Makes looping GIFs seamless" = "Ginagawang tuloy-tuloy ang mga umuulit na GIF";
 "Mirror" = "I-mirror";
@@ -822,10 +782,8 @@
 "Ripple" = "Ripple";
 "Save As…" = "I-save Bilang…";
 "Shape" = "Hugis";
-"Shortcuts only" = "Mga shortcut lang";
 "Show camera" = "Ipakita ang camera";
 "Show captions" = "Ipakita ang mga caption";
-"Show keystrokes" = "Ipakita ang mga keystroke";
 "Show pointer" = "Ipakita ang pointer";
 "Shrink during zooms" = "Paliitin habang naka-zoom";
 "Smoothing" = "Pagpapakinis";
@@ -844,7 +802,6 @@
 "Title" = "Pamagat";
 "Transcribing…" = "Nagta-transcribe…";
 "Transition" = "Transition";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "I-on ang Ipakita ang mga Keystroke bago mag-record. Ire-record ng macshot ang mga ito nang hiwalay para ma-style mo ang mga ito dito.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "I-on ang camera bago mag-record. Nire-record ito ng macshot nang hiwalay para mailipat, mabago ang laki, mabago ang estilo o maitago mo ito dito, at paliitin ito habang naka-zoom.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Gamitin ang Solid para itago ang sensitibong impormasyon: minsan ay maaaring maibalik ang blur at pixelation.";
 "Visibility" = "Visibility";
@@ -861,3 +818,5 @@
 
 "Snap webcam to corners when moved" = "Idikit ang webcam sa mga sulok kapag inililipat";
 "Search emoji" = "Maghanap ng emoji";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

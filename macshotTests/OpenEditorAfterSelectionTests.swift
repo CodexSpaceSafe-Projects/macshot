@@ -70,7 +70,6 @@ private final class SelectionDelegate: OverlayViewDelegate {
     func overlayViewDidRequestOCR() {}
     func overlayViewDidRequestQuickSave() {}
     func overlayViewDidRequestFileSave() {}
-    func overlayViewDidRequestUpload() {}
     func overlayViewDidRequestShare(anchorView: NSView?) {}
     func overlayViewDidRequestRemoveBackground() {}
     func overlayViewDidRequestEnterRecordingMode() {}

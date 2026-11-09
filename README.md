@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/preview-studio.png" alt="macshot Studio video editor — background, pointer, zoom, keystrokes, camera and captions, with a timeline for zooms, cuts and titles" width="700"/>
+  <img src="assets/preview-studio.png" alt="macshot Studio video editor — background, pointer, zoom, camera and captions, with a timeline for zooms, cuts and titles" width="700"/>
 </p>
 
 ---
@@ -33,7 +33,6 @@
 - **Capture & annotate in one flow** — select a region, draw arrows/text/shapes/blur, copy to clipboard. One hotkey, zero friction.
 - **Screen recording with built-in editor** — record any area or full screen as MP4/GIF with system audio + microphone. Audio merge dialog with per-track volume control. Trim and export without leaving the app.
 - **Scroll capture** — select a region and scroll. macshot stitches it into one seamless tall (or wide) image automatically.
-- **Upload anywhere** — one-click upload to Google Drive, imgbb, or any S3-compatible service (Cloudflare R2, AWS S3, MinIO, etc.). Link copied to clipboard instantly.
 - **Lightweight & native** — lives in your menu bar. Built with Swift and AppKit, not a web browser in disguise.
 - **40 languages** — English, 中文, 日本語, 한국어, Deutsch, Français, Español, Italiano, Português, العربية, हिन्दी, and 29 more. Auto-detects your system language.
 
@@ -97,13 +96,10 @@ brew install --cask macshot
 - **Selection border** — visible capture region outline during recording
 - **Menu bar stop button** — stop recording from the menu bar icon (appears even if icon is hidden)
 - **Quick settings popover** — change format, FPS, and post-recording action on the fly without opening Preferences
-- **Video editor** — trim timeline, mute/strip audio, play/pause, save (with Save As), upload, reveal in Finder
+- **Video editor** — trim timeline, mute/strip audio, play/pause, save (with Save As), reveal in Finder
 
-### Output & Upload
+### Output
 - **Formats** — PNG, JPEG, HEIC, WebP, AVIF with quality slider
-- **Google Drive** — sign in once, uploads to a private folder (defaults to "macshot", configurable in Settings)
-- **imgbb** — anonymous image hosting with shareable links
-- **S3-compatible** — upload to Cloudflare R2, AWS S3, MinIO, DigitalOcean Spaces, Backblaze B2, etc.
 - **Retina downscale** — optional 1x export for smaller files
 - **sRGB color profile** — optional embedding for cross-display consistency
 
@@ -125,11 +121,11 @@ brew install --cask macshot
 - Live preview in the overlay
 
 ### Other
-- **OCR & QR** — extract text with Apple Vision (auto-detects all languages on macOS 13+), auto-copy to clipboard, translate to 30+ languages, Google AI Search; also reads QR codes with open/copy/scan actions
+- **OCR & QR** — extract text with Apple Vision (auto-detects all languages on macOS 13+), auto-copy to clipboard, translate on-device with installed Apple language packs (macOS 15+); also reads QR codes with open/copy/scan actions
 - **Invert colors** — one-click color inversion, apply twice to revert
 - **Background removal** — Apple Vision foreground mask (macOS 14+)
 - **Pin to screen** — floating always-on-top window
-- **Floating thumbnail** — auto-dismiss preview with Copy/Save/Pin/Edit/Upload
+- **Floating thumbnail** — auto-dismiss preview with Copy/Save/Pin/Edit
 - **Screenshot history with editable annotations** — menu bar submenu + drop-down history panel (`Cmd+Shift+H`). Re-open any capture in the editor with live annotations preserved — edit, then press Done to save back. Drag-and-drop, Quick Look, and right-click actions
 - **QR & barcode detection** — inline Open/Copy actions
 - **Snap alignment guides** — annotations snap to midlines and edges

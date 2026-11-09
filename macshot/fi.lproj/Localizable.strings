@@ -109,7 +109,6 @@
 "QR Code" = "QR-koodi";
 "QR Codes" = "QR-koodit";
 "Open Link" = "Avaa linkki";
-"Upload" = "Lataa";
 "Share" = "Jaa";
 "Undo" = "Kumoa";
 "Redo" = "Tee uudelleen";
@@ -158,7 +157,6 @@
 "PII" = "PII";
 "Faces" = "Kasvot";
 "People" = "Ihmiset";
-"Confirm before upload" = "Vahvista ennen latausta";
 "Flip" = "Käännä";
 "Smooth" = "Tasoita";
 "Refined" = "Hienosäädetty";
@@ -213,7 +211,6 @@
 "Recording" = "Nauhoitus";
 "About" = "Tietoja";
 "Shortcuts" = "Pikanäppäimet";
-"Uploads" = "Lataukset";
 "Language" = "Kieli";
 "Language:" = "Kieli:";
 "Restart the app to fully apply the new language." = "Käynnistä sovellus uudelleen ottaaksesi uuden kielen käyttöön.";
@@ -331,14 +328,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Latauspalvelu";
-"Upload Provider" = "Latauspalveluntarjoaja";
 "Provider:" = "Palveluntarjoaja:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (kuvat + videot)";
-"imgbb (images only)" = "imgbb (vain kuvat)";
-"S3-Compatible (images + videos)" = "S3-yhteensopiva (kuvat + videot)";
-"S3-Compatible Storage" = "S3-yhteensopiva tallennustila";
 "Sign In with Google" = "Kirjaudu sisään Googlella";
 "Sign Out" = "Kirjaudu ulos";
 "Signed in" = "Kirjautunut sisään";
@@ -357,17 +347,7 @@
 "Secret Key:" = "Salainen avain:";
 "Public URL:" = "Julkinen URL:";
 "Path Prefix:" = "Polun etuliite:";
-"Make uploads publicly readable" = "Tee latauksista julkisesti luettavia";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "L\U00E4hett\U00E4\U00E4 public-read ACL -otsakkeen, jotta ladatut tiedostot ovat kaikkien n\U00E4ht\U00E4viss\U00E4 linkin kautta. Tarvitaan AWS S3:lle, DigitalOcean Spacesille, MinIO:lle ja Backblaze B2:lle, jotka tallentavat objektit oletuksena yksityisin\U00E4. J\U00E4t\U00E4 pois p\U00E4\U00E4lt\U00E4 Cloudflare R2:lle, joka ei tue ACL-otsakkeita ja hylk\U00E4\U00E4 ne.";
 "API key:" = "API-avain:";
-"Upload History" = "Lataushistoria";
-"No uploads yet." = "Ei latauksia vielä.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Julkisen pääsyn perus-URL. Jos tyhjä, käytetään S3-päätepisteen URL-osoitetta (ei välttämättä julkisesti saatavilla).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Jaettu avain on mukana, hanki oma ilmainen avain osoitteesta imgbb.com/api, jos kohtaat nopeusrajoituksia. Vain kuvat (ei videotukea).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Toimii AWS S3:n, Cloudflare R2:n, MinIO:n, DigitalOcean Spacesin, Backblaze B2:n ja muiden S3-yhteensopivien palveluiden kanssa. Tukee kuvia ja videoita.";
-"Configure S3 in Preferences" = "Määritä S3 asetuksissa";
-"Sign in to Google Drive in Preferences" = "Kirjaudu Google Driveen asetuksissa";
-"Video upload requires Google Drive or S3" = "Videon lataus vaatii Google Driven tai S3:n";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -389,10 +369,6 @@
 "Cancel" = "Peruuta";
 "Microphone Access Required" = "Mikrofonin käyttöoikeus vaaditaan";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot tarvitsee mikrofonin käyttöoikeuden äänittääkseen puhetta. Avaa järjestelmän asetukset myöntääksesi käyttöoikeuden.";
-"Upload to Google Drive?" = "Ladataanko Google Driveen?";
-"Upload to S3?" = "Ladataanko S3:een?";
-"Upload to imgbb.com?" = "Ladataanko imgbb.com-palveluun?";
-"Your screenshot will be uploaded." = "Kuvakaappauksesi ladataan.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "Tervetuloa macshot-sovellukseen";
@@ -411,7 +387,6 @@
 "Translate to:" = "Käännä kielelle:";
 "%d chars · %d words" = "%d merkkiä · %d sanaa";
 "Copy  ⌘↩" = "Kopioi  ⌘↩";
-"AI Search" = "Tekoälyhaku";
 "Show Original" = "Näytä alkuperäinen";
 "Translation Failed" = "Käännös epäonnistui";
 "Translation" = "Käännös";
@@ -419,10 +394,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL kopioitu leikepöydälle";
-"Uploading... %d%%" = "Ladataan... %d%%";
-"Upload failed: %@" = "Lataus epäonnistui: %@";
-"Uploaded! Link copied." = "Ladattu! Linkki kopioitu.";
-"Uploading to %@... %d%%" = "Ladataan palveluun %@... %d%%";
 "Open" = "Avaa";
 
 /* Recording Toast */
@@ -481,13 +452,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Syötön seuranta vaaditaan";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot tarvitsee syötön seurannan luvan korostaakseen hiiren napsautukset tai näyttääkseen näppäinpainallukset tallennuksen aikana. Myönnä käyttöoikeus Järjestelmäasetuksissa ja yritä uudelleen.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot tarvitsee Esteettömyys-luvan yksittäisiin käyttöliittymäelementteihin kohdistamista varten. Myönnä käyttöoikeus Järjestelmäasetuksista ja yritä uudelleen.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "Näytä näppäinpainallukset";
-"Shortcuts Only" = "Vain pikanäppäimet";
-"All Keystrokes" = "Kaikki näppäinpainallukset";
 
 /* Recording — Settings Popover */
 "Delay:" = "Viive:";
@@ -556,12 +523,8 @@
 "Pause" = "Tauko";
 "Resume" = "Jatka";
 "Engine:" = "Moottori:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (laitteessa)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple-k\U00E4\U00E4nn\U00F6s on nopeampi ja toimii offline-tilassa. Google Translate tukee useampia kieli\U00E4.";
 "Download language packs in System Settings\U2026" = "Lataa kielipaketteja J\U00E4rjestelm\U00E4asetuksista\U2026";
-"Configure S3 in Settings" = "M\U00E4\U00E4rit\U00E4 S3 asetuksissa";
-"Sign in to Google Drive in Settings" = "Kirjaudu Google Driveen asetuksissa";
 "Position:" = "Sijainti:";
 "Size:" = "Koko:";
 "Shape:" = "Muoto:";
@@ -574,7 +537,6 @@
 "Clear History?" = "Tyhjennetäänkö historia?";
 "This will permanently delete all screenshots from history." = "Tämä poistaa kaikki kuvakaappaukset historiasta pysyvästi.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Napsauta \"Aseta\" ja paina näppäinyhdistelmää, jossa on vähintään yksi muokkausnäppäin (⌘, ⌥, ⌃, ⇧) asettaaksesi pikakuvakkeen.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "Tiedostot ladataan tähän kansioon Google Drivessasi. Jätä tyhjäksi, jos haluat käyttää kansiota \"macshot\". macshot voi käyttää vain itse luomiaan kansioita, joten Driveen itse tekemääsi samannimistä kansiota ei käytetä uudelleen, sen sijaan luodaan uusi. Kaikki pysyy yksityisenä, mitään ei jaeta julkisesti.";
 
 "Pressure" = "Paine";
 
@@ -659,14 +621,14 @@
 "Enable macshot:// URL scheme" = "Ota macshot://-URL-skeema k\U00E4ytt\U00F6\U00F6n";
 "sec (0 = never)" = "s (0 = ei koskaan)";
 "Settings" = "Asetukset";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Offline-versio: lähetys- ja pilvitallennusintegraatiot on poistettu. Päivitysten tarkistus voi silti muodostaa yhteyden MacShotin päivityspalvelimeen. Kuvakaappaukset ja tallenteet pysyvät paikallisina, ellet jaa tai tallenna niitä itse.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "Asetusten varmuuskopio";
 "Export Settings…" = "Vie asetukset…";
 "Import Settings…" = "Tuo asetukset…";
 "Reveal Settings File in Finder" = "Näytä asetustiedosto Finderissa";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "Vie asetuksesi tiedostoon siirtääksesi ne toiseen Maciin tai puhtaaseen asennukseen. Latauksen tunnistetietoja, tallennuskansiotasi ja kuvakaappaushistoriaa ei sisällytetä. Asetukset tallennetaan macshotin sovellussäiliöön.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "Vie asetukset";
 "Import Settings" = "Tuo asetukset";
 "Import failed" = "Tuonti epäonnistui";
@@ -676,7 +638,7 @@
 "Later" = "Myöhemmin";
 "Relaunch Now" = "Käynnistä uudelleen nyt";
 "Replace your current settings?" = "Korvataanko nykyiset asetuksesi?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Tuonti korvaa nykyiset asetuksesi tämän tiedoston asetuksilla. Tallennuskansiosi, latauksen tunnistetiedot ja kuvakaappaushistoria säilytetään. Tätä ei voi kumota.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d asetusta otettiin käyttöön. Käynnistä macshot uudelleen ottaaksesi kaikki muutokset käyttöön.";
 "A few large items were too big to include. Everything else was saved." = "Muutama suuri kohde oli liian suuri sisällytettäväksi. Kaikki muu tallennettiin.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Mukautettu Beautify-taustakuvasi oli liian suuri sisällytettäväksi. Kaikki muu tallennettiin.";
@@ -758,7 +720,7 @@
 "Duration" = "Kesto";
 "Edge highlight" = "Reunan korostus";
 "Edit Text" = "Muokkaa tekstiä";
-"Editable pointer, clicks and keystrokes" = "Muokattava osoitin, napsautukset ja näppäinpainallukset";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Muokkaukset";
 "Export" = "Vie";
 "Export Subtitles (.srt)…" = "Vie tekstitykset (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "Pidä kohdistus";
 "Idle delay" = "Joutoviive";
 "Image" = "Kuva";
-"Keystrokes" = "Näppäinpainallukset";
-"Keystrokes in this recording are part of the video pixels." = "Tämän nauhoituksen näppäinpainallukset ovat osa videon pikseleitä.";
 "Light appearance" = "Vaalea ulkoasu";
 "Makes looping GIFs seamless" = "Tekee toistuvista GIF-kuvista saumattomia";
 "Mirror" = "Peilaa";
@@ -820,10 +780,8 @@
 "Ripple" = "Aalto";
 "Save As…" = "Tallenna nimellä…";
 "Shape" = "Muoto";
-"Shortcuts only" = "Vain pikanäppäimet";
 "Show camera" = "Näytä kamera";
 "Show captions" = "Näytä tekstitykset";
-"Show keystrokes" = "Näytä näppäinpainallukset";
 "Show pointer" = "Näytä osoitin";
 "Shrink during zooms" = "Pienennä zoomausten aikana";
 "Smoothing" = "Tasoitus";
@@ -842,7 +800,6 @@
 "Title" = "Otsikko";
 "Transcribing…" = "Litteroidaan…";
 "Transition" = "Siirtymä";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "Ota Näytä näppäinpainallukset käyttöön ennen nauhoitusta. macshot tallentaa ne silloin erikseen, jotta voit muotoilla ne täällä.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Ota kamera käyttöön ennen nauhoitusta. macshot tallentaa sen erikseen, jotta voit siirtää, muuttaa kokoa, muuttaa tyyliä tai piilottaa sen täällä, ja pienentää sen zoomausten aikana.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Käytä Yhtenäinen-tyyliä arkaluontoisten tietojen piilottamiseen: sumennus ja pikselöinti voidaan joskus kumota.";
 "Visibility" = "Näkyvyys";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "Kohdista verkkokamera kulmiin siirrettäessä";
 "Search emoji" = "Hae emojia";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

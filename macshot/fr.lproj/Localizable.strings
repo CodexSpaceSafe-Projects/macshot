@@ -109,7 +109,6 @@
 "Open Link" = "Ouvrir le lien";
 "QR Code" = "Code QR";
 "QR Codes" = "Codes QR";
-"Upload" = "Téléverser";
 "Share" = "Partager";
 "Open With" = "Ouvrir avec";
 "No Apps Available" = "Aucune app disponible";
@@ -154,7 +153,6 @@
 "PII" = "PII";
 "Faces" = "Visages";
 "People" = "Personnes";
-"Confirm before upload" = "Confirmer avant le téléversement";
 "Flip" = "Retourner";
 "Smooth" = "Lissage";
 "Refined" = "Affiné";
@@ -212,7 +210,6 @@
 "Recording" = "Enregistrement";
 "About" = "À propos";
 "Shortcuts" = "Raccourcis";
-"Uploads" = "Téléversements";
 "Language" = "Langue";
 "Language:" = "Langue :";
 "Restart the app to fully apply the new language." = "Redémarrez l'application pour appliquer la nouvelle langue.";
@@ -330,14 +327,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Service de téléversement";
-"Upload Provider" = "Fournisseur de téléversement";
 "Provider:" = "Fournisseur :";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (images + vidéos)";
-"imgbb (images only)" = "imgbb (images uniquement)";
-"S3-Compatible (images + videos)" = "S3-Compatible (images + vidéos)";
-"S3-Compatible Storage" = "Stockage S3-Compatible";
 "Sign In with Google" = "Se connecter avec Google";
 "Sign Out" = "Se déconnecter";
 "Signed in" = "Connecté";
@@ -356,17 +346,7 @@
 "Secret Key:" = "Clé secrète :";
 "Public URL:" = "URL publique :";
 "Path Prefix:" = "Préfixe de chemin :";
-"Make uploads publicly readable" = "Rendre les envois lisibles publiquement";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "Envoie l'ACL public-read pour que les fichiers téléversés soient visibles par toute personne disposant du lien. Nécessaire pour AWS S3, DigitalOcean Spaces, MinIO et Backblaze B2, qui stockent les objets en privé par défaut. À désactiver pour Cloudflare R2, qui ne prend pas en charge les ACL et rejette l'en-tête.";
 "API key:" = "Clé API :";
-"Upload History" = "Historique des téléversements";
-"No uploads yet." = "Aucun téléversement pour le moment.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL de base pour l'accès public. Si vide, l'URL du point d'accès S3 est utilisée (peut ne pas être accessible publiquement).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Une clé partagée est incluse, obtenez votre propre clé gratuite sur imgbb.com/api en cas de limites. Images uniquement (pas de prise en charge vidéo).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Compatible avec AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 et autres services S3-Compatible. Prend en charge les images et les vidéos.";
-"Configure S3 in Preferences" = "Configurer S3 dans les Préférences";
-"Sign in to Google Drive in Preferences" = "Connectez-vous à Google Drive dans les Préférences";
-"Video upload requires Google Drive or S3" = "Le téléversement vidéo nécessite Google Drive ou S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -388,10 +368,6 @@
 "Cancel" = "Annuler";
 "Microphone Access Required" = "Accès au microphone requis";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot a besoin de l'autorisation du microphone pour enregistrer l'audio vocal. Ouvrez les Réglages Système pour accorder l'accès.";
-"Upload to Google Drive?" = "Téléverser vers Google Drive ?";
-"Upload to S3?" = "Téléverser vers S3 ?";
-"Upload to imgbb.com?" = "Téléverser vers imgbb.com ?";
-"Your screenshot will be uploaded." = "Votre capture d'écran sera téléversée.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "Bienvenue dans macshot";
@@ -410,7 +386,6 @@
 "Translate to:" = "Traduire en :";
 "%d chars · %d words" = "%d caractères · %d mots";
 "Copy  ⌘↩" = "Copier  ⌘↩";
-"AI Search" = "Recherche IA";
 "Show Original" = "Afficher l'original";
 "Translation Failed" = "Échec de la traduction";
 "Translation" = "Traduction";
@@ -418,10 +393,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL copiée dans le presse-papiers";
-"Uploading... %d%%" = "Téléversement... %d%%";
-"Upload failed: %@" = "Échec du téléversement : %@";
-"Uploaded! Link copied." = "Téléversé ! Lien copié.";
-"Uploading to %@... %d%%" = "Téléversement vers %@... %d%%";
 "Open" = "Ouvrir";
 
 /* Recording Toast */
@@ -481,13 +452,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Surveillance des entrées requise";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot a besoin de l’autorisation Surveillance des entrées pour mettre en évidence les clics de souris ou afficher les frappes pendant l’enregistrement. Accordez l’accès dans les Réglages Système, puis réessayez.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot a besoin de l'autorisation Accessibilité pour s'aligner sur des éléments d'interface individuels. Veuillez accorder l'accès dans les Réglages Système, puis réessayez.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "Afficher les frappes";
-"Shortcuts Only" = "Raccourcis uniquement";
-"All Keystrokes" = "Toutes les frappes";
 
 /* Recording — Settings Popover */
 "Delay:" = "Délai :";
@@ -553,12 +520,8 @@
 "Pause" = "Pause";
 "Resume" = "Reprendre";
 "Engine:" = "Moteur :";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (sur l'appareil)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "La traduction Apple est plus rapide et fonctionne hors ligne. Google Translate prend en charge plus de langues.";
 "Download language packs in System Settings…" = "Télécharger les packs de langues dans les Réglages Système…";
-"Configure S3 in Settings" = "Configurer S3 dans les Réglages";
-"Sign in to Google Drive in Settings" = "Se connecter à Google Drive dans les Réglages";
 "Position:" = "Position :";
 "Size:" = "Taille :";
 "Shape:" = "Forme :";
@@ -571,7 +534,6 @@
 "Clear History?" = "Effacer l'historique ?";
 "This will permanently delete all screenshots from history." = "Cela supprimera définitivement toutes les captures d'écran de l'historique.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Cliquez sur \"Définir\" et appuyez sur une combinaison de touches avec au moins un modificateur (⌘, ⌥, ⌃, ⇧) pour définir un raccourci.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "Les fichiers sont téléversés dans ce dossier de votre Google Drive. Laissez vide pour utiliser \"macshot\". macshot ne peut utiliser que les dossiers qu'il a lui-même créés : un dossier du même nom que vous avez créé dans Drive ne sera donc pas réutilisé, un nouveau dossier sera créé à la place. Tout reste privé, rien n'est partagé publiquement.";
 
 "Pressure" = "Pression";
 
@@ -659,14 +621,14 @@
 /* Keyboard key names */
 "Space" = "Espace";
 "Settings" = "Réglages";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Version hors ligne : les intégrations de téléversement et de stockage cloud sont supprimées. La recherche de mises à jour peut toujours se connecter au serveur de mise à jour de MacShot. Les captures d'écran et les enregistrements restent locaux à moins que vous ne les partagiez ou ne les enregistriez vous-même.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "Sauvegarde des réglages";
 "Export Settings…" = "Exporter les réglages…";
 "Import Settings…" = "Importer les réglages…";
 "Reveal Settings File in Finder" = "Afficher le fichier de réglages dans le Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "Exportez vos préférences dans un fichier pour les transférer vers un autre Mac ou une nouvelle installation. Les identifiants d'envoi, votre dossier d'enregistrement et l'historique des captures ne sont pas inclus. Les réglages sont stockés dans le conteneur de l'app macshot.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "Exporter les réglages";
 "Import Settings" = "Importer les réglages";
 "Import failed" = "Échec de l'importation";
@@ -676,7 +638,7 @@
 "Later" = "Plus tard";
 "Relaunch Now" = "Relancer maintenant";
 "Replace your current settings?" = "Remplacer vos réglages actuels ?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "L'importation remplacera vos préférences actuelles par celles de ce fichier. Votre dossier d'enregistrement, vos identifiants d'envoi et l'historique des captures sont conservés. Cette action est irréversible.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d réglages ont été appliqués. Relancez macshot pour appliquer toutes les modifications.";
 "A few large items were too big to include. Everything else was saved." = "Quelques éléments volumineux étaient trop grands pour être inclus. Tout le reste a été enregistré.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Votre image d'arrière-plan Beautify personnalisée était trop grande pour être incluse. Tout le reste a été enregistré.";
@@ -758,7 +720,7 @@
 "Duration" = "Durée";
 "Edge highlight" = "Liseré lumineux";
 "Edit Text" = "Modifier le texte";
-"Editable pointer, clicks and keystrokes" = "Pointeur, clics et frappes modifiables";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Modifications";
 "Export" = "Exporter";
 "Export Subtitles (.srt)…" = "Exporter les sous-titres (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "Maintenir le cadrage";
 "Idle delay" = "Délai d'inactivité";
 "Image" = "Image";
-"Keystrokes" = "Frappes";
-"Keystrokes in this recording are part of the video pixels." = "Les frappes de cet enregistrement font partie des pixels de la vidéo.";
 "Light appearance" = "Apparence claire";
 "Makes looping GIFs seamless" = "Rend les GIF en boucle fluides";
 "Mirror" = "Miroir";
@@ -820,10 +780,8 @@
 "Ripple" = "Onde";
 "Save As…" = "Enregistrer sous…";
 "Shape" = "Forme";
-"Shortcuts only" = "Raccourcis uniquement";
 "Show camera" = "Afficher la caméra";
 "Show captions" = "Afficher les sous-titres";
-"Show keystrokes" = "Afficher les frappes";
 "Show pointer" = "Afficher le pointeur";
 "Shrink during zooms" = "Réduire pendant les zooms";
 "Smoothing" = "Lissage";
@@ -842,7 +800,6 @@
 "Title" = "Titre";
 "Transcribing…" = "Transcription…";
 "Transition" = "Transition";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "Activez Afficher les frappes avant d'enregistrer. macshot les enregistre alors séparément pour que vous puissiez les styliser ici.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Activez la caméra avant d'enregistrer. macshot l'enregistre séparément pour que vous puissiez la déplacer, la redimensionner, modifier son style ou la masquer ici, et la réduire pendant les zooms.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Utilisez Opaque pour masquer les informations sensibles : le flou et la pixélisation peuvent parfois être inversés.";
 "Visibility" = "Visibilité";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "Aligner la webcam sur les coins lors du déplacement";
 "Search emoji" = "Rechercher un emoji";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

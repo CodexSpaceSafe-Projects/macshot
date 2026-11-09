@@ -105,7 +105,6 @@
 "OCR (extract text)" = "OCR（提取文字）";
 "OCR & QR" = "OCR & QR";
 "Run OCR & QR" = "运行 OCR & QR";
-"Upload" = "上传";
 "Share" = "共享";
 "Undo" = "撤销";
 "Redo" = "重做";
@@ -147,7 +146,6 @@
 "PII" = "PII";
 "Faces" = "面部";
 "People" = "人物";
-"Confirm before upload" = "上传前确认";
 "Flip" = "翻转";
 "Smooth" = "平滑";
 "Refined" = "精细";
@@ -199,7 +197,6 @@
 "Recording" = "录制";
 "About" = "关于";
 "Shortcuts" = "快捷键";
-"Uploads" = "上传";
 "Language" = "语言";
 "Language:" = "语言:";
 "Restart the app to fully apply the new language." = "重新启动应用以完全应用新语言。";
@@ -315,14 +312,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "上传服务";
-"Upload Provider" = "上传服务商";
 "Provider:" = "服务商:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive（图片 + 视频）";
-"imgbb (images only)" = "imgbb（仅图片）";
-"S3-Compatible (images + videos)" = "S3 兼容（图片 + 视频）";
-"S3-Compatible Storage" = "S3 兼容存储";
 "Sign In with Google" = "使用 Google 登录";
 "Sign Out" = "退出登录";
 "Signed in" = "已登录";
@@ -341,17 +331,7 @@
 "Secret Key:" = "私有密钥:";
 "Public URL:" = "公共 URL:";
 "Path Prefix:" = "路径前缀:";
-"Make uploads publicly readable" = "将上传文件设为公开可读";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "发送 public-read ACL，使上传的文件可被任何拥有链接的人查看。AWS S3、DigitalOcean Spaces、MinIO 和 Backblaze B2 默认以私有方式存储对象，需要启用此选项。Cloudflare R2 不支持 ACL 且会拒绝此请求头，请保持关闭。";
 "API key:" = "API 密钥:";
-"Upload History" = "上传历史";
-"No uploads yet." = "暂无上传记录。";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "用于公共访问的基础 URL。留空时将使用 S3 端点 URL（可能无法公开访问）。";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "已内置共享密钥 - 如遇到频率限制，请在 imgbb.com/api 获取免费密钥。仅支持图片（不支持视频）。";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "兼容 AWS S3、Cloudflare R2、MinIO、DigitalOcean Spaces、Backblaze B2 及其他 S3 兼容服务。支持图片和视频。";
-"Configure S3 in Preferences" = "在偏好设置中配置 S3";
-"Sign in to Google Drive in Preferences" = "在偏好设置中登录 Google Drive";
-"Video upload requires Google Drive or S3" = "视频上传需要 Google Drive 或 S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -373,10 +353,6 @@
 "Cancel" = "取消";
 "Microphone Access Required" = "需要麦克风权限";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot 需要麦克风权限来录制语音。请打开系统设置以授予权限。";
-"Upload to Google Drive?" = "上传到 Google Drive？";
-"Upload to S3?" = "上传到 S3？";
-"Upload to imgbb.com?" = "上传到 imgbb.com？";
-"Your screenshot will be uploaded." = "您的截图将被上传。";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "欢迎使用 macshot";
@@ -398,7 +374,6 @@
 "Translate to:" = "翻译为:";
 "%d chars · %d words" = "%d 个字符 · %d 个词";
 "Copy  ⌘↩" = "拷贝  ⌘↩";
-"AI Search" = "AI 搜索";
 "Show Original" = "显示原文";
 "Translation Failed" = "翻译失败";
 "Translation" = "翻译";
@@ -406,10 +381,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL 已拷贝到剪贴板";
-"Uploading... %d%%" = "上传中... %d%%";
-"Upload failed: %@" = "上传失败: %@";
-"Uploaded! Link copied." = "上传完成！链接已拷贝。";
-"Uploading to %@... %d%%" = "正在上传到 %@... %d%%";
 "Open" = "打开";
 "Open Link" = "打开链接";
 "Open With" = "打开方式";
@@ -472,13 +443,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "需要输入监控权限";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot 需要输入监控权限才能在录制时高亮显示鼠标点击或显示按键。请在系统设置中授予权限，然后重试。";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot 需要辅助功能权限才能吸附到单个界面元素。请在系统设置中授予访问权限，然后重试。";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "显示按键";
-"Shortcuts Only" = "仅快捷键";
-"All Keystrokes" = "所有按键";
 
 /* Recording — Settings Popover */
 "Delay:" = "延迟:";
@@ -547,13 +514,9 @@
 "Pause" = "暂停";
 "Resume" = "继续";
 "Engine:" = "引擎:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple（设备端）";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple 翻译更快且支持离线使用。Google Translate 支持更多语言。";
 "Download language packs in System Settings…" = "在系统设置中下载语言包…";
-"Configure S3 in Settings" = "在设置中配置 S3";
-"Sign in to Google Drive in Settings" = "在设置中登录 Google Drive";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "离线版本：已移除上传和云存储集成。检查更新时可能仍会连接到 MacShot 的更新服务器。除非你自行分享或保存，否则截图和录制内容仅保留在本地。";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "更新检查可能连接到 MacShot 的更新服务器。除非你主动分享或保存，截图和录制内容始终保留在本机。";
 "Position:" = "位置:";
 "  Position:" = "  位置:";
 "Size:" = "大小:";
@@ -567,7 +530,6 @@
 "Clear History?" = "清除历史记录？";
 "This will permanently delete all screenshots from history." = "这将从历史记录中永久删除所有截图。";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "点击\"设置\"，然后按下包含至少一个修饰键（⌘、⌥、⌃、⇧）的组合键来设置快捷键。";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "文件将上传到您 Google Drive 中的此文件夹。留空则使用\"macshot\"。macshot 只能使用由它自己创建的文件夹，因此您在 Drive 中自行创建的同名文件夹不会被重复使用，而是会新建一个文件夹。所有内容均保持私密, , 不会公开共享任何内容。";
 
 "Pressure" = "压感";
 
@@ -668,7 +630,7 @@
 "Export Settings…" = "导出设置…";
 "Import Settings…" = "导入设置…";
 "Reveal Settings File in Finder" = "在访达中显示设置文件";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "将你的偏好设置导出为文件，以便迁移到另一台 Mac 或全新安装的系统。上传凭证、保存文件夹和截图历史不会包含在内。设置存储在 macshot 的应用容器内。";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "导出偏好设置以迁移到另一台 Mac 或全新安装。保存文件夹和截图历史不会导出。设置保存在 macshot 的应用容器中。";
 "Export Settings" = "导出设置";
 "Import Settings" = "导入设置";
 "Import failed" = "导入失败";
@@ -678,7 +640,7 @@
 "Later" = "稍后";
 "Relaunch Now" = "立即重新启动";
 "Replace your current settings?" = "替换当前设置？";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "导入将用此文件中的偏好设置替换你当前的偏好设置。你的保存文件夹、上传凭证和截图历史将予以保留。此操作无法撤销。";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "导入将替换当前偏好设置。保存文件夹和截图历史保持不变。此操作无法撤销。";
 "%d settings were applied. Relaunch macshot to apply all changes." = "已应用 %d 项设置。重新启动 macshot 以应用所有更改。";
 "A few large items were too big to include. Everything else was saved." = "少数较大的项目因体积过大未能包含。其余内容均已保存。";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "你自定义的 Beautify 背景图像因体积过大未能包含。其余内容均已保存。";
@@ -760,7 +722,7 @@
 "Duration" = "时长";
 "Edge highlight" = "边缘高光";
 "Edit Text" = "编辑文字";
-"Editable pointer, clicks and keystrokes" = "可编辑的指针、点按和按键";
+"Editable pointer and clicks" = "可编辑的指针和点击";
 "Edits" = "编辑";
 "Export" = "导出";
 "Export Subtitles (.srt)…" = "导出字幕 (.srt)…";
@@ -788,8 +750,6 @@
 "Hold Focus" = "保持焦点";
 "Idle delay" = "空闲延迟";
 "Image" = "图像";
-"Keystrokes" = "按键";
-"Keystrokes in this recording are part of the video pixels." = "此录制中的按键已是视频像素的一部分。";
 "Light appearance" = "浅色外观";
 "Makes looping GIFs seamless" = "让循环 GIF 无缝衔接";
 "Mirror" = "镜像";
@@ -822,10 +782,8 @@
 "Ripple" = "波纹";
 "Save As…" = "存储为…";
 "Shape" = "形状";
-"Shortcuts only" = "仅快捷键";
 "Show camera" = "显示摄像头";
 "Show captions" = "显示字幕";
-"Show keystrokes" = "显示按键";
 "Show pointer" = "显示指针";
 "Shrink during zooms" = "缩放时缩小";
 "Smoothing" = "平滑度";
@@ -844,7 +802,6 @@
 "Title" = "标题";
 "Transcribing…" = "正在转录…";
 "Transition" = "过渡";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "录制前请打开“显示按键”。macshot 随后会单独记录按键，以便你在此处设置样式。";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "录制前请打开摄像头。macshot 会单独录制摄像头画面，让你可以在此处移动、调整大小、更改样式或隐藏它, 并在缩放时将其缩小。";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "请使用“纯色”隐藏敏感信息：模糊和像素化有时可以被还原。";
 "Visibility" = "可见性";
@@ -861,3 +818,5 @@
 
 "Snap webcam to corners when moved" = "移动时将摄像头吸附到角落";
 "Search emoji" = "搜索表情符号";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot 需要输入监控权限才能在录屏时高亮鼠标点击。请在系统设置中授予权限后重试。";

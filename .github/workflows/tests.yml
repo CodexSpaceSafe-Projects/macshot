@@ -20,7 +20,15 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Set up Python for release tool tests
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+
+      - name: Test release tool verification
+        run: python3 scripts/test-prepare-sparkle-tools.py
 
       - name: Select Xcode
         run: |
@@ -32,7 +40,7 @@ jobs:
           xcodebuild -version
 
       - name: Cache SwiftPM dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: ~/Library/Developer/Xcode/DerivedData/**/SourcePackages
           key: ${{ runner.os }}-spm-${{ hashFiles('macshot.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
@@ -43,6 +51,7 @@ jobs:
           set -o pipefail
           xcodebuild test \
             -scheme macshotTests \
+            -onlyUsePackageVersionsFromResolvedFile \
             -configuration Debug \
             -destination 'platform=macOS' \
             -resultBundlePath TestResults.xcresult \
@@ -59,6 +68,7 @@ jobs:
           set -o pipefail
           xcodebuild test \
             -scheme macshotTests \
+            -onlyUsePackageVersionsFromResolvedFile \
             -configuration Debug \
             -destination 'platform=macOS' \
             -resultBundlePath OfflineTestResults.xcresult \
@@ -89,7 +99,7 @@ jobs:
 
       - name: Upload test results
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: test-results
           path: |
@@ -107,7 +117,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
       - name: Select Xcode
         run: |
@@ -120,6 +130,7 @@ jobs:
           set -o pipefail
           xcodebuild build \
             -scheme macshot \
+            -onlyUsePackageVersionsFromResolvedFile \
             -configuration Release \
             -destination 'platform=macOS' \
             CODE_SIGNING_ALLOWED=NO \
@@ -131,6 +142,7 @@ jobs:
           set -o pipefail
           xcodebuild build \
             -scheme macshot \
+            -onlyUsePackageVersionsFromResolvedFile \
             -configuration Release \
             -destination 'platform=macOS' \
             CODE_SIGNING_ALLOWED=NO \

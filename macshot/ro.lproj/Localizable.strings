@@ -104,7 +104,6 @@
 "OCR" = "OCR";
 "OCR Text" = "OCR Text";
 "OCR (extract text)" = "OCR (extrage text)";
-"Upload" = "Încarcă";
 "Share" = "Partajează";
 "No Share Services" = "Niciun serviciu de partajare";
 "Undo" = "Anulează";
@@ -147,7 +146,6 @@
 "PII" = "PII";
 "Faces" = "Fețe";
 "People" = "Persoane";
-"Confirm before upload" = "Confirmă înainte de încărcare";
 "Flip" = "Oglindire";
 "Smooth" = "Neted";
 "Refined" = "Rafinat";
@@ -200,7 +198,6 @@
 "Recording" = "Înregistrare";
 "About" = "Despre";
 "Shortcuts" = "Scurtături";
-"Uploads" = "Încărcări";
 "Language" = "Limba";
 "Language:" = "Limba:";
 "Restart the app to fully apply the new language." = "Repornește aplicația pentru a aplica complet noua limbă.";
@@ -326,14 +323,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Serviciu de încărcare";
-"Upload Provider" = "Furnizor de încărcare";
 "Provider:" = "Furnizor:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (imagini + videoclipuri)";
-"imgbb (images only)" = "imgbb (doar imagini)";
-"S3-Compatible (images + videos)" = "S3-Compatible (imagini + videoclipuri)";
-"S3-Compatible Storage" = "S3-Compatible Storage";
 "Sign In with Google" = "Autentificare cu Google";
 "Sign Out" = "Deconectare";
 "Signed in" = "Conectat";
@@ -352,17 +342,7 @@
 "Secret Key:" = "Cheie secretă:";
 "Public URL:" = "URL public:";
 "Path Prefix:" = "Prefix cale:";
-"Make uploads publicly readable" = "Fă încărcările citibile public";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "Trimite ACL-ul public-read ca fișierele încărcate să fie vizibile de oricine are linkul. Necesar pentru AWS S3, DigitalOcean Spaces, MinIO și Backblaze B2, care stochează obiectele privat în mod implicit. Lasă dezactivat pentru Cloudflare R2, care nu suportă ACL-uri și respinge headerul.";
 "API key:" = "Cheie API:";
-"Upload History" = "Istoric încărcări";
-"No uploads yet." = "Nicio încărcare încă.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL de bază pentru acces public. Dacă este gol, se folosește URL-ul endpoint-ului S3 (poate să nu fie accesibil public).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "O cheie partajată este inclusă, obține propria cheie gratuită la imgbb.com/api dacă atingi limitele de rată. Doar imagini (fără suport video).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Funcționează cu AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 și alte servicii S3-compatible. Suportă imagini și videoclipuri.";
-"Configure S3 in Preferences" = "Configurează S3 în Preferințe";
-"Sign in to Google Drive in Preferences" = "Autentifică-te în Google Drive din Preferințe";
-"Video upload requires Google Drive or S3" = "Încărcarea video necesită Google Drive sau S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -384,10 +364,6 @@
 "Cancel" = "Anulează";
 "Microphone Access Required" = "Acces la microfon necesar";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot are nevoie de permisiunea microfonului pentru a înregistra audio vocal. Deschide Setările sistemului pentru a acorda acces.";
-"Upload to Google Drive?" = "Încarcă pe Google Drive?";
-"Upload to S3?" = "Încarcă pe S3?";
-"Upload to imgbb.com?" = "Încarcă pe imgbb.com?";
-"Your screenshot will be uploaded." = "Captura ta de ecran va fi încărcată.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "Bun venit în macshot";
@@ -406,7 +382,6 @@
 "Translate to:" = "Traduce în:";
 "%d chars · %d words" = "%d caractere · %d cuvinte";
 "Copy  ⌘↩" = "Copiază  ⌘↩";
-"AI Search" = "Căutare AI";
 "Show Original" = "Afișează originalul";
 "Translation Failed" = "Traducerea a eșuat";
 "Translation" = "Traducere";
@@ -414,10 +389,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL copiat în clipboard";
-"Uploading... %d%%" = "Se încarcă... %d%%";
-"Upload failed: %@" = "Încărcarea a eșuat: %@";
-"Uploaded! Link copied." = "Încărcat! Link copiat.";
-"Uploading to %@... %d%%" = "Se încarcă pe %@... %d%%";
 "Open" = "Deschide";
 
 /* Recording Toast */
@@ -476,13 +447,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Monitorizarea tastaturii este necesară";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot are nevoie de permisiunea Monitorizare intrare pentru a evidenția clicurile de mouse sau a afișa apăsările de taste în timpul înregistrării. Acordă acces în Configurări sistem și încearcă din nou.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot are nevoie de permisiunea Accesibilitate pentru alinierea la elementele individuale ale interfeței. Acordați acces în Setările Sistemului și încercați din nou.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "Afișează apăsările de taste";
-"Shortcuts Only" = "Doar scurtături";
-"All Keystrokes" = "Toate apăsările de taste";
 
 /* Recording — Settings Popover */
 "Delay:" = "Întârziere:";
@@ -549,13 +516,9 @@
 "Pause" = "Pauză";
 "Resume" = "Reia";
 "Engine:" = "Motor:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (pe dispozitiv)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Traducerea Apple este mai rapidă și funcționează offline. Google Translate suportă mai multe limbi.";
 "Download language packs in System Settings…" = "Descarcă pachetele de limbi din Setările sistemului…";
-"Configure S3 in Settings" = "Configurează S3 în Setări";
-"Sign in to Google Drive in Settings" = "Autentifică-te în Google Drive din Setări";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Versiune offline: integrările de încărcare și stocare în cloud au fost eliminate. Verificările de actualizări încă se pot conecta la serverul de actualizări al MacShot. Capturile de ecran și înregistrările rămân locale, cu excepția cazului în care le partajezi sau le salvezi chiar tu.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Poziție:";
 "Size:" = "Dimensiune:";
 "Shape:" = "Formă:";
@@ -568,7 +531,6 @@
 "Clear History?" = "Ștergi istoricul?";
 "This will permanently delete all screenshots from history." = "Aceasta va șterge definitiv toate capturile de ecran din istoric.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Apasă \"Setează\" și tastează o combinație de taste cu cel puțin un modificator (⌘, ⌥, ⌃, ⇧) pentru a seta o scurtătură.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "Fișierele sunt încărcate în acest folder din Google Drive-ul tău. Lasă gol pentru a folosi \"macshot\". macshot poate folosi doar folderele create de el însuși, așa că un folder creat de tine în Drive cu același nume nu va fi refolosit, în schimb, se creează unul nou. Totul rămâne privat, nimic nu este distribuit public.";
 
 "Pressure" = "Presiune";
 
@@ -666,7 +628,7 @@
 "Export Settings…" = "Exportă setările…";
 "Import Settings…" = "Importă setările…";
 "Reveal Settings File in Finder" = "Afișează fișierul de setări în Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "Exportă preferințele într-un fișier pentru a le muta pe alt Mac sau pe o instalare nouă. Datele de autentificare pentru încărcare, folderul de salvare și istoricul capturilor nu sunt incluse. Setările sunt stocate în containerul aplicației macshot.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "Exportă setările";
 "Import Settings" = "Importă setările";
 "Import failed" = "Importul a eșuat";
@@ -676,7 +638,7 @@
 "Later" = "Mai târziu";
 "Relaunch Now" = "Relansează acum";
 "Replace your current settings?" = "Înlocuiești setările curente?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Importarea va înlocui preferințele curente cu cele din acest fișier. Folderul de salvare, datele de autentificare pentru încărcare și istoricul capturilor sunt păstrate. Această acțiune nu poate fi anulată.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d setări au fost aplicate. Relansează macshot pentru a aplica toate modificările.";
 "A few large items were too big to include. Everything else was saved." = "Câteva elemente mari au fost prea voluminoase pentru a fi incluse. Restul a fost salvat.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Imaginea personalizată de fundal Beautify a fost prea mare pentru a fi inclusă. Restul a fost salvat.";
@@ -758,7 +720,7 @@
 "Duration" = "Durată";
 "Edge highlight" = "Evidențiere margini";
 "Edit Text" = "Editează textul";
-"Editable pointer, clicks and keystrokes" = "Cursor, clicuri și taste editabile";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Editări";
 "Export" = "Exportă";
 "Export Subtitles (.srt)…" = "Exportă subtitrările (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "Menține focalizarea";
 "Idle delay" = "Întârziere repaus";
 "Image" = "Imagine";
-"Keystrokes" = "Taste";
-"Keystrokes in this recording are part of the video pixels." = "Apăsările de taste din această înregistrare fac parte din pixelii videoclipului.";
 "Light appearance" = "Aspect luminos";
 "Makes looping GIFs seamless" = "Face buclele GIF fără întreruperi";
 "Mirror" = "Oglindire";
@@ -820,10 +780,8 @@
 "Ripple" = "Undă";
 "Save As…" = "Salvează ca…";
 "Shape" = "Formă";
-"Shortcuts only" = "Doar scurtături";
 "Show camera" = "Afișează camera";
 "Show captions" = "Afișează subtitrările";
-"Show keystrokes" = "Afișează apăsările de taste";
 "Show pointer" = "Afișează cursorul";
 "Shrink during zooms" = "Micșorează în timpul zoomului";
 "Smoothing" = "Netezire";
@@ -842,7 +800,6 @@
 "Title" = "Titlu";
 "Transcribing…" = "Se transcrie…";
 "Transition" = "Tranziție";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "Activează Afișează apăsările de taste înainte de înregistrare. macshot le va înregistra separat, ca să le poți stiliza aici.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Pornește camera înainte de înregistrare. macshot o înregistrează separat, ca să o poți muta, redimensiona, restiliza sau ascunde aici, și micșora în timpul zoomurilor.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Folosește Solid pentru a ascunde informațiile sensibile: estomparea și pixelarea pot fi uneori inversate.";
 "Visibility" = "Vizibilitate";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "Aliniază webcamul la colțuri când este mutat";
 "Search emoji" = "Caută emoji";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

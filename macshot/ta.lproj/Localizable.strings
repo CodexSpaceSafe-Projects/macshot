@@ -107,7 +107,6 @@
 "OCR" = "OCR";
 "OCR Text" = "OCR உரை";
 "OCR (extract text)" = "OCR (உரையைப் பிரி)";
-"Upload" = "பதிவேற்று";
 "Share" = "பகிர்";
 "No Apps Available" = "பயன்பாடுகள் எதுவும் இல்லை";
 "No Share Services" = "பகிர்வு சேவைகள் இல்லை";
@@ -151,7 +150,6 @@
 "PII" = "PII";
 "Faces" = "முகங்கள்";
 "People" = "நபர்கள்";
-"Confirm before upload" = "பதிவேற்றத்திற்கு முன் உறுதிசெய்";
 "Flip" = "புரட்டு";
 "Smooth" = "மென்மை";
 "Refined" = "நுணுக்கமான";
@@ -204,7 +202,6 @@
 "Recording" = "பதிவு";
 "About" = "பற்றி";
 "Shortcuts" = "குறுக்குவழிகள்";
-"Uploads" = "பதிவேற்றங்கள்";
 "Language" = "மொழி";
 "Language:" = "மொழி:";
 "Restart the app to fully apply the new language." = "புதிய மொழியை முழுமையாகப் பயன்படுத்த பயன்பாட்டை மறுதொடக்கம் செய்யுங்கள்.";
@@ -331,14 +328,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "பதிவேற்ற சேவை";
-"Upload Provider" = "பதிவேற்ற வழங்குநர்";
 "Provider:" = "வழங்குநர்:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (படங்கள் + காணொளிகள்)";
-"imgbb (images only)" = "imgbb (படங்கள் மட்டும்)";
-"S3-Compatible (images + videos)" = "S3-இணக்கமான (படங்கள் + காணொளிகள்)";
-"S3-Compatible Storage" = "S3-இணக்கமான சேமிப்பகம்";
 "Sign In with Google" = "Google மூலம் உள்நுழை";
 "Sign Out" = "வெளியேறு";
 "Signed in" = "உள்நுழைந்துள்ளீர்கள்";
@@ -357,17 +347,7 @@
 "Secret Key:" = "ரகசிய விசை:";
 "Public URL:" = "பொது URL:";
 "Path Prefix:" = "பாதை முன்னொட்டு:";
-"Make uploads publicly readable" = "பதிவேற்றங்களை பொதுவில் படிக்கக்கூடியதாக்கு";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "public-read ACL அனுப்புகிறது, இதனால் பதிவேற்றிய கோப்புகள் இணைப்பு உள்ள எவரும் பார்க்கக்கூடியதாக இருக்கும். இயல்பாக பொருட்களை தனிப்பட்டதாக சேமிக்கும் AWS S3, DigitalOcean Spaces, MinIO மற்றும் Backblaze B2 க்கு தேவை. ACLs இல்லாத மற்றும் தலைப்பை நிராகரிக்கும் Cloudflare R2 க்கு அணைத்து வைக்கவும்.";
 "API key:" = "API விசை:";
-"Upload History" = "பதிவேற்ற வரலாறு";
-"No uploads yet." = "இதுவரை பதிவேற்றங்கள் இல்லை.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "பொது அணுகலுக்கான அடிப்படை URL. காலியாக இருந்தால், S3 முனைப்புள்ளி URL பயன்படுத்தப்படும் (பொதுவாக அணுகக்கூடியதாக இல்லாமல் போகலாம்).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "பகிரப்பட்ட விசை சேர்க்கப்பட்டுள்ளது, வீத வரம்புகளை அடைந்தால் imgbb.com/api இல் உங்கள் சொந்த இலவச விசையைப் பெறுங்கள். படங்கள் மட்டும் (காணொளி ஆதரவு இல்லை).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 மற்றும் பிற S3-இணக்கமான சேவைகளுடன் செயல்படும். படங்கள் மற்றும் காணொளிகளை ஆதரிக்கிறது.";
-"Configure S3 in Preferences" = "விருப்பங்களில் S3 ஐ உள்ளமை";
-"Sign in to Google Drive in Preferences" = "விருப்பங்களில் Google Drive இல் உள்நுழை";
-"Video upload requires Google Drive or S3" = "காணொளி பதிவேற்றத்திற்கு Google Drive அல்லது S3 தேவை";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -389,10 +369,6 @@
 "Cancel" = "ரத்துசெய்";
 "Microphone Access Required" = "ஒலிவாங்கி அணுகல் தேவை";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot குரல் ஒலியைப் பதிவு செய்ய ஒலிவாங்கி அனுமதி தேவை. அணுகலை வழங்க கணினி அமைப்புகளைத் திறக்கவும்.";
-"Upload to Google Drive?" = "Google Drive இல் பதிவேற்றவா?";
-"Upload to S3?" = "S3 இல் பதிவேற்றவா?";
-"Upload to imgbb.com?" = "imgbb.com இல் பதிவேற்றவா?";
-"Your screenshot will be uploaded." = "உங்கள் திரைப்பிடிப்பு பதிவேற்றப்படும்.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "macshot க்கு வரவேற்கிறோம்";
@@ -414,7 +390,6 @@
 "Translate to:" = "இதற்கு மொழிபெயர்:";
 "%d chars · %d words" = "%d எழுத்துகள் · %d சொற்கள்";
 "Copy  ⌘↩" = "நகலெடு  ⌘↩";
-"AI Search" = "AI தேடல்";
 "Show Original" = "மூலத்தைக் காட்டு";
 "Translation Failed" = "மொழிபெயர்ப்பு தோல்வி";
 "Translation" = "மொழிபெயர்ப்பு";
@@ -422,10 +397,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL ஒட்டுப்பலகையில் நகலெடுக்கப்பட்டது";
-"Uploading... %d%%" = "பதிவேற்றுகிறது... %d%%";
-"Upload failed: %@" = "பதிவேற்றம் தோல்வி: %@";
-"Uploaded! Link copied." = "பதிவேற்றப்பட்டது! இணைப்பு நகலெடுக்கப்பட்டது.";
-"Uploading to %@... %d%%" = "%@ இல் பதிவேற்றுகிறது... %d%%";
 "Open" = "திற";
 
 /* Recording Toast */
@@ -484,13 +455,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "உள்ளீட்டு கண்காணிப்பு தேவை";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "பதிவின்போது மவுஸ் கிளிக்குகளை முன்னிலைப்படுத்த அல்லது விசை அழுத்தங்களைக் காட்ட macshot க்கு உள்ளீட்டு கண்காணிப்பு அனுமதி தேவை. கணினி அமைப்புகளில் அணுகலை வழங்கி, மீண்டும் முயற்சிக்கவும்.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "தனித்தனி இடைமுக உறுப்புகளுடன் ஸ்நாப் செய்ய macshot-க்கு அணுகல்தன்மை அனுமதி தேவை. கணினி அமைப்புகளில் அணுகலை வழங்கி, மீண்டும் முயற்சிக்கவும்.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "விசை அழுத்தங்களைக் காட்டு";
-"Shortcuts Only" = "குறுக்குவழிகள் மட்டும்";
-"All Keystrokes" = "அனைத்து விசை அழுத்தங்களும்";
 
 /* Recording — Settings Popover */
 "Delay:" = "தாமதம்:";
@@ -559,13 +526,9 @@
 "Pause" = "இடைநிறுத்தம்";
 "Resume" = "தொடரவும்";
 "Engine:" = "இயந்திரம்:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (சாதனத்தில்)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple மொழிபெயர்ப்பு வேகமானது மற்றும் ஆஃப்லைனில் வேலை செய்யும். Google Translate அதிக மொழிகளை ஆதரிக்கிறது.";
 "Download language packs in System Settings…" = "கணினி அமைப்புகளில் மொழி தொகுப்புகளைப் பதிவிறக்கவும்…";
-"Configure S3 in Settings" = "அமைப்புகளில் S3 கட்டமைக்கவும்";
-"Sign in to Google Drive in Settings" = "அமைப்புகளில் Google Drive-இல் உள்நுழையவும்";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "ஆஃப்லைன் பதிப்பு: பதிவேற்றம் மற்றும் கிளவுட் சேமிப்பக ஒருங்கிணைப்புகள் அகற்றப்பட்டுள்ளன. புதுப்பிப்புச் சரிபார்ப்புகள் இன்னும் MacShot-இன் புதுப்பிப்பு சேவையகத்துடன் இணையலாம். நீங்களே பகிர்ந்தாலோ சேமித்தாலோ தவிர, திரைப்பிடிப்புகளும் பதிவுகளும் உள்ளூரிலேயே இருக்கும்.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "நிலை:";
 "Size:" = "அளவு:";
 "Shape:" = "வடிவம்:";
@@ -578,7 +541,6 @@
 "Clear History?" = "வரலாற்றை அழிக்கவா?";
 "This will permanently delete all screenshots from history." = "இது வரலாற்றில் உள்ள அனைத்து ஸ்கிரீன்ஷாட்களையும் நிரந்தரமாக நீக்கும்.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "\"அமை\" என்பதை கிளிக் செய்து, குறுக்குவழியை அமைக்க குறைந்தது ஒரு மாற்றி (⌘, ⌥, ⌃, ⇧) கொண்ட விசை சேர்க்கையை அழுத்தவும்.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "கோப்புகள் உங்கள் Google Drive-ல் உள்ள இந்தக் கோப்புறையில் பதிவேற்றப்படும். \"macshot\"-ஐப் பயன்படுத்த காலியாக விடவும். macshot தானே உருவாக்கிய கோப்புறைகளை மட்டுமே பயன்படுத்த முடியும், எனவே Drive-ல் நீங்கள் அதே பெயரில் உருவாக்கிய கோப்புறை மீண்டும் பயன்படுத்தப்படாது, அதற்குப் பதிலாக புதிய கோப்புறை உருவாக்கப்படும். அனைத்தும் தனிப்பட்டதாக இருக்கும், எதுவும் பொதுவில் பகிரப்படாது.";
 
 "Pressure" = "அழுத்தம்";
 
@@ -668,7 +630,7 @@
 "Export Settings…" = "அமைப்புகளை ஏற்றுமதி செய்…";
 "Import Settings…" = "அமைப்புகளை இறக்குமதி செய்…";
 "Reveal Settings File in Finder" = "அமைப்புகள் கோப்பை Finder இல் காட்டு";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "உங்கள் விருப்பங்களை மற்றொரு Mac அல்லது புதிய நிறுவலுக்கு நகர்த்த ஒரு கோப்பிற்கு ஏற்றுமதி செய்யுங்கள். பதிவேற்ற சான்றுகள், உங்கள் சேமிப்புக் கோப்புறை மற்றும் திரைப்பிடிப்பு வரலாறு சேர்க்கப்படவில்லை. அமைப்புகள் macshot இன் ஆப் கன்டெய்னருக்குள் சேமிக்கப்படுகின்றன.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "அமைப்புகளை ஏற்றுமதி செய்";
 "Import Settings" = "அமைப்புகளை இறக்குமதி செய்";
 "Import failed" = "இறக்குமதி தோல்வியடைந்தது";
@@ -678,7 +640,7 @@
 "Later" = "பிறகு";
 "Relaunch Now" = "இப்போதே மீண்டும் தொடங்கு";
 "Replace your current settings?" = "உங்கள் தற்போதைய அமைப்புகளை மாற்றவா?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "இறக்குமதி செய்வது உங்கள் தற்போதைய விருப்பங்களை இந்தக் கோப்பில் உள்ளவற்றால் மாற்றிவிடும். உங்கள் சேமிப்புக் கோப்புறை, பதிவேற்ற சான்றுகள் மற்றும் திரைப்பிடிப்பு வரலாறு தக்கவைக்கப்படும். இதைச் செயல்தவிர்க்க முடியாது.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d அமைப்புகள் பயன்படுத்தப்பட்டன. அனைத்து மாற்றங்களையும் பயன்படுத்த macshot ஐ மீண்டும் தொடங்குங்கள்.";
 "A few large items were too big to include. Everything else was saved." = "சில பெரிய உருப்படிகள் சேர்க்க முடியாத அளவுக்குப் பெரியதாக இருந்தன. மற்ற அனைத்தும் சேமிக்கப்பட்டன.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "உங்கள் தனிப்பயன் Beautify பின்னணிப் படம் சேர்க்க முடியாத அளவுக்குப் பெரியதாக இருந்தது. மற்ற அனைத்தும் சேமிக்கப்பட்டன.";
@@ -760,7 +722,7 @@
 "Duration" = "கால அளவு";
 "Edge highlight" = "விளிம்பு ஒளிர்வு";
 "Edit Text" = "உரையைத் திருத்து";
-"Editable pointer, clicks and keystrokes" = "திருத்தக்கூடிய சுட்டி, கிளிக்குகள் மற்றும் விசை அழுத்தங்கள்";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "திருத்தங்கள்";
 "Export" = "ஏற்றுமதி";
 "Export Subtitles (.srt)…" = "வசனங்களை ஏற்றுமதி செய் (.srt)…";
@@ -788,8 +750,6 @@
 "Hold Focus" = "குவியத்தை நிலைநிறுத்து";
 "Idle delay" = "செயலற்ற தாமதம்";
 "Image" = "படம்";
-"Keystrokes" = "விசை அழுத்தங்கள்";
-"Keystrokes in this recording are part of the video pixels." = "இந்தப் பதிவிலுள்ள விசை அழுத்தங்கள் வீடியோ பிக்சல்களின் ஒரு பகுதி.";
 "Light appearance" = "வெளிர் தோற்றம்";
 "Makes looping GIFs seamless" = "சுழலும் GIF-களைத் தடையற்றதாக்குகிறது";
 "Mirror" = "கண்ணாடிப் பிம்பம்";
@@ -822,10 +782,8 @@
 "Ripple" = "அலை";
 "Save As…" = "இவ்வாறு சேமி…";
 "Shape" = "வடிவம்";
-"Shortcuts only" = "குறுக்குவழிகள் மட்டும்";
 "Show camera" = "கேமராவைக் காட்டு";
 "Show captions" = "தலைப்புரைகளைக் காட்டு";
-"Show keystrokes" = "விசை அழுத்தங்களைக் காட்டு";
 "Show pointer" = "சுட்டியைக் காட்டு";
 "Shrink during zooms" = "பெரிதாக்கத்தின்போது சுருக்கு";
 "Smoothing" = "மென்மையாக்கல்";
@@ -844,7 +802,6 @@
 "Title" = "தலைப்பு";
 "Transcribing…" = "எழுத்தாக்குகிறது…";
 "Transition" = "மாறுதல்";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "பதிவுசெய்வதற்கு முன் \"விசை அழுத்தங்களைக் காட்டு\" என்பதை இயக்கவும். பின்னர் macshot அவற்றைத் தனியாகப் பதிவுசெய்யும், எனவே அவற்றை இங்கே வடிவமைக்கலாம்.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "பதிவுசெய்வதற்கு முன் கேமராவை இயக்கவும். macshot அதைத் தனியாகப் பதிவுசெய்வதால், அதை இங்கே நகர்த்தலாம், அளவு மாற்றலாம், பாணி மாற்றலாம் அல்லது மறைக்கலாம், மேலும் பெரிதாக்கத்தின்போது சுருக்கலாம்.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "முக்கியமான தகவலை மறைக்க திடமான என்பதைப் பயன்படுத்தவும்: மங்கலாக்கலையும் பிக்சலேஷனையும் சில நேரங்களில் மீட்டெடுக்க முடியும்.";
 "Visibility" = "தெரிவுநிலை";
@@ -861,3 +818,5 @@
 
 "Snap webcam to corners when moved" = "நகர்த்தும்போது வெப்கேமைக் மூலைகளில் பொருத்து";
 "Search emoji" = "எமோஜியைத் தேடு";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

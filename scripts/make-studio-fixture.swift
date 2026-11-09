@@ -230,13 +230,6 @@ import AppKit
             }
             t += 1.0 / 120
         }
-        // Typing and one shortcut.
-        for (i, ch) in script.typing.text.enumerated() {
-            CursorTelemetry.encode(.key(time: base + script.typing.start + Double(i) * 0.14, down: true, keyCode: 0, modifiers: 0,
-                                        characters: String(ch)), into: &data)
-        }
-        CursorTelemetry.encode(.key(time: base + script.typing.start + 3.2, down: true, keyCode: 1,
-                                    modifiers: 1 << 20, characters: "s"), into: &data)
         try data.write(to: url)
     }
 }

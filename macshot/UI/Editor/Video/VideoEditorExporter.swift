@@ -55,7 +55,6 @@ final class VideoEditorExporter {
         let project = document.project
         return settings.format == .gif || settings.scale < 0.999 || settings.quality != .high
             || project.hasEdits || document.cursorIsEditable || document.cameraURL != nil
-            || (document.overlaysAreEditable && document.hasKeystrokes)
     }
 
     /// Canvas size the export will have.

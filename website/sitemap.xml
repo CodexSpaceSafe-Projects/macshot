@@ -41,11 +41,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://macshot.io/screenshot-to-s3-mac</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://macshot.io/auto-redact-screenshot-mac</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

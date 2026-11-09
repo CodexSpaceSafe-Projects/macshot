@@ -748,7 +748,7 @@ extension VideoEditorWindowController {
         case "pause": playback.pause()
         case "section":
             let map: [String: VideoInspectorView.Section] = ["background": .background, "cursor": .cursor, "zoom": .zoom,
-                                                              "keystrokes": .keystrokes, "camera": .camera, "captions": .captions]
+                                                              "camera": .camera, "captions": .captions]
             if let s = map[args.first ?? ""] { inspector.show(section: s) }
         case "autozoom": autoZoom()
         case "deselect": doc.select(nil)

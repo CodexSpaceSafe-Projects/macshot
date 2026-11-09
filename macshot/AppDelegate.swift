@@ -207,12 +207,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     private var delayCountdownWindow: NSWindow?
     private var delayTimer: Timer?
     private var delayEscMonitor: Any?
-    #if !OFFLINE
-    private var uploadToastController: UploadToastController?
-    #endif
     /// Transient toast for failures that would otherwise be invisible — a save
     /// that couldn't be written, a recording that produced no file.
-    private var errorToastController: UploadToastController?
+    private var errorToastController: StatusToastController?
     private var recordingEngine: RecordingEngine?
     private var terminatingAfterRecording = false
     private let terminationCoordinator = ApplicationTerminationCoordinator()
@@ -223,7 +220,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     private var recordingScreenRect: NSRect = .zero  // screen-space capture rect
     private var recordingScreen: NSScreen?
     private var mouseHighlightOverlay: MouseHighlightOverlay?
-    private var keystrokeOverlay: KeystrokeOverlay?
     private var webcamOverlay: WebcamOverlay?
     private var selectionBorderOverlay: SelectionBorderOverlay?
     private var menuBarIconWasHidden: Bool = false  // restore after recording if user had it hidden
@@ -318,6 +314,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         updaterController.updater.automaticallyDownloadsUpdates = false
         setupMainMenu()
         setupStatusBar()
+        do { try RemovedFeatureCleanup.run() }
+        catch { showFailureToast("Could not remove retired credentials: \(error.localizedDescription)") }
         DistributedNotificationCenter.default().addObserver(
             self,
             selector: #selector(keyboardInputSourceDidChange),
@@ -1695,7 +1693,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         }
     }
 
-
     @objc private func handleShowAndOpenPrefs() {
         if UserDefaults.standard.bool(forKey: "hideMenuBarIcon") {
             UserDefaults.standard.set(false, forKey: "hideMenuBarIcon")
@@ -1986,20 +1983,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
             // Image already has beautify/effects baked in — disable to avoid double-applying
             DetachedEditorWindowController.open(image: image, historyEntryID: id, disableBeautify: true)
         }
-        #if !OFFLINE
-        controller.onUpload = { [weak self, weak controller] in
-            guard let self = self, let controller = controller else { return }
-            let image = controller.image
-            let data = controller.annotationData
-            ScreenshotHistory.shared.add(
-                image: image,
-                rawImage: data?.rawImage,
-                annotations: data?.annotations,
-                editState: data?.editState
-            )
-            self.showUploadProgress(image: image)
-        }
-        #endif
         controller.onTransform = { transformed in
             if let id = historyEntryID {
                 ScreenshotHistory.shared.updateEntry(id: id, compositedImage: transformed, rawImage: nil, annotations: nil)
@@ -2175,14 +2158,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
             copyPathToClipboard: copyPathToClipboard)
     }
 
-    #if !OFFLINE
-    // MARK: - Upload
-
-    func uploadImage(_ image: NSImage) {
-        showUploadProgress(image: image)
-    }
-    #endif
-
     @objc private func pinFromHistory(_ notification: Notification) {
         guard let image = notification.object as? NSImage else { return }
         showPin(image: image)
@@ -2192,13 +2167,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     /// any indication is worse than any error message.
     func showFailureToast(_ message: String) {
         errorToastController?.dismiss()
-        let toast = UploadToastController()
+        let toast = StatusToastController()
         errorToastController = toast
         toast.onDismiss = { [weak self] in
             self?.errorToastController = nil
         }
         toast.show(status: message)
-        toast.showError(message: message, asUploadFailure: false)
+        toast.showError(message: message)
     }
 
     func showPin(image: NSImage) {
@@ -2207,78 +2182,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         pin.show()
         pinControllers.append(pin)
     }
-
-    #if !OFFLINE
-    private func showUploadProgress(image: NSImage) {
-        uploadToastController?.dismiss()
-        let toast = UploadToastController()
-        uploadToastController = toast
-        toast.onDismiss = { [weak self] in
-            self?.uploadToastController = nil
-        }
-        toast.show(status: "Uploading...")
-
-        let provider = UserDefaults.standard.string(forKey: "uploadProvider") ?? "imgbb"
-
-        if provider == "gdrive" && !GoogleDriveUploader.shared.isSignedIn {
-            toast.showError(message: "Google Drive not signed in")
-            return
-        }
-
-        if provider == "s3" && !S3Uploader.shared.isConfigured {
-            toast.showError(message: "S3 not configured. Check Settings.")
-            return
-        }
-
-        if provider == "gdrive" {
-            GoogleDriveUploader.shared.uploadImage(image) { result in
-                switch result {
-                case .success(let link):
-                    let pasteboard = NSPasteboard.general
-                    pasteboard.clearContents()
-                    pasteboard.setString(link, forType: .string)
-                    toast.showSuccess(link: link, deleteURL: "")
-                case .failure(let error):
-                    toast.showError(message: error.localizedDescription)
-                }
-            }
-        } else if provider == "s3" {
-            S3Uploader.shared.uploadImage(image, progress: { fraction in
-                toast.updateProgress(fraction)
-            }) { result in
-                switch result {
-                case .success(let link):
-                    let pasteboard = NSPasteboard.general
-                    pasteboard.clearContents()
-                    pasteboard.setString(link, forType: .string)
-                    toast.showSuccess(link: link, deleteURL: "")
-                case .failure(let error):
-                    toast.showError(message: error.localizedDescription)
-                }
-            }
-        } else {
-            ImageUploader.upload(image: image) { result in
-                switch result {
-                case .success(let uploadResult):
-                    let pasteboard = NSPasteboard.general
-                    pasteboard.clearContents()
-                    pasteboard.setString(uploadResult.link, forType: .string)
-
-                    var uploads = UserDefaults.standard.array(forKey: "imgbbUploads") as? [[String: String]] ?? []
-                    uploads.append([
-                        "deleteURL": uploadResult.deleteURL,
-                        "link": uploadResult.link,
-                    ])
-                    UserDefaults.standard.set(uploads, forKey: "imgbbUploads")
-
-                    toast.showSuccess(link: uploadResult.link, deleteURL: uploadResult.deleteURL)
-                case .failure(let error):
-                    toast.showError(message: error.localizedDescription)
-                }
-            }
-        }
-    }
-    #endif
 
     // MARK: - Open Image
 
@@ -2693,24 +2596,6 @@ extension AppDelegate: OverlayWindowControllerDelegate {
         }
     }
 
-    func overlayDidRequestUpload(_ controller: OverlayWindowController, image: NSImage, annotationData: CaptureAnnotationData?) {
-        #if !OFFLINE
-        ScreenshotHistory.shared.add(
-            image: image,
-            rawImage: annotationData?.rawImage,
-            annotations: annotationData?.annotations,
-            editState: annotationData?.editState
-        )
-        let appToRefocus = previousApp
-        dismissOverlays(refocusPreviousApp: false)
-        showUploadProgress(image: image)
-        // Return focus — upload toast stays visible (hidesOnDeactivate=false)
-        if let app = appToRefocus, !app.isTerminated, app.bundleIdentifier != Bundle.main.bundleIdentifier {
-            DispatchQueue.main.async { AppDelegate.activateApp(app) }
-        }
-        #endif
-    }
-
     func overlayDidRequestStartRecording(_ controller: OverlayWindowController, rect: NSRect, screen: NSScreen) {
         recordingScreenRect = rect
         recordingScreen = screen
@@ -2827,8 +2712,7 @@ extension AppDelegate: OverlayWindowControllerDelegate {
         removeDelayEscMonitors()
     }
 
-    /// Recordings that open in the video editor keep the pointer, clicks and
-    /// keystrokes as data (default on).
+    /// Recordings that open in the video editor keep pointer and click data (default on).
     static let editablePointerDefaultsKey = "recordEditablePointer"
     static var recordsEditablePointer: Bool {
         UserDefaults.standard.object(forKey: editablePointerDefaultsKey) as? Bool ?? true
@@ -2934,15 +2818,6 @@ extension AppDelegate: OverlayWindowControllerDelegate {
             mouseHighlightOverlay = overlay
         }
 
-        // Start keystroke overlay if enabled
-        if UserDefaults.standard.bool(forKey: "recordKeystroke") && KeystrokeOverlay.hasInputMonitoringPermission {
-            let overlay = KeystrokeOverlay(screen: screen)
-            overlay.setRecordingRect(rect)
-            overlay.orderFrontRegardless()
-            overlay.startMonitoring()
-            keystrokeOverlay = overlay
-        }
-
         // Start webcam overlay if enabled — reuse existing session to avoid camera restart flash
         if UserDefaults.standard.bool(forKey: "recordWebcam") &&
            AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
@@ -2973,10 +2848,10 @@ extension AppDelegate: OverlayWindowControllerDelegate {
         enterRecordingMenuBarMode()
 
         // Collect window IDs of UI chrome to exclude from the recording
-        // (selection border + HUD). Webcam, mouse highlight, and keystroke
+        // (selection border + HUD). Webcam, mouse highlight
         // overlays are captured, unless the take opens in the video editor
         // with an editable pointer: then the editor renders the pointer,
-        // clicks and keystrokes from recorded data, restyleable afterwards.
+        // clicks from recorded data, restyleable afterwards.
         var excludeIDs: [CGWindowID] = []
         if let w = selectionBorderOverlay { excludeIDs.append(CGWindowID(w.windowNumber)) }
         if let w = recordingHUDPanel { excludeIDs.append(CGWindowID(w.windowNumber)) }
@@ -2984,7 +2859,6 @@ extension AppDelegate: OverlayWindowControllerDelegate {
         let editable = onStop == "editor" && Self.recordsEditablePointer
         if editable {
             if let w = mouseHighlightOverlay { excludeIDs.append(CGWindowID(w.windowNumber)) }
-            if let w = keystrokeOverlay { excludeIDs.append(CGWindowID(w.windowNumber)) }
             // The camera records to its own file when its frames can be
             // tapped; otherwise it stays in the pixels as before.
             if let webcam = webcamOverlay {
@@ -3005,13 +2879,6 @@ extension AppDelegate: OverlayWindowControllerDelegate {
             }
         }
         let cameraWindowID = engine.cameraRecorder != nil ? webcamOverlay.map { CGWindowID($0.windowNumber) } : nil
-        engine.onTelemetryStarted = { [weak self] telemetry in
-            guard editable else { return }
-            self?.keystrokeOverlay?.onKey = { [weak telemetry] code, mods, text in
-                telemetry?.recordKey(down: true, keyCode: code, modifiers: mods, characters: text)
-            }
-        }
-
         // Start recording
         engine.startRecording(rect: rect, screen: screen, fpsOverride: fpsOverride, excludeWindowNumbers: excludeIDs,
                               editablePointer: editable, cameraWindowID: cameraWindowID, appName: output.appName)
@@ -3266,9 +3133,6 @@ extension AppDelegate: OverlayWindowControllerDelegate {
         mouseHighlightOverlay?.stopMonitoring()
         mouseHighlightOverlay?.close()
         mouseHighlightOverlay = nil
-        keystrokeOverlay?.stopMonitoring()
-        keystrokeOverlay?.close()
-        keystrokeOverlay = nil
         webcamOverlay?.stopPreview()
         webcamOverlay?.close()
         webcamOverlay = nil
@@ -3392,10 +3256,10 @@ extension AppDelegate: OverlayWindowControllerDelegate {
 
     func overlayDidRequestInputMonitoringPermission(_ controller: OverlayWindowController) {
         dismissOverlays()
-        KeystrokeOverlay.requestInputMonitoringPermission()
+        CGRequestListenEventAccess()
         let alert = NSAlert()
         alert.messageText = L("Input Monitoring Required")
-        alert.informativeText = L("macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again.")
+        alert.informativeText = L("macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.")
         alert.alertStyle = .warning
         alert.addButton(withTitle: L("Open Settings"))
         alert.addButton(withTitle: L("Cancel"))

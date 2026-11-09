@@ -14,7 +14,6 @@ protocol OverlayViewDelegate: AnyObject {
     func overlayViewDidRequestOCR()
     func overlayViewDidRequestQuickSave()
     func overlayViewDidRequestFileSave()
-    func overlayViewDidRequestUpload()
     func overlayViewDidRequestShare(anchorView: NSView?)
     @available(macOS 14.0, *)
     func overlayViewDidRequestRemoveBackground()
@@ -629,7 +628,6 @@ class OverlayView: NSView {
     var smartMarkerEnabled: Bool =
         UserDefaults.standard.object(forKey: "smartMarkerEnabled") as? Bool ?? false
 
-
     var currentLoupeSize: CGFloat = {
         let saved = UserDefaults.standard.object(forKey: "loupeSize") as? Double
         return saved != nil ? CGFloat(saved!) : 120.0
@@ -743,7 +741,7 @@ class OverlayView: NSView {
 
     // Recording state
     var hasRecordingInputMonitoringPermission: Bool {
-        KeystrokeOverlay.hasInputMonitoringPermission
+        CGPreflightListenEventAccess()
     }
 
     var isRecording: Bool = false {  // true when recording toolbar is shown (pre-recording setup)
@@ -761,7 +759,7 @@ class OverlayView: NSView {
                 // Unavailable optional overlays stay off. Ask for Input
                 // Monitoring only when the user explicitly enables one, not
                 // merely on entering recording setup with saved preferences.
-                let enabledInputOverlays = ["recordMouseHighlight", "recordKeystroke"].filter {
+                let enabledInputOverlays = ["recordMouseHighlight"].filter {
                     UserDefaults.standard.bool(forKey: $0)
                 }
                 if !enabledInputOverlays.isEmpty && !hasRecordingInputMonitoringPermission {
@@ -2308,8 +2306,6 @@ class OverlayView: NSView {
 
                 // Loupe size picker
 
-                // Upload confirm picker
-
                 // Redact type picker
 
             }
@@ -3166,7 +3162,6 @@ class OverlayView: NSView {
         return String(format: "%02X%02X%02X", r, g, b)
     }
 
-
     // MARK: - Custom Color Persistence
     private func saveCustomColors() {
         let hexArray = customColors.map { color -> String in
@@ -3176,7 +3171,6 @@ class OverlayView: NSView {
         UserDefaults.standard.set(hexArray, forKey: "customColors")
     }
     /// The expanded rect including beautify padding (for live preview).
-
 
     private func drawBeautifyPreview(context: NSGraphicsContext) {
         let config = beautifyConfig
@@ -7970,48 +7964,17 @@ class OverlayView: NSView {
             }
             menu.popUp(
                 positioning: nil, at: NSPoint(x: 0, y: anchorView.bounds.height), in: anchorView)
-        case .upload:
-            #if !OFFLINE
-            showUploadConfirmPopover(
-                anchorRect: anchorView.convert(anchorView.bounds, to: self), anchorView: anchorView)
-            #endif
+
         case .translate:
             showTranslatePopover(
                 anchorRect: anchorView.convert(anchorView.bounds, to: self), anchorView: anchorView)
         case .micAudio:
             showMicDeviceMenu(anchorView: anchorView)
-        case .showKeystrokes:
-            showKeystrokeModeMenu(anchorView: anchorView)
         case .webcam:
             showWebcamDeviceMenu(anchorView: anchorView)
         default:
             break
         }
-    }
-
-    private func showKeystrokeModeMenu(anchorView: NSView) {
-        let menu = NSMenu()
-        let allKeys = UserDefaults.standard.bool(forKey: "keystrokeShowAll")
-
-        let shortcutsItem = NSMenuItem(title: L("Shortcuts Only"), action: #selector(keystrokeModeShortcuts), keyEquivalent: "")
-        shortcutsItem.target = self
-        if !allKeys { shortcutsItem.state = .on }
-        menu.addItem(shortcutsItem)
-
-        let allItem = NSMenuItem(title: L("All Keystrokes"), action: #selector(keystrokeModeAll), keyEquivalent: "")
-        allItem.target = self
-        if allKeys { allItem.state = .on }
-        menu.addItem(allItem)
-
-        menu.popUp(positioning: nil, at: NSPoint(x: 0, y: anchorView.bounds.height), in: anchorView)
-    }
-
-    @objc private func keystrokeModeShortcuts() {
-        UserDefaults.standard.set(false, forKey: "keystrokeShowAll")
-    }
-
-    @objc private func keystrokeModeAll() {
-        UserDefaults.standard.set(true, forKey: "keystrokeShowAll")
     }
 
     private func showMicDeviceMenu(anchorView: NSView) {
@@ -8373,35 +8336,7 @@ class OverlayView: NSView {
             overlayDelegate?.overlayViewDidConfirm()
         case .save:
             overlayDelegate?.overlayViewDidRequestSave()
-        case .upload:
-            #if !OFFLINE
-            let confirmEnabled = UserDefaults.standard.bool(forKey: "uploadConfirmEnabled")
-            if confirmEnabled {
-                let provider = UserDefaults.standard.string(forKey: "uploadProvider") ?? "imgbb"
-                let title: String
-                switch provider {
-                case "gdrive": title = L("Upload to Google Drive?")
-                case "s3": title = L("Upload to S3?")
-                default: title = L("Upload to imgbb.com?")
-                }
-                let alert = NSAlert()
-                alert.messageText = title
-                alert.informativeText = L("Your screenshot will be uploaded.")
-                alert.addButton(withTitle: L("Upload"))
-                alert.addButton(withTitle: L("Cancel"))
-                alert.alertStyle = .informational
-                // Temporarily lower window level so the alert is visible
-                let originalLevel = window?.level ?? .statusBar
-                window?.level = .normal
-                let response = alert.runModal()
-                window?.level = originalLevel
-                if response == .alertFirstButtonReturn {
-                    overlayDelegate?.overlayViewDidRequestUpload()
-                }
-            } else {
-                overlayDelegate?.overlayViewDidRequestUpload()
-            }
-            #endif
+
         case .share:
             // Show share picker anchored to the share button, then dismiss on selection
             let shareBtn = rightStripView?.buttonViews.first { if case .share = $0.action { return true }; return false }
@@ -8459,8 +8394,6 @@ class OverlayView: NSView {
             overlayDelegate?.overlayViewDidCancel()
         case .mouseHighlight:
             toggleInputMonitoredRecordingOverlay(forKey: "recordMouseHighlight")
-        case .showKeystrokes:
-            toggleInputMonitoredRecordingOverlay(forKey: "recordKeystroke")
         case .systemAudio:
             let current = UserDefaults.standard.bool(forKey: "recordSystemAudio")
             UserDefaults.standard.set(!current, forKey: "recordSystemAudio")
@@ -10166,7 +10099,6 @@ class OverlayView: NSView {
         UserDefaults.standard.set(Double(currentLoupeMagnification), forKey: "loupeMagnification")
         needsDisplay = true
     }
-
 
     /// Invalidate the cached layers so loupe appearance changes (outline color/
     /// toggle) repaint immediately.

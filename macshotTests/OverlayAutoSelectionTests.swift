@@ -263,7 +263,6 @@ final class RecordingOverlayDelegate: OverlayViewDelegate {
     func overlayViewDidRequestSaveAs() {}
     func overlayViewDidRequestPin() {}
     func overlayViewDidRequestFileSave() {}
-    func overlayViewDidRequestUpload() {}
     func overlayViewDidRequestShare(anchorView: NSView?) {}
     @available(macOS 14.0, *)
     func overlayViewDidRequestRemoveBackground() {}

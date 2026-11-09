@@ -19,7 +19,7 @@ struct RecordingConfiguration {
     /// Keep the system pointer out of the pixels; the editor draws it from
     /// recorded pointer data instead.
     var hidesCursor = false
-    /// Click and keystroke overlays are excluded from the pixels and
+    /// Click overlays are excluded from the pixels and
     /// rendered by the editor.
     var overlaysInTelemetry = false
     /// Webcam window excluded because the camera records to its own file.

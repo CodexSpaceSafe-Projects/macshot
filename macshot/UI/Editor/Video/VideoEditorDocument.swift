@@ -78,12 +78,11 @@ final class VideoEditorDocument {
     /// Revision bumps on every change; exports and caches key off it.
     private(set) var revision: UInt64 = 0
 
-    /// Cursor, click and keystroke rendering is available because the take
+    /// Cursor and click rendering is available because the take
     /// recorded them separately from its pixels.
     var cursorIsEditable: Bool { recording?.header.cursorHiddenInVideo == true && recording?.isEmpty == false }
     var overlaysAreEditable: Bool { recording?.header.overlaysInTelemetry == true }
     var hasPointerData: Bool { recording?.isEmpty == false }
-    var hasKeystrokes: Bool { !(recording?.keys.isEmpty ?? true) }
 
     var canUndo: Bool { !undoStack.isEmpty }
     var canRedo: Bool { !redoStack.isEmpty }

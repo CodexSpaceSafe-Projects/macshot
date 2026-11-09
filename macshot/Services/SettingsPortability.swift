@@ -62,8 +62,6 @@ enum SettingsPortability {
         "knownToolRawValues", "knownActionTags",
         "suppressMoveToApplications", "useWindowTitleInFilename",
         // Account PII / history that isn't credential-named but shouldn't leave the machine.
-        "gdriveUserEmail",
-        "imgbbUploads",   // uploaded image links + delete URLs
     ]
 
     /// Prefixes of OS/framework key families macOS injects into every app's domain. Stable —
@@ -116,7 +114,7 @@ enum SettingsPortability {
     /// Whether a key is safe to export/import.
     static func isPortable(_ key: String) -> Bool {
         // Machine-specific / migration macshot keys that would otherwise pass the shape rule.
-        if excludedKeys.contains(key) { return false }
+        if RemovedFeatureCleanup.isRetiredSetting(key) || excludedKeys.contains(key) { return false }
         // Secrets (fails closed) — checked before the allow-list so a secret can't be forced in.
         if looksSecret(key) { return false }
         // Explicitly-allowed macshot keys that don't match the lowercase shape rule.

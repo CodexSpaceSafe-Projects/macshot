@@ -2,7 +2,7 @@
 # Compile the production editor/media code into an isolated native UI probe.
 # Usage: scripts/probe-video-editor.sh /path/to/synthetic-fixture.mp4 [--audio-merge] [--normal]
 # Saves replace only the private copy printed below; the input is untouched.
-# Uploads and capture are disabled. Other app services are minimal stubs.
+# Capture is disabled. Other app services are minimal stubs.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 if [[ $# -lt 1 || ! -f "$1" ]]; then
@@ -46,7 +46,7 @@ sources=(
   macshot/Capture/EffectsVideoCompositor.swift
   macshot/Capture/GIFEncoder.swift
   macshot/Capture/GIFExporter.swift
-  macshot/Capture/KeystrokeTimeline.swift
+  macshot/Capture/CaptionTimeline.swift
   macshot/Capture/MediaExportPump.swift
   macshot/Capture/PreparedVideoSource.swift
   macshot/Capture/RecordingSessionStore.swift

@@ -109,7 +109,6 @@
 "QR Code" = "QR-kode";
 "QR Codes" = "QR-koder";
 "Open Link" = "\U00C5pne lenke";
-"Upload" = "Last opp";
 "Share" = "Del";
 "Undo" = "Angre";
 "Redo" = "Gj\U00F8r om";
@@ -158,7 +157,6 @@
 "PII" = "PII";
 "Faces" = "Ansikter";
 "People" = "Personer";
-"Confirm before upload" = "Bekreft f\U00F8r opplasting";
 "Flip" = "Speilvend";
 "Smooth" = "Jevn";
 "Refined" = "Forfinet";
@@ -213,7 +211,6 @@
 "Recording" = "Opptak";
 "About" = "Om";
 "Shortcuts" = "Snarveier";
-"Uploads" = "Opplastinger";
 "Language" = "Spr\U00E5k";
 "Language:" = "Spr\U00E5k:";
 "Restart the app to fully apply the new language." = "Start appen p\U00E5 nytt for \U00E5 bruke det nye spr\U00E5ket.";
@@ -331,14 +328,7 @@
 "GIF" = "GIF";
 
 /* Preferences - Upload */
-"Upload Service" = "Opplastingstjeneste";
-"Upload Provider" = "Opplastingsleverand\U00F8r";
 "Provider:" = "Leverand\U00F8r:";
-"Google Drive" = "Google Drive";
-"Google Drive (images + videos)" = "Google Drive (bilder + videoer)";
-"imgbb (images only)" = "imgbb (kun bilder)";
-"S3-Compatible (images + videos)" = "S3-kompatibel (bilder + videoer)";
-"S3-Compatible Storage" = "S3-kompatibel lagring";
 "Sign In with Google" = "Logg inn med Google";
 "Sign Out" = "Logg ut";
 "Signed in" = "Innlogget";
@@ -357,17 +347,7 @@
 "Secret Key:" = "Hemmelig n\U00F8kkel:";
 "Public URL:" = "Offentlig URL:";
 "Path Prefix:" = "Sti-prefiks:";
-"Make uploads publicly readable" = "Gj\U00F8r opplastinger offentlig lesbare";
-"Sends the public-read ACL so uploaded files are viewable by anyone with the link. Needed for AWS S3, DigitalOcean Spaces, MinIO and Backblaze B2, which store objects privately by default. Leave off for Cloudflare R2, which has no ACLs and rejects the header." = "Sender public-read ACL slik at opplastede filer kan ses av alle med lenken. N\U00F8dvendig for AWS S3, DigitalOcean Spaces, MinIO og Backblaze B2, som lagrer objekter privat som standard. La st\U00E5 av for Cloudflare R2, som ikke har ACL og avviser headeren.";
 "API key:" = "API-n\U00F8kkel:";
-"Upload History" = "Opplastingshistorikk";
-"No uploads yet." = "Ingen opplastinger enn\U00E5.";
-"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Basis-URL for offentlig tilgang. Hvis tom, brukes S3-endepunktets URL (som kanskje ikke er offentlig tilgjengelig).";
-"A shared key is included. Get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "En delt nøkkel er inkludert, få din egen gratis nøkkel på imgbb.com/api hvis du når hastighetsgrenser. Kun bilder (ingen støtte for video).";
-"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Fungerer med AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 og andre S3-kompatible tjenester. St\U00F8tter bilder og videoer.";
-"Configure S3 in Preferences" = "Konfigurer S3 i innstillingene";
-"Sign in to Google Drive in Preferences" = "Logg inn p\U00E5 Google Drive i innstillingene";
-"Video upload requires Google Drive or S3" = "Videoopplasting krever Google Drive eller S3";
 
 /* Preferences - About */
 "macshot" = "macshot";
@@ -389,10 +369,6 @@
 "Cancel" = "Avbryt";
 "Microphone Access Required" = "Mikrofontilgang p\U00E5krevd";
 "macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot trenger mikrofontillatelse for \U00E5 ta opp lyd. \U00C5pne Systeminnstillinger for \U00E5 gi tilgang.";
-"Upload to Google Drive?" = "Laste opp til Google Drive?";
-"Upload to S3?" = "Laste opp til S3?";
-"Upload to imgbb.com?" = "Laste opp til imgbb.com?";
-"Your screenshot will be uploaded." = "Skjermbildet ditt vil bli lastet opp.";
 
 /* Permission Onboarding */
 "Welcome to macshot" = "Velkommen til macshot";
@@ -411,7 +387,6 @@
 "Translate to:" = "Oversett til:";
 "%d chars \U00B7 %d words" = "%d tegn \U00B7 %d ord";
 "Copy  \U2318\U21A9" = "Kopier  \U2318\U21A9";
-"AI Search" = "AI-s\U00F8k";
 "Show Original" = "Vis original";
 "Translation Failed" = "Oversettelse mislyktes";
 "Translation" = "Oversettelse";
@@ -419,10 +394,6 @@
 
 /* Upload Toast */
 "URL copied to the clipboard" = "URL kopiert til utklippstavlen";
-"Uploading... %d%%" = "Laster opp\U2026 %d%%";
-"Upload failed: %@" = "Opplasting mislyktes: %@";
-"Uploaded! Link copied." = "Lastet opp! Lenke kopiert.";
-"Uploading to %@... %d%%" = "Laster opp til %@\U2026 %d%%";
 "Open" = "\U00C5pne";
 
 /* Recording Toast */
@@ -481,13 +452,9 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Inngangsoverv\U00E5king p\U00E5krevd";
-"macshot needs Input Monitoring permission to highlight mouse clicks or show keystrokes during recording. Please grant access in System Settings, then try again." = "macshot trenger tillatelse til inndataovervåking for å fremheve museklikk eller vise tastetrykk under opptak. Gi tilgang i Systeminnstillinger, og prøv igjen.";
 "macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot trenger tilgjengelighetstillatelse for å feste seg til enkelte grensesnittelementer. Gi tilgang i Systeminnstillinger og prøv igjen.";
 
 /* Recording — Keystroke Overlay */
-"Show Keystrokes" = "Vis tastetrykk";
-"Shortcuts Only" = "Kun snarveier";
-"All Keystrokes" = "Alle tastetrykk";
 
 /* Recording — Settings Popover */
 "Delay:" = "Forsinkelse:";
@@ -519,7 +486,7 @@
 
 /* New Strings */
 "Settings" = "Innstillinger";
-"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Frakoblet bygg: integrasjoner for opplasting og skylagring er fjernet. Oppdateringssøk kan fortsatt koble til MacShots oppdateringsserver. Skjermbilder og opptak forblir lokale med mindre du deler eller lagrer dem selv.";
+"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Settings..." = "Innstillinger...";
 "macshot Settings" = "macshot-innstillinger";
 "Also open in Editor" = "\U00C5pne ogs\U00E5 i redigering";
@@ -558,12 +525,8 @@
 "Pause" = "Pause";
 "Resume" = "Gjenoppta";
 "Engine:" = "Motor:";
-"Google Translate" = "Google Translate";
 "Apple (on-device)" = "Apple (p\U00E5 enheten)";
-"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple-oversettelse er raskere og fungerer uten nett. Google Translate st\U00F8tter flere spr\U00E5k.";
 "Download language packs in System Settings\U2026" = "Last ned spr\U00E5kpakker i Systeminnstillinger\U2026";
-"Configure S3 in Settings" = "Konfigurer S3 i innstillingene";
-"Sign in to Google Drive in Settings" = "Logg inn p\U00E5 Google Drive i innstillingene";
 "Position:" = "Posisjon:";
 "Size:" = "St\U00F8rrelse:";
 "Shape:" = "Form:";
@@ -576,7 +539,6 @@
 "Clear History?" = "Tøm historikk?";
 "This will permanently delete all screenshots from history." = "Dette vil slette alle skjermbilder fra historikken permanent.";
 "Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Klikk \"Angi\" og trykk en tastekombinasjon med minst én modifikatortast (⌘, ⌥, ⌃, ⇧) for å angi en snarvei.";
-"Files are uploaded to this folder in your Google Drive. Leave empty to use \"macshot\". macshot can only use folders it created itself, so a folder you made in Drive with the same name won't be reused. A new one is created instead. Everything stays private and nothing is shared publicly." = "Filer lastes opp til denne mappen i Google Disk. La feltet stå tomt for å bruke \"macshot\". macshot kan bare bruke mapper det har opprettet selv, så en mappe med samme navn som du har laget i Disk, blir ikke gjenbrukt, det opprettes en ny i stedet. Alt forblir privat, ingenting deles offentlig.";
 
 "Pressure" = "Trykk";
 
@@ -666,7 +628,7 @@
 "Export Settings…" = "Eksporter innstillinger…";
 "Import Settings…" = "Importer innstillinger…";
 "Reveal Settings File in Finder" = "Vis innstillingsfil i Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside macshot's app container." = "Eksporter innstillingene dine til en fil for å flytte dem til en annen Mac eller en ren installasjon. Opplastingslegitimasjon, lagringsmappen din og skjermbildehistorikk er ikke inkludert. Innstillingene lagres i macshots appbeholder.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
 "Export Settings" = "Eksporter innstillinger";
 "Import Settings" = "Importer innstillinger";
 "Import failed" = "Importen mislyktes";
@@ -676,7 +638,7 @@
 "Later" = "Senere";
 "Relaunch Now" = "Start på nytt nå";
 "Replace your current settings?" = "Erstatte nåværende innstillinger?";
-"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Import erstatter de nåværende innstillingene dine med dem i denne filen. Lagringsmappen din, opplastingslegitimasjon og skjermbildehistorikk beholdes. Dette kan ikke angres.";
+"Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
 "%d settings were applied. Relaunch macshot to apply all changes." = "%d innstillinger ble brukt. Start macshot på nytt for å bruke alle endringene.";
 "A few large items were too big to include. Everything else was saved." = "Noen få store elementer var for store til å inkluderes. Alt annet ble lagret.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Det egendefinerte Beautify-bakgrunnsbildet ditt var for stort til å inkluderes. Alt annet ble lagret.";
@@ -758,7 +720,7 @@
 "Duration" = "Varighet";
 "Edge highlight" = "Kantlys";
 "Edit Text" = "Rediger tekst";
-"Editable pointer, clicks and keystrokes" = "Redigerbar peker, klikk og tastetrykk";
+"Editable pointer and clicks" = "Editable pointer and clicks";
 "Edits" = "Redigeringer";
 "Export" = "Eksporter";
 "Export Subtitles (.srt)…" = "Eksporter undertekster (.srt)…";
@@ -786,8 +748,6 @@
 "Hold Focus" = "Hold fokus";
 "Idle delay" = "Inaktivitetsforsinkelse";
 "Image" = "Bilde";
-"Keystrokes" = "Tastetrykk";
-"Keystrokes in this recording are part of the video pixels." = "Tastetrykkene i dette opptaket er en del av videoens piksler.";
 "Light appearance" = "Lyst utseende";
 "Makes looping GIFs seamless" = "Gjør GIF-er i løkke sømløse";
 "Mirror" = "Speilvend";
@@ -820,10 +780,8 @@
 "Ripple" = "Krusning";
 "Save As…" = "Lagre som…";
 "Shape" = "Form";
-"Shortcuts only" = "Bare snarveier";
 "Show camera" = "Vis kamera";
 "Show captions" = "Vis undertekster";
-"Show keystrokes" = "Vis tastetrykk";
 "Show pointer" = "Vis peker";
 "Shrink during zooms" = "Krymp under zoom";
 "Smoothing" = "Utjevning";
@@ -842,7 +800,6 @@
 "Title" = "Tittel";
 "Transcribing…" = "Transkriberer…";
 "Transition" = "Overgang";
-"Turn on Show Keystrokes before recording. macshot then records them separately so you can style them here." = "Slå på Vis tastetrykk før opptak. macshot tar dem da opp separat, slik at du kan endre stilen her.";
 "Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Slå på kameraet før opptak. macshot tar det opp separat, slik at du kan flytte, endre størrelse, endre stil eller skjule det her, og krympe det under zoom.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Bruk Heldekkende for å skjule sensitiv informasjon: uskarphet og pikselering kan noen ganger reverseres.";
 "Visibility" = "Synlighet";
@@ -859,3 +816,5 @@
 
 "Snap webcam to corners when moved" = "Fest webkameraet til hjørnene når det flyttes";
 "Search emoji" = "Søk etter emoji";
+
+"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

@@ -330,7 +330,7 @@ nonisolated enum CameraPathBuilder {
 
 // MARK: - Auto zoom
 
-/// Suggests zoom segments from recorded clicks and typing, following the
+/// Suggests zoom segments from recorded clicks, following the
 /// pointer. Pure and deterministic.
 nonisolated enum AutoZoomPlanner {
     struct Suggestion: Equatable, Sendable {
@@ -352,15 +352,6 @@ nonisolated enum AutoZoomPlanner {
             let p = click.position
             guard (0...1).contains(p.x), (0...1).contains(p.y), range.contains(click.time) else { return nil }
             return Activity(time: click.time, point: p)
-        }
-        // Typing bursts: sample where the pointer (usually the caret area) is.
-        var lastKeyTime = -Double.infinity
-        for key in recording.keys where range.contains(key.time) {
-            if key.time - lastKeyTime > 0.8, let p = track?.position(at: key.time) ?? recording.rawPosition(at: key.time),
-               (0...1).contains(p.x), (0...1).contains(p.y) {
-                events.append(Activity(time: key.time, point: p))
-            }
-            lastKeyTime = key.time
         }
         events.sort { $0.time < $1.time }
         guard !events.isEmpty else { return [] }

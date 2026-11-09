@@ -28,10 +28,18 @@ jobs:
     steps:
       # ── 1. Checkout ────────────────────────────────────────────────────────
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           ref: ${{ github.event.inputs.tag || github.ref }}
           token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+
+      - name: Set up Python for verified release tooling
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+
+      - name: Test release tool verification
+        run: python3 scripts/test-prepare-sparkle-tools.py
 
       # ── 1b. Select Xcode 26 (macOS 26 SDK) ─────────────────────────────────
       - name: Select Xcode
@@ -104,6 +112,7 @@ jobs:
           xcodebuild \
             -project macshot.xcodeproj \
             -scheme macshot \
+            -onlyUsePackageVersionsFromResolvedFile \
             -configuration Release \
             -derivedDataPath build \
             CODE_SIGN_IDENTITY="" \
@@ -114,6 +123,7 @@ jobs:
           xcodebuild \
             -project macshot.xcodeproj \
             -scheme macshot \
+            -onlyUsePackageVersionsFromResolvedFile \
             -configuration Release \
             -derivedDataPath build \
             CODE_SIGN_IDENTITY="" \
@@ -126,6 +136,7 @@ jobs:
           xcodebuild \
             -project macshot.xcodeproj \
             -scheme macshot \
+            -onlyUsePackageVersionsFromResolvedFile \
             -configuration Release \
             -derivedDataPath build-offline \
             CODE_SIGN_IDENTITY="" \
@@ -150,16 +161,10 @@ jobs:
           expected_bundle_id = "com.sw33tlie.macshot.offline"
           expected_feed_url = "https://raw.githubusercontent.com/sw33tLie/macshot/main/appcast-offline.xml"
           plist["SUFeedURL"] = expected_feed_url
-          plist["CFBundleURLTypes"] = [
-              item for item in plist.get("CFBundleURLTypes", [])
-              if item.get("CFBundleURLName") != "Google OAuth"
-          ]
           if plist.get("CFBundleIdentifier") != expected_bundle_id:
               raise SystemExit(f"Offline bundle id mismatch: {plist.get('CFBundleIdentifier')}")
           if plist.get("SUFeedURL") != expected_feed_url:
               raise SystemExit(f"Offline Sparkle feed mismatch: {plist.get('SUFeedURL')}")
-          if any(item.get("CFBundleURLName") == "Google OAuth" for item in plist.get("CFBundleURLTypes", [])):
-              raise SystemExit("Offline build still contains Google OAuth URL scheme")
           plist_path.write_bytes(plistlib.dumps(plist))
           PYEOF
 
@@ -315,7 +320,7 @@ jobs:
 
       - name: Keep images for resuming
         if: ${{ !inputs.resume_run }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: notarization-${{ env.VERSION }}
           path: |
@@ -327,7 +332,7 @@ jobs:
 
       - name: Restore images from the earlier run
         if: ${{ inputs.resume_run }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: notarization-${{ env.VERSION }}
           run-id: ${{ inputs.resume_run }}
@@ -494,14 +499,13 @@ jobs:
         env:
           SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
         run: |
-          # Download Sparkle tools
-          SPARKLE_VERSION="2.6.4"
-          curl -L -o /tmp/Sparkle.tar.xz \
-            "https://github.com/sparkle-project/Sparkle/releases/download/${SPARKLE_VERSION}/Sparkle-${SPARKLE_VERSION}.tar.xz"
-          mkdir -p /tmp/sparkle
-          tar -xf /tmp/Sparkle.tar.xz -C /tmp/sparkle
-
-          echo "$SPARKLE_PRIVATE_KEY" > /tmp/sparkle_key
+          set -euo pipefail
+          umask 077
+          # Verification must succeed before a signing tool can access the key.
+          SPARKLE_TOOLS=$(python3 scripts/prepare-sparkle-tools.py)
+          SIGNING_KEY_FILE=$(mktemp)
+          trap 'rm -f "$SIGNING_KEY_FILE"; rm -rf "$SPARKLE_TOOLS"' EXIT
+          printf '%s\n' "$SPARKLE_PRIVATE_KEY" > "$SIGNING_KEY_FILE"
           DATE=$(date -R)
 
           if [ "$IS_BETA" = "true" ]; then
@@ -540,7 +544,7 @@ jobs:
             local ITEM_PATH="/tmp/new_item_${VARIANT}.xml"
             local STABLE_PATH="/tmp/stable_items_${VARIANT}.xml"
 
-            SIGN_OUTPUT=$(/tmp/sparkle/bin/sign_update "$DMG" --ed-key-file /tmp/sparkle_key)
+            SIGN_OUTPUT=$("$SPARKLE_TOOLS/tools/bin/sign_update" "$DMG" --ed-key-file "$SIGNING_KEY_FILE")
             echo "Sparkle signature output for $DMG: $SIGN_OUTPUT"
 
             ED_SIG=$(echo "$SIGN_OUTPUT" | sed -n 's/.*edSignature="\([^"]*\)".*/\1/p')
@@ -567,7 +571,6 @@ jobs:
 
           update_appcast "normal" "MacShot.dmg" "appcast.xml" "macshot" "macshot updates"
           update_appcast "offline" "MacShot-Offline.dmg" "appcast-offline.xml" "macshot Offline" "macshot Offline updates"
-          rm -f /tmp/sparkle_key
 
       # ── 11. Create GitHub Release ──────────────────────────────────────────
       - name: Create GitHub Release

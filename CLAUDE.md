@@ -20,9 +20,7 @@ macshot has two release variants:
 - **Normal:** product name `macshot`, bundle id `com.sw33tlie.macshot.macshot`, Sparkle feed `appcast.xml`, release asset `MacShot.dmg`.
 - **Offline:** product name `macshot Offline`, bundle id `com.sw33tlie.macshot.offline`, Sparkle feed `appcast-offline.xml`, release asset `MacShot-Offline.dmg`.
 
-The offline build is selected with the `OFFLINE` Swift compilation condition. Use `BuildVariant.isOffline` / `BuildVariant.displayName` for runtime variant checks and display names. Upload and cloud storage integrations must be compiled out of the offline build with `#if !OFFLINE`, including upload UI, upload shortcuts, upload settings, upload context menu items, and uploader implementations.
-
-The release workflow builds both variants from the same tag. It patches the offline app's `SUFeedURL` to `appcast-offline.xml`, removes the Google OAuth URL scheme from the offline app, signs both apps, packages both DMGs, notarizes both DMGs, and writes both appcasts. Do not point the offline app at the normal appcast or vice versa; Sparkle updates must stay variant-specific so offline users never update into the normal app.
+Both release variants exclude built-in uploads, web translation/search and keyboard capture. `OFFLINE` remains for bundle identity and update-feed compatibility. Translation uses installed Apple language packs on macOS 15+, with no network fallback. Normal and Offline update feeds must remain separate.
 
 Beta handling is shared: beta items get `<sparkle:channel>beta</sparkle:channel>`, and users opt in through the existing "Check for beta updates" setting. Stable offline releases will appear to offline users through `appcast-offline.xml` once a stable offline item exists.
 
@@ -52,13 +50,13 @@ macshot/
 │   ├── ScrollFrameAnalyzer.swift       # Pure pixel access + frozen header / scrollbar helpers
 │   ├── GIFExporter.swift              # Edited timeline → timestamped GIF frames
 │   ├── GIFEncoder.swift               # Bounded-memory streaming GIF writer
-│   ├── CursorTelemetry.swift          # Pointer/click/key data file format + media-clock view (CursorRecording)
+│   ├── CursorTelemetry.swift          # Pointer/click data file format + media-clock view (CursorRecording)
 │   ├── CursorTelemetryRecorder.swift  # Samples the pointer during a take (no permissions needed)
 │   ├── CursorMotion.swift             # Spring smoothing, idle/typing hiding, click timing
 │   ├── VideoSceneGeometry.swift       # Canvas/frame layout, camera path (zooms), auto-zoom planner
 │   ├── VideoSceneRenderer.swift       # Per-frame Core Image scene: frame, camera, cursor, overlays, webcam
 │   ├── VideoSceneBuilder.swift        # Main-actor snapshot builder: background art, sprites
-│   ├── KeystrokeTimeline.swift        # Keystroke labels + caption segmentation/SRT
+│   ├── CaptionTimeline.swift        # Caption segmentation/SRT
 │   ├── VideoCameraRecorder.swift      # Separate webcam file aligned to the screen clock
 │   ├── CameraPlacementTrack.swift     # Webcam bubble moves/resizes during a take, replayed by the editor
 │   └── VideoCaptionTranscriber.swift  # On-device speech → caption words
@@ -68,7 +66,7 @@ macshot/
 │   ├── BeautifyRenderer.swift          # Gradient frame / background beautification (linear + mesh gradients)
 │   ├── AutoRedactor.swift              # PII regex detection + Vision OCR → redaction annotations
 │   ├── TranslationOverlay.swift        # OCR → translate → overlay annotations
-│   ├── TranslationService.swift        # Google Translate API wrapper
+│   ├── TranslationService.swift        # On-device Apple Translation
 │   ├── VisionOCR.swift                 # Vision text recognition request factory
 │   ├── HotkeyManager.swift            # Global keyboard shortcut (Carbon RegisterEventHotKey)
 │   ├── KeyboardShortcutMatcher.swift   # Layout-aware character matching for shortcuts
@@ -79,12 +77,6 @@ macshot/
 │   ├── LanguageManager.swift           # Locale resolution + L("…") lookup
 │   ├── ScreenshotHistory.swift         # Local history in ~/Library/Application Support/
 │   └── SaveDirectoryAccess.swift       # Security-scoped bookmark for save directory
-│
-├── Upload/
-│   ├── UploadPayload.swift             # Streamed upload bodies (chunking, incremental SHA256, multipart on disk)
-│   ├── ImgbbUploader.swift             # imgbb image upload
-│   ├── GoogleDriveUploader.swift       # Google Drive OAuth2 upload
-│   └── S3Uploader.swift               # S3-compatible upload
 │
 ├── UI/
 │   ├── Overlay/
@@ -141,7 +133,7 @@ macshot/
 │       ├── PreferencesWindowController.swift  # Settings: General, Tools, Recording tabs
 │       ├── OCRResultController.swift          # Text recognition results window with translation
 │       ├── HistoryOverlayController.swift     # Recent captures visual overlay panel
-│       ├── UploadToastController.swift        # Upload progress/success toast
+│       ├── StatusToastController.swift        # Save/recording failure toast
 │       ├── RecordingControlView.swift         # Click-through recording control overlay
 │       ├── RecordingToastView.swift           # Toast notification after recording completes
 │       ├── CountdownView.swift                # Delay capture countdown display
@@ -158,7 +150,7 @@ macshot/
 - NSStatusItem in menu bar with "Capture Screen", "Recent Captures", "Preferences...", "Quit"
 - Registers global hotkey via HotkeyManager
 - On trigger: ScreenCaptureManager captures all screens → creates one OverlayWindowController per screen
-- Implements `OverlayWindowControllerDelegate` — handles confirm, cancel, pin, OCR, recording, scroll capture, upload, delay
+- Implements `OverlayWindowControllerDelegate` — handles confirm, cancel, pin, OCR, recording, scroll capture, delay
 - Manages: `overlayControllers[]`, `thumbnailControllers[]`, `pinControllers[]`, `ocrController`, `recordingEngine`, `scrollCaptureController`
 
 #### OverlayView — The Main Interaction Surface
@@ -232,10 +224,10 @@ TextEditingCanvas                — Coordinate transforms + annotation storage 
 
 ### Video editor (Studio)
 
-The video editor is built around `VideoEditorDocument` (one `VideoProject`: timeline edits plus the look — frame/background, pointer, zoom, keystrokes, camera, captions). Views observe it; they never keep copies. Undo is a stack of encoded project snapshots; group continuous interactions with `beginGesture()`/`endGesture()`. Projects autosave beside a recording (`<take>.project.json`) or in `VideoProjects/` for other files, and decode leniently.
+The video editor is built around `VideoEditorDocument` (one `VideoProject`: timeline edits plus the look — frame/background, pointer, zoom, camera, captions). Views observe it; they never keep copies. Undo is a stack of encoded project snapshots; group continuous interactions with `beginGesture()`/`endGesture()`. Projects autosave beside a recording (`<take>.project.json`) or in `VideoProjects/` for other files, and decode leniently.
 
-- **One render path.** `VideoRenderPlanner` builds every composition (preview and all exports) and the compositor renders `VideoSceneSnapshot` through `VideoSceneRenderer`: censors in content space → crop and framed placement → camera over the whole canvas (with motion blur) → text, pointer, clicks, camera bubble, keystrokes and captions in output space. Preview only lowers the render scale. Don't add effects to one path only.
-- **Recorded pointer data.** Every take writes `cursor.mstl` (`CursorTelemetry`) beside the MP4. Takes that open in the editor with "Editable pointer" hide the system cursor from ScreenCaptureKit and exclude the click/keystroke/webcam overlay windows; the editor redraws them. Any other destination keeps them in the pixels. Telemetry is host-clock based and anchored to the writer's first frame (`MP4WriterSession` `onSessionStart`); pauses are removed exactly like the writer removes them. Telemetry and camera failures never affect the screen recording.
+- **One render path.** `VideoRenderPlanner` builds every composition (preview and all exports) and the compositor renders `VideoSceneSnapshot` through `VideoSceneRenderer`: censors in content space → crop and framed placement → camera over the whole canvas (with motion blur) → text, pointer, clicks, camera bubble and captions in output space. Preview only lowers the render scale. Don't add effects to one path only.
+- **Recorded pointer data.** Every take writes `cursor.mstl` (`CursorTelemetry`) beside the MP4. Takes that open in the editor with "Editable pointer" hide the system cursor from ScreenCaptureKit and exclude the click/webcam overlay windows; the editor redraws them. Any other destination keeps them in the pixels. Telemetry is host-clock based and anchored to the writer's first frame (`MP4WriterSession` `onSessionStart`); pauses are removed exactly like the writer removes them. Telemetry and camera failures never affect the screen recording.
 - **Time-dependent motion is precomputed and pure.** Cursor smoothing (`CursorMotion`) and the camera path (`CameraPathBuilder`) are sampled deterministically so scrubbing, playback and export produce identical frames. Motion-blur averaging must weight alpha only (Core Image color matrices are unpremultiplied).
 - **Webcam.** When the camera records separately, `VideoCompositionBuilder` adds its track in lockstep with every cut/speed/freeze piece.
 - **Visual checks.** `scripts/probe-video-editor.sh` builds the real editor into an isolated app; with `-D VIDEO_EDITOR_PROBE` it accepts scripted commands (`PROBE_COMMANDS` file) and renders in-process snapshots, including the preview frame. `scripts/make-studio-fixture.swift` generates a synthetic recording with pointer data.
@@ -262,16 +254,14 @@ The video editor is built around `VideoEditorDocument` (one `VideoProject`: time
 - Recording: `recordingFormat` (mp4/gif), `recordingFPS`, `recordingOnStop`
 - History: `historySize`
 - Tools: `enabledTools`, `knownToolRawValues`
-- Features: `imgbbAPIKey`, `beautifyEnabled`, `beautifyStyleIndex`, `beautifyMode`, `beautifyPadding`, `beautifyCornerRadius`, `beautifyShadowRadius`, `pencilSmoothEnabled`, `loupeSize`, `stampSize`, `translateTargetLang`
+- Features: `beautifyEnabled`, `beautifyStyleIndex`, `beautifyMode`, `beautifyPadding`, `beautifyCornerRadius`, `beautifyShadowRadius`, `pencilSmoothEnabled`, `loupeSize`, `stampSize`, `translateTargetLang`
 - Styles: `currentLineStyle`, `currentArrowStyle`, `currentRectFillStyle`, `currentRectCornerRadius`
-- Upload: `uploadProvider` (imgbb/gdrive), `googleDriveRefreshToken`, `gdriveFolderName` (Drive destination folder, defaults to "macshot"), `uploadConfirmEnabled`
 
 ### Threading Model
 - **Capture:** Displays are captured one at a time, the one under the pointer first (on macOS 26 `replayd` serializes concurrent screenshot requests and charges far more per queued request). Each display's overlay is shown as soon as its capture lands; keyboard focus stays on the display with a selection, else the one under the pointer, and a partial failure falls back only for the displays not yet shown.
 - **Recording:** SCStream output on background thread, main actor for state updates
 - **Scroll capture:** Frames grabbed every 50 ms while scrolling (a mouse wheel animates without events) plus a settled capture after; matching/stitching on main, serialized by `isCapturing`
 - **OCR:** VNImageRequestHandler on background thread, results to main
-- **Upload:** URLSession background task
 - **GIF:** Frame encoding on background thread
 - **UI:** All drawing, state changes, and user interaction on main thread
 
@@ -293,11 +283,11 @@ Pencil, Line, Arrow, Rectangle, Filled Rectangle, Ellipse, Marker/Highlighter, T
 - **Stamp tool:** Place emoji or custom images, load from file
 
 ### Output Actions
-Copy to clipboard, Save to file (PNG/JPEG/HEIC/WebP), Pin (floating always-on-top), OCR with translation (30+ languages), Upload to imgbb or Google Drive (OAuth2), Remove background (VNGenerateForegroundInstanceMaskRequest), Open in editor, Beautify (30 gradient styles including 7 mesh gradients on macOS 15+), Flip horizontal/vertical
+Copy to clipboard, Save to file (PNG/JPEG/HEIC/WebP), Pin (floating always-on-top), OCR with on-device translation (macOS 15+), Remove background (VNGenerateForegroundInstanceMaskRequest), Open in editor, Beautify (30 gradient styles including 7 mesh gradients on macOS 15+), Flip horizontal/vertical
 
 ### Advanced
 - **Editor Window:** Standalone resizable window for post-capture editing, full annotation tools, zoom 0.1x–8x via NSScrollView
-- **Video Editor:** Standalone video editor window for trimming, exporting, and uploading recorded videos
+- **Video Editor:** Standalone video editor window for trimming and exporting recorded videos
 - **Screen Recording:** MP4/GIF, annotation mode during recording, configurable FPS (up to 120fps), mouse click highlighting, system audio capture
 - **Scroll Capture:** Automatic scroll detection + stitching. `ScrollFrameMatcher` matches only the columns that scroll, cancels fixed backgrounds and leaves out navbars (translucent too) and pinned boxes; `ScrollStitcher` shows headers, sidebars and bottom banners once
 - **Auto-Redact:** Right-click filled rect → regex patterns (emails, phones, SSN, credit cards, IPs, AWS keys, bearer tokens)
@@ -341,8 +331,6 @@ Copy to clipboard, Save to file (PNG/JPEG/HEIC/WebP), Pin (floating always-on-to
 - **Offline bitrate targets differ from capture.** Medium/Low MP4 exports use `VideoExportEncodingPlan`, with source metadata loaded during preparation. Do not apply live-recording bitrate minimums or estimate size by multiplying input bytes by a quality percentage. For comparable H.264 sources with near-uniform cadence, estimates use the same target settings and edited duration as export, including audio. Omit estimates for sparse or unknown cadence, different codecs, High and GIF; fallback encoder budgets are not size predictions. Keep file/track metadata reads out of editor drawing.
 - **Video cadence is not the shortest sample.** Idle heartbeats and final tails produce variable timing. `VideoFrameCadence` stores the intended interval in MP4's supported software metadata field and performs a bounded background timing inspection for unmarked files. Cache that interval during preparation and reuse it for preview, rendering and bitrate targets; preserve it through audio mixing and MP4 exports. Do not derive rendering FPS from a single minimum interval or the average across long idle gaps.
 - **GIF export streams.** Use `GIFExporter` with the processed timeline and an explicit output cadence. `GIFEncoder` consumes presentation timestamps and writes one ImageIO-encoded frame at a time, combining unchanged pixels into holds. Do not accumulate an animation in one ImageIO destination, decimate by guessed source FPS, or spool every frame into scratch PNGs.
-- **Uploads stream, they don't buffer.** A recording is routinely larger than the memory the app can hold, so uploaders take an `UploadPayload` (`.file` for recordings, `.data` for encoded screenshots). `UploadPayload` chunks, hashes incrementally for SigV4, and `MultipartBodyWriter` writes request bodies straight to a temp file. Don't reintroduce `Data(contentsOf:)` on a recording.
-- **Upload bodies and callbacks belong to one job.** Prepare `PreparedUploadBody` off the main actor, hash the bytes while writing that owned body, and retain it through every retry. Never reread the public source for a retry or put progress on a shared uploader property. `UploadJob` participates in the existing quit drain; completion owns source leases until the request finishes. Drive retries reuse one pre-generated file ID and one multipart body. Account/cache changes stay on the main actor, and stale responses must not restore signed-out credentials or folders. Verify requests with local fixtures, not live cloud uploads.
 - **Keyboard shortcuts:** Character-based commands must go through `KeyboardShortcutMatcher`; do not compare raw letter key codes or read `charactersIgnoringModifiers` directly. The matcher follows the character produced by rearranged Latin layouts such as QWERTZ, AZERTY, and Dvorak, while falling back through the user's ASCII-capable layout for non-Latin input sources such as Russian or Arabic. Use `EditorCommandShortcutManager` for configurable Undo/Redo chords and `ToolShortcutManager` plus `KeyboardShortcutMatcher.toolCharacters(for:)` for single-key overlay tools. Raw `event.keyCode` checks are appropriate only for layout-independent non-character keys such as Escape, Return, Tab, Space, Delete, arrows, and function keys. Global Carbon hotkeys remain physical key-code bindings; translate them only for display with `KeyboardShortcutMatcher.currentLayoutCharacter(for:)`, and disable `NSMenuItem` automatic key-equivalent localization after applying an already-translated physical binding.
 - `autoreleasepool` for overlay teardown to prevent memory spikes
 - Extension files (`OverlayView+Feature.swift`) for self-contained feature code that accesses OverlayView state but is logically separate (recording overlays, scroll capture HUD, window snapping, popovers)
@@ -350,10 +338,10 @@ Copy to clipboard, Save to file (PNG/JPEG/HEIC/WebP), Pin (floating always-on-to
 - **Focus management:** macshot is an `LSUIElement` (menu bar app) that temporarily shows windows. All focus return is handled by `AppDelegate.returnFocusIfNeeded()` — one centralized method. Rules:
   - `previousApp` is captured in `startCapture()` before the overlay steals focus. Cleared after single use.
   - `returnFocusIfNeeded()` checks for visible titled windows, switches to `.accessory` policy, activates `previousApp`. When `previousApp` is nil it activates the frontmost non-macshot app instead. It deliberately does **not** call `NSApp.hide(nil)`: that can suspend the Carbon event loop and break global hotkeys.
-  - `dismissOverlays(refocusPreviousApp: true)` (default) calls `returnFocusIfNeeded()`. Pass `false` only when macshot creates floating panels immediately after (pin, upload toast, recording HUD).
-  - **Pattern for pin/upload/OCR-window paths:** an overlay dismiss that creates a floating panel afterward should: (1) save `previousApp` locally, (2) `dismissOverlays(refocusPreviousApp: false)`, (3) create the panel, (4) manually `app.activate(options: .activateIgnoringOtherApps)` on the saved app. See `overlayDidRequestPin` and `overlayDidRequestUpload`. (This originally guarded against the `NSApp.hide(nil)` fallback, which no longer exists; the ordering still gives the panel a clean hand-off.)
+  - `dismissOverlays(refocusPreviousApp: true)` (default) calls `returnFocusIfNeeded()`. Pass `false` only when macshot creates floating panels immediately after (pin, error toast, recording HUD).
+  - **Pattern for pin/OCR-window paths:** an overlay dismiss that creates a floating panel afterward should: (1) save `previousApp` locally, (2) `dismissOverlays(refocusPreviousApp: false)`, (3) create the panel, (4) manually `app.activate(options: .activateIgnoringOtherApps)` on the saved app. See `overlayDidRequestPin`. (This originally guarded against the `NSApp.hide(nil)` fallback, which no longer exists; the ordering still gives the panel a clean hand-off.)
   - Every window close (editor, video editor, OCR, preferences) calls `returnFocusIfNeeded()` — never inline `setActivationPolicy`/`activate` directly.
-  - All floating panels (thumbnails, pins, upload toasts, HUD, overlays) must set `hidesOnDeactivate = false` so they survive app deactivation. Pin windows must use `orderFrontRegardless()` instead of `makeKeyAndOrderFront` to avoid activating macshot.
+  - All floating panels (thumbnails, pins, status toasts, HUD, overlays) must set `hidesOnDeactivate = false` so they survive app deactivation. Pin windows must use `orderFrontRegardless()` instead of `makeKeyAndOrderFront` to avoid activating macshot.
   - `NSApp.activate(options: .activateIgnoringOtherApps)` is the only reliable way to switch focus to another app — plain `activate()` and `NSApp.deactivate()` do not reliably transfer focus on macOS 26.
   - `NSApp.hide(nil)` transfers focus but hides ALL windows and can suspend the Carbon event loop that global hotkeys depend on — don't reintroduce it.
 
