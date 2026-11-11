@@ -158,7 +158,7 @@ jobs:
 
       - name: Verify offline sandbox
         run: |
-          codesign -d --entitlements - "$APP_PATH" > "$RUNNER_TEMP/offline-entitlements.plist"
+          codesign -d --entitlements - --xml "$APP_PATH" > "$RUNNER_TEMP/offline-entitlements.plist"
           python3 - <<'PY'
           import os
           import plistlib
