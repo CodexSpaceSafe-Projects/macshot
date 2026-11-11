@@ -495,7 +495,7 @@ class ScreenCaptureManager {
             } catch {
                 timing?("captureAllScreens error \(error.localizedDescription)")
                 #if DEBUG
-                    NSLog("macshot: screen capture error: \(error.localizedDescription)")
+                    NSLog("MShot: screen capture error: \(error.localizedDescription)")
                 #endif
                 await MainActor.run { completion([]) }
             }

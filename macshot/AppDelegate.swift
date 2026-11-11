@@ -616,7 +616,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        os_log(.fault, log: timingLog, "macshot terminating — thermalState=%d", ProcessInfo.processInfo.thermalState.rawValue)
+        os_log(.fault, log: timingLog, "MShot terminating — thermalState=%d", ProcessInfo.processInfo.thermalState.rawValue)
         // Normal quit drains the recording writer and coordinated exports.
         // A force quit leaves the durable take in place.
         for (_, controller) in overlayControllerPool {
