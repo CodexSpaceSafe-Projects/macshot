@@ -34,7 +34,6 @@
 "Open from Clipboard" = "เปิดจากคลิปบอร์ด";
 "Pin from Clipboard" = "ปักหมุดจากคลิปบอร์ด";
 "Preferences..." = "การตั้งค่า...";
-"Check for Updates..." = "ตรวจสอบอัปเดต...";
 "Quit macshot" = "ออกจาก macshot";
 "No recent captures" = "ไม่มีภาพที่จับล่าสุด";
 "Clear History" = "ล้างประวัติ";
@@ -243,8 +242,6 @@
 "Choose the order of capture actions in the macshot menu bar menu." = "เลือกลำดับของการดำเนินการจับภาพในเมนูแถบเมนูของ macshot";
 "Move up" = "เลื่อนขึ้น";
 "Move down" = "เลื่อนลง";
-"Check for updates automatically" = "ตรวจสอบอัปเดตอัตโนมัติ";
-"Check for beta updates" = "ตรวจสอบอัปเดตเบต้า";
 "Thumbnail" = "ภาพขนาดย่อ";
 "  Dismiss after:" = "  ปิดหลังจาก:";
 "seconds before auto-dismiss (0 = never)" = "วินาทีก่อนปิดอัตโนมัติ (0 = ไม่ปิด)";
@@ -525,7 +522,6 @@
 "Engine:" = "เครื่องมือ:";
 "Apple (on-device)" = "Apple (บนอุปกรณ์)";
 "Download language packs in System Settings…" = "ดาวน์โหลดชุดภาษาในการตั้งค่าระบบ…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "ตำแหน่ง:";
 "  Position:" = "  ตำแหน่ง:";
 "Size:" = "ขนาด:";

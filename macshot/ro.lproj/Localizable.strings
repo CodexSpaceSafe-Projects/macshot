@@ -32,7 +32,6 @@
 "Open from Clipboard" = "Deschide din clipboard";
 "Pin from Clipboard" = "Fixează din clipboard";
 "Preferences..." = "Preferințe...";
-"Check for Updates..." = "Verifică actualizări...";
 "Quit macshot" = "Închide macshot";
 "No recent captures" = "Nicio captură recentă";
 "Clear History" = "Șterge istoricul";
@@ -221,8 +220,6 @@
 "Default" = "Implicit";
 "Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Introdu orice nume de SF Symbol (ex. camera.fill) sau alege o presetare. Răsfoiește numele în aplicația SF Symbols de la Apple. Numele invalide revin la pictograma implicită.";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Scurtăturile funcționează în continuare. Pentru a afișa din nou pictograma, repornește macshot.";
-"Check for updates automatically" = "Verifică actualizările automat";
-"Check for beta updates" = "Verifică actualizările beta";
 "Thumbnail" = "Miniatură";
 "  Dismiss after:" = "  Închide după:";
 "seconds before auto-dismiss (0 = never)" = "secunde înainte de închidere automată (0 = niciodată)";
@@ -518,7 +515,6 @@
 "Engine:" = "Motor:";
 "Apple (on-device)" = "Apple (pe dispozitiv)";
 "Download language packs in System Settings…" = "Descarcă pachetele de limbi din Setările sistemului…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Poziție:";
 "Size:" = "Dimensiune:";
 "Shape:" = "Formă:";

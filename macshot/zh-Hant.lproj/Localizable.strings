@@ -34,7 +34,6 @@
 "Open from Clipboard" = "從剪貼簿開啟";
 "Pin from Clipboard" = "從剪貼簿釘選";
 "Preferences..." = "偏好設定⋯";
-"Check for Updates..." = "檢查更新⋯";
 "Quit macshot" = "結束 macshot";
 "No recent captures" = "沒有最近的擷取";
 "Clear History" = "清除歷史記錄";
@@ -243,8 +242,6 @@
 "Choose the order of capture actions in the macshot menu bar menu." = "選擇 macshot 選單列選單中擷取動作的順序。";
 "Move up" = "上移";
 "Move down" = "下移";
-"Check for updates automatically" = "自動檢查更新";
-"Check for beta updates" = "檢查測試版更新";
 "Thumbnail" = "縮圖";
 "  Dismiss after:" = "  自動關閉：";
 "seconds before auto-dismiss (0 = never)" = "秒後自動關閉（0 = 永不）";
@@ -527,7 +524,6 @@
 "Engine:" = "引擎：";
 "Apple (on-device)" = "Apple（裝置端）";
 "Download language packs in System Settings…" = "在系統設定中下載語言套件⋯";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "位置：";
 "  Position:" = "  位置：";
 "Size:" = "大小：";

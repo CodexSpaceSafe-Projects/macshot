@@ -34,7 +34,6 @@
 "Open from Clipboard" = "Buksan mula sa Clipboard";
 "Pin from Clipboard" = "I-pin mula sa Clipboard";
 "Preferences..." = "Mga Kagustuhan...";
-"Check for Updates..." = "Tingnan ang mga Update...";
 "Quit macshot" = "Isara ang macshot";
 "No recent captures" = "Walang kamakailang pagkuha";
 "Clear History" = "Burahin ang Kasaysayan";
@@ -240,8 +239,6 @@
 "Choose the order of capture actions in the macshot menu bar menu." = "Piliin ang pagkakasunod-sunod ng mga aksyon sa pagkuha sa menu ng menu bar ng macshot.";
 "Move up" = "Ilipat pataas";
 "Move down" = "Ilipat pababa";
-"Check for updates automatically" = "Awtomatikong tingnan ang mga update";
-"Check for beta updates" = "Tingnan ang mga beta update";
 "Thumbnail" = "Thumbnail";
 "  Dismiss after:" = "  I-dismiss pagkatapos ng:";
 "seconds before auto-dismiss (0 = never)" = "segundo bago mag-auto-dismiss (0 = hindi kailanman)";
@@ -623,7 +620,6 @@
 "Enable macshot:// URL scheme" = "I-enable ang macshot:// URL scheme";
 "sec (0 = never)" = "seg (0 = hindi kailanman)";
 "Settings" = "Settings";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "Backup ng Mga Setting";

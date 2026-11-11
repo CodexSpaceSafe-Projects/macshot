@@ -34,7 +34,6 @@
 "Open from Clipboard" = "Mở từ bộ nhớ tạm";
 "Pin from Clipboard" = "Ghim từ bộ nhớ tạm";
 "Preferences..." = "Tùy chọn...";
-"Check for Updates..." = "Kiểm tra cập nhật...";
 "Quit macshot" = "Thoát macshot";
 "No recent captures" = "Không có ảnh chụp gần đây";
 "Clear History" = "Xóa lịch sử";
@@ -243,8 +242,6 @@
 "Choose the order of capture actions in the macshot menu bar menu." = "Chọn thứ tự các hành động chụp trong menu thanh menu của macshot.";
 "Move up" = "Di chuyển lên";
 "Move down" = "Di chuyển xuống";
-"Check for updates automatically" = "Tự động kiểm tra cập nhật";
-"Check for beta updates" = "Kiểm tra bản cập nhật beta";
 "Thumbnail" = "Ảnh thu nhỏ";
 "  Dismiss after:" = "  Ẩn sau:";
 "seconds before auto-dismiss (0 = never)" = "giây trước khi tự động ẩn (0 = không bao giờ)";
@@ -525,7 +522,6 @@
 "Engine:" = "Công cụ:";
 "Apple (on-device)" = "Apple (trên thiết bị)";
 "Download language packs in System Settings…" = "Tải gói ngôn ngữ trong Cài đặt hệ thống…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Vị trí:";
 "  Position:" = "  Vị trí:";
 "Size:" = "Kích thước:";

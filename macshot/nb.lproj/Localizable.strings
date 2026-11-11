@@ -34,7 +34,6 @@
 "Open from Clipboard" = "\U00C5pne fra utklippstavlen";
 "Pin from Clipboard" = "Fest fra utklippstavlen";
 "Preferences..." = "Innstillinger\U2026";
-"Check for Updates..." = "Se etter oppdateringer\U2026";
 "Quit macshot" = "Avslutt macshot";
 "No recent captures" = "Ingen nylige opptak";
 "Clear History" = "T\U00F8m historikk";
@@ -230,8 +229,6 @@
 "Use window title in saved filename" = "Bruk vindustittel i lagret filnavn";
 "Hide menu bar icon" = "Skjul menylinje-ikon";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Hurtigtastene fungerer fortsatt. For \U00E5 vise ikonet igjen, start macshot p\U00E5 nytt.";
-"Check for updates automatically" = "Se etter oppdateringer automatisk";
-"Check for beta updates" = "Se etter betaoppdateringer";
 "Thumbnail" = "Miniatyrbilde";
 "  Dismiss after:" = "  Lukk etter:";
 "seconds before auto-dismiss (0 = never)" = "sekunder f\U00F8r automatisk lukking (0 = aldri)";
@@ -486,7 +483,6 @@
 
 /* New Strings */
 "Settings" = "Innstillinger";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Settings..." = "Innstillinger...";
 "macshot Settings" = "macshot-innstillinger";
 "Also open in Editor" = "\U00C5pne ogs\U00E5 i redigering";

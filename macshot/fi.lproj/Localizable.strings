@@ -34,7 +34,6 @@
 "Open from Clipboard" = "Avaa leikepöydältä";
 "Pin from Clipboard" = "Kiinnitä leikepöydältä";
 "Preferences..." = "Asetukset...";
-"Check for Updates..." = "Tarkista päivitykset...";
 "Quit macshot" = "Lopeta macshot";
 "No recent captures" = "Ei viimeaikaisia kaappauksia";
 "Clear History" = "Tyhjennä historia";
@@ -230,8 +229,6 @@
 "Use window title in saved filename" = "Käytä ikkunan otsikkoa tiedostonimessä";
 "Hide menu bar icon" = "Piilota valikkopalkin kuvake";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Pikanäppäimet toimivat edelleen. Näytä kuvake uudelleen käynnistämällä macshot.";
-"Check for updates automatically" = "Tarkista päivitykset automaattisesti";
-"Check for beta updates" = "Tarkista beetapäivitykset";
 "Thumbnail" = "Pienoiskuva";
 "  Dismiss after:" = "  Hylkää jälkeen:";
 "seconds before auto-dismiss (0 = never)" = "sekuntia ennen automaattista hylkäämistä (0 = ei koskaan)";
@@ -621,7 +618,6 @@
 "Enable macshot:// URL scheme" = "Ota macshot://-URL-skeema k\U00E4ytt\U00F6\U00F6n";
 "sec (0 = never)" = "s (0 = ei koskaan)";
 "Settings" = "Asetukset";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "Asetusten varmuuskopio";

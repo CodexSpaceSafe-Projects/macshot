@@ -1,7 +1,9 @@
-# macshot
+# macshot Offline
 
-> [!IMPORTANT]
-> **Updating to 4.4.0 from 4.3.x or earlier?** macshot's developer signature changed in 4.4.0, so macOS may require you to grant permissions again. If Screen Recording looks enabled but capture fails, remove macshot with the minus button (−) in System Settings, then add it back from Applications with the plus button (+). Re-enable Accessibility or Input Monitoring if prompted. Your settings, history and recordings are preserved. If you already restored permissions on a 4.4.0 beta (beta.3 or later), you don't need to do this again.
+One local-only macOS app for screenshots, annotations and screen recordings.
+Capture and editing use Apple frameworks, with no third-party package dependencies
+and no built-in update checks or downloads. Install new versions manually from
+this repository's Releases page.
 
 <p align="center">
   <img src="assets/logo.svg" alt="macshot logo" width="200"/>
@@ -15,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/sw33tLie/macshot/releases/latest">Download</a> · <a href="https://github.com/sw33tLie/macshot/blob/main/CHANGELOG.md">Changelog</a> · <a href="https://github.com/sw33tLie/macshot/blob/main/PRIVACY.md">Privacy</a> · <a href="https://github.com/sw33tLie/macshot/blob/main/SECURITY.md">Security</a>
+  <a href="../../releases/latest">Download</a> · <a href="CHANGELOG.md">Changelog</a> · <a href="PRIVACY.md">Privacy</a> · <a href="SECURITY.md">Security</a>
 </p>
 
 <p align="center">
@@ -40,18 +42,15 @@
 
 ## Install
 
-**Homebrew:**
-```bash
-brew install --cask macshot
-```
-
-**Manual:** Download the latest `.dmg` from [Releases](https://github.com/sw33tLie/macshot/releases), open it, drag to `/Applications`.
+Download `MacShot-Offline.dmg` from this repository's [Releases](../../releases),
+open it, and drag **macshot Offline.app** to `/Applications`.
+To update, quit the app and replace it with a newly downloaded copy.
 
 ---
 
 ## Quick Start
 
-1. Launch macshot — it appears in your menu bar
+1. Launch macshot Offline — it appears in your menu bar
 2. Press `Cmd+Shift+X` to capture
 3. Drag to select, annotate with the toolbar, press `Cmd+C` to copy
 4. Press `Esc` to cancel
@@ -99,7 +98,7 @@ brew install --cask macshot
 - **Video editor** — trim timeline, mute/strip audio, play/pause, save (with Save As), reveal in Finder
 
 ### Output
-- **Formats** — PNG, JPEG, HEIC, WebP, AVIF with quality slider
+- **Formats** — PNG, JPEG and HEIC, plus AVIF when the system supports encoding it; quality control for lossy formats
 - **Retina downscale** — optional 1x export for smaller files
 - **sRGB color profile** — optional embedding for cross-display consistency
 
@@ -131,7 +130,6 @@ brew install --cask macshot
 - **Snap alignment guides** — annotations snap to midlines and edges
 - **Liquid Glass theme** (macOS 26 Tahoe) — render toolbars, popovers, and HUDs as Apple's translucent Liquid Glass material
 - **Custom menu bar icon** — use the default, a built-in preset, or any SF Symbol
-- **Auto-updates** via Sparkle
 
 </details>
 
@@ -193,6 +191,12 @@ brew install --cask macshot
 
 macshot requires **Screen Recording** permission. macOS will prompt you on first capture.
 
+The app has no sandbox network-client permission. Opening a QR link or the
+project website uses your browser; the system share sheet can send content
+through a service you explicitly choose. OCR, translation with already-installed
+Apple language packs, captions and media processing run locally. See
+[Privacy](PRIVACY.md) for original-file retention and sharing details.
+
 ---
 
 ## Donations
@@ -206,6 +210,40 @@ If you'd like to help out, starring the repo, reporting bugs, or contributing is
 ## Requirements
 
 macOS 12.3 (Monterey) or later.
+
+## Automated releases
+
+The [Build & Release workflow](.github/workflows/build-release.yml) builds
+the single offline app on macOS with Xcode 26 and uploads `MacShot-Offline.dmg`
+and `SHA256SUMS.txt` to this repository's GitHub Release.
+Push a version tag after committing the workflow:
+
+```bash
+git tag v3.8.0
+git push origin v3.8.0
+```
+
+Tags such as `v3.8.0-beta.1` create prereleases. Publishing a Release for an
+existing version tag also triggers the build and preserves its title and notes.
+To rebuild an existing tag, run **Actions → Build & Release → Run workflow**
+and enter the tag. Reruns replace assets with the same names.
+
+No additional secrets are needed: the workflow uses `GITHUB_TOKEN` to publish
+the release. By default, apps use ad-hoc signatures and are **not notarized**;
+macOS Gatekeeper may block opening them until the user explicitly allows them.
+To enable Developer ID signing and Apple notarization, configure all five
+repository Actions secrets:
+
+| Secret | Value |
+| --- | --- |
+| `DEVELOPER_ID_CERT_P12` | Base64-encoded Developer ID Application `.p12` certificate |
+| `DEVELOPER_ID_CERT_PASSWORD` | Password for the `.p12` certificate |
+| `ASC_API_KEY` | Base64-encoded App Store Connect `.p8` API key |
+| `ASC_API_KEY_ID` | App Store Connect API key ID |
+| `ASC_API_ISSUER_ID` | App Store Connect issuer ID |
+
+Release automation runs on GitHub and requires network access there. The
+installed application does not check GitHub or install updates itself.
 
 ## License
 

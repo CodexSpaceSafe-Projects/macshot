@@ -34,7 +34,6 @@
 "Open from Clipboard" = "\U00D6ppna fr\U00E5n urklipp";
 "Pin from Clipboard" = "F\U00E4st fr\U00E5n urklipp";
 "Preferences..." = "Inst\U00E4llningar...";
-"Check for Updates..." = "S\U00F6k efter uppdateringar...";
 "Quit macshot" = "Avsluta macshot";
 "No recent captures" = "Inga senaste f\U00E5ngster";
 "Clear History" = "Rensa historik";
@@ -230,8 +229,6 @@
 "Use window title in saved filename" = "Anv\U00E4nd f\U00F6nstertitel i filnamn";
 "Hide menu bar icon" = "D\U00F6lj menyradsikon";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Kortkommandon fungerar fortfarande. F\U00F6r att visa ikonen igen, starta om macshot.";
-"Check for updates automatically" = "S\U00F6k efter uppdateringar automatiskt";
-"Check for beta updates" = "S\U00F6k efter betauppdateringar";
 "Thumbnail" = "Miniatyrbild";
 "  Dismiss after:" = "  St\U00E4ng efter:";
 "seconds before auto-dismiss (0 = never)" = "sekunder f\U00F6re automatisk st\U00E4ngning (0 = aldrig)";
@@ -526,7 +523,6 @@
 "Engine:" = "Motor:";
 "Apple (on-device)" = "Apple (p\U00E5 enheten)";
 "Download language packs in System Settings\U2026" = "Ladda ner spr\U00E5kpaket i Systeminst\U00E4llningar\U2026";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Position:";
 "Size:" = "Storlek:";
 "Shape:" = "Form:";

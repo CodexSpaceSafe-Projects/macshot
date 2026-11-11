@@ -6,15 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		2F98BCF22F6D83A1006ADDC3 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000022F61B60100B71643 /* Sparkle */; };
-		2F98BCF32F6D83A1006ADDC3 /* WebP in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000052F61B60100B71643 /* WebP */; };
-		2FAA000D2F00000100AA0001 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2FAA000B2F00000100AA0001 /* Sparkle */; };
-		2FAA000E2F00000100AA0001 /* WebP in Frameworks */ = {isa = PBXBuildFile; productRef = 2FAA000C2F00000100AA0001 /* WebP */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		2F4EB1222F61B60100B71643 /* macshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F4EB1222F61B60100B71643 /* macshot Offline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macshot Offline.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FAA00012F00000100AA0001 /* macshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,8 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F98BCF32F6D83A1006ADDC3 /* WebP in Frameworks */,
-				2F98BCF22F6D83A1006ADDC3 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,8 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FAA000D2F00000100AA0001 /* Sparkle in Frameworks */,
-				2FAA000E2F00000100AA0001 /* WebP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +76,7 @@
 		2F4EB1232F61B60100B71643 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F4EB1222F61B60100B71643 /* macshot.app */,
+				2F4EB1222F61B60100B71643 /* macshot Offline.app */,
 				2FAA00012F00000100AA0001 /* macshotTests.xctest */,
 			);
 			name = Products;
@@ -112,12 +101,8 @@
 				2F4EB1242F61B60100B71643 /* macshot */,
 			);
 			name = macshot;
-			packageProductDependencies = (
-				AA0000022F61B60100B71643 /* Sparkle */,
-				AA0000052F61B60100B71643 /* WebP */,
-			);
-			productName = macshot;
-			productReference = 2F4EB1222F61B60100B71643 /* macshot.app */;
+			productName = "macshot Offline";
+			productReference = 2F4EB1222F61B60100B71643 /* macshot Offline.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2FAA00042F00000100AA0001 /* macshotTests */ = {
@@ -137,10 +122,6 @@
 				2FAA00022F00000100AA0001 /* macshotTests */,
 			);
 			name = macshotTests;
-			packageProductDependencies = (
-				2FAA000B2F00000100AA0001 /* Sparkle */,
-				2FAA000C2F00000100AA0001 /* WebP */,
-			);
 			productName = macshotTests;
 			productReference = 2FAA00012F00000100AA0001 /* macshotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -211,10 +192,6 @@
 			);
 			mainGroup = 2F4EB1192F61B60100B71643;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				AA0000032F61B60100B71643 /* XCRemoteSwiftPackageReference "Sparkle" */,
-				AA0000042F61B60100B71643 /* XCRemoteSwiftPackageReference "Swift-WebP" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2F4EB1232F61B60100B71643 /* Products */;
 			projectDirPath = "";
@@ -388,10 +365,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3.5.2;
-				DEVELOPMENT_TEAM = ZPSG2DNYFC;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = macshot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "macshot Offline";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -405,8 +383,8 @@
 					"-weak_framework",
 					ScreenCaptureKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sw33tlie.macshot.macshot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sw33tlie.macshot.offline;
+				PRODUCT_NAME = "macshot Offline";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -430,6 +408,7 @@
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = macshot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "macshot Offline";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -443,8 +422,8 @@
 					"-weak_framework",
 					ScreenCaptureKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sw33tlie.macshot.macshot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sw33tlie.macshot.offline;
+				PRODUCT_NAME = "macshot Offline";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -478,7 +457,7 @@
 					"-weak_framework",
 					ScreenCaptureKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sw33tlie.macshot.macshotTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sw33tlie.macshot.offlineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -512,7 +491,7 @@
 					"-weak_framework",
 					ScreenCaptureKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sw33tlie.macshot.macshotTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sw33tlie.macshot.offlineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -555,47 +534,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		AA0000032F61B60100B71643 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = exactVersion;
-				version = 2.9.6;
-			};
-		};
-		AA0000042F61B60100B71643 /* XCRemoteSwiftPackageReference "Swift-WebP" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ainame/Swift-WebP.git";
-			requirement = {
-				kind = exactVersion;
-				version = 0.5.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2FAA000B2F00000100AA0001 /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA0000032F61B60100B71643 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
-		};
-		2FAA000C2F00000100AA0001 /* WebP */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA0000042F61B60100B71643 /* XCRemoteSwiftPackageReference "Swift-WebP" */;
-			productName = WebP;
-		};
-		AA0000022F61B60100B71643 /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA0000032F61B60100B71643 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
-		};
-		AA0000052F61B60100B71643 /* WebP */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA0000042F61B60100B71643 /* XCRemoteSwiftPackageReference "Swift-WebP" */;
-			productName = WebP;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2F4EB11A2F61B60100B71643 /* Project object */;
 }

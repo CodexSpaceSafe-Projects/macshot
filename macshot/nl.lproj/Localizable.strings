@@ -32,7 +32,6 @@
 "Open from Clipboard" = "Openen vanuit klembord";
 "Pin from Clipboard" = "Vastpinnen vanuit klembord";
 "Preferences..." = "Instellingen...";
-"Check for Updates..." = "Controleer op updates...";
 "Quit macshot" = "Stop macshot";
 "No recent captures" = "Geen recente opnames";
 "Clear History" = "Geschiedenis wissen";
@@ -223,8 +222,6 @@
 "Use window title in saved filename" = "Venstertitel gebruiken in bestandsnaam";
 "Hide menu bar icon" = "Menubalkpictogram verbergen";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Sneltoetsen werken nog steeds. Start macshot opnieuw op om het pictogram weer te tonen.";
-"Check for updates automatically" = "Automatisch op updates controleren";
-"Check for beta updates" = "Controleren op bèta-updates";
 "Thumbnail" = "Miniatuur";
 "  Dismiss after:" = "  Verberg na:";
 "seconds before auto-dismiss (0 = never)" = "seconden voor automatisch verbergen (0 = nooit)";
@@ -515,7 +512,6 @@
 "Engine:" = "Engine:";
 "Apple (on-device)" = "Apple (op het apparaat)";
 "Download language packs in System Settings…" = "Download taalpakketten in Systeeminstellingen…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Positie:";
 "Size:" = "Grootte:";
 "Shape:" = "Vorm:";

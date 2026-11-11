@@ -32,7 +32,6 @@
 "Open from Clipboard" = "Abrir desde portapapeles";
 "Pin from Clipboard" = "Fijar desde portapapeles";
 "Preferences..." = "Preferencias...";
-"Check for Updates..." = "Buscar actualizaciones...";
 "Quit macshot" = "Salir de macshot";
 "No recent captures" = "No hay capturas recientes";
 "Clear History" = "Borrar historial";
@@ -224,8 +223,6 @@
 "Use window title in saved filename" = "Usar título de ventana en el nombre de archivo";
 "Hide menu bar icon" = "Ocultar icono de la barra de menú";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Los atajos siguen funcionando. Para mostrar el icono de nuevo, reinicia macshot.";
-"Check for updates automatically" = "Buscar actualizaciones automáticamente";
-"Check for beta updates" = "Buscar actualizaciones beta";
 "Thumbnail" = "Miniatura";
 "  Dismiss after:" = "  Cerrar después de:";
 "seconds before auto-dismiss (0 = never)" = "segundos antes de cerrar automáticamente (0 = nunca)";
@@ -623,7 +620,6 @@
 /* Keyboard key names */
 "Space" = "Espacio";
 "Settings" = "Ajustes";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "Copia de seguridad de ajustes";

@@ -1,11 +1,9 @@
 import Cocoa
 import Carbon
-import Sparkle
 import ServiceManagement
 import UniformTypeIdentifiers
 import AVFoundation
 import Vision
-import WebP
 
 enum CaptureMenuItemID: String, CaseIterable {
     case captureArea = "captureArea"
@@ -84,7 +82,7 @@ enum CaptureMenuItemID: String, CaseIterable {
 
 import os.log
 
-private let timingLog = OSLog(subsystem: "com.sw33tlie.macshot.macshot", category: "capture-timing")
+private let timingLog = OSLog(subsystem: "com.sw33tlie.macshot.offline", category: "capture-timing")
 
 // MARK: - Signal-safe diagnostic logging
 
@@ -191,10 +189,9 @@ private final class CaptureTimingTrace: @unchecked Sendable {
 }
 
 @MainActor
-class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate {
 
     private var statusItem: NSStatusItem!
-    private var updaterController: SPUStandardUpdaterController!
     private var overlayControllers: [OverlayWindowController] = []
     private var settingsController: SettingsWindowController?
     private var onboardingController: PermissionOnboardingController?
@@ -252,7 +249,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Prevent multiple instances — if already running, activate the existing one and quit
-        let bundleID = Bundle.main.bundleIdentifier ?? "com.sw33tlie.macshot.macshot"
+        let bundleID = Bundle.main.bundleIdentifier ?? "com.sw33tlie.macshot.offline"
         let running = NSRunningApplication.runningApplications(withBundleIdentifier: bundleID)
         if running.count > 1 {
             // Tell the existing instance to show its icon and open Settings
@@ -307,11 +304,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         // something references ScreenshotHistory.shared.
         _ = ScreenshotHistory.shared
 
-        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: self, userDriverDelegate: nil)
-        // Disable silent update downloads — updates should only apply
-        // via explicit user action ("Check for Updates..." / Install),
-        // so an automatic update can't be mistaken for a silent crash.
-        updaterController.updater.automaticallyDownloadsUpdates = false
         setupMainMenu()
         setupStatusBar()
         do { try RemovedFeatureCleanup.run() }
@@ -559,8 +551,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
 
     /// If the app is running from a DMG volume or a translocated path,
-    /// offer to move it to /Applications for proper operation (auto-updates,
-    /// persistent preferences, no translocation issues).
+    /// offer to move it to /Applications for persistent preferences and to
+    /// avoid translocation issues.
     private func promptToMoveToApplicationsIfNeeded() {
         let bundlePath = Bundle.main.bundlePath
         let isOnDMG = bundlePath.hasPrefix("/Volumes/")
@@ -570,7 +562,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
         let alert = NSAlert()
         alert.messageText = "Move to Applications folder?"
-        alert.informativeText = "\(BuildVariant.displayName) is running from a disk image. Move it to your Applications folder for auto-updates and best experience."
+        alert.informativeText = "\(BuildVariant.displayName) is running from a disk image. Move it to your Applications folder for persistent preferences and the best experience."
         alert.addButton(withTitle: "Move to Applications")
         alert.addButton(withTitle: "Not Now")
         alert.showsSuppressionButton = true
@@ -904,11 +896,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         prefsItem.image = NSImage(systemSymbolName: "gear", accessibilityDescription: nil)
         menu.addItem(prefsItem)
 
-        let updateItem = NSMenuItem(title: L("Check for Updates..."), action: #selector(checkForUpdates), keyEquivalent: "")
-        updateItem.target = self
-        updateItem.image = NSImage(systemSymbolName: "arrow.triangle.2.circlepath", accessibilityDescription: nil)
-        menu.addItem(updateItem)
-
         menu.addItem(NSMenuItem.separator())
 
         let quitItem = NSMenuItem(title: L("Quit macshot"), action: #selector(quitApp), keyEquivalent: "q")
@@ -1032,7 +1019,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     /// The app that was active before macshot showed its overlay.
     private var previousApp: NSRunningApplication?
 
-    /// Titled macshot windows (editors, preferences, Sparkle, etc.) that were
+    /// Titled macshot windows (editors, preferences, etc.) that were
     /// visible when capture started. We `orderOut` them so `NSApp.activate`
     /// during capture can't drag them in front of the user's frontmost app,
     /// then `orderFront` them when the overlay dismisses. Kept in the order
@@ -1751,7 +1738,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
     /// Path to the rolling timing log inside the sandbox container.
     /// Real path on disk:
-    ///   ~/Library/Containers/com.sw33tlie.macshot.macshot/Data/Library/Application Support/macshot/timing.log
+    ///   ~/Library/Containers/com.sw33tlie.macshot.offline/Data/Library/Application Support/macshot/timing.log
     static let timingLogURL: URL = {
         let fm = FileManager.default
         let support = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
@@ -2245,16 +2232,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
 
     private func openImageFile(url: URL) {
-        let image: NSImage
-        if url.pathExtension.lowercased() == "webp",
-           let data = try? Data(contentsOf: url),
-           let decoded = try? WebPDecoder().decode(toNSImage: data, options: WebPDecoderOptions()) {
-            image = decoded
-        } else if let loaded = NSImage(contentsOf: url) {
-            image = loaded
-        } else {
-            return
-        }
+        // Imports stay local and use only the codecs supplied by macOS.
+        guard url.isFileURL, let image = NSImage(contentsOf: url) else { return }
         DetachedEditorWindowController.open(image: image)
     }
 
@@ -2349,6 +2328,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
                 handleURLSchemeAction(url)
                 continue
             }
+            guard url.isFileURL else { continue }
             let ext = url.pathExtension.lowercased()
             // GIFs can be opened in either the image editor or the video
             // editor. Default to image editor (matches prior behavior) — users
@@ -2420,19 +2400,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
     // MARK: - Quit
 
-    @objc private func checkForUpdates() {
-        NSApp.activate(ignoringOtherApps: true)
-        updaterController.checkForUpdates(nil)
-    }
-
     @objc private func quitApp() {
         NSApp.terminate(nil)
-    }
-
-    // MARK: - SPUUpdaterDelegate
-
-    func allowedChannels(for updater: SPUUpdater) -> Set<String> {
-        UserDefaults.standard.bool(forKey: "betaUpdatesEnabled") ? ["beta"] : []
     }
 }
 

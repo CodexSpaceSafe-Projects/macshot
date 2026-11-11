@@ -34,7 +34,6 @@
 "Open from Clipboard" = "Aus Zwischenablage öffnen";
 "Pin from Clipboard" = "Aus Zwischenablage anheften";
 "Preferences..." = "Einstellungen ...";
-"Check for Updates..." = "Nach Updates suchen ...";
 "Quit macshot" = "macshot beenden";
 "No recent captures" = "Keine letzten Aufnahmen";
 "Clear History" = "Verlauf löschen";
@@ -224,8 +223,6 @@
 "Use window title in saved filename" = "Fenstertitel im Dateinamen verwenden";
 "Hide menu bar icon" = "Menüleistensymbol ausblenden";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Kurzbefehle funktionieren weiterhin. Um das Symbol wieder anzuzeigen, starten Sie macshot neu.";
-"Check for updates automatically" = "Automatisch nach Updates suchen";
-"Check for beta updates" = "Nach Beta-Updates suchen";
 "Thumbnail" = "Vorschaubild";
 "  Dismiss after:" = "  Ausblenden nach:";
 "seconds before auto-dismiss (0 = never)" = "Sekunden bis zum automatischen Ausblenden (0 = nie)";
@@ -516,7 +513,6 @@
 "Engine:" = "Engine:";
 "Apple (on-device)" = "Apple (auf dem Gerät)";
 "Download language packs in System Settings…" = "Sprachpakete in den Systemeinstellungen laden …";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Position:";
 "Size:" = "Größe:";
 "Shape:" = "Form:";

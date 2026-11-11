@@ -8,8 +8,12 @@ promote it or delete its full capture files.
 ## Before recovering files
 
 Quit macshot normally and let pending saves finish. Make a copy of the entire
-history directory, including `index.json`, before changing anything. The normal
-sandboxed app uses:
+history directory, including `index.json`, before changing anything. The current
+sandboxed offline app uses:
+
+`~/Library/Containers/com.sw33tlie.macshot.offline/Data/Library/Application Support/com.sw33tlie.macshot/history`
+
+An older normal-build installation may still have its captures under:
 
 `~/Library/Containers/com.sw33tlie.macshot.macshot/Data/Library/Application Support/com.sw33tlie.macshot/history`
 

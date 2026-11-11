@@ -1,36 +1,38 @@
 # Security Policy
 
-I do vulnerability research and bug bounty for a living, so I know what a good
-disclosure experience looks like from the reporter's side, and what a bad one
-feels like. You'll get the good kind here.
-
 ## Reporting a vulnerability
 
-**Preferred:** [GitHub Private Vulnerability Reporting](https://github.com/sw33tLie/macshot/security/advisories/new).
-It's private and structured, and we can work on the fix together in a private fork.
+Use this repository's **Security → Report a vulnerability** feature when private
+reporting is enabled. If it is unavailable, contact the repository maintainer
+privately before publishing exploit details or sensitive captures. Test only
+systems and data you own or have permission to assess.
 
-**Also fine:** DM me on X at [x.com/sw33tLie](https://x.com/sw33tLie). Good for a
-heads-up or if you can't use GitHub. Please don't put PoCs or exploit details in
-public issues, and don't test against infrastructure you don't own.
+Include the application version, macOS version, reproduction steps and expected
+impact. Remove private images, recordings, tokens and personal data from examples.
 
-I aim to respond within 48 hours, usually much faster. High/Critical issues get a
-fix or a concrete plan within days, not weeks, and fixes reach users quickly via
-Sparkle auto-update.
+## Supported version and distribution
 
-## Out of scope
+Only the latest release of **macshot Offline** is supported. The application has
+no built-in updater: security fixes are distributed through this repository's
+Releases page and must be downloaded and installed manually. Use the accompanying
+`SHA256SUMS.txt` to check a download against the published release checksum.
 
-Auto-redact regex misses (best-effort, documented as such), issues
-requiring a compromised machine or physical access, vulnerabilities in Sparkle/
-macOS/dependencies themselves (report upstream, but tell me so I can ship the
-bumped version), and DoS of the app's UI.
+Release automation can optionally sign and notarize the app with Apple
+credentials. Without those credentials, release artifacts are ad-hoc signed and
+not notarized. A signature or checksum alone does not establish that an artifact
+matches reviewed source code.
 
-## Supported versions
+## Security boundaries
 
-Only the latest release of each variant (normal and Offline). Sparkle keeps
-almost everyone current within days.
+- The app is sandboxed without network-client permission and uses Apple frameworks
+  for local image, video, OCR, translation and speech processing.
+- There are no third-party Swift package dependencies or bundled update services.
+- External URL commands and the system share sheet are user-configurable features;
+  their presence does not grant external callers arbitrary command execution.
+- Editable history and original recordings are recovery data, not securely erased
+  or application-encrypted storage. Redacting an exported image does not erase its
+  original from history or backups.
+- Automatic redaction is best-effort. Review sensitive images before sharing.
 
-## Credit
-
-No paid bounty (this is a free GPLv3 project), but you'll get credited in the
-release notes, CHANGELOG, and the GitHub advisory unless you'd rather stay
-anonymous.
+Report flaws in macOS frameworks to Apple, and notify this repository's maintainer
+when the application needs a workaround or supported-version change.

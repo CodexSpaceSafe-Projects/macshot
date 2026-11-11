@@ -91,8 +91,6 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
     private var filenameTemplatePreview: NSTextField!
     private var recordingFilenameTemplateField: NSTextField!
     private var recordingFilenameTemplatePreview: NSTextField!
-    private var autoUpdateCheckbox: NSButton!
-    private var betaUpdateCheckbox: NSButton!
     private var accentColorWell: NSColorWell!
     private var iconColorWell: NSColorWell!
     private var bgColorWell: NSColorWell!
@@ -480,14 +478,6 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         stack.addArrangedSubview(indented(urlSchemeRow))
         stack.setCustomSpacing(6, after: stack.arrangedSubviews.last!)
 
-        autoUpdateCheckbox = NSButton(checkboxWithTitle: L("Check for updates automatically"), target: self, action: #selector(autoUpdateChanged(_:)))
-        stack.addArrangedSubview(indented(autoUpdateCheckbox))
-        stack.setCustomSpacing(4, after: stack.arrangedSubviews.last!)
-
-        betaUpdateCheckbox = NSButton(checkboxWithTitle: L("Check for beta updates"), target: self, action: #selector(betaUpdateChanged(_:)))
-        stack.addArrangedSubview(indented(betaUpdateCheckbox))
-        stack.setCustomSpacing(20, after: stack.arrangedSubviews.last!)
-
         // ── Appearance ───────────────────────────────────────
         stack.addArrangedSubview(sectionHeader(L("Appearance")))
         stack.setCustomSpacing(10, after: stack.arrangedSubviews.last!)
@@ -678,7 +668,7 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
     @objc private func revealSettingsFileClicked(_ sender: NSButton) {
         let prefsDir = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).first!
             .appendingPathComponent("Preferences", isDirectory: true)
-        let bundleID = Bundle.main.bundleIdentifier ?? "com.sw33tlie.macshot.macshot"
+        let bundleID = Bundle.main.bundleIdentifier ?? "com.sw33tlie.macshot.offline"
         let plist = prefsDir.appendingPathComponent("\(bundleID).plist")
         if FileManager.default.fileExists(atPath: plist.path) {
             NSWorkspace.shared.activateFileViewerSelecting([plist])
@@ -940,7 +930,7 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         stack.addArrangedSubview(indented(clipboardFormatNote))
         stack.setCustomSpacing(8, after: stack.arrangedSubviews.last!)
 
-        // Quality (applies to lossy formats: JPEG, HEIC, WebP, AVIF)
+        // Quality (applies to lossy formats: JPEG, HEIC, AVIF)
         qualitySlider = NSSlider()
         qualitySlider.minValue = 10
         qualitySlider.maxValue = 100
@@ -1929,15 +1919,6 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         stack.addArrangedSubview(desc)
         stack.setCustomSpacing(20, after: desc)
 
-        #if OFFLINE
-        let offlineNote = NSTextField(wrappingLabelWithString: L("Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself."))
-        offlineNote.font = NSFont.systemFont(ofSize: 12)
-        offlineNote.textColor = .secondaryLabelColor
-        offlineNote.alignment = .center
-        stack.addArrangedSubview(offlineNote)
-        stack.setCustomSpacing(20, after: offlineNote)
-        #endif
-
         // License
         let license = NSTextField(labelWithString: L("Licensed under the GPLv3"))
         license.font = NSFont.systemFont(ofSize: 11)
@@ -2230,11 +2211,6 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         updateFilenamePreview()
         recordingFilenameTemplateField.stringValue = UserDefaults.standard.string(forKey: FilenameFormatter.recordingUserDefaultsKey) ?? FilenameFormatter.defaultRecordingTemplate
         updateRecordingFilenamePreview()
-
-        let autoUpdate = UserDefaults.standard.object(forKey: "SUEnableAutomaticChecks") as? Bool ?? true
-        autoUpdateCheckbox.state = autoUpdate ? .on : .off
-
-        betaUpdateCheckbox.state = UserDefaults.standard.bool(forKey: "betaUpdatesEnabled") ? .on : .off
 
         accentColorWell.color = ToolbarLayout.accentColor
         iconColorWell.color = ToolbarLayout.iconColor
@@ -2913,14 +2889,6 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         let custom = menuBarIconModePopup.indexOfSelectedItem == 1
         menuBarIconSymbolField.isEnabled = custom
         menuBarIconPresetPopup.isEnabled = custom
-    }
-
-    @objc private func autoUpdateChanged(_ sender: NSButton) {
-        UserDefaults.standard.set(sender.state == .on, forKey: "SUEnableAutomaticChecks")
-    }
-
-    @objc private func betaUpdateChanged(_ sender: NSButton) {
-        UserDefaults.standard.set(sender.state == .on, forKey: "betaUpdatesEnabled")
     }
 
     @objc private func openTranslationSettings() {

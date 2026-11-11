@@ -31,7 +31,6 @@
 "Open Image..." = "Open Image...";
 "Open from Clipboard" = "Open from Clipboard";
 "Pin from Clipboard" = "Pin from Clipboard";
-"Check for Updates..." = "Check for Updates...";
 "Quit macshot" = "Quit macshot";
 "No recent captures" = "No recent captures";
 "Clear History" = "Clear History";
@@ -226,8 +225,6 @@
 "Use window title in saved filename" = "Use window title in saved filename";
 "Hide menu bar icon" = "Hide menu bar icon";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Hotkeys still work. To show the icon again, re-launch macshot.";
-"Check for updates automatically" = "Check for updates automatically";
-"Check for beta updates" = "Check for beta updates";
 "Thumbnail" = "Thumbnail";
 "  Dismiss after:" = "  Dismiss after:";
 "seconds before auto-dismiss (0 = never)" = "seconds before auto-dismiss (0 = never)";
@@ -614,7 +611,6 @@
 "URL scheme info" = "URL scheme info";
 "sec (0 = never)" = "sec (0 = never)";
 "Settings" = "Settings";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "Settings Backup";

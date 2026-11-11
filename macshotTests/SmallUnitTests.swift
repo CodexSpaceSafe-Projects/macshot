@@ -234,17 +234,11 @@ final class ClipboardTextPinRendererTests: XCTestCase {
     }
 }
 
-/// Build variants retain distinct names and update feeds.
+/// Every build ships the same offline product identity.
 final class BuildVariantTests: XCTestCase {
 
-    func testTheVariantIsSelfConsistent() {
-        XCTAssertFalse(BuildVariant.displayName.isEmpty)
-        if BuildVariant.isOffline {
-            XCTAssertTrue(BuildVariant.displayName.lowercased().contains("offline"),
-                          "the offline build should say so in its name")
-        } else {
-            XCTAssertFalse(BuildVariant.displayName.lowercased().contains("offline"))
-        }
+    func testTheOfflineProductNameIsUsed() {
+        XCTAssertEqual(BuildVariant.displayName, "macshot Offline")
     }
 
 }

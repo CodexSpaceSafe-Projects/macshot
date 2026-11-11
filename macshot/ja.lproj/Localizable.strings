@@ -34,7 +34,6 @@
 "Open from Clipboard" = "クリップボードから開く";
 "Pin from Clipboard" = "クリップボードからピン留め";
 "Preferences..." = "環境設定...";
-"Check for Updates..." = "アップデートを確認...";
 "Quit macshot" = "macshot を終了";
 "No recent captures" = "最近のキャプチャはありません";
 "Clear History" = "履歴を消去";
@@ -220,8 +219,6 @@
 "Choose the order of capture actions in the macshot menu bar menu." = "macshot メニューバーメニューでのキャプチャアクションの順序を選択します。";
 "Move up" = "上へ移動";
 "Move down" = "下へ移動";
-"Check for updates automatically" = "自動的にアップデートを確認";
-"Check for beta updates" = "ベータアップデートを確認";
 "Thumbnail" = "サムネイル";
 "  Dismiss after:" = "  自動非表示:";
 "seconds before auto-dismiss (0 = never)" = "秒後に自動非表示 (0 = 無効)";
@@ -476,7 +473,6 @@
 
 /* New strings */
 "Settings" = "設定";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Settings..." = "設定...";
 "macshot Settings" = "macshot 設定";
 "Also open in Editor" = "エディタでも開く";

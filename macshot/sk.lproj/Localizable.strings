@@ -34,7 +34,6 @@
 "Open from Clipboard" = "Otvoriť zo schránky";
 "Pin from Clipboard" = "Pripnúť zo schránky";
 "Preferences..." = "Predvoľby...";
-"Check for Updates..." = "Skontrolovať aktualizácie...";
 "Quit macshot" = "Ukončiť macshot";
 "No recent captures" = "Žiadne posledné zachytenia";
 "Clear History" = "Vymazať históriu";
@@ -236,8 +235,6 @@
 "Use window title in saved filename" = "Použiť názov okna v názve súboru";
 "Hide menu bar icon" = "Skryť ikonu v lište menu";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Klávesové skratky stále fungujú. Pre opätovné zobrazenie ikony znovu spusťte macshot.";
-"Check for updates automatically" = "Automaticky kontrolovať aktualizácie";
-"Check for beta updates" = "Kontrolovať beta aktualizácie";
 "Thumbnail" = "Náhľad";
 "  Dismiss after:" = "  Skryť po:";
 "seconds before auto-dismiss (0 = never)" = "sekund pred automatickým skrytím (0 = nikdy)";
@@ -525,7 +522,6 @@
 "Engine:" = "Engine:";
 "Apple (on-device)" = "Apple (na zariadení)";
 "Download language packs in System Settings…" = "Stiahnite jazykové balíčky v Nastaveniach systému…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Pozícia:";
 "  Position:" = "  Pozícia:";
 "Size:" = "Veľkosť:";

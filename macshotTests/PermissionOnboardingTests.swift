@@ -6,13 +6,13 @@ import XCTest
 /// first-run welcome.
 final class PermissionOnboardingTests: XCTestCase {
     func testReturningUserDetection() {
-        withDefaults(["SUHasLaunchedBefore": nil, "screenRecordingGrantedBefore": nil]) {
+        withDefaults(["screenRecordingGrantedBefore": nil]) {
             XCTAssertFalse(PermissionOnboardingController.isReturningUser())
         }
-        withDefaults(["SUHasLaunchedBefore": true, "screenRecordingGrantedBefore": nil]) {
+        withDefaults(["screenRecordingGrantedBefore": true]) {
             XCTAssertTrue(PermissionOnboardingController.isReturningUser())
         }
-        withDefaults(["SUHasLaunchedBefore": nil, "screenRecordingGrantedBefore": nil]) {
+        withDefaults(["screenRecordingGrantedBefore": nil]) {
             PermissionOnboardingController.rememberGranted()
             XCTAssertTrue(PermissionOnboardingController.isReturningUser())
         }

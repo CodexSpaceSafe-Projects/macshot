@@ -34,7 +34,6 @@
 "Open from Clipboard" = "Buka dari Papan Keratan";
 "Pin from Clipboard" = "Semat dari Papan Keratan";
 "Preferences..." = "Keutamaan...";
-"Check for Updates..." = "Semak Kemas Kini...";
 "Quit macshot" = "Keluar macshot";
 "No recent captures" = "Tiada tangkapan terkini";
 "Clear History" = "Padam Sejarah";
@@ -240,8 +239,6 @@
 "Choose the order of capture actions in the macshot menu bar menu." = "Pilih susunan tindakan tangkapan dalam menu bar menu macshot.";
 "Move up" = "Alih ke atas";
 "Move down" = "Alih ke bawah";
-"Check for updates automatically" = "Semak kemas kini secara automatik";
-"Check for beta updates" = "Semak kemas kini beta";
 "Thumbnail" = "Lakaran Kecil";
 "  Dismiss after:" = "  Ketepikan selepas:";
 "seconds before auto-dismiss (0 = never)" = "saat sebelum ketepikan auto (0 = tidak pernah)";
@@ -487,7 +484,6 @@
 
 /* Settings */
 "Settings" = "Tetapan";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Settings..." = "Tetapan...";
 "macshot Settings" = "Tetapan macshot";
 "Also open in Editor" = "Buka juga dalam Editor";

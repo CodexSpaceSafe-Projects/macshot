@@ -34,7 +34,6 @@
 "Open from Clipboard" = "Megnyitás vágólapról";
 "Pin from Clipboard" = "Rögzítés vágólapról";
 "Preferences..." = "Beállítások...";
-"Check for Updates..." = "Frissítések keresése...";
 "Quit macshot" = "Kilépés a macshot-ból";
 "No recent captures" = "Nincsenek legutóbbi rögzítések";
 "Clear History" = "Előzmények törlése";
@@ -229,8 +228,6 @@
 "Use window title in saved filename" = "Ablakcím használata a mentett fájlnévben";
 "Hide menu bar icon" = "Menüsor ikon elrejtése";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "A gyorsbillentyűk továbbra is működnek. Az ikon újbóli megjelenítéséhez indítsd újra a macshot-ot.";
-"Check for updates automatically" = "Frissítések automatikus keresése";
-"Check for beta updates" = "Béta frissítések keresése";
 "Thumbnail" = "Bélyegkép";
 "  Dismiss after:" = "  Eltüntetés ennyi idő után:";
 "seconds before auto-dismiss (0 = never)" = "másodperc az automatikus eltüntetés előtt (0 = soha)";
@@ -488,7 +485,6 @@
 
 /* New Strings */
 "Settings" = "Beállítások";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Settings..." = "Beállítások...";
 "macshot Settings" = "macshot beállítások";
 "Also open in Editor" = "Megnyitás a szerkesztőben is";

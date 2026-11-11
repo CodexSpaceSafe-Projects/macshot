@@ -4,7 +4,8 @@ import XCTest
 final class RemovedFeatureCleanupTests: XCTestCase {
     func testRetiredConfigurationCannotBeImportedOrExported() {
         for key in ["uploadProvider", "imgbbUploads", "gdriveFolderName", "s3Endpoint",
-                    "recordKeystroke", "keystrokeShowAll", "translationProvider"] {
+                    "recordKeystroke", "keystrokeShowAll", "translationProvider",
+                    "SUEnableAutomaticChecks", "SUFeedURL", "SUPublicEDKey", "betaUpdatesEnabled"] {
             XCTAssertTrue(RemovedFeatureCleanup.isRetiredSetting(key))
             XCTAssertFalse(SettingsPortability.isPortable(key))
         }
@@ -27,6 +28,9 @@ final class RemovedFeatureCleanupTests: XCTestCase {
         defaults.set("secret", forKey: "s3SecretAccessKey")
         defaults.set(true, forKey: "recordKeystroke")
         defaults.set(true, forKey: "recordMouseHighlight")
+        defaults.set(true, forKey: "SUHasLaunchedBefore")
+        defaults.set(true, forKey: "SUEnableAutomaticChecks")
+        defaults.set(true, forKey: "betaUpdatesEnabled")
 
         try RemovedFeatureCleanup.run(defaults: defaults, supportDirectory: support)
         try RemovedFeatureCleanup.run(defaults: defaults, supportDirectory: support)
@@ -34,6 +38,10 @@ final class RemovedFeatureCleanupTests: XCTestCase {
         XCTAssertNil(defaults.object(forKey: "s3SecretAccessKey"))
         XCTAssertNil(defaults.object(forKey: "recordKeystroke"))
         XCTAssertTrue(defaults.bool(forKey: "recordMouseHighlight"))
+        XCTAssertTrue(defaults.bool(forKey: "screenRecordingGrantedBefore"))
+        XCTAssertNil(defaults.object(forKey: "SUHasLaunchedBefore"))
+        XCTAssertNil(defaults.object(forKey: "SUEnableAutomaticChecks"))
+        XCTAssertNil(defaults.object(forKey: "betaUpdatesEnabled"))
         XCTAssertFalse(FileManager.default.fileExists(atPath: tokens.path))
         XCTAssertEqual(try Data(contentsOf: recording), Data("keep".utf8))
     }

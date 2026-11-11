@@ -32,7 +32,6 @@
 "Open from Clipboard" = "باز کردن از کلیپ‌بورد";
 "Pin from Clipboard" = "سنجاق کردن از کلیپ‌بورد";
 "Preferences..." = "تنظیمات...";
-"Check for Updates..." = "بررسی به‌روزرسانی‌ها...";
 "Quit macshot" = "خروج از macshot";
 "No recent captures" = "ضبط اخیری وجود ندارد";
 "Clear History" = "پاک کردن تاریخچه";
@@ -221,8 +220,6 @@
 "Default" = "پیش‌فرض";
 "Custom symbol" = "نماد سفارشی";
 "Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "هر نام SF Symbol دلخواه (مثلاً camera.fill) را وارد کنید یا یک پیش‌تنظیم انتخاب کنید. نام‌ها را در برنامه SF Symbols اپل مرور کنید. نام‌های نامعتبر به آیکون پیش‌فرض بازمی‌گردند.";
-"Check for updates automatically" = "بررسی خودکار به‌روزرسانی‌ها";
-"Check for beta updates" = "بررسی به‌روزرسانی‌های بتا";
 "Thumbnail" = "تصویر بندانگشتی";
 "  Dismiss after:" = "  بستن بعد از:";
 "seconds before auto-dismiss (0 = never)" = "ثانیه قبل از بستن خودکار (0 = هرگز)";
@@ -623,7 +620,6 @@
 "URL scheme info" = "اطلاعات طرح URL";
 "sec (0 = never)" = "ثانیه (0 = هرگز)";
 "Settings" = "تنظیمات";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "پشتیبان‌گیری تنظیمات";

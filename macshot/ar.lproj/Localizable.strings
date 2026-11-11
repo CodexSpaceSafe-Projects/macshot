@@ -32,7 +32,6 @@
 "Open from Clipboard" = "فتح من الحافظة";
 "Pin from Clipboard" = "تثبيت من الحافظة";
 "Preferences..." = "التفضيلات...";
-"Check for Updates..." = "التحقق من التحديثات...";
 "Quit macshot" = "إنهاء macshot";
 "No recent captures" = "لا توجد التقاطات حديثة";
 "Clear History" = "مسح السجل";
@@ -221,8 +220,6 @@
 "Default" = "افتراضي";
 "Custom symbol" = "رمز مخصص";
 "Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "أدخل أي اسم SF Symbol (مثل camera.fill) أو اختر إعدادًا مسبقًا. تصفّح الأسماء في تطبيق SF Symbols من Apple. الأسماء غير الصالحة تعود إلى الأيقونة الافتراضية.";
-"Check for updates automatically" = "التحقق من التحديثات تلقائيًا";
-"Check for beta updates" = "التحقق من التحديثات التجريبية";
 "Thumbnail" = "صورة مصغرة";
 "  Dismiss after:" = "  إخفاء بعد:";
 "seconds before auto-dismiss (0 = never)" = "ثوانٍ قبل الإخفاء التلقائي (0 = أبدًا)";
@@ -520,7 +517,6 @@
 "Engine:" = "المحرك:";
 "Apple (on-device)" = "Apple (على الجهاز)";
 "Download language packs in System Settings…" = "قم بتنزيل حزم اللغات في إعدادات النظام…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "الموضع:";
 "Size:" = "الحجم:";
 "Shape:" = "الشكل:";

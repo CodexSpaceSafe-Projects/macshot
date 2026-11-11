@@ -34,7 +34,6 @@
 "Open from Clipboard" = "Otvori iz međuspremnika";
 "Pin from Clipboard" = "Prikvači iz međuspremnika";
 "Preferences..." = "Postavke...";
-"Check for Updates..." = "Provjeri ažuriranja...";
 "Quit macshot" = "Zatvori macshot";
 "No recent captures" = "Nema nedavnih snimanja";
 "Clear History" = "Očisti povijest";
@@ -236,8 +235,6 @@
 "Use window title in saved filename" = "Koristi naslov prozora u nazivu datoteke";
 "Hide menu bar icon" = "Sakrij ikonu u traci izbornika";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Tipkovni prečaci i dalje rade. Za ponovni prikaz ikone ponovno pokrenite macshot.";
-"Check for updates automatically" = "Automatski provjeravaj ažuriranja";
-"Check for beta updates" = "Provjeri beta ažuriranja";
 "Thumbnail" = "Minijatura";
 "  Dismiss after:" = "  Odbaci nakon:";
 "seconds before auto-dismiss (0 = never)" = "sekundi prije automatskog odbacivanja (0 = nikad)";
@@ -487,7 +484,6 @@
 
 /* New Strings */
 "Settings" = "Postavke";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Settings..." = "Postavke...";
 "macshot Settings" = "macshot Postavke";
 "Also open in Editor" = "Otvori i u uređivaču";

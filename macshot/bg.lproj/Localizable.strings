@@ -34,7 +34,6 @@
 "Open from Clipboard" = "Отваряне от клипборда";
 "Pin from Clipboard" = "Закачане от клипборда";
 "Preferences..." = "Настройки...";
-"Check for Updates..." = "Проверка за обновления...";
 "Quit macshot" = "Изход от macshot";
 "No recent captures" = "Няма скорошни заснемания";
 "Clear History" = "Изчистване на историята";
@@ -236,8 +235,6 @@
 "Use window title in saved filename" = "Използване на заглавието на прозореца в името на файла";
 "Hide menu bar icon" = "Скриване на иконата в лентата с менюта";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Бързите клавиши продължават да работят. За да покажете иконата отново, рестартирайте macshot.";
-"Check for updates automatically" = "Автоматична проверка за обновления";
-"Check for beta updates" = "Проверка за бета обновления";
 "Thumbnail" = "Миниатюр";
 "  Dismiss after:" = "  Скриване след:";
 "seconds before auto-dismiss (0 = never)" = "секунди преди автоматично скриване (0 = никога)";
@@ -525,7 +522,6 @@
 "Engine:" = "Двигател:";
 "Apple (on-device)" = "Apple (на устройството)";
 "Download language packs in System Settings…" = "Изтеглете езикови пакети в Системни настройки…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Позиция:";
 "  Position:" = "  Позиция:";
 "Size:" = "Размер:";

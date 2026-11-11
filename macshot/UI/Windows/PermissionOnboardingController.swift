@@ -24,9 +24,9 @@ class PermissionOnboardingController: NSWindowController {
 
     private static let grantedBeforeKey = "screenRecordingGrantedBefore"
 
-    /// Sparkle records the first launch; the flag covers later grants.
+    /// Permission history is owned by the app independently of its release source.
     static func isReturningUser(_ defaults: UserDefaults = .standard) -> Bool {
-        defaults.bool(forKey: grantedBeforeKey) || defaults.bool(forKey: "SUHasLaunchedBefore")
+        defaults.bool(forKey: grantedBeforeKey)
     }
 
     static func rememberGranted(_ defaults: UserDefaults = .standard) {

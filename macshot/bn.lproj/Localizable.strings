@@ -36,7 +36,6 @@
 "Open from Clipboard" = "ক্লিপবোর্ড থেকে খুলুন";
 "Pin from Clipboard" = "ক্লিপবোর্ড থেকে পিন করুন";
 "Preferences..." = "পছন্দসমূহ...";
-"Check for Updates..." = "আপডেট পরীক্ষা করুন...";
 "Quit macshot" = "macshot বন্ধ করুন";
 "No recent captures" = "কোনো সাম্প্রতিক ক্যাপচার নেই";
 "Clear History" = "ইতিহাস মুছুন";
@@ -224,8 +223,6 @@
 "Default" = "ডিফল্ট";
 "Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "যেকোনো SF Symbol নাম লিখুন (যেমন camera.fill) বা একটি প্রিসেট বেছে নিন। Apple-এর SF Symbols অ্যাপে নাম ব্রাউজ করুন। অবৈধ নাম ডিফল্ট আইকনে ফিরে যায়।";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "হটকি এখনও কাজ করে। আইকন আবার দেখাতে macshot পুনরায় চালু করুন।";
-"Check for updates automatically" = "স্বয়ংক্রিয়ভাবে আপডেট পরীক্ষা করুন";
-"Check for beta updates" = "বিটা আপডেট পরীক্ষা করুন";
 "Thumbnail" = "থাম্বনেইল";
 "  Dismiss after:" = "  এর পরে বাতিল করুন:";
 "seconds before auto-dismiss (0 = never)" = "স্বয়ংক্রিয় বাতিলের আগে সেকেন্ড (0 = কখনই না)";
@@ -528,7 +525,6 @@
 "Engine:" = "ইঞ্জিন:";
 "Apple (on-device)" = "Apple (ডিভাইসে)";
 "Download language packs in System Settings…" = "সিস্টেম সেটিংসে ভাষা প্যাক ডাউনলোড করুন…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "অবস্থান:";
 "Size:" = "আকার:";
 "Shape:" = "আকৃতি:";

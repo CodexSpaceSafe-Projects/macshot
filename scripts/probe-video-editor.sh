@@ -1,22 +1,20 @@
 #!/bin/bash
 # Compile the production editor/media code into an isolated native UI probe.
-# Usage: scripts/probe-video-editor.sh /path/to/synthetic-fixture.mp4 [--audio-merge] [--normal]
+# Usage: scripts/probe-video-editor.sh /path/to/synthetic-fixture.mp4 [--audio-merge]
 # Saves replace only the private copy printed below; the input is untouched.
 # Capture is disabled. Other app services are minimal stubs.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 if [[ $# -lt 1 || ! -f "$1" ]]; then
-  echo "Usage: $0 /absolute/path/to/synthetic-fixture.mp4 [--audio-merge] [--normal]" >&2
+  echo "Usage: $0 /absolute/path/to/synthetic-fixture.mp4 [--audio-merge]" >&2
   exit 2
 fi
 probe_source="$1"
 shift
-probe_conditions=(-D OFFLINE -D VIDEO_EDITOR_PROBE)
 probe_audio_merge=false
 for option in "$@"; do
   case "$option" in
     --audio-merge) probe_audio_merge=true ;;
-    --normal) probe_conditions=(-D MACSHOT_UI_PROBE -D VIDEO_EDITOR_PROBE) ;;
     *) echo "Unknown probe option: $option" >&2; exit 2 ;;
   esac
 done
@@ -101,7 +99,7 @@ sources=(
   macshot/UI/Windows/MediaExportProgressController.swift
   macshot/UI/Windows/AudioMergeController.swift
 )
-swiftc -O -swift-version 5 -default-isolation MainActor "${probe_conditions[@]}" -parse-as-library   "${sources[@]}" scripts/probe-video-editor.swift   -o "$probe_bundle/Contents/MacOS/SourceEditorProbe" > "$probe_directory/build.log" 2>&1 || {
+swiftc -O -swift-version 5 -default-isolation MainActor -D VIDEO_EDITOR_PROBE -parse-as-library   "${sources[@]}" scripts/probe-video-editor.swift   -o "$probe_bundle/Contents/MacOS/SourceEditorProbe" > "$probe_directory/build.log" 2>&1 || {
     cat "$probe_directory/build.log" >&2
     exit 1
   }

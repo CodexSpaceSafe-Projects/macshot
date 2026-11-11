@@ -1,4 +1,4 @@
-# Contributing to macshot
+# Contributing to macshot Offline
 
 Thanks for your interest in contributing! macshot is open to bug fixes, improvements, and new features.
 
@@ -15,6 +15,10 @@ Thanks for your interest in contributing! macshot is open to bug fixes, improvem
 3. Grant Screen Recording permission when prompted
 
 The project uses synchronized file groups — just create `.swift` files in `macshot/` and Xcode picks them up.
+It builds one app, **macshot Offline**, with bundle identifier
+`com.sw33tlie.macshot.offline`. There are no third-party package dependencies.
+Capture, OCR, translation with installed language packs and media processing stay
+on the Mac; do not add network-client permission or update services.
 
 ## Tests
 

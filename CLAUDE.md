@@ -1,4 +1,4 @@
-# macshot
+# macshot Offline
 
 Native macOS screenshot & annotation tool inspired by Flameshot. Built with Swift + AppKit. No Qt, no Electron.
 
@@ -7,24 +7,29 @@ Native macOS screenshot & annotation tool inspired by Flameshot. Built with Swif
 - **Language:** Swift 5.0
 - **UI:** AppKit (all windows created in code, storyboard is minimal — just app entry + main menu)
 - **Min Target:** macOS 12.3+ (Monterey)
-- **Bundle ID:** com.sw33tlie.macshot.macshot
-- **Sandbox:** Enabled (entitlements: network.client, files.user-selected.read-write, files.bookmarks.app-scope)
+- **Bundle ID:** com.sw33tlie.macshot.offline
+- **Sandbox:** Enabled without network-client permission (entitlements include files.user-selected.read-write, files.bookmarks.app-scope, optional microphone/camera)
 - **LSUIElement:** YES (menu bar only app, no dock icon — switches to `.regular` when editor windows are open)
 - **Permissions:** Screen Recording (Info.plist has Privacy - Screen Capture Usage Description)
 - **Xcode:** File system synchronized groups — just create .swift files in `macshot/` and Xcode picks them up automatically
 
-## Build Variants
+## Build identity and offline behavior
 
-macshot has two release variants:
+The project builds one app: **macshot Offline**, bundle id
+`com.sw33tlie.macshot.offline`, release asset `MacShot-Offline.dmg`.
+There is no alternate product or `OFFLINE` compilation switch.
 
-- **Normal:** product name `macshot`, bundle id `com.sw33tlie.macshot.macshot`, Sparkle feed `appcast.xml`, release asset `MacShot.dmg`.
-- **Offline:** product name `macshot Offline`, bundle id `com.sw33tlie.macshot.offline`, Sparkle feed `appcast-offline.xml`, release asset `MacShot-Offline.dmg`.
+The app has no third-party package dependencies, update service, cloud upload,
+web translation/search, or keyboard-content recording integration. It has no
+sandbox network-client entitlement. Translation uses already-installed Apple
+language packs on macOS 15+; captions require on-device speech recognition.
+Images are imported from local files through Apple frameworks. Export formats
+are PNG, JPEG, HEIC and AVIF when ImageIO reports encoding support.
 
-Both release variants exclude built-in uploads, web translation/search and keyboard capture. `OFFLINE` remains for bundle identity and update-feed compatibility. Translation uses installed Apple language packs on macOS 15+, with no network fallback. Normal and Offline update feeds must remain separate.
-
-Beta handling is shared: beta items get `<sparkle:channel>beta</sparkle:channel>`, and users opt in through the existing "Check for beta updates" setting. Stable offline releases will appear to offline users through `appcast-offline.xml` once a stable offline item exists.
-
-Homebrew status: beta releases skip Homebrew. Stable releases update the normal cask and generate `macshot-offline` in the personal tap. The official Homebrew cask remains normal-only unless a separate `macshot-offline` cask is submitted later.
+User-invoked QR/project links open in the browser, and the system share sheet
+can use the service explicitly selected by the user. These actions do not imply
+that the app blocks networking by macOS or other applications. New versions
+are installed manually from this repository's Releases page.
 
 ## Architecture
 
@@ -62,7 +67,7 @@ macshot/
 │   └── VideoCaptionTranscriber.swift  # On-device speech → caption words
 │
 ├── Services/
-│   ├── ImageEncoder.swift              # PNG/JPEG/HEIC/WebP encoding, clipboard copy, resolution scaling
+│   ├── ImageEncoder.swift              # PNG/JPEG/HEIC/AVIF encoding, clipboard copy, resolution scaling
 │   ├── BeautifyRenderer.swift          # Gradient frame / background beautification (linear + mesh gradients)
 │   ├── AutoRedactor.swift              # PII regex detection + Vision OCR → redaction annotations
 │   ├── TranslationOverlay.swift        # OCR → translate → overlay annotations
@@ -250,7 +255,7 @@ The video editor is built around `VideoEditorDocument` (one `VideoProject`: time
 - Output: `saveDirectory`, `quickCaptureMode`, `copyPathAfterSave`, `playCopySound`
 - Selection: `lastSelectionRect`, `lastSelectionScreenFrame`, `rememberLastSelection`
 - Thumbnails: `showFloatingThumbnail`, `thumbnailStacking`, `thumbnailAutoDismissSeconds`
-- Image: `imageFormat` (png/jpeg/heic/webp/avif), `imageQuality` (0.0–1.0), `downscaleRetina` (bool), `clipboardIncludesImageFormat` (bool, opt-in: adds the configured format ahead of PNG/TIFF on the clipboard)
+- Image: `imageFormat` (png/jpeg/heic/avif), `imageQuality` (0.0–1.0), `downscaleRetina` (bool), `clipboardIncludesImageFormat` (bool, opt-in: adds the configured format ahead of PNG/TIFF on the clipboard)
 - Recording: `recordingFormat` (mp4/gif), `recordingFPS`, `recordingOnStop`
 - History: `historySize`
 - Tools: `enabledTools`, `knownToolRawValues`
@@ -283,7 +288,7 @@ Pencil, Line, Arrow, Rectangle, Filled Rectangle, Ellipse, Marker/Highlighter, T
 - **Stamp tool:** Place emoji or custom images, load from file
 
 ### Output Actions
-Copy to clipboard, Save to file (PNG/JPEG/HEIC/WebP), Pin (floating always-on-top), OCR with on-device translation (macOS 15+), Remove background (VNGenerateForegroundInstanceMaskRequest), Open in editor, Beautify (30 gradient styles including 7 mesh gradients on macOS 15+), Flip horizontal/vertical
+Copy to clipboard, Save to file (PNG/JPEG/HEIC, plus AVIF when supported), Pin (floating always-on-top), OCR with on-device translation (macOS 15+), Remove background (VNGenerateForegroundInstanceMaskRequest), Open in editor, Beautify (30 gradient styles including 7 mesh gradients on macOS 15+), Flip horizontal/vertical
 
 ### Advanced
 - **Editor Window:** Standalone resizable window for post-capture editing, full annotation tools, zoom 0.1x–8x via NSScrollView
@@ -298,7 +303,6 @@ Copy to clipboard, Save to file (PNG/JPEG/HEIC/WebP), Pin (floating always-on-to
 - **Color Opacity:** Adjustable per annotation via custom color picker
 - **Smooth Pencil Strokes:** Toggle in settings
 - **Zoom:** 0.1x–8x, scroll/pinch, pan, clickable label to edit percentage
-- **Sparkle Auto-Updates:** Automatic update checks via Sparkle framework
 - **Permission Onboarding:** First-run guide for granting Screen Recording permission
 
 ## Coding Conventions
@@ -307,7 +311,7 @@ Copy to clipboard, Save to file (PNG/JPEG/HEIC/WebP), Pin (floating always-on-to
 - **Use proper AppKit components:** NSPopover for popovers, NSView subclasses for toolbar buttons and strips, NSSlider/NSSegmentedControl/NSButton for controls, NSScrollView for editor zoom/pan, NSTextView for text editing. Avoid reimplementing standard UI components with manual `draw()` + coordinate hit-testing.
 - **Strict concurrency:** CI builds with Xcode 16+ and `-Owholemodule` which enforces strict Swift concurrency. Any code using `@MainActor`-isolated SwiftUI APIs (e.g. `ImageRenderer`) must itself be `@MainActor`. Always mark classes/functions that touch SwiftUI rendering with `@MainActor`. Calling `@MainActor`-isolated methods (e.g. on AppDelegate) from non-`@MainActor` classes requires `MainActor.assumeIsolated { }`. **Local Debug builds do NOT catch these errors.** Before tagging a release, always verify with a Release build: `xcodebuild -scheme macshot -configuration Release build 2>&1 | grep "error:"`
 - **Tool handler pattern:** New annotation tools should implement `AnnotationToolHandler` protocol in `UI/Tools/`, not add switch cases to OverlayView. The handler's `start`/`update`/`finish` methods use `AnnotationCanvas` to access shared state.
-- Apple frameworks: ScreenCaptureKit, Vision, CoreImage, AVFoundation + Sparkle for auto-updates + Swift-WebP for WebP encoding
+- Apple frameworks: ScreenCaptureKit, Vision, CoreImage, ImageIO, AVFoundation, Translation and Speech. No third-party package dependencies.
 - SF Symbols for toolbar icons
 - Minimal allocations during mouse tracking (reuse paths, avoid per-mouseMoved object creation)
 - `[weak self]` in all closures to avoid retain cycles
@@ -347,11 +351,11 @@ Copy to clipboard, Save to file (PNG/JPEG/HEIC/WebP), Pin (floating always-on-to
 
 ## Tests
 
-- `scripts/run-tests.sh` runs everything; add `--offline` for the offline variant, and pass `ClassName` or `ClassName/testName` to narrow it. It reports failures and preserves the full log/result bundle on failure. Set `MACSHOT_KEEP_TEST_RESULTS=1` to preserve successful results too. Empty/all-skipped runs are errors.
+- `scripts/run-tests.sh` runs the single offline app test suite; pass `ClassName` or `ClassName/testName` to narrow it. It reports failures and preserves the full log/result bundle on failure. Set `MACSHOT_KEEP_TEST_RESULTS=1` to preserve successful results too. Empty/all-skipped runs are errors.
 - The `macshotTests` target compiles the app sources directly (a synchronized group over `macshot/`, minus `main.swift`), so there is **no host app**: tests run headless, with no Screen Recording permission and no window server dependency. `internal` symbols are reachable without `@testable import`; `private` ones are not.
 - Shared helpers live in `macshotTests/TestSupport.swift`: `withDefaults` (isolated UserDefaults), `ImageProbe` (scale-independent fixture images + pixel probes — never build fixtures with `lockFocus`, it produces 2x buffers on Retina and 1x in CI), `TestKeyEvent` (synthesized `NSEvent`s), and `Reflect`/`FieldDescriber` (compare every stored property of a value at once).
 - Logic that is worth testing but buried in a permission-gated class should be extracted rather than left untested — see `ScrollFrameAnalyzer` and `RecordingEngine.cropRect(for:displayBounds:)`.
-- `.github/workflows/tests.yml` runs the suite plus a Release build of both variants on every push and PR. The Release build is what catches strict-concurrency errors that Debug builds let through.
+- `.github/workflows/tests.yml` runs the suite plus a Release build of the offline app on every push and PR. The Release build is what catches strict-concurrency errors that Debug builds let through.
 
 ## Build & Run
 
@@ -365,51 +369,42 @@ Copy to clipboard, Save to file (PNG/JPEG/HEIC/WebP), Pin (floating always-on-to
 
 ### Workflow: `.github/workflows/build-release.yml`
 
-CI triggers on tag push (`v*.*.*` or `v*.*.*-beta.*`) or manual `workflow_dispatch`. The workflow builds, signs, notarizes, creates a DMG, updates Sparkle appcast, creates a GitHub Release, and (for stable only) updates Homebrew.
+CI triggers on version tag push (`v*.*.*`, including prerelease tags),
+`release.published`, or manual `workflow_dispatch`. It builds the single offline
+app, signs it, packages `MacShot-Offline.dmg`, and uploads that image and
+`SHA256SUMS.txt` to the current repository's GitHub Release. Existing release
+titles, notes and prerelease status are preserved; reruns replace matching
+assets. Runs for the same tag are serialized.
 
-### Stable release
+Without Apple secrets, CI uses ad-hoc signing and skips notarization. Developer
+ID signing and notarization require all five secrets: `DEVELOPER_ID_CERT_P12`,
+`DEVELOPER_ID_CERT_PASSWORD`, `ASC_API_KEY`, `ASC_API_KEY_ID`, and
+`ASC_API_ISSUER_ID`. Partial configuration fails early. Checkout and release
+publishing use the built-in `GITHUB_TOKEN`. There are no application update
+feeds, package-signing keys, external package downloads or Homebrew publishing
+steps. GitHub Actions and optional Apple notarization still need network access
+on the CI runner.
 
-1. **Add a CHANGELOG.md entry** for the new version — CI extracts it for GitHub Release notes.
-2. **Tag and push:** `git tag v3.8.0 && git push origin main --tags`
-3. CI handles the rest: DMG, GitHub Release, appcast update (replaces all items with just the new stable), website version bump, Homebrew cask update.
-4. Make sure tool version in the website page is updated too.
+### Version tags
 
-### Beta release
+1. Add a `CHANGELOG.md` entry for the new version; CI uses it for release notes.
+2. Tag the commit containing the workflow and push the tag, for example:
+   `git tag v4.5.0 && git push origin v4.5.0`.
+3. Use a suffix such as `v4.5.0-beta.1` to create a GitHub prerelease. There is no
+   in-app beta channel or automatic installation.
 
-1. **Add a CHANGELOG.md entry** (e.g. `## [3.8.0-beta.3] - 2026-04-06`).
-2. **Tag with `-beta.N` suffix:** `git tag v3.8.0-beta.3 && git push origin v3.8.0-beta.3`
-3. CI auto-detects beta from the tag and:
-   - Adds `<sparkle:channel>beta</sparkle:channel>` to the appcast item (invisible to stable users)
-   - Preserves the existing stable item in the appcast
-   - Marks the GitHub Release as **pre-release**
-   - **Skips** Homebrew tap and cask updates
-   - **Skips** website version update
+CI overrides `MARKETING_VERSION` with the version from the tag and
+`CURRENT_PROJECT_VERSION` with its run number. Project values are local-build
+fallbacks.
 
-Beta users opt in via Preferences > "Check for beta updates". This sets `allowedChannels(for:)` to `["beta"]` in `SPUUpdaterDelegate`.
+### Manual trigger
 
-### Sparkle versioning
+The tag must already exist on the remote:
 
-- `sparkle:version` (what Sparkle compares) = `github.run_number` — a monotonically increasing integer per CI build. This avoids all semver/pre-release comparison issues.
-- `sparkle:shortVersionString` (what the user sees) = the human-readable version from the tag (e.g. `3.8.0-beta.3`).
-- `MARKETING_VERSION` = tag version (display). `CURRENT_PROJECT_VERSION` = run number (build number).
-- The stable appcast item from older builds still uses the old version string (e.g. `3.7.0`) for `sparkle:version`. Sparkle's comparator parses `3.7.0` as `3` when compared to a plain integer, so any run number > 3 is seen as newer. This works.
-
-### Appcast safety
-
-- CI validates the generated appcast XML with `python3 ET.parse()` before committing. If invalid, the build fails and the broken XML never reaches users.
-- Appcast is served from `https://raw.githubusercontent.com/sw33tLie/macshot/main/appcast.xml` (CDN-cached, ~5 min TTL).
-- Stable item extraction uses `python3 xml.etree.ElementTree` with `ET.register_namespace('sparkle', ...)` to preserve the `sparkle:` prefix.
-
-### Manual trigger (fallback)
-
-If tag push doesn't trigger CI (e.g. after rapid tag create/delete), use:
+```sh
+gh workflow run build-release.yml --ref main -f tag=v4.5.0
 ```
-gh workflow run build-release.yml --ref main -f tag=v3.8.0-beta.3
-```
-This dispatches from main (which has `workflow_dispatch` support) and reads the tag from the input parameter. The tag must already exist on the remote.
 
-### Notes
-
-- `MARKETING_VERSION` in `project.pbxproj` is only used for local dev builds. CI always overrides it.
-- Never rapidly create/delete tags — GitHub throttles tag push events and may suppress triggers for 15-30 minutes.
-- The workflow was renamed from `release.yml` to `build-release.yml`.
+The workflow must be present on the default branch for manual dispatch. Users
+install newer releases by quitting the app and replacing it with a freshly
+downloaded copy.

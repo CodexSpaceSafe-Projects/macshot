@@ -1,6 +1,6 @@
 #!/bin/bash
 # Run headless tests. Failures retain the full log and xcresult for inspection.
-# Usage: scripts/run-tests.sh [--offline] [ClassName[/testName] ...]
+# Usage: scripts/run-tests.sh [ClassName[/testName] ...]
 set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
@@ -10,7 +10,6 @@ test_result="$test_directory/results.xcresult"
 test_log="$test_directory/xcodebuild.log"
 test_args=(
   -scheme macshotTests
-  -onlyUsePackageVersionsFromResolvedFile
   -configuration "${CONFIGURATION:-Debug}"
   -destination 'platform=macOS'
   -resultBundlePath "$test_result"
@@ -19,11 +18,10 @@ test_args=(
   CODE_SIGNING_ALLOWED=NO
 )
 for test_filter in "$@"; do
-  if [[ "$test_filter" == --offline ]]; then
-    test_args+=('SWIFT_ACTIVE_COMPILATION_CONDITIONS=$(inherited) OFFLINE')
-  else
-    test_args+=(-only-testing:"macshotTests/$test_filter")
-  fi
+  case "$test_filter" in
+    -*) echo "Unknown option: $test_filter. Usage: $0 [ClassName[/testName] ...]" >&2; exit 2 ;;
+    *) test_args+=(-only-testing:"macshotTests/$test_filter") ;;
+  esac
 done
 
 xcodebuild "${test_args[@]}" test > "$test_log" 2>&1
@@ -54,7 +52,7 @@ sys.exit(1 if failed or result.get("testFailures") else 0)
 test_summary_status=$?
 
 if (( test_build_status != 0 || test_summary_status != 0 )); then
-  # Include non-Swift failures too: signing, dependency resolution, linker,
+  # Include non-Swift failures too: signing, linker,
   # test discovery and runner crashes all need an actionable diagnostic.
   tail -n 60 "$test_log"
   echo "Full log: $test_log"

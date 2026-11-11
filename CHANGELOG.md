@@ -1,5 +1,20 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- Ship a single **macshot Offline** application with the offline bundle identity.
+- Remove application update checks/downloads, their settings and installer helpers,
+  and the sandbox network-client entitlement. Install new versions manually.
+- Remove third-party image codecs and update packages. Image processing now uses
+  Apple frameworks; PNG, JPEG and HEIC export remain, with AVIF on supported systems.
+- Remove WebP export; an old WebP output preference falls back to PNG.
+- Build and publish one `MacShot-Offline.dmg` and `SHA256SUMS.txt` for each release.
+
+Earlier entries below describe historical versions and may mention removed
+features or dependencies.
+
 ## [4.4.0] - 2026-11-01
 
 ### Before you update

@@ -32,7 +32,6 @@
 "Open from Clipboard" = "Panodan Aç";
 "Pin from Clipboard" = "Panodan Sabitle";
 "Preferences..." = "Tercihler...";
-"Check for Updates..." = "Güncellemeleri Denetle...";
 "Quit macshot" = "macshot'tan Çık";
 "No recent captures" = "Son yakalama yok";
 "Clear History" = "Geçmişi Temizle";
@@ -221,8 +220,6 @@
 "Default" = "Varsayılan";
 "Custom symbol" = "Özel sembol";
 "Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Herhangi bir SF Symbol adı girin (örn. camera.fill) veya bir hazır ayar seçin. Adlara Apple'ın SF Symbols uygulamasından göz atın. Geçersiz adlar varsayılan simgeye döner.";
-"Check for updates automatically" = "Güncellemeleri otomatik denetle";
-"Check for beta updates" = "Beta güncellemelerini denetle";
 "Thumbnail" = "Küçük Resim";
 "  Dismiss after:" = "  Kapatma süresi:";
 "seconds before auto-dismiss (0 = never)" = "saniye sonra otomatik kapat (0 = asla)";
@@ -520,7 +517,6 @@
 "Engine:" = "Motor:";
 "Apple (on-device)" = "Apple (cihaz üzerinde)";
 "Download language packs in System Settings…" = "Sistem Ayarları'ndan dil paketlerini indirin…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Konum:";
 "Size:" = "Boyut:";
 "Shape:" = "Şekil:";

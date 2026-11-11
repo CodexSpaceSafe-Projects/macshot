@@ -34,7 +34,6 @@
 "Open from Clipboard" = "\U00C5bn fra udklipsholder";
 "Pin from Clipboard" = "Fastg\U00F8r fra udklipsholder";
 "Preferences..." = "Indstillinger...";
-"Check for Updates..." = "S\U00F8g efter opdateringer...";
 "Quit macshot" = "Afslut macshot";
 "No recent captures" = "Ingen seneste optagelser";
 "Clear History" = "Ryd historik";
@@ -230,8 +229,6 @@
 "Use window title in saved filename" = "Brug vinduets titel i gemt filnavn";
 "Hide menu bar icon" = "Skjul menulinjeikon";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Genvejstaster virker stadig. For at vise ikonet igen skal du genstarte macshot.";
-"Check for updates automatically" = "S\U00F8g efter opdateringer automatisk";
-"Check for beta updates" = "S\U00F8g efter betaopdateringer";
 "Thumbnail" = "Miniature";
 "  Dismiss after:" = "  Luk efter:";
 "seconds before auto-dismiss (0 = never)" = "sekunder f\U00F8r automatisk lukning (0 = aldrig)";
@@ -526,7 +523,6 @@
 "Engine:" = "Motor:";
 "Apple (on-device)" = "Apple (p\U00E5 enheden)";
 "Download language packs in System Settings\U2026" = "Download sprogpakker i Systemindstillinger\U2026";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Position:";
 "Size:" = "St\U00F8rrelse:";
 "Shape:" = "Form:";

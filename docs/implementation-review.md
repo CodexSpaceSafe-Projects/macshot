@@ -1,4 +1,10 @@
-# Implementation review
+# Historical implementation review
+
+> This is an archived record of earlier application variants and their test
+> evidence. It includes features, dependencies, commands and installation paths
+> that no longer exist. It does not describe the current offline-only build or
+> authorize work in a new session. Use [the current guide](../CLAUDE.md) and
+> [offline boundaries](security-hardening.md) for current behavior and checks.
 
 Starting revision: `2dce330` (25 local commits after `43d5ae4`). The worktree was clean when this review began. The attached handoff and current `CLAUDE.md` were read. This file tracks the full scope across long-running review sessions; it is not a completion certificate.
 

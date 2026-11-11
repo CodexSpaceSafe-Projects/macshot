@@ -32,7 +32,6 @@
 "Open from Clipboard" = "פתח מהלוח";
 "Pin from Clipboard" = "הצמד מהלוח";
 "Preferences..." = "העדפות...";
-"Check for Updates..." = "בדוק עדכונים...";
 "Quit macshot" = "צא מ-macshot";
 "No recent captures" = "אין לכידות אחרונות";
 "Clear History" = "נקה היסטוריה";
@@ -221,8 +220,6 @@
 "Default" = "ברירת מחדל";
 "Custom symbol" = "סמל מותאם אישית";
 "Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "הזן שם SF Symbol כלשהו (למשל camera.fill) או בחר ערכה מוגדרת מראש. עיין בשמות באפליקציית SF Symbols של Apple. שמות לא חוקיים חוזרים לסמל ברירת המחדל.";
-"Check for updates automatically" = "בדוק עדכונים באופן אוטומטי";
-"Check for beta updates" = "בדוק עדכוני בטא";
 "Thumbnail" = "תמונה ממוזערת";
 "  Dismiss after:" = "  סגור אחרי:";
 "seconds before auto-dismiss (0 = never)" = "שניות לסגירה אוטומטית (0 = אף פעם)";
@@ -623,7 +620,6 @@
 "URL scheme info" = "מידע על סכמת URL";
 "sec (0 = never)" = "שניות (0 = אף פעם)";
 "Settings" = "הגדרות";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 
 /* Settings import/export (issues #265, #280) */
 "Settings Backup" = "גיבוי הגדרות";

@@ -32,7 +32,6 @@
 "Open from Clipboard" = "Obrir des del porta-retalls";
 "Pin from Clipboard" = "Fixar des del porta-retalls";
 "Preferences..." = "Preferències...";
-"Check for Updates..." = "Cercar actualitzacions...";
 "Quit macshot" = "Sortir de macshot";
 "No recent captures" = "No hi ha captures recents";
 "Clear History" = "Esborrar historial";
@@ -217,8 +216,6 @@
 "Use window title in saved filename" = "Utilitzar el títol de la finestra al nom del fitxer";
 "Hide menu bar icon" = "Amagar la icona de la barra de menús";
 "Hotkeys still work. To show the icon again, re-launch macshot." = "Les dreceres segueixen funcionant. Per mostrar la icona de nou, reinicieu macshot.";
-"Check for updates automatically" = "Cercar actualitzacions automàticament";
-"Check for beta updates" = "Cercar actualitzacions beta";
 "Thumbnail" = "Miniatura";
 "  Dismiss after:" = "  Descartar després de:";
 "seconds before auto-dismiss (0 = never)" = "segons abans de descartar automàticament (0 = mai)";
@@ -520,7 +517,6 @@
 "Engine:" = "Motor:";
 "Apple (on-device)" = "Apple (al dispositiu)";
 "Download language packs in System Settings…" = "Descarregar paquets d'idioma a la Configuració del sistema…";
-"Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Update checks may connect to MacShot's update server. Screenshots and recordings stay local unless you share or save them yourself.";
 "Position:" = "Posició:";
 "Size:" = "Mida:";
 "Shape:" = "Forma:";

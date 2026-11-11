@@ -4,12 +4,16 @@ import Foundation
 enum RemovedFeatureCleanup {
     static func isRetiredSetting(_ key: String) -> Bool {
         let lower = key.lowercased()
-        return lower == "translationprovider" || [
+        return key.hasPrefix("SU") || lower == "betaupdatesenabled" || lower == "translationprovider" || [
             "imgbb", "gdrive", "googledrive", "s3", "upload", "recordkeystroke", "keystroke",
         ].contains { lower.hasPrefix($0) }
     }
 
     static func run(defaults: UserDefaults = .standard, supportDirectory: URL? = nil) throws {
+        // Preserve onboarding history before discarding obsolete updater state.
+        if defaults.bool(forKey: "SUHasLaunchedBefore") {
+            defaults.set(true, forKey: "screenRecordingGrantedBefore")
+        }
         for key in defaults.dictionaryRepresentation().keys where isRetiredSetting(key) {
             defaults.removeObject(forKey: key)
         }
