@@ -215,7 +215,7 @@ final class LocalizationTests: XCTestCase {
     /// ban. A locale that climbs above its budget has almost certainly been
     /// re-damaged; the fix is to repair the strings, not to raise the number.
     private static let diacriticSuspectBudget: [String: Int] = [
-        "ca": 2, "cs": 17, "es": 0, "fr": 6, "hr": 1, "pl": 1,
+        "ca": 1, "cs": 17, "es": 0, "fr": 6, "hr": 1, "pl": 1,
         "pt": 1, "pt-BR": 1, "ro": 45, "sk": 3, "sv": 1, "tr": 6, "vi": 43,
     ]
 
