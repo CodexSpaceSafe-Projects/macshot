@@ -132,10 +132,10 @@ final class VideoSceneRendererTests: XCTestCase {
         assertColor(pixel(hidden, 204, 104), 255, 0, 0)
     }
 
-    func testTextCacheReturnsSameImageForSameLabel() {
+    func testTextCacheReturnsSameImageForSameCaption() {
         let cache = OverlayTextCache()
-        let a = cache.pill(text: "⌘ ⇧ 4", fontSize: 30, maxWidth: 800, light: false, weight: .semibold)
-        let b = cache.pill(text: "⌘ ⇧ 4", fontSize: 30, maxWidth: 800, light: false, weight: .semibold)
+        let a = cache.caption(text: "A local caption", fontSize: 30, maxWidth: 800, background: true)
+        let b = cache.caption(text: "A local caption", fontSize: 30, maxWidth: 800, background: true)
         XCTAssertNotNil(a)
         XCTAssertTrue(a === b)
         XCTAssertNotNil(cache.caption(text: "A caption that is long enough to wrap onto more than one line",
