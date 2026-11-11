@@ -1,17 +1,17 @@
-/* हिन्दी — macshot localization
+/* हिन्दी — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "क्लिपबोर्ड से खोलें";
 "Pin from Clipboard" = "क्लिपबोर्ड से पिन करें";
 "Preferences..." = "प्राथमिकताएँ...";
-"Quit macshot" = "macshot बंद करें";
+"Quit MShot" = "MShot बंद करें";
 "No recent captures" = "कोई हालिया कैप्चर नहीं";
 "Clear History" = "इतिहास मिटाएँ";
 
@@ -191,7 +191,7 @@
 "Copy to clipboard" = "क्लिपबोर्ड पर कॉपी करें";
 
 /* Preferences - General */
-"macshot Preferences" = "macshot प्राथमिकताएँ";
+"MShot Preferences" = "MShot प्राथमिकताएँ";
 "General" = "सामान्य";
 "Tools" = "उपकरण";
 "Recording" = "रिकॉर्डिंग";
@@ -223,7 +223,7 @@
 "Keep ratio for next captures" = "अगले कैप्चर के लिए अनुपात बनाए रखें";
 "Use window title in saved filename" = "सहेजे गए फ़ाइलनाम में विंडो शीर्षक उपयोग करें";
 "Hide menu bar icon" = "मेनू बार आइकन छिपाएँ";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "हॉटकी अभी भी काम करेंगी। आइकन फिर से दिखाने के लिए macshot पुनः लॉन्च करें।";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "हॉटकी अभी भी काम करेंगी। आइकन फिर से दिखाने के लिए MShot पुनः लॉन्च करें।";
 "Thumbnail" = "थंबनेल";
 "  Dismiss after:" = "  इसके बाद खारिज करें:";
 "seconds before auto-dismiss (0 = never)" = "सेकंड में स्वतः खारिज (0 = कभी नहीं)";
@@ -232,7 +232,7 @@
 "Stack (keep all)" = "स्टैक (सभी रखें)";
 "Replace (show only latest)" = "बदलें (केवल नवीनतम दिखाएँ)";
 "Menu Bar Order" = "मेनू बार क्रम";
-"Choose the order of capture actions in the macshot menu bar menu." = "macshot मेनू बार मेनू में कैप्चर क्रियाओं का क्रम चुनें।";
+"Choose the order of capture actions in the MShot menu bar menu." = "MShot मेनू बार मेनू में कैप्चर क्रियाओं का क्रम चुनें।";
 "Move up" = "ऊपर ले जाएँ";
 "Move down" = "नीचे ले जाएँ";
 "Output" = "आउटपुट";
@@ -349,9 +349,8 @@
 "No Share Services" = "कोई साझा सेवा नहीं";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "संस्करण %@ (%@)";
-"Made by" = "निर्माता";
 "Licensed under the GPLv3" = "GPLv3 के अंतर्गत लाइसेंसीकृत";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "macOS के लिए एक मुफ़्त, ओपन-सोर्स स्क्रीनशॉट और स्क्रीन रिकॉर्डिंग उपकरण।\nपूर्णतः नेटिव, Swift और AppKit से निर्मित।";
 
@@ -362,22 +361,22 @@
 "Copy an image or text to the clipboard first, then try again." = "पहले क्लिपबोर्ड पर एक छवि या पाठ कॉपी करें, फिर पुनः प्रयास करें।";
 "OK" = "ठीक है";
 "Accessibility Access Required" = "सुलभता पहुँच आवश्यक";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "macshot को अन्य ऐप्स को स्वतः-स्क्रॉल करने के लिए सुलभता अनुमति चाहिए। कृपया सिस्टम सेटिंग्स में पहुँच प्रदान करें, फिर पुनः प्रयास करें।";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "स्क्रॉल कैप्चर के लिए macshot को एक्सेसिबिलिटी अनुमति चाहिए। कृपया सिस्टम सेटिंग्स में एक्सेस दें, फिर पुनः प्रयास करें।";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "MShot को अन्य ऐप्स को स्वतः-स्क्रॉल करने के लिए सुलभता अनुमति चाहिए। कृपया सिस्टम सेटिंग्स में पहुँच प्रदान करें, फिर पुनः प्रयास करें।";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "स्क्रॉल कैप्चर के लिए MShot को एक्सेसिबिलिटी अनुमति चाहिए। कृपया सिस्टम सेटिंग्स में एक्सेस दें, फिर पुनः प्रयास करें।";
 "Open Settings" = "सेटिंग्स खोलें";
 "Cancel" = "रद्द करें";
 "Microphone Access Required" = "माइक्रोफ़ोन पहुँच आवश्यक";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot को ध्वनि ऑडियो रिकॉर्ड करने के लिए माइक्रोफ़ोन अनुमति चाहिए। पहुँच प्रदान करने के लिए सिस्टम सेटिंग्स खोलें।";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "MShot को ध्वनि ऑडियो रिकॉर्ड करने के लिए माइक्रोफ़ोन अनुमति चाहिए। पहुँच प्रदान करने के लिए सिस्टम सेटिंग्स खोलें।";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "macshot में आपका स्वागत है";
-"Welcome back to macshot" = "macshot में फिर से स्वागत है";
+"Welcome to MShot" = "MShot में आपका स्वागत है";
+"Welcome back to MShot" = "MShot में फिर से स्वागत है";
 "Turn Screen Recording back on" = "स्क्रीन रिकॉर्डिंग फिर से चालू करें";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "कुछ अपडेट के बाद macOS आपसे macshot को फिर से अनुमति देने के लिए कहता है। आपकी सेटिंग्स और कैप्चर सुरक्षित हैं। अगर macshot पहले से सूची में है, तो उसे चुनें, हटाने के लिए माइनस बटन (−) पर क्लिक करें, फिर प्लस बटन (+) पर क्लिक करके macshot को दोबारा जोड़ें।";
-"macshot needs one permission" = "macshot को एक अनुमति चाहिए";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "कुछ अपडेट के बाद macOS आपसे MShot को फिर से अनुमति देने के लिए कहता है। आपकी सेटिंग्स और कैप्चर सुरक्षित हैं। अगर MShot पहले से सूची में है, तो उसे चुनें, हटाने के लिए माइनस बटन (−) पर क्लिक करें, फिर प्लस बटन (+) पर क्लिक करके MShot को दोबारा जोड़ें।";
+"MShot needs one permission" = "MShot को एक अनुमति चाहिए";
 "Screen Recording not yet granted" = "स्क्रीन रिकॉर्डिंग अभी तक प्रदान नहीं की गई";
 "Screen Recording granted!" = "स्क्रीन रिकॉर्डिंग प्रदान की गई!";
-"Enable macshot, then try taking a screenshot" = "macshot सक्षम करें, फिर स्क्रीनशॉट लेने का प्रयास करें";
+"Enable MShot, then try taking a screenshot" = "MShot सक्षम करें, फिर स्क्रीनशॉट लेने का प्रयास करें";
 "Open Screen Recording Settings" = "स्क्रीन रिकॉर्डिंग सेटिंग्स खोलें";
 "Continue" = "जारी रखें";
 
@@ -404,7 +403,7 @@
 "Path copied!" = "पथ कॉपी किया गया!";
 
 /* Video Editor */
-"macshot Video Editor" = "macshot वीडियो संपादक";
+"MShot Video Editor" = "MShot वीडियो संपादक";
 "%@ selected" = "%@ चयनित";
 "Exporting..." = "निर्यात हो रहा है...";
 "Export failed" = "निर्यात विफल";
@@ -452,7 +451,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "इनपुट मॉनिटरिंग आवश्यक";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "अलग-अलग इंटरफ़ेस तत्वों पर स्नैप करने के लिए macshot को एक्सेसिबिलिटी अनुमति चाहिए। कृपया सिस्टम सेटिंग्स में एक्सेस दें, फिर पुनः प्रयास करें।";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "अलग-अलग इंटरफ़ेस तत्वों पर स्नैप करने के लिए MShot को एक्सेसिबिलिटी अनुमति चाहिए। कृपया सिस्टम सेटिंग्स में एक्सेस दें, फिर पुनः प्रयास करें।";
 
 /* Recording — Keystroke Overlay */
 
@@ -465,7 +464,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "वेबकैम ओवरले";
 "Camera Access Required" = "कैमरा पहुँच आवश्यक";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "macshot को वेबकैम ओवरले के लिए कैमरा अनुमति चाहिए। पहुँच प्रदान करने के लिए सिस्टम सेटिंग्स खोलें।";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "MShot को वेबकैम ओवरले के लिए कैमरा अनुमति चाहिए। पहुँच प्रदान करने के लिए सिस्टम सेटिंग्स खोलें।";
 "Webcam" = "वेबकैम";
 "Bottom Right" = "नीचे दाएँ";
 "Bottom Left" = "नीचे बाएँ";
@@ -485,7 +484,7 @@
 
 /* New Strings */
 "Settings..." = "सेटिंग्स...";
-"macshot Settings" = "macshot सेटिंग्स";
+"MShot Settings" = "MShot सेटिंग्स";
 "Also open in Editor" = "संपादक में भी खोलें";
 "Open in Editor right after selection" = "चयन के तुरंत बाद संपादक में खोलें";
 "Close editor after copying" = "कॉपी करने के बाद संपादक बंद करें";
@@ -541,7 +540,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "वीडियो खोलें...";
-"Choose a video to open in macshot editor" = "macshot संपादक में खोलने के लिए वीडियो चुनें";
+"Choose a video to open in MShot editor" = "MShot संपादक में खोलने के लिए वीडियो चुनें";
 "Click to add effects" = "प्रभाव जोड़ने के लिए क्लिक करें";
 "Add Zoom" = "ज़ूम जोड़ें";
 "Add Censor" = "सेंसर जोड़ें";
@@ -607,7 +606,7 @@
 "Re-capture the last selected area" = "अंतिम चयनित क्षेत्र पुनः कैप्चर करें";
 "Captured window title (screenshots only, blank otherwise)" = "केवल स्क्रीनशॉट, कैप्चर किए गए विंडो का शीर्षक (अन्यथा खाली)";
 "Show available filename tokens" = "उपलब्ध फ़ाइलनाम टोकन दिखाएँ";
-"Enable macshot:// URL scheme" = "macshot:// URL स्कीम सक्षम करें";
+"Enable mshot:// URL scheme" = "mshot:// URL स्कीम सक्षम करें";
 "Show supported URL scheme commands" = "समर्थित URL स्कीम कमांड दिखाएँ";
 "Start area capture" = "क्षेत्र कैप्चर शुरू करें";
 "Start area recording" = "क्षेत्र रिकॉर्डिंग शुरू करें";
@@ -616,7 +615,7 @@
 "Stop the current recording" = "वर्तमान रिकॉर्डिंग रोकें";
 "Supported URL Scheme Commands" = "समर्थित URL स्कीम कमांड";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "फ़ाइल एक्सटेंशन स्वचालित रूप से जोड़ा जाता है। {window} में स्लैश और कोलन डैश बन जाते हैं।";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Raycast, Alfred, Shortcuts, या URL खोलने वाले किसी भी उपकरण से macshot ट्रिगर करें।";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Raycast, Alfred, Shortcuts, या URL खोलने वाले किसी भी उपकरण से MShot ट्रिगर करें।";
 "URL scheme info" = "URL स्कीम जानकारी";
 "sec (0 = never)" = "से. (0 = कभी नहीं)";
 "Settings" = "सेटिंग्स";
@@ -626,7 +625,7 @@
 "Export Settings…" = "सेटिंग्स एक्सपोर्ट करें…";
 "Import Settings…" = "सेटिंग्स इम्पोर्ट करें…";
 "Reveal Settings File in Finder" = "सेटिंग्स फ़ाइल को Finder में दिखाएँ";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "सेटिंग्स एक्सपोर्ट करें";
 "Import Settings" = "सेटिंग्स इम्पोर्ट करें";
 "Import failed" = "इम्पोर्ट विफल रहा";
@@ -637,12 +636,12 @@
 "Relaunch Now" = "अभी पुनः लॉन्च करें";
 "Replace your current settings?" = "अपनी वर्तमान सेटिंग्स बदलें?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "%d सेटिंग्स लागू की गईं। सभी बदलाव लागू करने के लिए macshot को पुनः लॉन्च करें।";
+"%d settings were applied. Relaunch MShot to apply all changes." = "%d सेटिंग्स लागू की गईं। सभी बदलाव लागू करने के लिए MShot को पुनः लॉन्च करें।";
 "A few large items were too big to include. Everything else was saved." = "कुछ बड़ी वस्तुएँ शामिल करने के लिए बहुत बड़ी थीं। बाकी सब कुछ सहेज लिया गया।";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "आपकी कस्टम Beautify बैकग्राउंड छवि शामिल करने के लिए बहुत बड़ी थी। बाकी सब कुछ सहेज लिया गया।";
-"This file is not a valid macshot settings file." = "यह फ़ाइल एक मान्य macshot सेटिंग्स फ़ाइल नहीं है।";
+"This file is not a valid MShot settings file." = "यह फ़ाइल एक मान्य MShot सेटिंग्स फ़ाइल नहीं है।";
 "This settings file contains no settings." = "इस सेटिंग्स फ़ाइल में कोई सेटिंग्स नहीं हैं।";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "यह सेटिंग्स फ़ाइल macshot के किसी नए संस्करण द्वारा बनाई गई थी। कृपया पहले macshot को अपडेट करें।";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "यह सेटिंग्स फ़ाइल MShot के किसी नए संस्करण द्वारा बनाई गई थी। कृपया पहले MShot को अपडेट करें।";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "टेक्स्ट को कैप्चर करें, अनुवाद करें और छवि पर ओवरले करें";
@@ -687,7 +686,7 @@
 "Apply Default Zoom to All" = "डिफ़ॉल्ट ज़ूम सभी पर लागू करें";
 "Auto" = "ऑटो";
 "Auto Zoom" = "ऑटो ज़ूम";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "ऑटो ज़ूम को पॉइंटर डेटा चाहिए, जिसे macshot हर नई रिकॉर्डिंग के साथ रिकॉर्ड करता है। आप अब भी ज़ूम लेन पर डबल-क्लिक करके ज़ूम जोड़ सकते हैं।";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "ऑटो ज़ूम को पॉइंटर डेटा चाहिए, जिसे MShot हर नई रिकॉर्डिंग के साथ रिकॉर्ड करता है। आप अब भी ज़ूम लेन पर डबल-क्लिक करके ज़ूम जोड़ सकते हैं।";
 "Background blur" = "पृष्ठभूमि ब्लर";
 "Background color" = "पृष्ठभूमि रंग";
 "Background, padding, rounded corners and shadow" = "पृष्ठभूमि, पैडिंग, गोल कोने और छाया";
@@ -784,7 +783,7 @@
 "Shrink during zooms" = "ज़ूम के दौरान छोटा करें";
 "Smoothing" = "स्मूदिंग";
 "Snappy" = "तेज़";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "macshot के लिए वाणी पहचान सिस्टम सेटिंग्स › गोपनीयता और सुरक्षा में बंद है।";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "MShot के लिए वाणी पहचान सिस्टम सेटिंग्स › गोपनीयता और सुरक्षा में बंद है।";
 "Speed" = "गति";
 "Spotlight" = "स्पॉटलाइट";
 "Square" = "वर्ग";
@@ -794,11 +793,11 @@
 "The recording's audio could not be read." = "रिकॉर्डिंग का ऑडियो पढ़ा नहीं जा सका।";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "यह रिकॉर्डिंग पहले से ही अपने पिक्सेल में पॉइंटर दिखाती है, इसलिए इसकी शैली बदली नहीं जा सकती। ज़ूम फिर भी इसका अनुसरण कर सकते हैं।";
 "This recording has no audio to transcribe." = "इस रिकॉर्डिंग में ट्रांसक्राइब करने के लिए कोई ऑडियो नहीं है।";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "इस वीडियो में कोई रिकॉर्ड किया गया पॉइंटर डेटा नहीं है। macshot से बनी जो रिकॉर्डिंग एडिटर में खुलती हैं, उनमें रिकॉर्डिंग के बाद पॉइंटर की शैली, स्मूदिंग और आकार बदला जा सकता है।";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "इस वीडियो में कोई रिकॉर्ड किया गया पॉइंटर डेटा नहीं है। MShot से बनी जो रिकॉर्डिंग एडिटर में खुलती हैं, उनमें रिकॉर्डिंग के बाद पॉइंटर की शैली, स्मूदिंग और आकार बदला जा सकता है।";
 "Title" = "शीर्षक";
 "Transcribing…" = "ट्रांसक्राइब हो रहा है…";
 "Transition" = "ट्रांज़िशन";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "रिकॉर्डिंग से पहले कैमरा चालू करें। macshot इसे अलग से रिकॉर्ड करता है ताकि आप इसे यहाँ खिसका सकें, आकार बदल सकें, शैली बदल सकें या छिपा सकें, और ज़ूम के दौरान छोटा कर सकें।";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "रिकॉर्डिंग से पहले कैमरा चालू करें। MShot इसे अलग से रिकॉर्ड करता है ताकि आप इसे यहाँ खिसका सकें, आकार बदल सकें, शैली बदल सकें या छिपा सकें, और ज़ूम के दौरान छोटा कर सकें।";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "संवेदनशील जानकारी छिपाने के लिए ठोस का उपयोग करें: ब्लर और पिक्सलेशन को कभी-कभी उलटा जा सकता है।";
 "Visibility" = "दृश्यता";
 "Wallpaper" = "वॉलपेपर";
@@ -815,4 +814,4 @@
 "Snap webcam to corners when moved" = "वेबकैम को खिसकाते समय कोनों से चिपकाएँ";
 "Search emoji" = "इमोजी खोजें";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

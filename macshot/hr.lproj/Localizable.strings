@@ -1,17 +1,17 @@
-/* Hrvatski — macshot localization
+/* Hrvatski — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "Otvori iz međuspremnika";
 "Pin from Clipboard" = "Prikvači iz međuspremnika";
 "Preferences..." = "Postavke...";
-"Quit macshot" = "Zatvori macshot";
+"Quit MShot" = "Zatvori MShot";
 "No recent captures" = "Nema nedavnih snimanja";
 "Clear History" = "Očisti povijest";
 
@@ -137,7 +137,7 @@
 "Move up" = "Pomakni gore";
 "Move down" = "Pomakni dolje";
 "Menu Bar Order" = "Redoslijed u traci izbornika";
-"Choose the order of capture actions in the macshot menu bar menu." = "Odaberite redoslijed radnji snimanja u izborniku macshot u traci izbornika.";
+"Choose the order of capture actions in the MShot menu bar menu." = "Odaberite redoslijed radnji snimanja u izborniku MShot u traci izbornika.";
 
 /* Toolbar - Recording */
 "Start Recording" = "Počni snimanje";
@@ -210,7 +210,7 @@
 "Copy to clipboard" = "Kopiraj u međuspremnik";
 
 /* Preferences - General */
-"macshot Preferences" = "macshot Postavke";
+"MShot Preferences" = "MShot Postavke";
 "General" = "Općenito";
 "Tools" = "Alati";
 "Recording" = "Snimanje";
@@ -234,7 +234,7 @@
 "Hide capture instructions" = "Sakrij upute pri snimanju";
 "Use window title in saved filename" = "Koristi naslov prozora u nazivu datoteke";
 "Hide menu bar icon" = "Sakrij ikonu u traci izbornika";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "Tipkovni prečaci i dalje rade. Za ponovni prikaz ikone ponovno pokrenite macshot.";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "Tipkovni prečaci i dalje rade. Za ponovni prikaz ikone ponovno pokrenite MShot.";
 "Thumbnail" = "Minijatura";
 "  Dismiss after:" = "  Odbaci nakon:";
 "seconds before auto-dismiss (0 = never)" = "sekundi prije automatskog odbacivanja (0 = nikad)";
@@ -349,9 +349,8 @@
 "API key:" = "API ključ:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "Verzija %@ (%@)";
-"Made by" = "Izradio";
 "Licensed under the GPLv3" = "Licencirano pod GPLv3";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "Besplatan alat otvorenog koda za snimanje zaslona i ekrana za macOS.\nU potpunosti izvoran, izgrađen sa Swift i AppKit.";
 
@@ -362,22 +361,22 @@
 "Copy an image or text to the clipboard first, then try again." = "Najprije kopirajte sliku ili tekst u međuspremnik, zatim pokušajte ponovo.";
 "OK" = "U redu";
 "Accessibility Access Required" = "Potreban pristup pristupačnosti";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "macshot treba dozvolu pristupačnosti za automatsko pomicanje drugih aplikacija. Odobrite pristup u Postavkama sustava, zatim pokušajte ponovo.";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "macshot treba dozvolu pristupačnosti za snimanje pomicanjem. Odobrite pristup u Postavkama sustava i pokušajte ponovno.";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "MShot treba dozvolu pristupačnosti za automatsko pomicanje drugih aplikacija. Odobrite pristup u Postavkama sustava, zatim pokušajte ponovo.";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "MShot treba dozvolu pristupačnosti za snimanje pomicanjem. Odobrite pristup u Postavkama sustava i pokušajte ponovno.";
 "Open Settings" = "Otvori postavke";
 "Cancel" = "Odustani";
 "Microphone Access Required" = "Potreban pristup mikrofonu";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot treba dozvolu mikrofona za snimanje glasa. Otvorite Postavke sustava za odobravanje pristupa.";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "MShot treba dozvolu mikrofona za snimanje glasa. Otvorite Postavke sustava za odobravanje pristupa.";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "Dobrodošli u macshot";
-"Welcome back to macshot" = "Dobro došli natrag u macshot";
+"Welcome to MShot" = "Dobrodošli u MShot";
+"Welcome back to MShot" = "Dobro došli natrag u MShot";
 "Turn Screen Recording back on" = "Ponovno uključite snimanje zaslona";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "Nakon nekih ažuriranja macOS traži da ponovno dopustite macshot. Vaše postavke i snimke su sigurni. Ako je macshot već na popisu, odaberite ga, kliknite tipku minus (−) da ga uklonite, zatim kliknite tipku plus (+) i ponovno dodajte macshot.";
-"macshot needs one permission" = "macshot treba jednu dozvolu";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "Nakon nekih ažuriranja macOS traži da ponovno dopustite MShot. Vaše postavke i snimke su sigurni. Ako je MShot već na popisu, odaberite ga, kliknite tipku minus (−) da ga uklonite, zatim kliknite tipku plus (+) i ponovno dodajte MShot.";
+"MShot needs one permission" = "MShot treba jednu dozvolu";
 "Screen Recording not yet granted" = "Snimanje zaslona još nije odobreno";
 "Screen Recording granted!" = "Snimanje zaslona odobreno!";
-"Enable macshot, then try taking a screenshot" = "Omogućite macshot, zatim pokušajte snimiti zaslon";
+"Enable MShot, then try taking a screenshot" = "Omogućite MShot, zatim pokušajte snimiti zaslon";
 "Open Screen Recording Settings" = "Otvori postavke snimanja zaslona";
 "Continue" = "Nastavi";
 
@@ -403,7 +402,7 @@
 "Path copied!" = "Putanja kopirana!";
 
 /* Video Editor */
-"macshot Video Editor" = "macshot Video uređivač";
+"MShot Video Editor" = "MShot Video uređivač";
 "%@ selected" = "%@ odabrano";
 "Exporting..." = "Izvoz...";
 "Export failed" = "Izvoz neuspjeo";
@@ -451,7 +450,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Potrebno praćenje unosa";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot treba dozvolu pristupačnosti za prianjanje uz pojedinačne elemente sučelja. Odobrite pristup u Postavkama sustava i pokušajte ponovno.";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "MShot treba dozvolu pristupačnosti za prianjanje uz pojedinačne elemente sučelja. Odobrite pristup u Postavkama sustava i pokušajte ponovno.";
 
 /* Recording — Keystroke Overlay */
 
@@ -464,7 +463,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "Preklapanje web-kamere";
 "Camera Access Required" = "Potreban pristup kameri";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "macshot treba dozvolu kamere za preklapanje web-kamere. Otvorite Postavke sustava za odobravanje pristupa.";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "MShot treba dozvolu kamere za preklapanje web-kamere. Otvorite Postavke sustava za odobravanje pristupa.";
 "Webcam" = "Web-kamera";
 "Bottom Right" = "Dolje desno";
 "Bottom Left" = "Dolje lijevo";
@@ -485,7 +484,7 @@
 /* New Strings */
 "Settings" = "Postavke";
 "Settings..." = "Postavke...";
-"macshot Settings" = "macshot Postavke";
+"MShot Settings" = "MShot Postavke";
 "Also open in Editor" = "Otvori i u uređivaču";
 "Open in Editor right after selection" = "Otvori u uređivaču odmah nakon odabira";
 "Close editor after copying" = "Zatvori uređivač nakon kopiranja";
@@ -540,7 +539,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "Otvori video...";
-"Choose a video to open in macshot editor" = "Odaberite videozapis za otvaranje u macshot uređivaču";
+"Choose a video to open in MShot editor" = "Odaberite videozapis za otvaranje u MShot uređivaču";
 "Click to add effects" = "Kliknite za dodavanje efekata";
 "Add Zoom" = "Dodaj zumiranje";
 "Add Censor" = "Dodaj cenzuru";
@@ -614,8 +613,8 @@
 "Stop the current recording" = "Zaustavi trenutno snimanje";
 "Supported URL Scheme Commands" = "Podržane naredbe URL sheme";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Ekstenzija datoteke dodaje se automatski. Kose crte i dvotočke u {window} pretvaraju se u crtice.";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Pokrenite macshot iz Raycast, Alfred, Shortcuts ili bilo kojeg alata koji otvara URL-ove.";
-"Enable macshot:// URL scheme" = "Omogući URL shemu macshot://";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Pokrenite MShot iz Raycast, Alfred, Shortcuts ili bilo kojeg alata koji otvara URL-ove.";
+"Enable mshot:// URL scheme" = "Omogući URL shemu mshot://";
 "URL scheme info" = "Informacije o URL shemi";
 "sec (0 = never)" = "s (0 = nikad)";
 
@@ -624,7 +623,7 @@
 "Export Settings…" = "Izvezi postavke…";
 "Import Settings…" = "Uvezi postavke…";
 "Reveal Settings File in Finder" = "Prikaži datoteku postavki u Finderu";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "Izvezi postavke";
 "Import Settings" = "Uvezi postavke";
 "Import failed" = "Uvoz nije uspio";
@@ -635,12 +634,12 @@
 "Relaunch Now" = "Ponovno pokreni sada";
 "Replace your current settings?" = "Zamijeniti trenutne postavke?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "Primijenjeno je %d postavki. Ponovno pokrenite macshot kako biste primijenili sve promjene.";
+"%d settings were applied. Relaunch MShot to apply all changes." = "Primijenjeno je %d postavki. Ponovno pokrenite MShot kako biste primijenili sve promjene.";
 "A few large items were too big to include. Everything else was saved." = "Nekoliko velikih stavki bilo je preveliko za uključivanje. Sve ostalo je spremljeno.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Vaša prilagođena Beautify pozadinska slika bila je prevelika za uključivanje. Sve ostalo je spremljeno.";
-"This file is not a valid macshot settings file." = "Ova datoteka nije valjana macshot datoteka postavki.";
+"This file is not a valid MShot settings file." = "Ova datoteka nije valjana MShot datoteka postavki.";
 "This settings file contains no settings." = "Ova datoteka postavki ne sadrži nijednu postavku.";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "Ova datoteka postavki izrađena je novijom verzijom macshota. Najprije ažurirajte macshot.";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "Ova datoteka postavki izrađena je novijom verzijom MShota. Najprije ažurirajte MShot.";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "Snimite, prevedite i prekrijte tekst na slici";
@@ -685,7 +684,7 @@
 "Apply Default Zoom to All" = "Primijeni zadano zumiranje na sve";
 "Auto" = "Auto";
 "Auto Zoom" = "Autozumiranje";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Autozumiranje treba podatke o pokazivaču, koje macshot bilježi pri svakom novom snimanju. Zumiranja i dalje možete dodavati dvostrukim klikom na traku zumiranja.";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Autozumiranje treba podatke o pokazivaču, koje MShot bilježi pri svakom novom snimanju. Zumiranja i dalje možete dodavati dvostrukim klikom na traku zumiranja.";
 "Background blur" = "Zamućenje pozadine";
 "Background color" = "Boja pozadine";
 "Background, padding, rounded corners and shadow" = "Pozadina, razmak, zaobljeni kutovi i sjena";
@@ -782,7 +781,7 @@
 "Shrink during zooms" = "Smanji tijekom zumiranja";
 "Smoothing" = "Izglađivanje";
 "Snappy" = "Brzo";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "Prepoznavanje govora isključeno je za macshot u Postavkama sustava › Privatnost i sigurnost.";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "Prepoznavanje govora isključeno je za MShot u Postavkama sustava › Privatnost i sigurnost.";
 "Speed" = "Brzina";
 "Spotlight" = "Reflektor";
 "Square" = "Kvadrat";
@@ -792,11 +791,11 @@
 "The recording's audio could not be read." = "Zvuk snimke nije moguće pročitati.";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "Ova snimka već sadrži pokazivač u slici pa mu se stil ne može mijenjati. Zumiranja ga i dalje mogu pratiti.";
 "This recording has no audio to transcribe." = "Ova snimka nema zvuka za transkripciju.";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Ovaj video nema snimljenih podataka o pokazivaču. Snimke napravljene u macshotu koje se otvaraju u uređivaču omogućuju promjenu stila, izglađivanje i promjenu veličine pokazivača nakon snimanja.";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Ovaj video nema snimljenih podataka o pokazivaču. Snimke napravljene u MShotu koje se otvaraju u uređivaču omogućuju promjenu stila, izglađivanje i promjenu veličine pokazivača nakon snimanja.";
 "Title" = "Naslov";
 "Transcribing…" = "Transkribiranje…";
 "Transition" = "Prijelaz";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Uključite kameru prije snimanja. macshot je snima zasebno pa je ovdje možete pomicati, mijenjati joj veličinu i stil, sakriti je, i smanjiti tijekom zumiranja.";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Uključite kameru prije snimanja. MShot je snima zasebno pa je ovdje možete pomicati, mijenjati joj veličinu i stil, sakriti je, i smanjiti tijekom zumiranja.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Upotrijebite „Ispuna” za skrivanje osjetljivih podataka: zamućenje i pikselizacija ponekad se mogu poništiti.";
 "Visibility" = "Vidljivost";
 "Wallpaper" = "Pozadinska slika";
@@ -813,4 +812,4 @@
 "Snap webcam to corners when moved" = "Prilijepi web-kameru uz kutove pri pomicanju";
 "Search emoji" = "Pretraži emojije";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

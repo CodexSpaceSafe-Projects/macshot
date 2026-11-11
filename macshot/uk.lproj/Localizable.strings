@@ -1,17 +1,17 @@
-/* Українська — macshot localization
+/* Українська — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "Відкрити з буфера обміну";
 "Pin from Clipboard" = "Закріпити з буфера обміну";
 "Preferences..." = "Параметри...";
-"Quit macshot" = "Завершити macshot";
+"Quit MShot" = "Завершити MShot";
 "No recent captures" = "Немає останніх захоплень";
 "Clear History" = "Очистити історію";
 
@@ -137,7 +137,7 @@
 "Move up" = "Перемістити вгору";
 "Move down" = "Перемістити вниз";
 "Menu Bar Order" = "Порядок у рядку меню";
-"Choose the order of capture actions in the macshot menu bar menu." = "Виберіть порядок дій захоплення в меню macshot у рядку меню.";
+"Choose the order of capture actions in the MShot menu bar menu." = "Виберіть порядок дій захоплення в меню MShot у рядку меню.";
 
 /* Toolbar - Recording */
 "Start Recording" = "Почати запис";
@@ -210,7 +210,7 @@
 "Copy to clipboard" = "Копіювати до буфера обміну";
 
 /* Preferences - General */
-"macshot Preferences" = "Параметри macshot";
+"MShot Preferences" = "Параметри MShot";
 "General" = "Загальні";
 "Tools" = "Інструменти";
 "Recording" = "Запис";
@@ -234,7 +234,7 @@
 "Hide capture instructions" = "Приховувати підказки під час захоплення";
 "Use window title in saved filename" = "Використовувати заголовок вікна у назві файлу";
 "Hide menu bar icon" = "Сховати іконку в смузі меню";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "Гарячі клавіші продовжують працювати. Щоб знову показати іконку, перезапустіть macshot.";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "Гарячі клавіші продовжують працювати. Щоб знову показати іконку, перезапустіть MShot.";
 "Thumbnail" = "Мініатюра";
 "  Dismiss after:" = "  Зникає через:";
 "seconds before auto-dismiss (0 = never)" = "секунд до автозникнення (0 = ніколи)";
@@ -349,9 +349,8 @@
 "API key:" = "API-ключ:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "Версія %@ (%@)";
-"Made by" = "Автор";
 "Licensed under the GPLv3" = "Ліцензія GPLv3";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "Безкоштовний інструмент з відкритим кодом для знімків та запису екрана на macOS.\nПовністю нативний, створений на Swift та AppKit.";
 
@@ -362,22 +361,22 @@
 "Copy an image or text to the clipboard first, then try again." = "Спочатку скопіюйте зображення або текст до буфера обміну, потім спробуйте знову.";
 "OK" = "OK";
 "Accessibility Access Required" = "Потрібен доступ до Універсального доступу";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "macshot потребує дозволу Універсального доступу для автопрокрутки інших програм. Надайте доступ у Системних параметрах і спробуйте знову.";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "macshot потребує дозволу Доступності для захоплення з прокруткою. Надайте доступ у Системних параметрах і спробуйте знову.";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "MShot потребує дозволу Універсального доступу для автопрокрутки інших програм. Надайте доступ у Системних параметрах і спробуйте знову.";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "MShot потребує дозволу Доступності для захоплення з прокруткою. Надайте доступ у Системних параметрах і спробуйте знову.";
 "Open Settings" = "Відкрити Параметри";
 "Cancel" = "Скасувати";
 "Microphone Access Required" = "Потрібен доступ до мікрофона";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot потребує дозволу мікрофона для запису голосового аудіо. Відкрийте Системні параметри, щоб надати доступ.";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "MShot потребує дозволу мікрофона для запису голосового аудіо. Відкрийте Системні параметри, щоб надати доступ.";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "Ласкаво просимо до macshot";
-"Welcome back to macshot" = "З поверненням до macshot";
+"Welcome to MShot" = "Ласкаво просимо до MShot";
+"Welcome back to MShot" = "З поверненням до MShot";
 "Turn Screen Recording back on" = "Знову ввімкніть запис екрана";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "Після деяких оновлень macOS просить знову дозволити macshot. Ваші налаштування та знімки збережено. Якщо macshot уже є у списку, виберіть його, натисніть кнопку «мінус» (−), щоб видалити, потім натисніть кнопку «плюс» (+) і додайте macshot знову.";
-"macshot needs one permission" = "macshot потребує один дозвіл";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "Після деяких оновлень macOS просить знову дозволити MShot. Ваші налаштування та знімки збережено. Якщо MShot уже є у списку, виберіть його, натисніть кнопку «мінус» (−), щоб видалити, потім натисніть кнопку «плюс» (+) і додайте MShot знову.";
+"MShot needs one permission" = "MShot потребує один дозвіл";
 "Screen Recording not yet granted" = "Запис екрана ще не дозволено";
 "Screen Recording granted!" = "Запис екрана дозволено!";
-"Enable macshot, then try taking a screenshot" = "Увімкніть macshot, а потім спробуйте зробити знімок екрана";
+"Enable MShot, then try taking a screenshot" = "Увімкніть MShot, а потім спробуйте зробити знімок екрана";
 "Open Screen Recording Settings" = "Відкрити параметри запису екрана";
 "Continue" = "Продовжити";
 
@@ -403,7 +402,7 @@
 "Path copied!" = "Шлях скопійовано!";
 
 /* Video Editor */
-"macshot Video Editor" = "macshot Відеоредактор";
+"MShot Video Editor" = "MShot Відеоредактор";
 "%@ selected" = "%@ вибрано";
 "Exporting..." = "Експортування...";
 "Export failed" = "Помилка експорту";
@@ -451,7 +450,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Потрібен моніторинг введення";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot потребує дозволу Доступності для прив’язки до окремих елементів інтерфейсу. Надайте доступ у Системних параметрах і спробуйте знову.";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "MShot потребує дозволу Доступності для прив’язки до окремих елементів інтерфейсу. Надайте доступ у Системних параметрах і спробуйте знову.";
 
 /* Recording — Keystroke Overlay */
 
@@ -464,7 +463,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "Накладання вебкамери";
 "Camera Access Required" = "Потрібен доступ до камери";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "macshot потребує дозволу камери для накладання вебкамери. Відкрийте Системні параметри, щоб надати доступ.";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "MShot потребує дозволу камери для накладання вебкамери. Відкрийте Системні параметри, щоб надати доступ.";
 "Webcam" = "Вебкамера";
 "Bottom Right" = "Внизу праворуч";
 "Bottom Left" = "Внизу ліворуч";
@@ -485,7 +484,7 @@
 /* New Strings */
 "Settings" = "Налаштування";
 "Settings..." = "Налаштування...";
-"macshot Settings" = "Налаштування macshot";
+"MShot Settings" = "Налаштування MShot";
 "Also open in Editor" = "Також відкрити в редакторі";
 "Open in Editor right after selection" = "Відкрити в редакторі одразу після виділення";
 "Close editor after copying" = "Закривати редактор після копіювання";
@@ -540,7 +539,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "Відкрити відео...";
-"Choose a video to open in macshot editor" = "Оберіть відео, щоб відкрити в редакторі macshot";
+"Choose a video to open in MShot editor" = "Оберіть відео, щоб відкрити в редакторі MShot";
 "Click to add effects" = "Клацніть, щоб додати ефекти";
 "Add Zoom" = "Додати масштабування";
 "Add Censor" = "Додати цензуру";
@@ -614,8 +613,8 @@
 "Stop the current recording" = "Зупинити поточний запис";
 "Supported URL Scheme Commands" = "Підтримувані команди URL-схеми";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Розширення файлу додається автоматично. Слеші та двокрапки в {window} стають рисками.";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Запускайте macshot з Raycast, Alfred, Shortcuts або будь-якого інструмента, що відкриває URL.";
-"Enable macshot:// URL scheme" = "Увімкнути URL-схему macshot://";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Запускайте MShot з Raycast, Alfred, Shortcuts або будь-якого інструмента, що відкриває URL.";
+"Enable mshot:// URL scheme" = "Увімкнути URL-схему mshot://";
 "URL scheme info" = "Інформація про URL-схему";
 "sec (0 = never)" = "сек (0 = ніколи)";
 
@@ -624,7 +623,7 @@
 "Export Settings…" = "Експортувати налаштування…";
 "Import Settings…" = "Імпортувати налаштування…";
 "Reveal Settings File in Finder" = "Показати файл налаштувань у Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "Експорт налаштувань";
 "Import Settings" = "Імпорт налаштувань";
 "Import failed" = "Не вдалося імпортувати";
@@ -635,12 +634,12 @@
 "Relaunch Now" = "Перезапустити зараз";
 "Replace your current settings?" = "Замінити поточні налаштування?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "Застосовано налаштувань: %d. Перезапустіть macshot, щоб застосувати всі зміни.";
+"%d settings were applied. Relaunch MShot to apply all changes." = "Застосовано налаштувань: %d. Перезапустіть MShot, щоб застосувати всі зміни.";
 "A few large items were too big to include. Everything else was saved." = "Кілька великих елементів виявилися завеликими для включення. Усе інше збережено.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Ваше власне фонове зображення Beautify виявилося завеликим для включення. Усе інше збережено.";
-"This file is not a valid macshot settings file." = "Цей файл не є дійсним файлом налаштувань macshot.";
+"This file is not a valid MShot settings file." = "Цей файл не є дійсним файлом налаштувань MShot.";
 "This settings file contains no settings." = "Цей файл налаштувань не містить жодних налаштувань.";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "Цей файл налаштувань створено новішою версією macshot. Спершу оновіть macshot.";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "Цей файл налаштувань створено новішою версією MShot. Спершу оновіть MShot.";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "Захопіть, перекладіть і накладіть текст на зображення";
@@ -685,7 +684,7 @@
 "Apply Default Zoom to All" = "Застосувати типовий масштаб до всіх";
 "Auto" = "Авто";
 "Auto Zoom" = "Автомасштаб";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Автомасштабу потрібні дані про вказівник, які macshot записує під час кожного нового запису. Ви й надалі можете додавати збільшення подвійним клацанням на доріжці масштабу.";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Автомасштабу потрібні дані про вказівник, які MShot записує під час кожного нового запису. Ви й надалі можете додавати збільшення подвійним клацанням на доріжці масштабу.";
 "Background blur" = "Розмиття тла";
 "Background color" = "Колір тла";
 "Background, padding, rounded corners and shadow" = "Тло, відступи, заокруглені кути й тінь";
@@ -782,7 +781,7 @@
 "Shrink during zooms" = "Зменшувати під час збільшень";
 "Smoothing" = "Згладжування";
 "Snappy" = "Швидкий";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "Розпізнавання мовлення для macshot вимкнено в Системних параметрах › Приватність і безпека.";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "Розпізнавання мовлення для MShot вимкнено в Системних параметрах › Приватність і безпека.";
 "Speed" = "Швидкість";
 "Spotlight" = "Прожектор";
 "Square" = "Квадрат";
@@ -792,11 +791,11 @@
 "The recording's audio could not be read." = "Не вдалося прочитати звук запису.";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "У цьому записі вказівник уже є частиною зображення, тому його не можна змінити. Збільшення все одно можуть слідувати за ним.";
 "This recording has no audio to transcribe." = "У цьому записі немає звуку для розпізнавання.";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "У цьому відео немає записаних даних вказівника. Записи macshot, що відкриваються в редакторі, дозволяють змінювати стиль, згладжувати й змінювати розмір вказівника після запису.";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "У цьому відео немає записаних даних вказівника. Записи MShot, що відкриваються в редакторі, дозволяють змінювати стиль, згладжувати й змінювати розмір вказівника після запису.";
 "Title" = "Заголовок";
 "Transcribing…" = "Розпізнавання…";
 "Transition" = "Перехід";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Увімкніть камеру перед записом. macshot запише її окремо, і тут її можна буде переміщувати, змінювати розмір і стиль, приховувати, і зменшувати під час збільшень.";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Увімкніть камеру перед записом. MShot запише її окремо, і тут її можна буде переміщувати, змінювати розмір і стиль, приховувати, і зменшувати під час збільшень.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Використовуйте «Суцільне», щоб приховати конфіденційні дані: розмиття та пікселізацію іноді можна скасувати.";
 "Visibility" = "Видимість";
 "Wallpaper" = "Шпалери";
@@ -813,4 +812,4 @@
 "Snap webcam to corners when moved" = "Прив’язувати вебкамеру до кутів під час переміщення";
 "Search emoji" = "Пошук емодзі";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

@@ -1,4 +1,4 @@
-# macshot Offline
+# MShot
 
 Native macOS screenshot & annotation tool inspired by Flameshot. Built with Swift + AppKit. No Qt, no Electron.
 
@@ -15,9 +15,9 @@ Native macOS screenshot & annotation tool inspired by Flameshot. Built with Swif
 
 ## Build identity and offline behavior
 
-The project builds one app: **macshot Offline**, bundle id
-`com.sw33tlie.macshot.offline`, release asset `MacShot-Offline.dmg`.
-There is no alternate product or `OFFLINE` compilation switch.
+The project builds one app: **MShot**, bundle id
+`com.sw33tlie.macshot.offline`, release asset `MShot.dmg`.
+There is one product. Its existing bundle identifier and local data namespaces are retained for compatibility with prior installations.
 
 The app has no third-party package dependencies, update service, cloud upload,
 web translation/search, or keyboard-content recording integration. It has no
@@ -26,7 +26,7 @@ language packs on macOS 15+; captions require on-device speech recognition.
 Images are imported from local files through Apple frameworks. Export formats
 are PNG, JPEG, HEIC and AVIF when ImageIO reports encoding support.
 
-User-invoked QR/project links open in the browser, and the system share sheet
+User-invoked QR links open in the browser, and the system share sheet
 can use the service explicitly selected by the user. These actions do not imply
 that the app blocks networking by macOS or other applications. New versions
 are installed manually from this repository's Releases page.
@@ -339,10 +339,10 @@ Copy to clipboard, Save to file (PNG/JPEG/HEIC, plus AVIF when supported), Pin (
 - `autoreleasepool` for overlay teardown to prevent memory spikes
 - Extension files (`OverlayView+Feature.swift`) for self-contained feature code that accesses OverlayView state but is logically separate (recording overlays, scroll capture HUD, window snapping, popovers)
 - **Light/dark mode:** The toolbar and popovers always use a dark background regardless of system appearance. `ToolOptionsRowView` and `PopoverHelper` force `NSAppearance(named: .darkAqua)` so system controls render with light text. Never use system-adaptive colors (`.labelColor`, `.secondaryLabelColor`) for text in toolbar/popover contexts without verifying contrast against the dark background. Always test new toolbar UI elements in both light and dark system appearance.
-- **Focus management:** macshot is an `LSUIElement` (menu bar app) that temporarily shows windows. All focus return is handled by `AppDelegate.returnFocusIfNeeded()` — one centralized method. Rules:
+- **Focus management:** MShot is an `LSUIElement` (menu bar app) that temporarily shows windows. All focus return is handled by `AppDelegate.returnFocusIfNeeded()` — one centralized method. Rules:
   - `previousApp` is captured in `startCapture()` before the overlay steals focus. Cleared after single use.
   - `returnFocusIfNeeded()` checks for visible titled windows, switches to `.accessory` policy, activates `previousApp`. When `previousApp` is nil it activates the frontmost non-macshot app instead. It deliberately does **not** call `NSApp.hide(nil)`: that can suspend the Carbon event loop and break global hotkeys.
-  - `dismissOverlays(refocusPreviousApp: true)` (default) calls `returnFocusIfNeeded()`. Pass `false` only when macshot creates floating panels immediately after (pin, error toast, recording HUD).
+  - `dismissOverlays(refocusPreviousApp: true)` (default) calls `returnFocusIfNeeded()`. Pass `false` only when MShot creates floating panels immediately after (pin, error toast, recording HUD).
   - **Pattern for pin/OCR-window paths:** an overlay dismiss that creates a floating panel afterward should: (1) save `previousApp` locally, (2) `dismissOverlays(refocusPreviousApp: false)`, (3) create the panel, (4) manually `app.activate(options: .activateIgnoringOtherApps)` on the saved app. See `overlayDidRequestPin`. (This originally guarded against the `NSApp.hide(nil)` fallback, which no longer exists; the ordering still gives the panel a clean hand-off.)
   - Every window close (editor, video editor, OCR, preferences) calls `returnFocusIfNeeded()` — never inline `setActivationPolicy`/`activate` directly.
   - All floating panels (thumbnails, pins, status toasts, HUD, overlays) must set `hidesOnDeactivate = false` so they survive app deactivation. Pin windows must use `orderFrontRegardless()` instead of `makeKeyAndOrderFront` to avoid activating macshot.
@@ -371,7 +371,7 @@ Copy to clipboard, Save to file (PNG/JPEG/HEIC, plus AVIF when supported), Pin (
 
 CI triggers on version tag push (`v*.*.*`, including prerelease tags),
 `release.published`, or manual `workflow_dispatch`. It builds the single offline
-app, signs it, packages `MacShot-Offline.dmg`, and uploads that image and
+app, signs it, packages `MShot.dmg`, and uploads that image and
 `SHA256SUMS.txt` to the current repository's GitHub Release. Existing release
 titles, notes and prerelease status are preserved; reruns replace matching
 assets. Runs for the same tag are serialized.
@@ -389,8 +389,8 @@ on the CI runner.
 
 1. Add a `CHANGELOG.md` entry for the new version; CI uses it for release notes.
 2. Tag the commit containing the workflow and push the tag, for example:
-   `git tag v4.5.0 && git push origin v4.5.0`.
-3. Use a suffix such as `v4.5.0-beta.1` to create a GitHub prerelease. There is no
+   `git tag v4.5.1 && git push origin v4.5.1`.
+3. Use a suffix such as `v4.5.1-beta.1` to create a GitHub prerelease. There is no
    in-app beta channel or automatic installation.
 
 CI overrides `MARKETING_VERSION` with the version from the tag and
@@ -402,7 +402,7 @@ fallbacks.
 The tag must already exist on the remote:
 
 ```sh
-gh workflow run build-release.yml --ref main -f tag=v4.5.0
+gh workflow run build-release.yml --ref main -f tag=v4.5.1
 ```
 
 The workflow must be present on the default branch for manual dispatch. Users

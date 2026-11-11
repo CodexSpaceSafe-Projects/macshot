@@ -1,17 +1,17 @@
-/* 日本語 — macshot localization
+/* 日本語 — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "クリップボードから開く";
 "Pin from Clipboard" = "クリップボードからピン留め";
 "Preferences..." = "環境設定...";
-"Quit macshot" = "macshot を終了";
+"Quit MShot" = "MShot を終了";
 "No recent captures" = "最近のキャプチャはありません";
 "Clear History" = "履歴を消去";
 
@@ -190,11 +190,11 @@
 "Copy to clipboard" = "クリップボードにコピー";
 
 /* Preferences - General */
-"macshot Preferences" = "macshot 環境設定";
+"MShot Preferences" = "MShot 環境設定";
 "General" = "一般";
 "Tools" = "ツール";
 "Recording" = "録画";
-"About" = "macshot について";
+"About" = "MShot について";
 "Shortcuts" = "ショートカット";
 "Language" = "言語";
 "Language:" = "言語:";
@@ -214,9 +214,9 @@
 "Hide capture instructions" = "撮影時の操作説明を非表示";
 "Use window title in saved filename" = "保存ファイル名にウインドウタイトルを使用";
 "Hide menu bar icon" = "メニューバーアイコンを隠す";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "ホットキーは引き続き使用できます。アイコンを再表示するには、macshot を再起動してください。";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "ホットキーは引き続き使用できます。アイコンを再表示するには、MShot を再起動してください。";
 "Menu Bar Order" = "メニューバーの順序";
-"Choose the order of capture actions in the macshot menu bar menu." = "macshot メニューバーメニューでのキャプチャアクションの順序を選択します。";
+"Choose the order of capture actions in the MShot menu bar menu." = "MShot メニューバーメニューでのキャプチャアクションの順序を選択します。";
 "Move up" = "上へ移動";
 "Move down" = "下へ移動";
 "Thumbnail" = "サムネイル";
@@ -331,9 +331,8 @@
 "API key:" = "API キー:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "バージョン %@ (%@)";
-"Made by" = "作者";
 "Licensed under the GPLv3" = "GPLv3 ライセンス";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "macOS 用の無料・オープンソースのスクリーンショット & 画面録画ツール。\n完全ネイティブ, Swift と AppKit で構築。";
 
@@ -344,22 +343,22 @@
 "Copy an image or text to the clipboard first, then try again." = "先にクリップボードに画像またはテキストをコピーしてから、もう一度お試しください。";
 "OK" = "OK";
 "Accessibility Access Required" = "アクセシビリティの許可が必要です";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "macshot が他のアプリを自動スクロールするには、アクセシビリティの許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "スクロールキャプチャにはアクセシビリティの許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "MShot が他のアプリを自動スクロールするには、アクセシビリティの許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "スクロールキャプチャにはアクセシビリティの許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
 "Open Settings" = "設定を開く";
 "Cancel" = "キャンセル";
 "Microphone Access Required" = "マイクのアクセスが必要です";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot が音声を録音するには、マイクの許可が必要です。システム設定を開いてアクセスを許可してください。";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "MShot が音声を録音するには、マイクの許可が必要です。システム設定を開いてアクセスを許可してください。";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "macshot へようこそ";
-"Welcome back to macshot" = "macshot へおかえりなさい";
+"Welcome to MShot" = "MShot へようこそ";
+"Welcome back to MShot" = "MShot へおかえりなさい";
 "Turn Screen Recording back on" = "画面収録をもう一度オンにしてください";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "一部のアップデートの後、macOS から macshot をもう一度許可するよう求められます。設定とキャプチャはそのまま残っています。リストに macshot がすでにある場合は、選択してマイナスボタン（−）で削除し、プラスボタン（+）で macshot をもう一度追加してください。";
-"macshot needs one permission" = "macshot には1つの許可が必要です";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "一部のアップデートの後、macOS から MShot をもう一度許可するよう求められます。設定とキャプチャはそのまま残っています。リストに MShot がすでにある場合は、選択してマイナスボタン（−）で削除し、プラスボタン（+）で MShot をもう一度追加してください。";
+"MShot needs one permission" = "MShot には1つの許可が必要です";
 "Screen Recording not yet granted" = "画面収録がまだ許可されていません";
 "Screen Recording granted!" = "画面収録が許可されました!";
-"Enable macshot, then try taking a screenshot" = "macshot を有効にして、スクリーンショットを撮ってみてください";
+"Enable MShot, then try taking a screenshot" = "MShot を有効にして、スクリーンショットを撮ってみてください";
 "Open Screen Recording Settings" = "画面収録の設定を開く";
 "Continue" = "続ける";
 
@@ -392,7 +391,7 @@
 "Path copied!" = "パスをコピーしました!";
 
 /* Video Editor */
-"macshot Video Editor" = "macshot ビデオエディタ";
+"MShot Video Editor" = "MShot ビデオエディタ";
 "%@ selected" = "%@ を選択中";
 "Exporting..." = "書き出し中...";
 "Export failed" = "書き出しに失敗しました";
@@ -440,7 +439,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "入力監視の許可が必要です";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "個々のインターフェイス要素にスナップするには、アクセシビリティの許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "個々のインターフェイス要素にスナップするには、アクセシビリティの許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
 
 /* Recording — Keystroke Overlay */
 
@@ -453,7 +452,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "ウェブカメラオーバーレイ";
 "Camera Access Required" = "カメラのアクセスが必要です";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "macshot がウェブカメラオーバーレイを使用するには、カメラの許可が必要です。システム設定を開いてアクセスを許可してください。";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "MShot がウェブカメラオーバーレイを使用するには、カメラの許可が必要です。システム設定を開いてアクセスを許可してください。";
 "Webcam" = "ウェブカメラ";
 "Bottom Right" = "右下";
 "Bottom Left" = "左下";
@@ -474,7 +473,7 @@
 /* New strings */
 "Settings" = "設定";
 "Settings..." = "設定...";
-"macshot Settings" = "macshot 設定";
+"MShot Settings" = "MShot 設定";
 "Also open in Editor" = "エディタでも開く";
 "Open in Editor right after selection" = "選択直後にエディタで開く";
 "Close editor after copying" = "コピー後にエディタを閉じる";
@@ -529,7 +528,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "動画を開く...";
-"Choose a video to open in macshot editor" = "macshot エディタで開く動画を選択";
+"Choose a video to open in MShot editor" = "MShot エディタで開く動画を選択";
 "Click to add effects" = "クリックしてエフェクトを追加";
 "Add Zoom" = "ズームを追加";
 "Add Censor" = "モザイクを追加";
@@ -603,9 +602,9 @@
 "Stop the current recording" = "現在の録画を停止";
 "Supported URL Scheme Commands" = "サポートされている URL スキームコマンド";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "ファイル拡張子は自動的に追加されます。{window} 内のスラッシュとコロンはダッシュになります。";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Raycast、Alfred、Shortcuts、または URL を開くツールから macshot を起動します。";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Raycast、Alfred、Shortcuts、または URL を開くツールから MShot を起動します。";
 "URL scheme info" = "URL スキーム情報";
-"Enable macshot:// URL scheme" = "macshot:// URL スキームを有効にする";
+"Enable mshot:// URL scheme" = "mshot:// URL スキームを有効にする";
 "sec (0 = never)" = "秒 (0 = 無効)";
 
 /* Resolution / Aspect Ratio Presets */
@@ -624,7 +623,7 @@
 "Export Settings…" = "設定を書き出す…";
 "Import Settings…" = "設定を読み込む…";
 "Reveal Settings File in Finder" = "設定ファイルをFinderで表示";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "設定を書き出す";
 "Import Settings" = "設定を読み込む";
 "Import failed" = "読み込みに失敗しました";
@@ -635,12 +634,12 @@
 "Relaunch Now" = "今すぐ再起動";
 "Replace your current settings?" = "現在の設定を置き換えますか？";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "%d件の設定を適用しました。すべての変更を反映するにはmacshotを再起動してください。";
+"%d settings were applied. Relaunch MShot to apply all changes." = "%d件の設定を適用しました。すべての変更を反映するにはMShotを再起動してください。";
 "A few large items were too big to include. Everything else was saved." = "サイズが大きすぎて含められなかった項目がいくつかあります。それ以外はすべて保存されました。";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "カスタムのBeautify背景画像はサイズが大きすぎて含められませんでした。それ以外はすべて保存されました。";
-"This file is not a valid macshot settings file." = "このファイルは有効なmacshotの設定ファイルではありません。";
+"This file is not a valid MShot settings file." = "このファイルは有効なMShotの設定ファイルではありません。";
 "This settings file contains no settings." = "この設定ファイルには設定が含まれていません。";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "この設定ファイルは新しいバージョンのmacshotで作成されています。先にmacshotをアップデートしてください。";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "この設定ファイルは新しいバージョンのMShotで作成されています。先にMShotをアップデートしてください。";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "テキストをキャプチャして翻訳し、画像に重ねて表示します";
@@ -685,7 +684,7 @@
 "Apply Default Zoom to All" = "デフォルトズームをすべてに適用";
 "Auto" = "自動";
 "Auto Zoom" = "自動ズーム";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "自動ズームにはポインタデータが必要です。macshot は新しい録画ごとにこのデータを記録します。ズームレーンをダブルクリックしてズームを追加することもできます。";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "自動ズームにはポインタデータが必要です。MShot は新しい録画ごとにこのデータを記録します。ズームレーンをダブルクリックしてズームを追加することもできます。";
 "Background blur" = "背景のぼかし";
 "Background color" = "背景色";
 "Background, padding, rounded corners and shadow" = "背景、余白、角丸、シャドウ";
@@ -782,7 +781,7 @@
 "Shrink during zooms" = "ズーム中は縮小";
 "Smoothing" = "スムージング";
 "Snappy" = "きびきび";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "システム設定 › プライバシーとセキュリティで、macshot の音声認識がオフになっています。";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "システム設定 › プライバシーとセキュリティで、MShot の音声認識がオフになっています。";
 "Speed" = "速度";
 "Spotlight" = "スポットライト";
 "Square" = "正方形";
@@ -792,11 +791,11 @@
 "The recording's audio could not be read." = "録画の音声を読み込めませんでした。";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "この録画にはポインタが画素として含まれているため、スタイルを変更できません。ズームは引き続きポインタに追従できます。";
 "This recording has no audio to transcribe." = "この録画には文字起こしする音声がありません。";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "この動画にはポインタデータが記録されていません。macshot で録画してエディタで開いた動画では、録画後にポインタのスタイル、スムージング、サイズを変更できます。";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "この動画にはポインタデータが記録されていません。MShot で録画してエディタで開いた動画では、録画後にポインタのスタイル、スムージング、サイズを変更できます。";
 "Title" = "タイトル";
 "Transcribing…" = "文字起こし中…";
 "Transition" = "トランジション";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "録画前にカメラをオンにしてください。macshot はカメラを別に記録するので、ここで移動、サイズ変更、スタイル変更、非表示ができます, ズーム中に縮小することもできます。";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "録画前にカメラをオンにしてください。MShot はカメラを別に記録するので、ここで移動、サイズ変更、スタイル変更、非表示ができます, ズーム中に縮小することもできます。";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "機密情報を隠すには「塗りつぶし」を使用してください。ぼかしやピクセル化は元に戻せる場合があります。";
 "Visibility" = "表示";
 "Wallpaper" = "壁紙";
@@ -813,4 +812,4 @@
 "Snap webcam to corners when moved" = "移動時にウェブカメラを四隅にスナップ";
 "Search emoji" = "絵文字を検索";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

@@ -6,9 +6,10 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>macshot Actions</string>
+			<string>MShot Actions</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>mshot</string>
 				<string>macshot</string>
 			</array>
 		</dict>
@@ -50,13 +51,13 @@
 		</dict>
 	</array>
 	<key>Privacy - Screen Capture Usage Description</key>
-	<string>macshot needs screen recording permission to capture screenshots.</string>
+	<string>MShot needs screen recording permission to capture screenshots.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>macshot can record microphone audio during screen recordings.</string>
+	<string>MShot can record microphone audio during screen recordings.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>macshot can show a webcam overlay during screen recordings.</string>
+	<string>MShot can show a webcam overlay during screen recordings.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>macshot transcribes your recordings on this Mac to create captions. Audio is not uploaded.</string>
+	<string>MShot transcribes your recordings on this Mac to create captions. Audio is not uploaded.</string>
 	<key>NSSupportsAutomaticTermination</key>
 	<false/>
 </dict>

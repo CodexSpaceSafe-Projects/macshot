@@ -1,17 +1,17 @@
-/* Bahasa Indonesia — macshot localization
+/* Bahasa Indonesia — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "Buka dari Papan Klip";
 "Pin from Clipboard" = "Sematkan dari Papan Klip";
 "Preferences..." = "Preferensi...";
-"Quit macshot" = "Keluar macshot";
+"Quit MShot" = "Keluar MShot";
 "No recent captures" = "Tidak ada tangkapan terbaru";
 "Clear History" = "Hapus Riwayat";
 
@@ -208,7 +208,7 @@
 "Copy to clipboard" = "Salin ke papan klip";
 
 /* Preferences - General */
-"macshot Preferences" = "Preferensi macshot";
+"MShot Preferences" = "Preferensi MShot";
 "General" = "Umum";
 "Tools" = "Alat";
 "Recording" = "Rekaman";
@@ -234,9 +234,9 @@
 "Show shortcuts in tooltips" = "Tampilkan pintasan di tooltip";
 "Use window title in saved filename" = "Gunakan judul jendela di nama file tersimpan";
 "Hide menu bar icon" = "Sembunyikan ikon bilah menu";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "Tombol pintas tetap berfungsi. Untuk menampilkan ikon kembali, jalankan ulang macshot.";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "Tombol pintas tetap berfungsi. Untuk menampilkan ikon kembali, jalankan ulang MShot.";
 "Menu Bar Order" = "Urutan Bilah Menu";
-"Choose the order of capture actions in the macshot menu bar menu." = "Pilih urutan tindakan tangkapan di menu bilah menu macshot.";
+"Choose the order of capture actions in the MShot menu bar menu." = "Pilih urutan tindakan tangkapan di menu bilah menu MShot.";
 "Move up" = "Pindah ke atas";
 "Move down" = "Pindah ke bawah";
 "Thumbnail" = "Thumbnail";
@@ -349,9 +349,8 @@
 "API key:" = "Kunci API:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "Versi %@ (%@)";
-"Made by" = "Dibuat oleh";
 "Licensed under the GPLv3" = "Dilisensikan di bawah GPLv3";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "Alat tangkapan layar & perekaman layar gratis dan sumber terbuka untuk macOS.\nSepenuhnya native, dibangun dengan Swift dan AppKit.";
 
@@ -362,22 +361,22 @@
 "Copy an image or text to the clipboard first, then try again." = "Salin gambar atau teks ke papan klip terlebih dahulu, lalu coba lagi.";
 "OK" = "OK";
 "Accessibility Access Required" = "Akses Aksesibilitas Diperlukan";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "macshot memerlukan izin Aksesibilitas untuk menggulir otomatis aplikasi lain. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "macshot memerlukan izin Aksesibilitas untuk tangkapan gulir. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "MShot memerlukan izin Aksesibilitas untuk menggulir otomatis aplikasi lain. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "MShot memerlukan izin Aksesibilitas untuk tangkapan gulir. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
 "Open Settings" = "Buka Pengaturan";
 "Cancel" = "Batal";
 "Microphone Access Required" = "Akses Mikrofon Diperlukan";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot memerlukan izin mikrofon untuk merekam audio suara. Buka Pengaturan Sistem untuk memberikan akses.";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "MShot memerlukan izin mikrofon untuk merekam audio suara. Buka Pengaturan Sistem untuk memberikan akses.";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "Selamat datang di macshot";
-"Welcome back to macshot" = "Selamat datang kembali di macshot";
+"Welcome to MShot" = "Selamat datang di MShot";
+"Welcome back to MShot" = "Selamat datang kembali di MShot";
 "Turn Screen Recording back on" = "Nyalakan lagi Perekaman Layar";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "Setelah beberapa pembaruan, macOS meminta Anda mengizinkan macshot lagi. Pengaturan dan tangkapan Anda aman. Jika macshot sudah ada di daftar, pilih, klik tombol minus (−) untuk menghapusnya, lalu klik tombol plus (+) dan tambahkan macshot lagi.";
-"macshot needs one permission" = "macshot memerlukan satu izin";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "Setelah beberapa pembaruan, macOS meminta Anda mengizinkan MShot lagi. Pengaturan dan tangkapan Anda aman. Jika MShot sudah ada di daftar, pilih, klik tombol minus (−) untuk menghapusnya, lalu klik tombol plus (+) dan tambahkan MShot lagi.";
+"MShot needs one permission" = "MShot memerlukan satu izin";
 "Screen Recording not yet granted" = "Perekaman Layar belum diberikan";
 "Screen Recording granted!" = "Perekaman Layar diberikan!";
-"Enable macshot, then try taking a screenshot" = "Aktifkan macshot, lalu coba ambil tangkapan layar";
+"Enable MShot, then try taking a screenshot" = "Aktifkan MShot, lalu coba ambil tangkapan layar";
 "Open Screen Recording Settings" = "Buka Pengaturan Perekaman Layar";
 "Continue" = "Lanjutkan";
 
@@ -403,7 +402,7 @@
 "Path copied!" = "Path disalin!";
 
 /* Video Editor */
-"macshot Video Editor" = "Editor Video macshot";
+"MShot Video Editor" = "Editor Video MShot";
 "%@ selected" = "%@ dipilih";
 "Exporting..." = "Mengekspor...";
 "Export failed" = "Ekspor gagal";
@@ -451,7 +450,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Pemantauan Input Diperlukan";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot memerlukan izin Aksesibilitas untuk menempel ke elemen antarmuka individual. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "MShot memerlukan izin Aksesibilitas untuk menempel ke elemen antarmuka individual. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
 
 /* Recording — Keystroke Overlay */
 
@@ -464,7 +463,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "Hamparan Webcam";
 "Camera Access Required" = "Akses Kamera Diperlukan";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "macshot memerlukan izin kamera untuk hamparan webcam. Buka Pengaturan Sistem untuk memberikan akses.";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "MShot memerlukan izin kamera untuk hamparan webcam. Buka Pengaturan Sistem untuk memberikan akses.";
 "Webcam" = "Webcam";
 "Bottom Right" = "Kanan Bawah";
 "Bottom Left" = "Kiri Bawah";
@@ -485,7 +484,7 @@
 /* New Strings */
 "Settings" = "Pengaturan";
 "Settings..." = "Pengaturan...";
-"macshot Settings" = "Pengaturan macshot";
+"MShot Settings" = "Pengaturan MShot";
 "Also open in Editor" = "Buka juga di Editor";
 "Open in Editor right after selection" = "Buka di Editor langsung setelah memilih";
 "Close editor after copying" = "Tutup editor setelah menyalin";
@@ -540,7 +539,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "Buka Video...";
-"Choose a video to open in macshot editor" = "Pilih video untuk dibuka di editor macshot";
+"Choose a video to open in MShot editor" = "Pilih video untuk dibuka di editor MShot";
 "Click to add effects" = "Klik untuk menambahkan efek";
 "Add Zoom" = "Tambah Zoom";
 "Add Censor" = "Tambah Sensor";
@@ -614,9 +613,9 @@
 "Stop the current recording" = "Hentikan rekaman saat ini";
 "Supported URL Scheme Commands" = "Perintah Skema URL yang Didukung";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Ekstensi file ditambahkan secara otomatis. Garis miring dan titik dua di {window} menjadi tanda hubung.";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Picu macshot dari Raycast, Alfred, Shortcuts, atau alat apa pun yang membuka URL.";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Picu MShot dari Raycast, Alfred, Shortcuts, atau alat apa pun yang membuka URL.";
 "URL scheme info" = "Info skema URL";
-"Enable macshot:// URL scheme" = "Aktifkan skema URL macshot://";
+"Enable mshot:// URL scheme" = "Aktifkan skema URL mshot://";
 "sec (0 = never)" = "detik (0 = tidak pernah)";
 
 /* Settings import/export (issues #265, #280) */
@@ -624,7 +623,7 @@
 "Export Settings…" = "Ekspor Pengaturan…";
 "Import Settings…" = "Impor Pengaturan…";
 "Reveal Settings File in Finder" = "Tampilkan Berkas Pengaturan di Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "Ekspor Pengaturan";
 "Import Settings" = "Impor Pengaturan";
 "Import failed" = "Impor gagal";
@@ -635,12 +634,12 @@
 "Relaunch Now" = "Luncurkan Ulang Sekarang";
 "Replace your current settings?" = "Ganti pengaturan Anda saat ini?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "%d pengaturan telah diterapkan. Luncurkan ulang macshot untuk menerapkan semua perubahan.";
+"%d settings were applied. Relaunch MShot to apply all changes." = "%d pengaturan telah diterapkan. Luncurkan ulang MShot untuk menerapkan semua perubahan.";
 "A few large items were too big to include. Everything else was saved." = "Beberapa item besar terlalu besar untuk disertakan. Selebihnya telah disimpan.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Gambar latar Beautify khusus Anda terlalu besar untuk disertakan. Selebihnya telah disimpan.";
-"This file is not a valid macshot settings file." = "Berkas ini bukan berkas pengaturan macshot yang valid.";
+"This file is not a valid MShot settings file." = "Berkas ini bukan berkas pengaturan MShot yang valid.";
 "This settings file contains no settings." = "Berkas pengaturan ini tidak berisi pengaturan apa pun.";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "Berkas pengaturan ini dibuat oleh versi macshot yang lebih baru. Harap perbarui macshot terlebih dahulu.";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "Berkas pengaturan ini dibuat oleh versi MShot yang lebih baru. Harap perbarui MShot terlebih dahulu.";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "Tangkap, terjemahkan, dan tampilkan teks di atas gambar";
@@ -685,7 +684,7 @@
 "Apply Default Zoom to All" = "Terapkan Zoom Default ke Semua";
 "Auto" = "Otomatis";
 "Auto Zoom" = "Zoom Otomatis";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Zoom Otomatis memerlukan data penunjuk, yang direkam macshot di setiap rekaman baru. Anda tetap dapat menambahkan zoom dengan mengeklik dua kali jalur zoom.";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Zoom Otomatis memerlukan data penunjuk, yang direkam MShot di setiap rekaman baru. Anda tetap dapat menambahkan zoom dengan mengeklik dua kali jalur zoom.";
 "Background blur" = "Blur latar belakang";
 "Background color" = "Warna latar belakang";
 "Background, padding, rounded corners and shadow" = "Latar belakang, padding, sudut membulat, dan bayangan";
@@ -782,7 +781,7 @@
 "Shrink during zooms" = "Perkecil saat zoom";
 "Smoothing" = "Penghalusan";
 "Snappy" = "Cepat";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "Pengenalan ucapan dimatikan untuk macshot di Pengaturan Sistem › Privasi & Keamanan.";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "Pengenalan ucapan dimatikan untuk MShot di Pengaturan Sistem › Privasi & Keamanan.";
 "Speed" = "Kecepatan";
 "Spotlight" = "Sorotan";
 "Square" = "Persegi";
@@ -792,11 +791,11 @@
 "The recording's audio could not be read." = "Audio rekaman tidak dapat dibaca.";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "Rekaman ini sudah menampilkan penunjuk di pikselnya, jadi gayanya tidak dapat diubah. Zoom tetap dapat mengikutinya.";
 "This recording has no audio to transcribe." = "Rekaman ini tidak memiliki audio untuk ditranskripsi.";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Video ini tidak memiliki data penunjuk yang terekam. Rekaman yang dibuat dengan macshot dan dibuka di editor memungkinkan Anda mengubah gaya, menghaluskan, dan mengubah ukuran penunjuk setelah merekam.";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Video ini tidak memiliki data penunjuk yang terekam. Rekaman yang dibuat dengan MShot dan dibuka di editor memungkinkan Anda mengubah gaya, menghaluskan, dan mengubah ukuran penunjuk setelah merekam.";
 "Title" = "Judul";
 "Transcribing…" = "Mentranskripsi…";
 "Transition" = "Transisi";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Aktifkan kamera sebelum merekam. macshot merekamnya secara terpisah agar Anda dapat memindahkan, mengubah ukuran, mengubah gaya, atau menyembunyikannya di sini, dan memperkecilnya saat zoom.";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Aktifkan kamera sebelum merekam. MShot merekamnya secara terpisah agar Anda dapat memindahkan, mengubah ukuran, mengubah gaya, atau menyembunyikannya di sini, dan memperkecilnya saat zoom.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Gunakan Solid untuk menyembunyikan informasi sensitif: blur dan pikselasi terkadang dapat dikembalikan.";
 "Visibility" = "Visibilitas";
 "Wallpaper" = "Wallpaper";
@@ -813,4 +812,4 @@
 "Snap webcam to corners when moved" = "Tempelkan webcam ke sudut saat dipindahkan";
 "Search emoji" = "Cari emoji";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

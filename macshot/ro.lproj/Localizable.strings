@@ -1,17 +1,17 @@
-/* Romana — macshot localization
+/* Romana — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -32,7 +32,7 @@
 "Open from Clipboard" = "Deschide din clipboard";
 "Pin from Clipboard" = "Fixează din clipboard";
 "Preferences..." = "Preferințe...";
-"Quit macshot" = "Închide macshot";
+"Quit MShot" = "Închide MShot";
 "No recent captures" = "Nicio captură recentă";
 "Clear History" = "Șterge istoricul";
 
@@ -191,7 +191,7 @@
 "Copy to clipboard" = "Copiază în clipboard";
 
 /* Preferences - General */
-"macshot Preferences" = "Preferințe macshot";
+"MShot Preferences" = "Preferințe MShot";
 "General" = "General";
 "Tools" = "Instrumente";
 "Recording" = "Înregistrare";
@@ -219,7 +219,7 @@
 "Custom symbol" = "Simbol personalizat";
 "Default" = "Implicit";
 "Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Introdu orice nume de SF Symbol (ex. camera.fill) sau alege o presetare. Răsfoiește numele în aplicația SF Symbols de la Apple. Numele invalide revin la pictograma implicită.";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "Scurtăturile funcționează în continuare. Pentru a afișa din nou pictograma, repornește macshot.";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "Scurtăturile funcționează în continuare. Pentru a afișa din nou pictograma, repornește MShot.";
 "Thumbnail" = "Miniatură";
 "  Dismiss after:" = "  Închide după:";
 "seconds before auto-dismiss (0 = never)" = "secunde înainte de închidere automată (0 = niciodată)";
@@ -228,7 +228,7 @@
 "Stack (keep all)" = "Stivă (păstrează toate)";
 "Replace (show only latest)" = "Înlocuiește (afișează doar ultima)";
 "Menu Bar Order" = "Ordinea barei de meniu";
-"Choose the order of capture actions in the macshot menu bar menu." = "Alege ordinea acțiunilor de capturare în meniul barei de meniu macshot.";
+"Choose the order of capture actions in the MShot menu bar menu." = "Alege ordinea acțiunilor de capturare în meniul barei de meniu MShot.";
 "Move up" = "Mută în sus";
 "Move down" = "Mută în jos";
 "Output" = "Ieșire";
@@ -342,9 +342,8 @@
 "API key:" = "Cheie API:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "Versiunea %@ (%@)";
-"Made by" = "Creat de";
 "Licensed under the GPLv3" = "Licență GPLv3";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "Un instrument gratuit și open-source de captură de ecran și înregistrare pentru macOS.\nComplet nativ, construit cu Swift și AppKit.";
 
@@ -355,22 +354,22 @@
 "Copy an image or text to the clipboard first, then try again." = "Copiază mai întâi o imagine sau text în clipboard, apoi încearcă din nou.";
 "OK" = "OK";
 "Accessibility Access Required" = "Acces de accesibilitate necesar";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "macshot are nevoie de permisiunea de accesibilitate pentru a derula automat alte aplicații. Acordă acces din Setările sistemului, apoi încearcă din nou.";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "macshot are nevoie de permisiunea Accesibilitate pentru captură cu derulare. Acordați acces în Setările Sistemului și încercați din nou.";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "MShot are nevoie de permisiunea de accesibilitate pentru a derula automat alte aplicații. Acordă acces din Setările sistemului, apoi încearcă din nou.";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "MShot are nevoie de permisiunea Accesibilitate pentru captură cu derulare. Acordați acces în Setările Sistemului și încercați din nou.";
 "Open Settings" = "Deschide setările";
 "Cancel" = "Anulează";
 "Microphone Access Required" = "Acces la microfon necesar";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot are nevoie de permisiunea microfonului pentru a înregistra audio vocal. Deschide Setările sistemului pentru a acorda acces.";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "MShot are nevoie de permisiunea microfonului pentru a înregistra audio vocal. Deschide Setările sistemului pentru a acorda acces.";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "Bun venit în macshot";
-"Welcome back to macshot" = "Bine ai revenit în macshot";
+"Welcome to MShot" = "Bun venit în MShot";
+"Welcome back to MShot" = "Bine ai revenit în MShot";
 "Turn Screen Recording back on" = "Activează din nou înregistrarea ecranului";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "După unele actualizări, macOS îți cere să permiți din nou macshot. Setările și capturile tale sunt în siguranță. Dacă macshot este deja în listă, selectează-l, apasă butonul minus (−) ca să-l elimini, apoi apasă butonul plus (+) și adaugă din nou macshot.";
-"macshot needs one permission" = "macshot are nevoie de o permisiune";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "După unele actualizări, macOS îți cere să permiți din nou MShot. Setările și capturile tale sunt în siguranță. Dacă MShot este deja în listă, selectează-l, apasă butonul minus (−) ca să-l elimini, apoi apasă butonul plus (+) și adaugă din nou MShot.";
+"MShot needs one permission" = "MShot are nevoie de o permisiune";
 "Screen Recording not yet granted" = "Înregistrarea ecranului nu a fost încă acordată";
 "Screen Recording granted!" = "Înregistrarea ecranului a fost acordată!";
-"Enable macshot, then try taking a screenshot" = "Activează macshot, apoi încearcă să faci o captură de ecran";
+"Enable MShot, then try taking a screenshot" = "Activează MShot, apoi încearcă să faci o captură de ecran";
 "Open Screen Recording Settings" = "Deschide setările de înregistrare a ecranului";
 "Continue" = "Continuă";
 
@@ -396,7 +395,7 @@
 "Path copied!" = "Cale copiată!";
 
 /* Video Editor */
-"macshot Video Editor" = "macshot Editor Video";
+"MShot Video Editor" = "MShot Editor Video";
 "%@ selected" = "%@ selectat";
 "Exporting..." = "Se exportă...";
 "Export failed" = "Exportul a eșuat";
@@ -444,7 +443,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Monitorizarea tastaturii este necesară";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot are nevoie de permisiunea Accesibilitate pentru alinierea la elementele individuale ale interfeței. Acordați acces în Setările Sistemului și încercați din nou.";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "MShot are nevoie de permisiunea Accesibilitate pentru alinierea la elementele individuale ale interfeței. Acordați acces în Setările Sistemului și încercați din nou.";
 
 /* Recording — Keystroke Overlay */
 
@@ -457,7 +456,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "Suprapunere webcam";
 "Camera Access Required" = "Acces la cameră necesar";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "macshot are nevoie de permisiunea camerei pentru suprapunerea webcam. Deschide Setările sistemului pentru a acorda acces.";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "MShot are nevoie de permisiunea camerei pentru suprapunerea webcam. Deschide Setările sistemului pentru a acorda acces.";
 "Webcam" = "Webcam";
 "Bottom Right" = "Dreapta jos";
 "Bottom Left" = "Stânga jos";
@@ -478,7 +477,7 @@
 /* New Strings */
 "Settings..." = "Setări...";
 "Settings" = "Setări";
-"macshot Settings" = "Setări macshot";
+"MShot Settings" = "Setări MShot";
 "Also open in Editor" = "Deschide și în editor";
 "Open in Editor right after selection" = "Deschide în editor imediat după selecție";
 "Close editor after copying" = "Închide editorul după copiere";
@@ -540,7 +539,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "Deschide video...";
-"Choose a video to open in macshot editor" = "Alege un videoclip pentru a-l deschide în editorul macshot";
+"Choose a video to open in MShot editor" = "Alege un videoclip pentru a-l deschide în editorul MShot";
 "Click to add effects" = "Clic pentru a adăuga efecte";
 "Add Zoom" = "Adaugă zoom";
 "Add Censor" = "Adaugă cenzură";
@@ -606,7 +605,7 @@
 "Re-capture the last selected area" = "Recapturează ultima zonă selectată";
 "Captured window title (screenshots only, blank otherwise)" = "Doar capturi de ecran, titlul ferestrei capturate (gol altfel)";
 "Show available filename tokens" = "Afișează jetoanele disponibile pentru nume fișier";
-"Enable macshot:// URL scheme" = "Activează schema URL macshot://";
+"Enable mshot:// URL scheme" = "Activează schema URL mshot://";
 "Show supported URL scheme commands" = "Afișează comenzile schemei URL suportate";
 "Start area capture" = "Pornește captura de zonă";
 "Start area recording" = "Pornește înregistrarea de zonă";
@@ -615,7 +614,7 @@
 "Stop the current recording" = "Oprește înregistrarea curentă";
 "Supported URL Scheme Commands" = "Comenzi schemă URL suportate";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Extensia fișierului este adăugată automat. Bara oblică și două puncte din {window} devin liniuțe.";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Declanșează macshot din Raycast, Alfred, Shortcuts sau orice instrument care deschide URL-uri.";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Declanșează MShot din Raycast, Alfred, Shortcuts sau orice instrument care deschide URL-uri.";
 "URL scheme info" = "Informații schemă URL";
 "sec (0 = never)" = "sec (0 = niciodată)";
 
@@ -624,7 +623,7 @@
 "Export Settings…" = "Exportă setările…";
 "Import Settings…" = "Importă setările…";
 "Reveal Settings File in Finder" = "Afișează fișierul de setări în Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "Exportă setările";
 "Import Settings" = "Importă setările";
 "Import failed" = "Importul a eșuat";
@@ -635,12 +634,12 @@
 "Relaunch Now" = "Relansează acum";
 "Replace your current settings?" = "Înlocuiești setările curente?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "%d setări au fost aplicate. Relansează macshot pentru a aplica toate modificările.";
+"%d settings were applied. Relaunch MShot to apply all changes." = "%d setări au fost aplicate. Relansează MShot pentru a aplica toate modificările.";
 "A few large items were too big to include. Everything else was saved." = "Câteva elemente mari au fost prea voluminoase pentru a fi incluse. Restul a fost salvat.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Imaginea personalizată de fundal Beautify a fost prea mare pentru a fi inclusă. Restul a fost salvat.";
-"This file is not a valid macshot settings file." = "Acest fișier nu este un fișier de setări macshot valid.";
+"This file is not a valid MShot settings file." = "Acest fișier nu este un fișier de setări MShot valid.";
 "This settings file contains no settings." = "Acest fișier de setări nu conține nicio setare.";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "Acest fișier de setări a fost creat cu o versiune mai nouă de macshot. Actualizează mai întâi macshot.";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "Acest fișier de setări a fost creat cu o versiune mai nouă de MShot. Actualizează mai întâi MShot.";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "Capturează, traduce și suprapune textul pe imagine";
@@ -685,7 +684,7 @@
 "Apply Default Zoom to All" = "Aplică zoomul implicit tuturor";
 "Auto" = "Auto";
 "Auto Zoom" = "Zoom automat";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Zoomul automat are nevoie de datele cursorului, pe care macshot le înregistrează la fiecare înregistrare nouă. Poți adăuga în continuare zoomuri făcând dublu clic pe pista de zoom.";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Zoomul automat are nevoie de datele cursorului, pe care MShot le înregistrează la fiecare înregistrare nouă. Poți adăuga în continuare zoomuri făcând dublu clic pe pista de zoom.";
 "Background blur" = "Estompare fundal";
 "Background color" = "Culoare fundal";
 "Background, padding, rounded corners and shadow" = "Fundal, spațiere, colțuri rotunjite și umbră";
@@ -782,7 +781,7 @@
 "Shrink during zooms" = "Micșorează în timpul zoomului";
 "Smoothing" = "Netezire";
 "Snappy" = "Rapid";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "Recunoașterea vorbirii este dezactivată pentru macshot în Setările sistemului › Confidențialitate și securitate.";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "Recunoașterea vorbirii este dezactivată pentru MShot în Setările sistemului › Confidențialitate și securitate.";
 "Speed" = "Viteză";
 "Spotlight" = "Reflector";
 "Square" = "Pătrat";
@@ -792,11 +791,11 @@
 "The recording's audio could not be read." = "Sunetul înregistrării nu a putut fi citit.";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "Această înregistrare afișează deja cursorul în pixelii săi, deci stilul lui nu poate fi schimbat. Zoomurile îl pot urmări în continuare.";
 "This recording has no audio to transcribe." = "Această înregistrare nu are sunet de transcris.";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Acest videoclip nu are date înregistrate despre cursor. Înregistrările făcute cu macshot care se deschid în editor îți permit să schimbi stilul, netezirea și dimensiunea cursorului după înregistrare.";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Acest videoclip nu are date înregistrate despre cursor. Înregistrările făcute cu MShot care se deschid în editor îți permit să schimbi stilul, netezirea și dimensiunea cursorului după înregistrare.";
 "Title" = "Titlu";
 "Transcribing…" = "Se transcrie…";
 "Transition" = "Tranziție";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Pornește camera înainte de înregistrare. macshot o înregistrează separat, ca să o poți muta, redimensiona, restiliza sau ascunde aici, și micșora în timpul zoomurilor.";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Pornește camera înainte de înregistrare. MShot o înregistrează separat, ca să o poți muta, redimensiona, restiliza sau ascunde aici, și micșora în timpul zoomurilor.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Folosește Solid pentru a ascunde informațiile sensibile: estomparea și pixelarea pot fi uneori inversate.";
 "Visibility" = "Vizibilitate";
 "Wallpaper" = "Imagine de fundal";
@@ -813,4 +812,4 @@
 "Snap webcam to corners when moved" = "Aliniază webcamul la colțuri când este mutat";
 "Search emoji" = "Caută emoji";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

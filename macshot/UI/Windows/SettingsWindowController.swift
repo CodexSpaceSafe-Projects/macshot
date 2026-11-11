@@ -191,55 +191,13 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         container.translatesAutoresizingMaskIntoConstraints = false
         tabContentContainer = container
 
-        // Footer separator
-        let sep = NSBox()
-        sep.boxType = .separator
-        sep.translatesAutoresizingMaskIntoConstraints = false
-
-        // Footer labels
-        let madeBy = NSTextField(labelWithString: "\(L("Made by")) sw33tLie")
-        madeBy.font = NSFont.systemFont(ofSize: 11)
-        madeBy.textColor = .secondaryLabelColor
-        madeBy.translatesAutoresizingMaskIntoConstraints = false
-
-        let linkBtn = NSButton(title: "github.com/sw33tLie/macshot", target: self, action: #selector(openGitHub))
-        linkBtn.bezelStyle = .inline
-        linkBtn.isBordered = false
-        linkBtn.font = NSFont.systemFont(ofSize: 11)
-        linkBtn.attributedTitle = NSAttributedString(string: "github.com/sw33tLie/macshot", attributes: [
-            .font: NSFont.systemFont(ofSize: 11),
-            .foregroundColor: NSColor.linkColor,
-            .underlineStyle: NSUnderlineStyle.single.rawValue,
-        ])
-        linkBtn.translatesAutoresizingMaskIntoConstraints = false
-
-        let footerStack = NSStackView(views: [madeBy, NSView(), linkBtn])
-        footerStack.orientation = .horizontal
-        footerStack.spacing = 0
-        footerStack.translatesAutoresizingMaskIntoConstraints = false
-
         cv.addSubview(container)
-        cv.addSubview(sep)
-        cv.addSubview(footerStack)
 
         NSLayoutConstraint.activate([
-            // Content container fills above the footer
             container.topAnchor.constraint(equalTo: cv.topAnchor),
             container.leadingAnchor.constraint(equalTo: cv.leadingAnchor),
             container.trailingAnchor.constraint(equalTo: cv.trailingAnchor),
-            container.bottomAnchor.constraint(equalTo: sep.topAnchor),
-
-            // Footer separator
-            sep.leadingAnchor.constraint(equalTo: cv.leadingAnchor),
-            sep.trailingAnchor.constraint(equalTo: cv.trailingAnchor),
-            sep.bottomAnchor.constraint(equalTo: footerStack.topAnchor, constant: -6),
-            sep.heightAnchor.constraint(equalToConstant: 1),
-
-            // Footer
-            footerStack.leadingAnchor.constraint(equalTo: cv.leadingAnchor, constant: 20),
-            footerStack.trailingAnchor.constraint(equalTo: cv.trailingAnchor, constant: -20),
-            footerStack.bottomAnchor.constraint(equalTo: cv.bottomAnchor, constant: -8),
-            footerStack.heightAnchor.constraint(equalToConstant: 20),
+            container.bottomAnchor.constraint(equalTo: cv.bottomAnchor),
         ])
 
         // Show initial tab
@@ -411,7 +369,7 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         stack.addArrangedSubview(indented(hideMenuBarIconCheckbox))
         stack.setCustomSpacing(4, after: stack.arrangedSubviews.last!)
 
-        let hideNote = NSTextField(wrappingLabelWithString: L("Hotkeys still work. To show the icon again, re-launch macshot."))
+        let hideNote = NSTextField(wrappingLabelWithString: L("Hotkeys still work. To show the icon again, re-launch MShot."))
         hideNote.font = NSFont.systemFont(ofSize: 10)
         hideNote.textColor = .secondaryLabelColor
         stack.addArrangedSubview(indented(hideNote))
@@ -456,7 +414,7 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         stack.addArrangedSubview(indented(iconNote))
         stack.setCustomSpacing(6, after: stack.arrangedSubviews.last!)
 
-        let urlSchemeCheckbox = NSButton(checkboxWithTitle: L("Enable macshot:// URL scheme"), target: self, action: #selector(urlSchemeChanged(_:)))
+        let urlSchemeCheckbox = NSButton(checkboxWithTitle: L("Enable mshot:// URL scheme"), target: self, action: #selector(urlSchemeChanged(_:)))
         urlSchemeCheckbox.state = (UserDefaults.standard.object(forKey: "urlSchemeEnabled") as? Bool ?? true) ? .on : .off
 
         let urlSchemeInfoIcon = HoverPopoverIconView(
@@ -540,7 +498,7 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         stack.addArrangedSubview(indented(backupButtonsRow))
         stack.setCustomSpacing(6, after: stack.arrangedSubviews.last!)
 
-        let backupNote = NSTextField(wrappingLabelWithString: L("Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container."))
+        let backupNote = NSTextField(wrappingLabelWithString: L("Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container."))
         backupNote.font = NSFont.systemFont(ofSize: 10)
         backupNote.textColor = .secondaryLabelColor
         stack.addArrangedSubview(indented(backupNote))
@@ -643,7 +601,7 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
 
         let alert = NSAlert()
         alert.messageText = L("Settings imported")
-        alert.informativeText = String(format: L("%d settings were applied. Relaunch macshot to apply all changes."), result.appliedCount)
+        alert.informativeText = String(format: L("%d settings were applied. Relaunch MShot to apply all changes."), result.appliedCount)
         alert.addButton(withTitle: L("Relaunch Now"))
         alert.addButton(withTitle: L("Later"))
         guard let window = window else { return }
@@ -1025,7 +983,7 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         stack.addArrangedSubview(sectionHeader(L("Menu Bar Order")))
         stack.setCustomSpacing(10, after: stack.arrangedSubviews.last!)
 
-        let menuOrderNote = NSTextField(wrappingLabelWithString: L("Choose the order of capture actions in the macshot menu bar menu."))
+        let menuOrderNote = NSTextField(wrappingLabelWithString: L("Choose the order of capture actions in the MShot menu bar menu."))
         menuOrderNote.font = NSFont.systemFont(ofSize: 10)
         menuOrderNote.textColor = .secondaryLabelColor
         stack.addArrangedSubview(indented(menuOrderNote))
@@ -2406,9 +2364,6 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         guard idx >= 0, idx < languages.count else { return }
         LanguageManager.shared.currentLanguage = languages[idx].code
     }
-    @objc private func openGitHub() {
-        if let url = URL(string: "https://github.com/sw33tLie/macshot") { NSWorkspace.shared.open(url) }
-    }
     @objc private func imageFormatChanged(_ sender: NSPopUpButton) {
         guard let raw = sender.selectedItem?.representedObject as? String,
               let format = ImageEncoder.Format(rawValue: raw),
@@ -2763,27 +2718,27 @@ class SettingsWindowController: NSWindowController, NSToolbarDelegate, NSWindowD
         if let existing = urlSchemeInfoPopover, existing.isShown { return }
 
         let commands: [(String, String)] = [
-            ("macshot://capture",             L("Start area capture")),
-            ("macshot://capture-fullscreen",  L("Capture the full screen")),
-            ("macshot://capture-last",        L("Re-capture the last selected area")),
-            ("macshot://quick-capture",       L("Quick capture (uses your Enter action)")),
-            ("macshot://ocr",                 L("Capture area and read text/QR codes")),
-            ("macshot://ocr-translate?target=zh-CN", L("Capture, translate, and overlay the text on the image")),
-            ("macshot://record",              L("Start area recording")),
-            ("macshot://record-fullscreen",   L("Start full-screen recording")),
-            ("macshot://stop-recording",      L("Stop the current recording")),
-            ("macshot://scroll-capture",      L("Start scroll capture")),
-            ("macshot://history",             L("Open the recent captures overlay")),
-            ("macshot://settings",            L("Open this settings window")),
-            ("macshot://open?file=/path.png", L("Open an image file in the editor")),
-            ("macshot://edit?id=<id>",        L("Open a history entry in the editor (keeps annotations editable)")),
+            ("mshot://capture",             L("Start area capture")),
+            ("mshot://capture-fullscreen",  L("Capture the full screen")),
+            ("mshot://capture-last",        L("Re-capture the last selected area")),
+            ("mshot://quick-capture",       L("Quick capture (uses your Enter action)")),
+            ("mshot://ocr",                 L("Capture area and read text/QR codes")),
+            ("mshot://ocr-translate?target=zh-CN", L("Capture, translate, and overlay the text on the image")),
+            ("mshot://record",              L("Start area recording")),
+            ("mshot://record-fullscreen",   L("Start full-screen recording")),
+            ("mshot://stop-recording",      L("Stop the current recording")),
+            ("mshot://scroll-capture",      L("Start scroll capture")),
+            ("mshot://history",             L("Open the recent captures overlay")),
+            ("mshot://settings",            L("Open this settings window")),
+            ("mshot://open?file=/path.png", L("Open an image file in the editor")),
+            ("mshot://edit?id=<id>",        L("Open a history entry in the editor (keeps annotations editable)")),
         ]
 
         let title = NSTextField(labelWithString: L("Supported URL Scheme Commands"))
         title.font = NSFont.systemFont(ofSize: 13, weight: .semibold)
         title.translatesAutoresizingMaskIntoConstraints = false
 
-        let subtitle = NSTextField(wrappingLabelWithString: L("Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs."))
+        let subtitle = NSTextField(wrappingLabelWithString: L("Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs."))
         subtitle.font = NSFont.systemFont(ofSize: 11)
         subtitle.textColor = .secondaryLabelColor
         subtitle.preferredMaxLayoutWidth = 440

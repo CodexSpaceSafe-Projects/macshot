@@ -1,17 +1,17 @@
-/* Filipino — macshot localization
+/* Filipino — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "Buksan mula sa Clipboard";
 "Pin from Clipboard" = "I-pin mula sa Clipboard";
 "Preferences..." = "Mga Kagustuhan...";
-"Quit macshot" = "Isara ang macshot";
+"Quit MShot" = "Isara ang MShot";
 "No recent captures" = "Walang kamakailang pagkuha";
 "Clear History" = "Burahin ang Kasaysayan";
 
@@ -208,7 +208,7 @@
 "Copy to clipboard" = "Kopyahin sa clipboard";
 
 /* Preferences - General */
-"macshot Preferences" = "Mga Kagustuhan ng macshot";
+"MShot Preferences" = "Mga Kagustuhan ng MShot";
 "General" = "Pangkalahatan";
 "Tools" = "Mga Kasangkapan";
 "Recording" = "Pag-record";
@@ -234,9 +234,9 @@
 "Show shortcuts in tooltips" = "Ipakita ang mga shortcut sa mga tooltip";
 "Use window title in saved filename" = "Gamitin ang pamagat ng window sa na-save na filename";
 "Hide menu bar icon" = "Itago ang icon sa menu bar";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "Gumagana pa rin ang mga hotkey. Upang ipakita muli ang icon, i-restart ang macshot.";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "Gumagana pa rin ang mga hotkey. Upang ipakita muli ang icon, i-restart ang MShot.";
 "Menu Bar Order" = "Pagkakasunod-sunod ng Menu Bar";
-"Choose the order of capture actions in the macshot menu bar menu." = "Piliin ang pagkakasunod-sunod ng mga aksyon sa pagkuha sa menu ng menu bar ng macshot.";
+"Choose the order of capture actions in the MShot menu bar menu." = "Piliin ang pagkakasunod-sunod ng mga aksyon sa pagkuha sa menu ng menu bar ng MShot.";
 "Move up" = "Ilipat pataas";
 "Move down" = "Ilipat pababa";
 "Thumbnail" = "Thumbnail";
@@ -349,9 +349,8 @@
 "API key:" = "API key:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "Bersyon %@ (%@)";
-"Made by" = "Ginawa ni";
 "Licensed under the GPLv3" = "Lisensiyado sa ilalim ng GPLv3";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "Isang libre at open-source na kasangkapan sa screenshot at pag-record ng screen para sa macOS.\nGanap na native, binuo gamit ang Swift at AppKit.";
 
@@ -362,22 +361,22 @@
 "Copy an image or text to the clipboard first, then try again." = "Kopyahin muna ang isang larawan o teksto sa clipboard, pagkatapos ay subukang muli.";
 "OK" = "OK";
 "Accessibility Access Required" = "Kinakailangan ang Accessibility Access";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Kailangan ng macshot ang Accessibility permission upang mag-auto-scroll sa ibang app. Pakibigyan ng access sa System Settings, pagkatapos ay subukang muli.";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Kailangan ng macshot ang Accessibility permission para sa scroll capture. Mangyaring bigyan ng access sa System Settings, pagkatapos subukan muli.";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Kailangan ng MShot ang Accessibility permission upang mag-auto-scroll sa ibang app. Pakibigyan ng access sa System Settings, pagkatapos ay subukang muli.";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Kailangan ng MShot ang Accessibility permission para sa scroll capture. Mangyaring bigyan ng access sa System Settings, pagkatapos subukan muli.";
 "Open Settings" = "Buksan ang Settings";
 "Cancel" = "Kanselahin";
 "Microphone Access Required" = "Kinakailangan ang Access sa Mikropono";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "Kailangan ng macshot ang microphone permission upang mag-record ng boses. Buksan ang System Settings upang bigyan ng access.";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "Kailangan ng MShot ang microphone permission upang mag-record ng boses. Buksan ang System Settings upang bigyan ng access.";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "Maligayang pagdating sa macshot";
-"Welcome back to macshot" = "Maligayang pagbabalik sa macshot";
+"Welcome to MShot" = "Maligayang pagdating sa MShot";
+"Welcome back to MShot" = "Maligayang pagbabalik sa MShot";
 "Turn Screen Recording back on" = "Buksan muli ang Screen Recording";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "Pagkatapos ng ilang update, hinihiling ng macOS na payagan mo ulit ang macshot. Ligtas ang iyong mga setting at capture. Kung nasa listahan na ang macshot, piliin ito, i-click ang minus button (−) para alisin ito, pagkatapos ay i-click ang plus button (+) at idagdag ulit ang macshot.";
-"macshot needs one permission" = "Kailangan ng macshot ang isang permission";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "Pagkatapos ng ilang update, hinihiling ng macOS na payagan mo ulit ang MShot. Ligtas ang iyong mga setting at capture. Kung nasa listahan na ang MShot, piliin ito, i-click ang minus button (−) para alisin ito, pagkatapos ay i-click ang plus button (+) at idagdag ulit ang MShot.";
+"MShot needs one permission" = "Kailangan ng MShot ang isang permission";
 "Screen Recording not yet granted" = "Hindi pa naibibigay ang Screen Recording";
 "Screen Recording granted!" = "Naibigay na ang Screen Recording!";
-"Enable macshot, then try taking a screenshot" = "I-enable ang macshot, pagkatapos ay subukang kumuha ng screenshot";
+"Enable MShot, then try taking a screenshot" = "I-enable ang MShot, pagkatapos ay subukang kumuha ng screenshot";
 "Open Screen Recording Settings" = "Buksan ang Screen Recording Settings";
 "Continue" = "Magpatuloy";
 
@@ -403,7 +402,7 @@
 "Path copied!" = "Nakopya ang path!";
 
 /* Video Editor */
-"macshot Video Editor" = "macshot Video Editor";
+"MShot Video Editor" = "MShot Video Editor";
 "%@ selected" = "%@ ang napili";
 "Exporting..." = "Ini-export...";
 "Export failed" = "Nabigo ang pag-export";
@@ -451,7 +450,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Kinakailangan ang Input Monitoring";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "Kailangan ng macshot ang Accessibility permission para sa pag-snap sa mga indibidwal na elemento ng interface. Mangyaring bigyan ng access sa System Settings, pagkatapos subukan muli.";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "Kailangan ng MShot ang Accessibility permission para sa pag-snap sa mga indibidwal na elemento ng interface. Mangyaring bigyan ng access sa System Settings, pagkatapos subukan muli.";
 
 /* Recording — Keystroke Overlay */
 
@@ -464,7 +463,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "Webcam Overlay";
 "Camera Access Required" = "Kinakailangan ang Access sa Camera";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "Kailangan ng macshot ang camera permission para sa webcam overlay. Buksan ang System Settings upang bigyan ng access.";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "Kailangan ng MShot ang camera permission para sa webcam overlay. Buksan ang System Settings upang bigyan ng access.";
 "Webcam" = "Webcam";
 "Bottom Right" = "Ibaba Kanan";
 "Bottom Left" = "Ibaba Kaliwa";
@@ -484,7 +483,7 @@
 
 /* Settings */
 "Settings..." = "Mga Setting...";
-"macshot Settings" = "Mga Setting ng macshot";
+"MShot Settings" = "Mga Setting ng MShot";
 "Also open in Editor" = "Buksan din sa Editor";
 "Open in Editor right after selection" = "Buksan sa Editor agad pagkatapos pumili";
 "Close editor after copying" = "Isara ang editor pagkatapos kumopya";
@@ -541,7 +540,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "Buksan ang Video...";
-"Choose a video to open in macshot editor" = "Pumili ng video na bubuksan sa macshot editor";
+"Choose a video to open in MShot editor" = "Pumili ng video na bubuksan sa MShot editor";
 "Click to add effects" = "I-click upang magdagdag ng mga effect";
 "Add Zoom" = "Magdagdag ng Zoom";
 "Add Censor" = "Magdagdag ng Sensura";
@@ -615,9 +614,9 @@
 "Stop the current recording" = "Ihinto ang kasalukuyang pag-record";
 "Supported URL Scheme Commands" = "Mga Suportadong URL Scheme Command";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Awtomatikong idinaragdag ang extension ng file. Ang mga slash at colon sa {window} ay nagiging mga gitling.";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "I-trigger ang macshot mula sa Raycast, Alfred, Shortcuts, o anumang tool na nagbubukas ng URL.";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "I-trigger ang MShot mula sa Raycast, Alfred, Shortcuts, o anumang tool na nagbubukas ng URL.";
 "URL scheme info" = "Impormasyon ng URL scheme";
-"Enable macshot:// URL scheme" = "I-enable ang macshot:// URL scheme";
+"Enable mshot:// URL scheme" = "I-enable ang mshot:// URL scheme";
 "sec (0 = never)" = "seg (0 = hindi kailanman)";
 "Settings" = "Settings";
 
@@ -626,7 +625,7 @@
 "Export Settings…" = "I-export ang Mga Setting…";
 "Import Settings…" = "Mag-import ng Mga Setting…";
 "Reveal Settings File in Finder" = "Ipakita ang Settings File sa Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "I-export ang Mga Setting";
 "Import Settings" = "Mag-import ng Mga Setting";
 "Import failed" = "Nabigo ang pag-import";
@@ -637,12 +636,12 @@
 "Relaunch Now" = "I-relaunch Ngayon";
 "Replace your current settings?" = "Palitan ang iyong kasalukuyang mga setting?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "%d na setting ang na-apply. I-relaunch ang macshot para i-apply ang lahat ng pagbabago.";
+"%d settings were applied. Relaunch MShot to apply all changes." = "%d na setting ang na-apply. I-relaunch ang MShot para i-apply ang lahat ng pagbabago.";
 "A few large items were too big to include. Everything else was saved." = "May ilang malalaking item na masyadong malaki para isama. Na-save ang lahat ng iba pa.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Masyadong malaki ang iyong custom na Beautify background image para isama. Na-save ang lahat ng iba pa.";
-"This file is not a valid macshot settings file." = "Ang file na ito ay hindi isang valid na settings file ng macshot.";
+"This file is not a valid MShot settings file." = "Ang file na ito ay hindi isang valid na settings file ng MShot.";
 "This settings file contains no settings." = "Walang lamang setting ang settings file na ito.";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "Ang settings file na ito ay ginawa ng mas bagong bersyon ng macshot. Mangyaring i-update muna ang macshot.";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "Ang settings file na ito ay ginawa ng mas bagong bersyon ng MShot. Mangyaring i-update muna ang MShot.";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "I-capture, isalin, at i-overlay ang text sa imahe";
@@ -687,7 +686,7 @@
 "Apply Default Zoom to All" = "Ilapat ang Default na Zoom sa Lahat";
 "Auto" = "Auto";
 "Auto Zoom" = "Auto Zoom";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Kailangan ng Auto Zoom ang pointer data, na nire-record ng macshot sa bawat bagong recording. Maaari ka pa ring magdagdag ng zoom sa pamamagitan ng pag-double-click sa zoom lane.";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Kailangan ng Auto Zoom ang pointer data, na nire-record ng MShot sa bawat bagong recording. Maaari ka pa ring magdagdag ng zoom sa pamamagitan ng pag-double-click sa zoom lane.";
 "Background blur" = "Blur ng background";
 "Background color" = "Kulay ng background";
 "Background, padding, rounded corners and shadow" = "Background, padding, bilugang sulok at anino";
@@ -784,7 +783,7 @@
 "Shrink during zooms" = "Paliitin habang naka-zoom";
 "Smoothing" = "Pagpapakinis";
 "Snappy" = "Mabilis";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "Naka-off ang speech recognition para sa macshot sa System Settings › Privacy & Security.";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "Naka-off ang speech recognition para sa MShot sa System Settings › Privacy & Security.";
 "Speed" = "Bilis";
 "Spotlight" = "Spotlight";
 "Square" = "Parisukat";
@@ -794,11 +793,11 @@
 "The recording's audio could not be read." = "Hindi mabasa ang audio ng recording.";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "Nakikita na ang pointer sa mga pixel ng recording na ito, kaya hindi na mababago ang estilo nito. Maaari pa rin itong sundan ng mga zoom.";
 "This recording has no audio to transcribe." = "Walang audio na maaaring i-transcribe sa recording na ito.";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Walang naka-record na pointer data ang video na ito. Sa mga recording na ginawa gamit ang macshot na binubuksan sa editor, maaari mong baguhin ang estilo, pakinisin at baguhin ang laki ng pointer pagkatapos mag-record.";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Walang naka-record na pointer data ang video na ito. Sa mga recording na ginawa gamit ang MShot na binubuksan sa editor, maaari mong baguhin ang estilo, pakinisin at baguhin ang laki ng pointer pagkatapos mag-record.";
 "Title" = "Pamagat";
 "Transcribing…" = "Nagta-transcribe…";
 "Transition" = "Transition";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "I-on ang camera bago mag-record. Nire-record ito ng macshot nang hiwalay para mailipat, mabago ang laki, mabago ang estilo o maitago mo ito dito, at paliitin ito habang naka-zoom.";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "I-on ang camera bago mag-record. Nire-record ito ng MShot nang hiwalay para mailipat, mabago ang laki, mabago ang estilo o maitago mo ito dito, at paliitin ito habang naka-zoom.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Gamitin ang Solid para itago ang sensitibong impormasyon: minsan ay maaaring maibalik ang blur at pixelation.";
 "Visibility" = "Visibility";
 "Wallpaper" = "Wallpaper";
@@ -815,4 +814,4 @@
 "Snap webcam to corners when moved" = "Idikit ang webcam sa mga sulok kapag inililipat";
 "Search emoji" = "Maghanap ng emoji";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

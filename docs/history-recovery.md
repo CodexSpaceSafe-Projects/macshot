@@ -7,7 +7,7 @@ promote it or delete its full capture files.
 
 ## Before recovering files
 
-Quit macshot normally and let pending saves finish. Make a copy of the entire
+Quit MShot normally and let pending saves finish. Make a copy of the entire
 history directory, including `index.json`, before changing anything. The current
 sandboxed offline app uses:
 
@@ -30,7 +30,7 @@ These instructions do not require modifying the index or deleting the source.
    Its full capture is `<id>/<revision>/image.png`. Entries without a revision
    use the older flat layout, `<id>.<fileExtension>`.
 2. Copy that full image to another folder with a distinct filename. Open the copy
-   in Preview or macshot and check its appearance and dimensions. This image
+   in Preview or MShot and check its appearance and dimensions. This image
    includes the saved annotations and effects; `raw.png` does not. `preview.png`
    and `thumb.png` are smaller caches.
 3. If the index is missing or a save was interrupted, inspect the full images in
@@ -44,14 +44,14 @@ were not recorded separately in the index: if one is missing while another is
 valid, the app cannot distinguish deletion from a legitimate annotations-only
 or effects-only capture. Recover from a backup when that distinction matters.
 
-## Returning to an older macshot build
+## Returning to an older MShot build
 
 Builds from before the revision layout look for flat image filenames. They cannot
 read newly written revision directories merely by opening the current index.
 There is no automatic downgrade conversion.
 
 Before downgrading, recover any newer captures as ordinary full-size images and
-back up the entire current history. With macshot closed, restore a complete
+back up the entire current history. With MShot closed, restore a complete
 history backup made by the older build to its original location. Keep the newer
 history backup separately; do not merge its index into the old backup. Reimporting
 a flattened image preserves its appearance but does not restore editable objects.

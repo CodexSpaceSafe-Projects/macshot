@@ -1,4 +1,4 @@
-# macshot Offline
+# MShot
 
 One local-only macOS app for screenshots, annotations and screen recordings.
 Capture and editing use Apple frameworks, with no third-party package dependencies
@@ -6,7 +6,7 @@ and no built-in update checks or downloads. Install new versions manually from
 this repository's Releases page.
 
 <p align="center">
-  <img src="assets/logo.svg" alt="macshot logo" width="200"/>
+  <img src="assets/logo.svg" alt="MShot logo" width="200"/>
 </p>
 
 <p align="center">
@@ -21,20 +21,20 @@ this repository's Releases page.
 </p>
 
 <p align="center">
-  <img src="assets/preview.png" alt="macshot demo" width="700"/>
+  <img src="assets/preview.png" alt="MShot demo" width="700"/>
 </p>
 
 <p align="center">
-  <img src="assets/preview-studio.png" alt="macshot Studio video editor — background, pointer, zoom, camera and captions, with a timeline for zooms, cuts and titles" width="700"/>
+  <img src="assets/preview-studio.png" alt="MShot Studio video editor — background, pointer, zoom, camera and captions, with a timeline for zooms, cuts and titles" width="700"/>
 </p>
 
 ---
 
-### Why macshot?
+### Why MShot?
 
 - **Capture & annotate in one flow** — select a region, draw arrows/text/shapes/blur, copy to clipboard. One hotkey, zero friction.
 - **Screen recording with built-in editor** — record any area or full screen as MP4/GIF with system audio + microphone. Audio merge dialog with per-track volume control. Trim and export without leaving the app.
-- **Scroll capture** — select a region and scroll. macshot stitches it into one seamless tall (or wide) image automatically.
+- **Scroll capture** — select a region and scroll. MShot stitches it into one seamless tall (or wide) image automatically.
 - **Lightweight & native** — lives in your menu bar. Built with Swift and AppKit, not a web browser in disguise.
 - **40 languages** — English, 中文, 日本語, 한국어, Deutsch, Français, Español, Italiano, Português, العربية, हिन्दी, and 29 more. Auto-detects your system language.
 
@@ -42,15 +42,17 @@ this repository's Releases page.
 
 ## Install
 
-Download `MacShot-Offline.dmg` from this repository's [Releases](../../releases),
-open it, and drag **macshot Offline.app** to `/Applications`.
+Download `MShot.dmg` from this repository's [Releases](../../releases),
+open it, and drag **MShot.app** to `/Applications`.
 To update, quit the app and replace it with a newly downloaded copy.
+When upgrading from the previous app name, remove the old app from Applications
+after installing MShot. Settings, capture history and recordings keep their existing locations.
 
 ---
 
 ## Quick Start
 
-1. Launch macshot Offline — it appears in your menu bar
+1. Launch MShot — it appears in your menu bar
 2. Press `Cmd+Shift+X` to capture
 3. Drag to select, annotate with the toolbar, press `Cmd+C` to copy
 4. Press `Esc` to cancel
@@ -89,7 +91,7 @@ To update, quit the app and replace it with a newly downloaded copy.
 
 ### Screen Recording
 - **MP4 (H.264)** up to 120fps or **GIF** (5/10/15fps)
-- **System audio capture** — toggle on/off, excludes macshot's own sounds
+- **System audio capture** — toggle on/off, excludes MShot's own sounds
 - **Microphone recording** — record voice narration alongside screen capture (permission requested on first use)
 - **Mouse click highlights** — visual ripple on clicks during recording
 - **Selection border** — visible capture region outline during recording
@@ -189,21 +191,12 @@ To update, quit the app and replace it with a newly downloaded copy.
 
 ## Permissions
 
-macshot requires **Screen Recording** permission. macOS will prompt you on first capture.
+MShot requires **Screen Recording** permission. macOS will prompt you on first capture.
 
-The app has no sandbox network-client permission. Opening a QR link or the
-project website uses your browser; the system share sheet can send content
+The app has no sandbox network-client permission. Opening a QR link uses your browser; the system share sheet can send content
 through a service you explicitly choose. OCR, translation with already-installed
 Apple language packs, captions and media processing run locally. See
 [Privacy](PRIVACY.md) for original-file retention and sharing details.
-
----
-
-## Donations
-
-Thanks for thinking about it, but macshot doesn't take donations. I make this in my free time and I'm happy to keep it that way, so there's no "buy me a coffee" or sponsorship link.
-
-If you'd like to help out, starring the repo, reporting bugs, or contributing is more than enough. Thank you! 🙏
 
 ---
 
@@ -214,16 +207,16 @@ macOS 12.3 (Monterey) or later.
 ## Automated releases
 
 The [Build & Release workflow](.github/workflows/build-release.yml) builds
-the single offline app on macOS with Xcode 26 and uploads `MacShot-Offline.dmg`
+the single offline app on macOS with Xcode 26 and uploads `MShot.dmg`
 and `SHA256SUMS.txt` to this repository's GitHub Release.
 Push a version tag after committing the workflow:
 
 ```bash
-git tag v3.8.0
-git push origin v3.8.0
+git tag v4.5.1
+git push origin v4.5.1
 ```
 
-Tags such as `v3.8.0-beta.1` create prereleases. Publishing a Release for an
+Tags such as `v4.5.1-beta.1` create prereleases. Publishing a Release for an
 existing version tag also triggers the build and preserves its title and notes.
 To rebuild an existing tag, run **Actions → Build & Release → Run workflow**
 and enter the tag. Reruns replace assets with the same names.

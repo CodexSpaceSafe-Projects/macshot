@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.5.1] - 2026-11-11
+
+### Changed
+
+- Rename the application, menus, permission prompts and installer to **MShot**.
+- Remove developer attribution and the project link from the settings window.
+- Keep the existing bundle identifier and data locations for settings, captures and recordings.
+- Add `mshot://` actions while retaining the previous URL scheme for compatibility.
+- Publish `MShot.dmg` with a SHA256 checksum.
+
 ## [4.5.0] - 2026-11-11
 
 ### Changed

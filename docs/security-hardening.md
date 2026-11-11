@@ -1,6 +1,6 @@
 # Offline application boundaries
 
-The project ships one sandboxed app, **macshot Offline**, with bundle identifier
+The project ships one sandboxed app, **MShot**, with bundle identifier
 `com.sw33tlie.macshot.offline`. Capture, image editing, OCR, local translation,
 recording and media export use Apple frameworks. There are no third-party Swift
 package dependencies or bundled update helpers.
@@ -13,7 +13,7 @@ must not be passed through to an HTTP image loader. Translation requires macOS 1
 and already-installed Apple language packs, and reports unavailable packs instead
 of using a network fallback. Captions require on-device speech recognition.
 
-Explicit QR/project links open the browser, and the system share sheet can send
+Explicit QR links open the browser, and the system share sheet can send
 content through the service chosen by the user. These external browser/system
 actions are governed by those services, not by a machine-wide network block.
 Release builds run on GitHub Actions and can contact GitHub and, when enabled,
@@ -21,7 +21,7 @@ Apple's notarization service; this is separate from installed-app behavior.
 
 ## Manual distribution
 
-The release workflow builds and signs one app, packages `MacShot-Offline.dmg`,
+The release workflow builds and signs one app, packages `MShot.dmg`,
 and publishes it with `SHA256SUMS.txt` in the current repository's GitHub Release.
 Actions are pinned to commit SHAs. Packaging uses macOS tools rather than
 installing a package manager utility. New versions must be installed manually.

@@ -31,7 +31,7 @@ jobs:
     env:
       RELEASE_TAG: ${{ inputs.tag || github.event.release.tag_name || github.ref_name }}
       GH_REPO: ${{ github.repository }}
-      APP_PATH: build/Build/Products/Release/macshot Offline.app
+      APP_PATH: build/Build/Products/Release/MShot.app
 
     steps:
       - name: Configure release
@@ -108,7 +108,7 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             MARKETING_VERSION="$VERSION" \
             CURRENT_PROJECT_VERSION="$BUILD_NUMBER"
-          lipo "$APP_PATH/Contents/MacOS/macshot Offline" -verify_arch arm64 x86_64
+          lipo "$APP_PATH/Contents/MacOS/MShot" -verify_arch arm64 x86_64
           BUNDLE_ID=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP_PATH/Contents/Info.plist")
           if [[ "$BUNDLE_ID" != 'com.sw33tlie.macshot.offline' ]]; then
             echo "::error::Unexpected bundle identifier: $BUNDLE_ID"
@@ -179,10 +179,10 @@ jobs:
         run: |
           STAGING_PATH=$(mktemp -d "$RUNNER_TEMP/macshot-dmg.XXXXXX")
           trap 'rm -rf "$STAGING_PATH"' EXIT
-          ditto "$APP_PATH" "$STAGING_PATH/macshot Offline.app"
+          ditto "$APP_PATH" "$STAGING_PATH/MShot.app"
           ln -s /Applications "$STAGING_PATH/Applications"
-          hdiutil create -volname 'macshot Offline' -srcfolder "$STAGING_PATH" \
-            -format UDZO -ov MacShot-Offline.dmg
+          hdiutil create -volname 'MShot' -srcfolder "$STAGING_PATH" \
+            -format UDZO -ov MShot.dmg
 
       - name: Notarize signed DMG
         if: env.SIGNING_ENABLED == 'true'
@@ -195,7 +195,7 @@ jobs:
           NOTARY_KEY=$(mktemp "$RUNNER_TEMP/notary-key.XXXXXX")
           trap 'rm -f "$NOTARY_KEY"' EXIT
           printf '%s' "$ASC_API_KEY_BASE64" | base64 --decode > "$NOTARY_KEY"
-          xcrun notarytool submit MacShot-Offline.dmg \
+          xcrun notarytool submit MShot.dmg \
             --key "$NOTARY_KEY" --key-id "$ASC_API_KEY_ID" --issuer "$ASC_API_ISSUER_ID" \
             --wait --timeout 120m --output-format json > notarization-result.json
           python3 - <<'PY'
@@ -205,18 +205,18 @@ jobs:
           if result.get('status') != 'Accepted':
               raise SystemExit(f"Notarization was not accepted: {result.get('status')}")
           PY
-          xcrun stapler staple MacShot-Offline.dmg
-          xcrun stapler validate MacShot-Offline.dmg
+          xcrun stapler staple MShot.dmg
+          xcrun stapler validate MShot.dmg
 
       - name: Compute checksum
-        run: shasum -a 256 MacShot-Offline.dmg > SHA256SUMS.txt
+        run: shasum -a 256 MShot.dmg > SHA256SUMS.txt
 
       - name: Keep release assets
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: release-${{ env.RELEASE_TAG }}
           path: |
-            MacShot-Offline.dmg
+            MShot.dmg
             SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 14
@@ -244,7 +244,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
-            gh release upload "$RELEASE_TAG" MacShot-Offline.dmg SHA256SUMS.txt --clobber
+            gh release upload "$RELEASE_TAG" MShot.dmg SHA256SUMS.txt --clobber
           else
             RELEASE_FLAGS=(--verify-tag --title "$RELEASE_TAG")
             if [[ "$IS_PRERELEASE" == 'true' ]]; then RELEASE_FLAGS+=(--prerelease); fi
@@ -253,7 +253,7 @@ jobs:
             else
               RELEASE_FLAGS+=(--generate-notes)
             fi
-            gh release create "$RELEASE_TAG" MacShot-Offline.dmg SHA256SUMS.txt "${RELEASE_FLAGS[@]}"
+            gh release create "$RELEASE_TAG" MShot.dmg SHA256SUMS.txt "${RELEASE_FLAGS[@]}"
           fi
 
       - name: Cleanup signing keychain

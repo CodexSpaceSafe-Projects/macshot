@@ -8172,7 +8172,7 @@ class OverlayView: NSView {
     private func showCameraPermissionAlert() {
         let alert = NSAlert()
         alert.messageText = L("Camera Access Required")
-        alert.informativeText = L("macshot needs camera permission for the webcam overlay. Open System Settings to grant access.")
+        alert.informativeText = L("MShot needs camera permission for the webcam overlay. Open System Settings to grant access.")
         alert.alertStyle = .warning
         alert.addButton(withTitle: L("Open Settings"))
         alert.addButton(withTitle: L("Cancel"))
@@ -8984,7 +8984,7 @@ class OverlayView: NSView {
         let alert = NSAlert()
         alert.messageText = L("Microphone Access Required")
         alert.informativeText =
-            L("macshot needs microphone permission to record voice audio. Open System Settings to grant access.")
+            L("MShot needs microphone permission to record voice audio. Open System Settings to grant access.")
         alert.alertStyle = .warning
         alert.addButton(withTitle: L("Open Settings"))
         alert.addButton(withTitle: L("Cancel"))

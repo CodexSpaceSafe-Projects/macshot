@@ -36,7 +36,7 @@ xcodebuild -project "$probe_directory/macshot.xcodeproj" -scheme macshot -config
   CODE_SIGNING_ALLOWED=YES CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM= \
   PRODUCT_BUNDLE_IDENTIFIER=com.macshot.history-editor-probe \
   build > "$probe_directory/build.log" 2>&1
-probe_bundle="$probe_directory/build/Build/Products/Release/macshot Offline.app"
+probe_bundle="$probe_directory/build/Build/Products/Release/MShot.app"
 /usr/libexec/PlistBuddy -c "Add :HistoryProbeRun string $(basename "$probe_directory")" "$probe_bundle/Contents/Info.plist"
 # Sign after the probe-only Info.plist change. File panels and scoped access
 # need the same sandbox entitlements as the shipping application.

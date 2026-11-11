@@ -1,17 +1,17 @@
-/* ไทย — macshot localization
+/* ไทย — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "เปิดจากคลิปบอร์ด";
 "Pin from Clipboard" = "ปักหมุดจากคลิปบอร์ด";
 "Preferences..." = "การตั้งค่า...";
-"Quit macshot" = "ออกจาก macshot";
+"Quit MShot" = "ออกจาก MShot";
 "No recent captures" = "ไม่มีภาพที่จับล่าสุด";
 "Clear History" = "ล้างประวัติ";
 
@@ -207,7 +207,7 @@
 "Copy to clipboard" = "คัดลอกไปยังคลิปบอร์ด";
 
 /* Preferences - General */
-"macshot Preferences" = "การตั้งค่า macshot";
+"MShot Preferences" = "การตั้งค่า MShot";
 "General" = "ทั่วไป";
 "Tools" = "เครื่องมือ";
 "Recording" = "การบันทึก";
@@ -233,13 +233,13 @@
 "Show shortcuts in tooltips" = "แสดงปุ่มลัดในคำแนะนำเครื่องมือ";
 "Use window title in saved filename" = "ใช้ชื่อหน้าต่างในชื่อไฟล์ที่บันทึก";
 "Hide menu bar icon" = "ซ่อนไอคอนแถบเมนู";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "ปุ่มลัดยังใช้งานได้ เปิด macshot ใหม่เพื่อแสดงไอคอนอีกครั้ง";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "ปุ่มลัดยังใช้งานได้ เปิด MShot ใหม่เพื่อแสดงไอคอนอีกครั้ง";
 "Menu bar icon:" = "ไอคอนแถบเมนู:";
 "Default" = "ค่าเริ่มต้น";
 "Custom symbol" = "สัญลักษณ์กำหนดเอง";
 "Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "ป้อนชื่อ SF Symbol ใดก็ได้ (เช่น camera.fill) หรือเลือกค่าที่ตั้งไว้ ดูชื่อได้ในแอป SF Symbols ของ Apple ชื่อที่ไม่ถูกต้องจะกลับไปใช้ไอคอนเริ่มต้น";
 "Menu Bar Order" = "ลำดับแถบเมนู";
-"Choose the order of capture actions in the macshot menu bar menu." = "เลือกลำดับของการดำเนินการจับภาพในเมนูแถบเมนูของ macshot";
+"Choose the order of capture actions in the MShot menu bar menu." = "เลือกลำดับของการดำเนินการจับภาพในเมนูแถบเมนูของ MShot";
 "Move up" = "เลื่อนขึ้น";
 "Move down" = "เลื่อนลง";
 "Thumbnail" = "ภาพขนาดย่อ";
@@ -348,9 +348,8 @@
 "API key:" = "API key:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "เวอร์ชัน %@ (%@)";
-"Made by" = "สร้างโดย";
 "Licensed under the GPLv3" = "อนุญาตภายใต้ GPLv3";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "เครื่องมือจับภาพหน้าจอและบันทึกหน้าจอฟรีแบบโอเพนซอร์สสำหรับ macOS\nเนทีฟเต็มรูปแบบ, สร้างด้วย Swift และ AppKit";
 
@@ -361,22 +360,22 @@
 "Copy an image or text to the clipboard first, then try again." = "คัดลอกรูปภาพหรือข้อความไปยังคลิปบอร์ดก่อน แล้วลองอีกครั้ง";
 "OK" = "ตกลง";
 "Accessibility Access Required" = "ต้องการสิทธิ์การเข้าถึง";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "macshot ต้องการสิทธิ์การเข้าถึงเพื่อเลื่อนแอปอื่นอัตโนมัติ กรุณาอนุญาตในการตั้งค่าระบบ แล้วลองอีกครั้ง";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "macshot ต้องการสิทธิ์การช่วยการเข้าถึงสำหรับการจับภาพแบบเลื่อน กรุณาให้สิทธิ์ในการตั้งค่าระบบ แล้วลองอีกครั้ง";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "MShot ต้องการสิทธิ์การเข้าถึงเพื่อเลื่อนแอปอื่นอัตโนมัติ กรุณาอนุญาตในการตั้งค่าระบบ แล้วลองอีกครั้ง";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "MShot ต้องการสิทธิ์การช่วยการเข้าถึงสำหรับการจับภาพแบบเลื่อน กรุณาให้สิทธิ์ในการตั้งค่าระบบ แล้วลองอีกครั้ง";
 "Open Settings" = "เปิดการตั้งค่า";
 "Cancel" = "ยกเลิก";
 "Microphone Access Required" = "ต้องการสิทธิ์ไมโครโฟน";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot ต้องการสิทธิ์ไมโครโฟนเพื่อบันทึกเสียง เปิดการตั้งค่าระบบเพื่ออนุญาต";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "MShot ต้องการสิทธิ์ไมโครโฟนเพื่อบันทึกเสียง เปิดการตั้งค่าระบบเพื่ออนุญาต";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "ยินดีต้อนรับสู่ macshot";
-"Welcome back to macshot" = "ยินดีต้อนรับกลับสู่ macshot";
+"Welcome to MShot" = "ยินดีต้อนรับสู่ MShot";
+"Welcome back to MShot" = "ยินดีต้อนรับกลับสู่ MShot";
 "Turn Screen Recording back on" = "เปิดการบันทึกหน้าจออีกครั้ง";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "หลังการอัปเดตบางครั้ง macOS จะขอให้คุณอนุญาต macshot อีกครั้ง การตั้งค่าและภาพที่จับไว้ของคุณยังอยู่ครบ หาก macshot อยู่ในรายการแล้ว ให้เลือก คลิกปุ่มลบ (−) เพื่อนำออก จากนั้นคลิกปุ่มเพิ่ม (+) แล้วเพิ่ม macshot อีกครั้ง";
-"macshot needs one permission" = "macshot ต้องการสิทธิ์หนึ่งอย่าง";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "หลังการอัปเดตบางครั้ง macOS จะขอให้คุณอนุญาต MShot อีกครั้ง การตั้งค่าและภาพที่จับไว้ของคุณยังอยู่ครบ หาก MShot อยู่ในรายการแล้ว ให้เลือก คลิกปุ่มลบ (−) เพื่อนำออก จากนั้นคลิกปุ่มเพิ่ม (+) แล้วเพิ่ม MShot อีกครั้ง";
+"MShot needs one permission" = "MShot ต้องการสิทธิ์หนึ่งอย่าง";
 "Screen Recording not yet granted" = "ยังไม่ได้อนุญาตการบันทึกหน้าจอ";
 "Screen Recording granted!" = "อนุญาตการบันทึกหน้าจอแล้ว!";
-"Enable macshot, then try taking a screenshot" = "เปิดใช้งาน macshot แล้วลองจับภาพหน้าจอ";
+"Enable MShot, then try taking a screenshot" = "เปิดใช้งาน MShot แล้วลองจับภาพหน้าจอ";
 "Open Screen Recording Settings" = "เปิดการตั้งค่าการบันทึกหน้าจอ";
 "Continue" = "ดำเนินการต่อ";
 
@@ -403,7 +402,7 @@
 "Path copied!" = "คัดลอกเส้นทางแล้ว!";
 
 /* Video Editor */
-"macshot Video Editor" = "ตัวแก้ไขวิดีโอ macshot";
+"MShot Video Editor" = "ตัวแก้ไขวิดีโอ MShot";
 "%@ selected" = "เลือก %@ แล้ว";
 "Exporting..." = "กำลังส่งออก...";
 "Export failed" = "ส่งออกล้มเหลว";
@@ -451,7 +450,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "ต้องการสิทธิ์การตรวจสอบอินพุต";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot ต้องการสิทธิ์การช่วยการเข้าถึงเพื่อสแนปไปยังองค์ประกอบอินเทอร์เฟซแต่ละรายการ กรุณาให้สิทธิ์ในการตั้งค่าระบบ แล้วลองอีกครั้ง";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "MShot ต้องการสิทธิ์การช่วยการเข้าถึงเพื่อสแนปไปยังองค์ประกอบอินเทอร์เฟซแต่ละรายการ กรุณาให้สิทธิ์ในการตั้งค่าระบบ แล้วลองอีกครั้ง";
 
 /* Recording — Keystroke Overlay */
 
@@ -464,7 +463,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "ซ้อนทับเว็บแคม";
 "Camera Access Required" = "ต้องการสิทธิ์กล้อง";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "macshot ต้องการสิทธิ์กล้องสำหรับการซ้อนทับเว็บแคม เปิดการตั้งค่าระบบเพื่ออนุญาต";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "MShot ต้องการสิทธิ์กล้องสำหรับการซ้อนทับเว็บแคม เปิดการตั้งค่าระบบเพื่ออนุญาต";
 "Webcam" = "เว็บแคม";
 "Bottom Right" = "ล่างขวา";
 "Bottom Left" = "ล่างซ้าย";
@@ -485,7 +484,7 @@
 /* New Strings */
 "Settings" = "การตั้งค่า";
 "Settings..." = "การตั้งค่า...";
-"macshot Settings" = "การตั้งค่า macshot";
+"MShot Settings" = "การตั้งค่า MShot";
 "Also open in Editor" = "เปิดในตัวแก้ไขด้วย";
 "Open in Editor right after selection" = "เปิดในตัวแก้ไขทันทีหลังเลือก";
 "Close editor after copying" = "ปิดตัวแก้ไขหลังคัดลอก";
@@ -540,7 +539,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "เปิดวิดีโอ...";
-"Choose a video to open in macshot editor" = "เลือกวิดีโอเพื่อเปิดในตัวแก้ไข macshot";
+"Choose a video to open in MShot editor" = "เลือกวิดีโอเพื่อเปิดในตัวแก้ไข MShot";
 "Click to add effects" = "คลิกเพื่อเพิ่มเอฟเฟกต์";
 "Add Zoom" = "เพิ่มการซูม";
 "Add Censor" = "เพิ่มการปิดบัง";
@@ -614,9 +613,9 @@
 "Stop the current recording" = "หยุดการบันทึกปัจจุบัน";
 "Supported URL Scheme Commands" = "คำสั่ง URL Scheme ที่รองรับ";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "นามสกุลไฟล์จะถูกเพิ่มโดยอัตโนมัติ เครื่องหมายทับและโคลอนใน {window} จะกลายเป็นเครื่องหมายขีด";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "เรียกใช้ macshot จาก Raycast, Alfred, Shortcuts หรือเครื่องมือใดก็ตามที่เปิด URL";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "เรียกใช้ MShot จาก Raycast, Alfred, Shortcuts หรือเครื่องมือใดก็ตามที่เปิด URL";
 "URL scheme info" = "ข้อมูล URL scheme";
-"Enable macshot:// URL scheme" = "เปิดใช้งาน URL scheme macshot://";
+"Enable mshot:// URL scheme" = "เปิดใช้งาน URL scheme mshot://";
 "sec (0 = never)" = "วินาที (0 = ไม่เลย)";
 
 /* Settings import/export (issues #265, #280) */
@@ -624,7 +623,7 @@
 "Export Settings…" = "ส่งออกการตั้งค่า…";
 "Import Settings…" = "นำเข้าการตั้งค่า…";
 "Reveal Settings File in Finder" = "แสดงไฟล์การตั้งค่าใน Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "ส่งออกการตั้งค่า";
 "Import Settings" = "นำเข้าการตั้งค่า";
 "Import failed" = "นำเข้าไม่สำเร็จ";
@@ -635,12 +634,12 @@
 "Relaunch Now" = "เปิดใหม่ตอนนี้";
 "Replace your current settings?" = "แทนที่การตั้งค่าปัจจุบันของคุณหรือไม่?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "นำการตั้งค่า %d รายการไปใช้แล้ว เปิด macshot ใหม่เพื่อนำการเปลี่ยนแปลงทั้งหมดไปใช้";
+"%d settings were applied. Relaunch MShot to apply all changes." = "นำการตั้งค่า %d รายการไปใช้แล้ว เปิด MShot ใหม่เพื่อนำการเปลี่ยนแปลงทั้งหมดไปใช้";
 "A few large items were too big to include. Everything else was saved." = "รายการขนาดใหญ่บางรายการมีขนาดเกินกว่าที่จะรวมได้ ส่วนอื่นทั้งหมดถูกบันทึกแล้ว";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "ภาพพื้นหลัง Beautify ที่คุณกำหนดเองมีขนาดใหญ่เกินกว่าที่จะรวมได้ ส่วนอื่นทั้งหมดถูกบันทึกแล้ว";
-"This file is not a valid macshot settings file." = "ไฟล์นี้ไม่ใช่ไฟล์การตั้งค่า macshot ที่ถูกต้อง";
+"This file is not a valid MShot settings file." = "ไฟล์นี้ไม่ใช่ไฟล์การตั้งค่า MShot ที่ถูกต้อง";
 "This settings file contains no settings." = "ไฟล์การตั้งค่านี้ไม่มีการตั้งค่าใดๆ";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "ไฟล์การตั้งค่านี้สร้างขึ้นโดย macshot เวอร์ชันที่ใหม่กว่า โปรดอัปเดต macshot ก่อน";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "ไฟล์การตั้งค่านี้สร้างขึ้นโดย MShot เวอร์ชันที่ใหม่กว่า โปรดอัปเดต MShot ก่อน";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "จับภาพ แปล และวางข้อความซ้อนทับบนภาพ";
@@ -685,7 +684,7 @@
 "Apply Default Zoom to All" = "ใช้ซูมเริ่มต้นกับทั้งหมด";
 "Auto" = "อัตโนมัติ";
 "Auto Zoom" = "ซูมอัตโนมัติ";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "ซูมอัตโนมัติต้องใช้ข้อมูลตัวชี้ ซึ่ง macshot บันทึกไว้ในการบันทึกใหม่ทุกครั้ง คุณยังคงเพิ่มการซูมได้โดยคลิกสองครั้งที่แทร็กซูม";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "ซูมอัตโนมัติต้องใช้ข้อมูลตัวชี้ ซึ่ง MShot บันทึกไว้ในการบันทึกใหม่ทุกครั้ง คุณยังคงเพิ่มการซูมได้โดยคลิกสองครั้งที่แทร็กซูม";
 "Background blur" = "เบลอพื้นหลัง";
 "Background color" = "สีพื้นหลัง";
 "Background, padding, rounded corners and shadow" = "พื้นหลัง ระยะห่าง มุมมน และเงา";
@@ -782,7 +781,7 @@
 "Shrink during zooms" = "ย่อขณะซูม";
 "Smoothing" = "ความเรียบ";
 "Snappy" = "ฉับไว";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "การรู้จำเสียงพูดถูกปิดสำหรับ macshot ในการตั้งค่าระบบ › ความเป็นส่วนตัวและความปลอดภัย";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "การรู้จำเสียงพูดถูกปิดสำหรับ MShot ในการตั้งค่าระบบ › ความเป็นส่วนตัวและความปลอดภัย";
 "Speed" = "ความเร็ว";
 "Spotlight" = "สปอตไลท์";
 "Square" = "สี่เหลี่ยมจัตุรัส";
@@ -792,11 +791,11 @@
 "The recording's audio could not be read." = "ไม่สามารถอ่านเสียงของการบันทึกได้";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "การบันทึกนี้มีตัวชี้อยู่ในพิกเซลแล้ว จึงไม่สามารถเปลี่ยนสไตล์ได้ แต่การซูมยังคงติดตามตัวชี้ได้";
 "This recording has no audio to transcribe." = "การบันทึกนี้ไม่มีเสียงให้ถอดความ";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "วิดีโอนี้ไม่มีข้อมูลตัวชี้ที่บันทึกไว้ การบันทึกที่สร้างด้วย macshot และเปิดในตัวแก้ไขจะให้คุณเปลี่ยนสไตล์ ปรับให้เรียบ และปรับขนาดตัวชี้ได้หลังการบันทึก";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "วิดีโอนี้ไม่มีข้อมูลตัวชี้ที่บันทึกไว้ การบันทึกที่สร้างด้วย MShot และเปิดในตัวแก้ไขจะให้คุณเปลี่ยนสไตล์ ปรับให้เรียบ และปรับขนาดตัวชี้ได้หลังการบันทึก";
 "Title" = "ชื่อเรื่อง";
 "Transcribing…" = "กำลังถอดความ…";
 "Transition" = "การเปลี่ยนผ่าน";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "เปิดกล้องก่อนบันทึก macshot จะบันทึกกล้องแยกต่างหากเพื่อให้คุณย้าย ปรับขนาด เปลี่ยนสไตล์ หรือซ่อนได้ที่นี่, และย่อลงขณะซูม";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "เปิดกล้องก่อนบันทึก MShot จะบันทึกกล้องแยกต่างหากเพื่อให้คุณย้าย ปรับขนาด เปลี่ยนสไตล์ หรือซ่อนได้ที่นี่, และย่อลงขณะซูม";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "ใช้ “ทึบ” เพื่อซ่อนข้อมูลที่ละเอียดอ่อน: การเบลอและการทำพิกเซลบางครั้งสามารถย้อนกลับได้";
 "Visibility" = "การแสดงผล";
 "Wallpaper" = "วอลเปเปอร์";
@@ -813,4 +812,4 @@
 "Snap webcam to corners when moved" = "จัดเว็บแคมให้ชิดมุมเมื่อย้าย";
 "Search emoji" = "ค้นหาอีโมจิ";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

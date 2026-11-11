@@ -238,7 +238,7 @@ final class ClipboardTextPinRendererTests: XCTestCase {
 final class BuildVariantTests: XCTestCase {
 
     func testTheOfflineProductNameIsUsed() {
-        XCTAssertEqual(BuildVariant.displayName, "macshot Offline")
+        XCTAssertEqual(BuildVariant.displayName, "MShot")
     }
 
 }

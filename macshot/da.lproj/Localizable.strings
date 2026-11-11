@@ -1,17 +1,17 @@
-/* Dansk — macshot lokalisering
+/* Dansk — MShot lokalisering
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "\U00C5bn fra udklipsholder";
 "Pin from Clipboard" = "Fastg\U00F8r fra udklipsholder";
 "Preferences..." = "Indstillinger...";
-"Quit macshot" = "Afslut macshot";
+"Quit MShot" = "Afslut MShot";
 "No recent captures" = "Ingen seneste optagelser";
 "Clear History" = "Ryd historik";
 
@@ -204,7 +204,7 @@
 "Copy to clipboard" = "Kopi\U00E9r til udklipsholder";
 
 /* Preferences - General */
-"macshot Preferences" = "macshot Indstillinger";
+"MShot Preferences" = "MShot Indstillinger";
 "General" = "Generelt";
 "Tools" = "V\U00E6rkt\U00F8jer";
 "Recording" = "Optagelse";
@@ -228,7 +228,7 @@
 "Hide capture instructions" = "Skjul vejledning ved optagelse";
 "Use window title in saved filename" = "Brug vinduets titel i gemt filnavn";
 "Hide menu bar icon" = "Skjul menulinjeikon";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "Genvejstaster virker stadig. For at vise ikonet igen skal du genstarte macshot.";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "Genvejstaster virker stadig. For at vise ikonet igen skal du genstarte MShot.";
 "Thumbnail" = "Miniature";
 "  Dismiss after:" = "  Luk efter:";
 "seconds before auto-dismiss (0 = never)" = "sekunder f\U00F8r automatisk lukning (0 = aldrig)";
@@ -289,7 +289,7 @@
 "Hidden tools are removed from the bottom toolbar." = "Skjulte v\U00E6rkt\U00F8jer fjernes fra bundv\U00E6rkt\U00F8jslinjen.";
 "Capture Actions" = "Optagelseshandlinger";
 "Menu Bar Order" = "Menulinjens r\U00E6kkef\U00F8lge";
-"Choose the order of capture actions in the macshot menu bar menu." = "V\U00E6lg r\U00E6kkef\U00F8lgen af optagelseshandlinger i macshot-menulinjemenuen.";
+"Choose the order of capture actions in the MShot menu bar menu." = "V\U00E6lg r\U00E6kkef\U00F8lgen af optagelseshandlinger i MShot-menulinjemenuen.";
 "Move up" = "Flyt op";
 "Move down" = "Flyt ned";
 "Bottom Toolbar Actions" = "Bundv\U00E6rkt\U00F8jslinjens handlinger";
@@ -347,9 +347,8 @@
 "API key:" = "API-n\U00F8gle:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "Version %@ (%@)";
-"Made by" = "Lavet af";
 "Licensed under the GPLv3" = "Licenseret under GPLv3";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "Et gratis, open source skærmbillede- og skærmoptagelsesværktøj til macOS.\nFuldt ud nativt, bygget med Swift og AppKit.";
 
@@ -360,22 +359,22 @@
 "Copy an image or text to the clipboard first, then try again." = "Kopi\U00E9r f\U00F8rst et billede eller tekst til udklipsholderen, og pr\U00F8v derefter igen.";
 "OK" = "OK";
 "Accessibility Access Required" = "Tilg\U00E6ngelighedsadgang kr\U00E6ves";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "macshot kr\U00E6ver tilg\U00E6ngelighedstilladelse for at auto-rulle andre apps. Giv adgang i Systemindstillinger, og pr\U00F8v derefter igen.";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "macshot har brug for tilgængeligheds­tilladelse til rulleoptagelse. Giv adgang i Systemindstillinger, og prøv igen.";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "MShot kr\U00E6ver tilg\U00E6ngelighedstilladelse for at auto-rulle andre apps. Giv adgang i Systemindstillinger, og pr\U00F8v derefter igen.";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "MShot har brug for tilgængeligheds­tilladelse til rulleoptagelse. Giv adgang i Systemindstillinger, og prøv igen.";
 "Open Settings" = "\U00C5bn Indstillinger";
 "Cancel" = "Annull\U00E9r";
 "Microphone Access Required" = "Mikrofonadgang kr\U00E6ves";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot kr\U00E6ver mikrofontilladelse for at optage stemmelyd. \U00C5bn Systemindstillinger for at give adgang.";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "MShot kr\U00E6ver mikrofontilladelse for at optage stemmelyd. \U00C5bn Systemindstillinger for at give adgang.";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "Velkommen til macshot";
-"Welcome back to macshot" = "Velkommen tilbage til macshot";
+"Welcome to MShot" = "Velkommen til MShot";
+"Welcome back to MShot" = "Velkommen tilbage til MShot";
 "Turn Screen Recording back on" = "Slå skærmoptagelse til igen";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "Efter nogle opdateringer beder macOS dig om at tillade macshot igen. Dine indstillinger og optagelser er i sikkerhed. Hvis macshot allerede er på listen, så vælg det, klik på minusknappen (−) for at fjerne det, og klik derefter på plusknappen (+) og tilføj macshot igen.";
-"macshot needs one permission" = "macshot kr\U00E6ver \U00E9n tilladelse";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "Efter nogle opdateringer beder macOS dig om at tillade MShot igen. Dine indstillinger og optagelser er i sikkerhed. Hvis MShot allerede er på listen, så vælg det, klik på minusknappen (−) for at fjerne det, og klik derefter på plusknappen (+) og tilføj MShot igen.";
+"MShot needs one permission" = "MShot kr\U00E6ver \U00E9n tilladelse";
 "Screen Recording not yet granted" = "Sk\U00E6rmoptagelse endnu ikke givet";
 "Screen Recording granted!" = "Sk\U00E6rmoptagelse givet!";
-"Enable macshot, then try taking a screenshot" = "Aktiv\U00E9r macshot, og pr\U00F8v at tage et sk\U00E6rmbillede";
+"Enable MShot, then try taking a screenshot" = "Aktiv\U00E9r MShot, og pr\U00F8v at tage et sk\U00E6rmbillede";
 "Open Screen Recording Settings" = "\U00C5bn sk\U00E6rmoptagelsesindstillinger";
 "Continue" = "Forts\U00E6t";
 
@@ -401,7 +400,7 @@
 "Path copied!" = "Sti kopieret!";
 
 /* Video Editor */
-"macshot Video Editor" = "macshot Videoredigering";
+"MShot Video Editor" = "MShot Videoredigering";
 "%@ selected" = "%@ valgt";
 "Exporting..." = "Eksporterer...";
 "Export failed" = "Eksport mislykkedes";
@@ -449,7 +448,7 @@
 
 /* Recording \U2014 Input Monitoring Permission */
 "Input Monitoring Required" = "Inputoverv\U00E5gning kr\U00E6ves";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot har brug for tilgængelighedstilladelse til at justere efter enkelte grænsefladeelementer. Giv adgang i Systemindstillinger, og prøv igen.";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "MShot har brug for tilgængelighedstilladelse til at justere efter enkelte grænsefladeelementer. Giv adgang i Systemindstillinger, og prøv igen.";
 
 /* Recording \U2014 Keystroke Overlay */
 
@@ -462,7 +461,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "Webcam-overlay";
 "Camera Access Required" = "Kameraadgang kr\U00E6ves";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "macshot kr\U00E6ver kameratilladelse til webcam-overlayet. \U00C5bn Systemindstillinger for at give adgang.";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "MShot kr\U00E6ver kameratilladelse til webcam-overlayet. \U00C5bn Systemindstillinger for at give adgang.";
 "Webcam" = "Webcam";
 "Bottom Right" = "Nederst til h\U00F8jre";
 "Bottom Left" = "Nederst til venstre";
@@ -484,7 +483,7 @@
 /* New Strings */
 "Settings" = "Indstillinger";
 "Settings..." = "Indstillinger...";
-"macshot Settings" = "macshot Indstillinger";
+"MShot Settings" = "MShot Indstillinger";
 "Also open in Editor" = "\U00C5bn ogs\U00E5 i redigering";
 "Open in Editor right after selection" = "\U00C5bn i redigering lige efter markering";
 "Close editor after copying" = "Luk editoren efter kopiering";
@@ -540,7 +539,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "\U00C5bn video...";
-"Choose a video to open in macshot editor" = "V\U00E6lg en video at \U00E5bne i macshot-redigering";
+"Choose a video to open in MShot editor" = "V\U00E6lg en video at \U00E5bne i MShot-redigering";
 "Click to add effects" = "Klik for at tilf\U00F8je effekter";
 "Add Zoom" = "Tilf\U00F8j zoom";
 "Add Censor" = "Tilf\U00F8j censur";
@@ -614,9 +613,9 @@
 "Stop the current recording" = "Stop den aktuelle optagelse";
 "Supported URL Scheme Commands" = "Underst\U00F8ttede URL-skema-kommandoer";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Filendelsen tilf\U00F8jes automatisk. Skr\U00E5streger og koloner i {window} bliver til bindestreger.";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Udl\U00F8s macshot fra Raycast, Alfred, Shortcuts eller ethvert v\U00E6rkt\U00F8j, der \U00E5bner URL'er.";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Udl\U00F8s MShot fra Raycast, Alfred, Shortcuts eller ethvert v\U00E6rkt\U00F8j, der \U00E5bner URL'er.";
 "URL scheme info" = "URL-skema-info";
-"Enable macshot:// URL scheme" = "Aktiv\U00E9r macshot://-URL-skema";
+"Enable mshot:// URL scheme" = "Aktiv\U00E9r mshot://-URL-skema";
 "sec (0 = never)" = "sek (0 = aldrig)";
 
 /* Settings import/export (issues #265, #280) */
@@ -624,7 +623,7 @@
 "Export Settings…" = "Eksportér indstillinger…";
 "Import Settings…" = "Importér indstillinger…";
 "Reveal Settings File in Finder" = "Vis indstillingsfil i Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "Eksportér indstillinger";
 "Import Settings" = "Importér indstillinger";
 "Import failed" = "Import mislykkedes";
@@ -635,12 +634,12 @@
 "Relaunch Now" = "Genstart nu";
 "Replace your current settings?" = "Vil du erstatte dine nuværende indstillinger?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "%d indstillinger blev anvendt. Genstart macshot for at anvende alle ændringer.";
+"%d settings were applied. Relaunch MShot to apply all changes." = "%d indstillinger blev anvendt. Genstart MShot for at anvende alle ændringer.";
 "A few large items were too big to include. Everything else was saved." = "Nogle få store emner var for store til at medtage. Alt andet blev gemt.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Dit tilpassede Beautify-baggrundsbillede var for stort til at medtage. Alt andet blev gemt.";
-"This file is not a valid macshot settings file." = "Denne fil er ikke en gyldig macshot-indstillingsfil.";
+"This file is not a valid MShot settings file." = "Denne fil er ikke en gyldig MShot-indstillingsfil.";
 "This settings file contains no settings." = "Denne indstillingsfil indeholder ingen indstillinger.";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "Denne indstillingsfil blev oprettet af en nyere version af macshot. Opdater macshot først.";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "Denne indstillingsfil blev oprettet af en nyere version af MShot. Opdater MShot først.";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "Fang, oversæt og læg teksten oven på billedet";
@@ -685,7 +684,7 @@
 "Apply Default Zoom to All" = "Anvend standardzoom på alle";
 "Auto" = "Auto";
 "Auto Zoom" = "Auto-zoom";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Auto-zoom kræver markørdata, som macshot optager ved hver ny optagelse. Du kan stadig tilføje zoom ved at dobbeltklikke på zoomsporet.";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Auto-zoom kræver markørdata, som MShot optager ved hver ny optagelse. Du kan stadig tilføje zoom ved at dobbeltklikke på zoomsporet.";
 "Background blur" = "Baggrundssløring";
 "Background color" = "Baggrundsfarve";
 "Background, padding, rounded corners and shadow" = "Baggrund, margen, afrundede hjørner og skygge";
@@ -782,7 +781,7 @@
 "Shrink during zooms" = "Formindsk under zoom";
 "Smoothing" = "Udjævning";
 "Snappy" = "Kvik";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "Talegenkendelse er slået fra for macshot i Systemindstillinger › Anonymitet og sikkerhed.";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "Talegenkendelse er slået fra for MShot i Systemindstillinger › Anonymitet og sikkerhed.";
 "Speed" = "Hastighed";
 "Spotlight" = "Spotlight";
 "Square" = "Kvadrat";
@@ -792,11 +791,11 @@
 "The recording's audio could not be read." = "Optagelsens lyd kunne ikke læses.";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "Denne optagelse viser allerede markøren i sine pixels, så dens stil kan ikke ændres. Zoom kan stadig følge den.";
 "This recording has no audio to transcribe." = "Denne optagelse har ingen lyd at transskribere.";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Denne video har ingen optagede markørdata. Optagelser lavet med macshot, der åbnes i redigeringen, lader dig ændre markørens stil, udjævne den og ændre dens størrelse efter optagelsen.";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Denne video har ingen optagede markørdata. Optagelser lavet med MShot, der åbnes i redigeringen, lader dig ændre markørens stil, udjævne den og ændre dens størrelse efter optagelsen.";
 "Title" = "Titel";
 "Transcribing…" = "Transskriberer…";
 "Transition" = "Overgang";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Slå kameraet til før optagelse. macshot optager det separat, så du kan flytte det, ændre størrelse, ændre stil eller skjule det her, og formindske det under zoom.";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Slå kameraet til før optagelse. MShot optager det separat, så du kan flytte det, ændre størrelse, ændre stil eller skjule det her, og formindske det under zoom.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Brug Massiv til at skjule følsomme oplysninger: sløring og pixelering kan nogle gange omgøres.";
 "Visibility" = "Synlighed";
 "Wallpaper" = "Skrivebordsbaggrund";
@@ -813,4 +812,4 @@
 "Snap webcam to corners when moved" = "Fastgør webkameraet til hjørnerne, når det flyttes";
 "Search emoji" = "Søg efter emoji";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

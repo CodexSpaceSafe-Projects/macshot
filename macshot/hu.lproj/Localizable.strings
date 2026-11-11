@@ -1,17 +1,17 @@
-/* Magyar — macshot lokalizáció
+/* Magyar — MShot lokalizáció
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "Megnyitás vágólapról";
 "Pin from Clipboard" = "Rögzítés vágólapról";
 "Preferences..." = "Beállítások...";
-"Quit macshot" = "Kilépés a macshot-ból";
+"Quit MShot" = "Kilépés a MShot-ból";
 "No recent captures" = "Nincsenek legutóbbi rögzítések";
 "Clear History" = "Előzmények törlése";
 
@@ -203,7 +203,7 @@
 "Keep ratio for next captures" = "Képarány megtartása a következő rögzítésekhez";
 
 /* Preferences - General */
-"macshot Preferences" = "macshot beállítások";
+"MShot Preferences" = "MShot beállítások";
 "General" = "Általános";
 "Tools" = "Eszközök";
 "Recording" = "Felvétel";
@@ -227,7 +227,7 @@
 "Show shortcuts in tooltips" = "Gyorsbillentyűk megjelenítése a buboréksúgókban";
 "Use window title in saved filename" = "Ablakcím használata a mentett fájlnévben";
 "Hide menu bar icon" = "Menüsor ikon elrejtése";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "A gyorsbillentyűk továbbra is működnek. Az ikon újbóli megjelenítéséhez indítsd újra a macshot-ot.";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "A gyorsbillentyűk továbbra is működnek. Az ikon újbóli megjelenítéséhez indítsd újra a MShot-ot.";
 "Thumbnail" = "Bélyegkép";
 "  Dismiss after:" = "  Eltüntetés ennyi idő után:";
 "seconds before auto-dismiss (0 = never)" = "másodperc az automatikus eltüntetés előtt (0 = soha)";
@@ -236,7 +236,7 @@
 "Stack (keep all)" = "Halmozás (összes megtartása)";
 "Replace (show only latest)" = "Csere (csak a legutolsó megjelenítése)";
 "Menu Bar Order" = "Menüsor sorrendje";
-"Choose the order of capture actions in the macshot menu bar menu." = "Válaszd ki a rögzítési műveletek sorrendjét a macshot menüsorának menüjében.";
+"Choose the order of capture actions in the MShot menu bar menu." = "Válaszd ki a rögzítési műveletek sorrendjét a MShot menüsorának menüjében.";
 "Move up" = "Mozgatás felfelé";
 "Move down" = "Mozgatás lefelé";
 "Output" = "Kimenet";
@@ -348,9 +348,8 @@
 "API key:" = "API kulcs:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "Verzió %@ (%@)";
-"Made by" = "Készítette";
 "Licensed under the GPLv3" = "GPLv3 licenc alatt";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "Egy ingyenes, nyílt forráskódú képernyőkép- és képernyőfelvétel-eszköz macOS-re.\nTeljesen natív, Swift-tel és AppKit-tel építve.";
 
@@ -361,22 +360,22 @@
 "Copy an image or text to the clipboard first, then try again." = "Előbb másolj egy képet vagy szöveget a vágólapra, majd próbáld újra.";
 "OK" = "OK";
 "Accessibility Access Required" = "Akadálymentesítési hozzáférés szükséges";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "A macshot-nak Akadálymentesítési engedélyre van szüksége más alkalmazások automatikus görgetéséhez. Kérlek, adj hozzáférést a Rendszerbeállításokban, majd próbáld újra.";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "A macshot Kisegítő lehetőségek engedélyre van szüksége a görgetéses rögzítéshez. Kérjük, engedélyezze a hozzáférést a Rendszerbeállításokban, majd próbálja újra.";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "A MShot-nak Akadálymentesítési engedélyre van szüksége más alkalmazások automatikus görgetéséhez. Kérlek, adj hozzáférést a Rendszerbeállításokban, majd próbáld újra.";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "A MShot Kisegítő lehetőségek engedélyre van szüksége a görgetéses rögzítéshez. Kérjük, engedélyezze a hozzáférést a Rendszerbeállításokban, majd próbálja újra.";
 "Open Settings" = "Beállítások megnyitása";
 "Cancel" = "Mégse";
 "Microphone Access Required" = "Mikrofon hozzáférés szükséges";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "A macshot-nak mikrofon engedélyre van szüksége a hangfelvételhez. Nyisd meg a Rendszerbeállításokat a hozzáférés megadásához.";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "A MShot-nak mikrofon engedélyre van szüksége a hangfelvételhez. Nyisd meg a Rendszerbeállításokat a hozzáférés megadásához.";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "Üdvözöl a macshot";
-"Welcome back to macshot" = "Üdv újra a macshotban";
+"Welcome to MShot" = "Üdvözöl a MShot";
+"Welcome back to MShot" = "Üdv újra a MShotban";
 "Turn Screen Recording back on" = "Kapcsold be újra a képernyőfelvételt";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "Egyes frissítések után a macOS újra engedélyt kér a macshot számára. A beállításaid és a felvételeid megmaradtak. Ha a macshot már szerepel a listában, jelöld ki, kattints a mínusz gombra (−) az eltávolításához, majd kattints a plusz gombra (+), és add hozzá újra a macshotot.";
-"macshot needs one permission" = "A macshot-nak egy engedélyre van szüksége";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "Egyes frissítések után a macOS újra engedélyt kér a MShot számára. A beállításaid és a felvételeid megmaradtak. Ha a MShot már szerepel a listában, jelöld ki, kattints a mínusz gombra (−) az eltávolításához, majd kattints a plusz gombra (+), és add hozzá újra a MShotot.";
+"MShot needs one permission" = "A MShot-nak egy engedélyre van szüksége";
 "Screen Recording not yet granted" = "Képernyőfelvétel engedélye még nem adott";
 "Screen Recording granted!" = "Képernyőfelvétel engedélyezve!";
-"Enable macshot, then try taking a screenshot" = "Engedélyezd a macshot-ot, majd próbálj képernyőképet készíteni";
+"Enable MShot, then try taking a screenshot" = "Engedélyezd a MShot-ot, majd próbálj képernyőképet készíteni";
 "Open Screen Recording Settings" = "Képernyőfelvétel beállításainak megnyitása";
 "Continue" = "Tovább";
 
@@ -404,7 +403,7 @@
 "Path copied!" = "Útvonal másolva!";
 
 /* Video Editor */
-"macshot Video Editor" = "macshot videószerkesztő";
+"MShot Video Editor" = "MShot videószerkesztő";
 "%@ selected" = "%@ kiválasztva";
 "Exporting..." = "Exportálás...";
 "Export failed" = "Exportálás sikertelen";
@@ -452,7 +451,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Bevitelfigyelés szükséges";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "A macshot alkalmazásnak Kisegítő lehetőségek engedélyre van szüksége az egyes felületelemekhez való illesztéshez. Kérjük, engedélyezze a hozzáférést a Rendszerbeállításokban, majd próbálja újra.";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "A MShot alkalmazásnak Kisegítő lehetőségek engedélyre van szüksége az egyes felületelemekhez való illesztéshez. Kérjük, engedélyezze a hozzáférést a Rendszerbeállításokban, majd próbálja újra.";
 
 /* Recording — Keystroke Overlay */
 
@@ -465,7 +464,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "Webkamera átfedés";
 "Camera Access Required" = "Kamera hozzáférés szükséges";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "A macshot-nak kamera engedélyre van szüksége a webkamera átfedéshez. Nyisd meg a Rendszerbeállításokat a hozzáférés megadásához.";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "A MShot-nak kamera engedélyre van szüksége a webkamera átfedéshez. Nyisd meg a Rendszerbeállításokat a hozzáférés megadásához.";
 "Webcam" = "Webkamera";
 "Bottom Right" = "Jobb alsó";
 "Bottom Left" = "Bal alsó";
@@ -486,7 +485,7 @@
 /* New Strings */
 "Settings" = "Beállítások";
 "Settings..." = "Beállítások...";
-"macshot Settings" = "macshot beállítások";
+"MShot Settings" = "MShot beállítások";
 "Also open in Editor" = "Megnyitás a szerkesztőben is";
 "Open in Editor right after selection" = "Megnyitás a szerkesztőben közvetlenül a kijelölés után";
 "Close editor after copying" = "Szerkesztő bezárása másolás után";
@@ -540,7 +539,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "Videó megnyitása...";
-"Choose a video to open in macshot editor" = "Válassz videót a macshot szerkesztőben való megnyitáshoz";
+"Choose a video to open in MShot editor" = "Válassz videót a MShot szerkesztőben való megnyitáshoz";
 "Click to add effects" = "Kattints effektusok hozzáadásához";
 "Add Zoom" = "Nagyítás hozzáadása";
 "Add Censor" = "Cenzúra hozzáadása";
@@ -606,7 +605,7 @@
 "Re-capture the last selected area" = "Utoljára kiválasztott terület újbóli rögzítése";
 "Captured window title (screenshots only, blank otherwise)" = "Csak képernyőképeknél, rögzített ablak címe (egyébként üres)";
 "Show available filename tokens" = "Elérhető fájlnév tokenek megjelenítése";
-"Enable macshot:// URL scheme" = "macshot:// URL séma engedélyezése";
+"Enable mshot:// URL scheme" = "mshot:// URL séma engedélyezése";
 "Show supported URL scheme commands" = "Támogatott URL séma parancsok megjelenítése";
 "Start area capture" = "Terület rögzítés indítása";
 "Start area recording" = "Terület felvétel indítása";
@@ -615,7 +614,7 @@
 "Stop the current recording" = "Jelenlegi felvétel leállítása";
 "Supported URL Scheme Commands" = "Támogatott URL séma parancsok";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "A fájlkiterjesztés automatikusan hozzáadódik. A {window} perjeleiből és kettőspontjaiból kötőjel lesz.";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Indítsd el a macshot-ot Raycast, Alfred, Shortcuts, vagy bármilyen URL-eket megnyitó eszközből.";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Indítsd el a MShot-ot Raycast, Alfred, Shortcuts, vagy bármilyen URL-eket megnyitó eszközből.";
 "URL scheme info" = "URL séma információ";
 "sec (0 = never)" = "mp (0 = soha)";
 
@@ -624,7 +623,7 @@
 "Export Settings…" = "Beállítások exportálása…";
 "Import Settings…" = "Beállítások importálása…";
 "Reveal Settings File in Finder" = "Beállításfájl megjelenítése a Finderben";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "Beállítások exportálása";
 "Import Settings" = "Beállítások importálása";
 "Import failed" = "Az importálás sikertelen";
@@ -635,12 +634,12 @@
 "Relaunch Now" = "Újraindítás most";
 "Replace your current settings?" = "Lecseréled a jelenlegi beállításaidat?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "%d beállítás lett alkalmazva. Indítsd újra a macshotot az összes módosítás érvényesítéséhez.";
+"%d settings were applied. Relaunch MShot to apply all changes." = "%d beállítás lett alkalmazva. Indítsd újra a MShotot az összes módosítás érvényesítéséhez.";
 "A few large items were too big to include. Everything else was saved." = "Néhány nagyméretű elem túl nagy volt ahhoz, hogy belekerüljön. Minden más mentésre került.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Az egyéni Beautify háttérképed túl nagy volt ahhoz, hogy belekerüljön. Minden más mentésre került.";
-"This file is not a valid macshot settings file." = "Ez a fájl nem érvényes macshot beállításfájl.";
+"This file is not a valid MShot settings file." = "Ez a fájl nem érvényes MShot beállításfájl.";
 "This settings file contains no settings." = "Ez a beállításfájl nem tartalmaz beállításokat.";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "Ez a beállításfájl a macshot egy újabb verziójával készült. Kérlek, először frissítsd a macshotot.";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "Ez a beállításfájl a MShot egy újabb verziójával készült. Kérlek, először frissítsd a MShotot.";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "A kép szövegének rögzítése, fordítása és rávetítése";
@@ -685,7 +684,7 @@
 "Apply Default Zoom to All" = "Alapértelmezett nagyítás alkalmazása mindre";
 "Auto" = "Auto";
 "Auto Zoom" = "Automatikus nagyítás";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Az automatikus nagyításhoz mutatóadatok kellenek, amelyeket a macshot minden új felvételnél rögzít. Nagyításokat továbbra is hozzáadhatsz a nagyítássávra duplán kattintva.";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Az automatikus nagyításhoz mutatóadatok kellenek, amelyeket a MShot minden új felvételnél rögzít. Nagyításokat továbbra is hozzáadhatsz a nagyítássávra duplán kattintva.";
 "Background blur" = "Háttér elmosása";
 "Background color" = "Háttérszín";
 "Background, padding, rounded corners and shadow" = "Háttér, margó, lekerekített sarkok és árnyék";
@@ -782,7 +781,7 @@
 "Shrink during zooms" = "Zsugorítás nagyításkor";
 "Smoothing" = "Simítás";
 "Snappy" = "Pörgős";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "A beszédfelismerés ki van kapcsolva a macshot számára a Rendszerbeállítások › Adatvédelem és biztonság menüpontban.";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "A beszédfelismerés ki van kapcsolva a MShot számára a Rendszerbeállítások › Adatvédelem és biztonság menüpontban.";
 "Speed" = "Sebesség";
 "Spotlight" = "Reflektor";
 "Square" = "Négyzet";
@@ -792,11 +791,11 @@
 "The recording's audio could not be read." = "A felvétel hangját nem sikerült beolvasni.";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "Ez a felvétel már a képpontjaiban tartalmazza a mutatót, ezért nem lehet átformázni. A nagyítások továbbra is követhetik.";
 "This recording has no audio to transcribe." = "Ebben a felvételben nincs leírható hang.";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Ebben a videóban nincsenek rögzített mutatóadatok. A macshot-tal készült, szerkesztőben megnyíló felvételeknél a mutató stílusa, simítása és mérete felvétel után is módosítható.";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Ebben a videóban nincsenek rögzített mutatóadatok. A MShot-tal készült, szerkesztőben megnyíló felvételeknél a mutató stílusa, simítása és mérete felvétel után is módosítható.";
 "Title" = "Cím";
 "Transcribing…" = "Leírás folyamatban…";
 "Transition" = "Átmenet";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Felvétel előtt kapcsold be a kamerát. A macshot külön rögzíti, így itt áthelyezheted, átméretezheted, átformázhatod vagy elrejtheted, és nagyításkor összezsugoríthatod.";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Felvétel előtt kapcsold be a kamerát. A MShot külön rögzíti, így itt áthelyezheted, átméretezheted, átformázhatod vagy elrejtheted, és nagyításkor összezsugoríthatod.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Érzékeny adatok elrejtéséhez használd a Színátfedés lehetőséget: az elmosás és a pixelezés néha visszafordítható.";
 "Visibility" = "Láthatóság";
 "Wallpaper" = "Háttérkép";
@@ -813,4 +812,4 @@
 "Snap webcam to corners when moved" = "Webkamera sarkokhoz igazítása mozgatáskor";
 "Search emoji" = "Emoji keresése";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

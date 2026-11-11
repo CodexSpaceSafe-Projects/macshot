@@ -10,7 +10,7 @@ enum VideoCaptionTranscriber {
         var errorDescription: String? {
             switch self {
             case .notAuthorized:
-                return L("Speech recognition is turned off for macshot in System Settings › Privacy & Security.")
+                return L("Speech recognition is turned off for MShot in System Settings › Privacy & Security.")
             case .unavailable:
                 return L("On-device speech recognition isn't available for your language on this Mac.")
             case .noAudio: return L("This recording has no audio to transcribe.")

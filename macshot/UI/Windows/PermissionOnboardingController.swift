@@ -43,7 +43,7 @@ class PermissionOnboardingController: NSWindowController {
             backing: .buffered,
             defer: false
         )
-        window.title = returningUser ? L("Welcome back to macshot") : L("Welcome to macshot")
+        window.title = returningUser ? L("Welcome back to MShot") : L("Welcome to MShot")
         window.center()
         window.isReleasedWhenClosed = false
         window.titlebarAppearsTransparent = false
@@ -80,7 +80,7 @@ class PermissionOnboardingController: NSWindowController {
         cv.addSubview(logoView)
 
         // Title
-        let title = NSTextField(labelWithString: isReturningUser ? L("Turn Screen Recording back on") : L("macshot needs one permission"))
+        let title = NSTextField(labelWithString: isReturningUser ? L("Turn Screen Recording back on") : L("MShot needs one permission"))
         title.font = NSFont.systemFont(ofSize: 15, weight: .semibold)
         title.textColor = .labelColor
         title.alignment = .center
@@ -89,7 +89,7 @@ class PermissionOnboardingController: NSWindowController {
 
         // Returning users: reassure, and give the fix for a stale entry that
         // still shows as on in System Settings.
-        let note = NSTextField(wrappingLabelWithString: L("After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again."))
+        let note = NSTextField(wrappingLabelWithString: L("After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again."))
         note.font = NSFont.systemFont(ofSize: 12)
         note.textColor = .secondaryLabelColor
         note.alignment = .center
@@ -302,7 +302,7 @@ class PermissionOnboardingController: NSWindowController {
             NSWorkspace.shared.open(url)
         }
 
-        statusLabel?.stringValue = L("Enable macshot, then try taking a screenshot")
+        statusLabel?.stringValue = L("Enable MShot, then try taking a screenshot")
     }
 
     @objc private func continueClicked() {

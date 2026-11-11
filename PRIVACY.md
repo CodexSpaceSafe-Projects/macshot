@@ -2,7 +2,7 @@
 
 **Last updated:** November 11, 2026
 
-macshot Offline processes screenshots, recordings, OCR and annotations on your
+MShot processes screenshots, recordings, OCR and annotations on your
 Mac. The project ships one application, has no third-party package dependencies,
 and does not include an updater, analytics service, built-in cloud upload,
 web translation/search, or keyboard-content recording integration.
@@ -36,7 +36,7 @@ checks, update downloads or built-in cloud requests. Image imports use local
 files and system image support. New application versions are downloaded and
 installed manually outside the app.
 
-Opening a QR HTTP(S) link or the project website launches your browser. The macOS
+Opening a QR HTTP(S) link launches your browser. The macOS
 share sheet exports content only when you invoke it and select a service or
 recipient. Those browser and system services have their own network behavior and
 privacy policies. The app does not block networking by other processes or by macOS.

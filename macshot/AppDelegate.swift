@@ -168,7 +168,7 @@ private final class CaptureTimingTrace: @unchecked Sendable {
 
         let total = snapshot.last?.elapsed ?? 0
         var lines: [String] = []
-        lines.append("macshot capture timing — total: \(Self.format(total))")
+        lines.append("MShot capture timing — total: \(Self.format(total))")
         lines.append("")
         lines.append(" elapsed    delta  thread  event")
         lines.append("-----------------------------------------------")
@@ -595,7 +595,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } catch {
             let errAlert = NSAlert()
             errAlert.messageText = "Could not move to Applications"
-            errAlert.informativeText = "Please drag macshot to your Applications folder manually.\n\n\(error.localizedDescription)"
+            errAlert.informativeText = "Please drag MShot to your Applications folder manually.\n\n\(error.localizedDescription)"
             errAlert.runModal()
         }
     }
@@ -657,9 +657,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainMenu.addItem(appMenuItem)
 
         let appMenu = NSMenu()
-        appMenu.addItem(withTitle: "About macshot", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
+        appMenu.addItem(withTitle: "About MShot", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
         appMenu.addItem(NSMenuItem.separator())
-        appMenu.addItem(withTitle: "Quit macshot", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        appMenu.addItem(withTitle: "Quit MShot", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         appMenuItem.submenu = appMenu
 
         let fileMenuItem = NSMenuItem()
@@ -729,7 +729,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let symbolName = UserDefaults.standard.string(forKey: Self.statusBarIconSymbolNameKey) ?? ""
 
         if mode == "symbol", !symbolName.isEmpty,
-           let symbol = NSImage(systemSymbolName: symbolName, accessibilityDescription: "macshot") {
+           let symbol = NSImage(systemSymbolName: symbolName, accessibilityDescription: "MShot") {
             symbol.isTemplate = true
             symbol.size = NSSize(width: 22, height: 22)
             button.image = symbol
@@ -741,7 +741,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.title = ""
         } else {
             button.image = nil
-            button.title = "macshot"
+            button.title = "MShot"
         }
     }
 
@@ -898,7 +898,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(NSMenuItem.separator())
 
-        let quitItem = NSMenuItem(title: L("Quit macshot"), action: #selector(quitApp), keyEquivalent: "q")
+        let quitItem = NSMenuItem(title: L("Quit MShot"), action: #selector(quitApp), keyEquivalent: "q")
         quitItem.target = self
         menu.addItem(quitItem)
 
@@ -2220,7 +2220,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = true
         panel.allowedContentTypes = [.png, .jpeg, .tiff, .bmp, .gif, .heic, .webP, .image]
-        panel.message = "Choose an image to open in macshot editor"
+        panel.message = "Choose an image to open in MShot editor"
 
         NSApp.activate(ignoringOtherApps: true)
         panel.begin { response in
@@ -2282,7 +2282,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = true
         panel.allowedContentTypes = [.mpeg4Movie, .quickTimeMovie, .movie, .video, .gif]
-        panel.message = L("Choose a video to open in macshot editor")
+        panel.message = L("Choose a video to open in MShot editor")
 
         NSApp.activate(ignoringOtherApps: true)
         panel.begin { response in
@@ -2311,7 +2311,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let imageExtensions: Set<String> = ["png", "jpg", "jpeg", "tiff", "tif", "bmp", "gif", "heic", "heif", "webp", "icns"]
         let videoExtensions: Set<String> = ["mp4", "mov", "m4v"]
         for url in urls {
-            if url.scheme == "macshot" {
+            if ["mshot", "macshot"].contains(url.scheme?.lowercased() ?? "") {
                 let urlSchemeEnabled = UserDefaults.standard.object(forKey: "urlSchemeEnabled") as? Bool ?? true
                 guard urlSchemeEnabled else { continue }
                 if Self.screenCaptureURLActions.contains(url.host ?? "") {
@@ -3119,7 +3119,7 @@ extension AppDelegate: OverlayWindowControllerDelegate {
             AXIsProcessTrustedWithOptions(opts)
             let alert = NSAlert()
             alert.messageText = L("Accessibility Access Required")
-            alert.informativeText = L("macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again.")
+            alert.informativeText = L("MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again.")
             alert.alertStyle = .warning
             alert.addButton(withTitle: L("Open Settings"))
             alert.addButton(withTitle: L("Cancel"))
@@ -3211,7 +3211,7 @@ extension AppDelegate: OverlayWindowControllerDelegate {
         AXIsProcessTrustedWithOptions(opts)
         let alert = NSAlert()
         alert.messageText = L("Accessibility Access Required")
-        alert.informativeText = L("macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again.")
+        alert.informativeText = L("MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again.")
         alert.alertStyle = .warning
         alert.addButton(withTitle: L("Open Settings"))
         alert.addButton(withTitle: L("Cancel"))
@@ -3228,7 +3228,7 @@ extension AppDelegate: OverlayWindowControllerDelegate {
         CGRequestListenEventAccess()
         let alert = NSAlert()
         alert.messageText = L("Input Monitoring Required")
-        alert.informativeText = L("macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.")
+        alert.informativeText = L("MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.")
         alert.alertStyle = .warning
         alert.addButton(withTitle: L("Open Settings"))
         alert.addButton(withTitle: L("Cancel"))
@@ -3259,7 +3259,7 @@ extension AppDelegate: OverlayWindowControllerDelegate {
                 AXIsProcessTrustedWithOptions(opts)
                 let alert = NSAlert()
                 alert.messageText = L("Accessibility Access Required")
-                alert.informativeText = L("macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again.")
+                alert.informativeText = L("MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again.")
                 alert.alertStyle = .warning
                 alert.addButton(withTitle: L("Open Settings"))
                 alert.addButton(withTitle: L("Cancel"))

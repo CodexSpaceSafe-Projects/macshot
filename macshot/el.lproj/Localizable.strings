@@ -1,17 +1,17 @@
-/* Ελληνικά — macshot localization
+/* Ελληνικά — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -35,7 +35,7 @@
 "Open from Clipboard" = "Άνοιγμα από πρόχειρο";
 "Pin from Clipboard" = "Καρφίτσωμα από πρόχειρο";
 "Preferences..." = "Προτιμήσεις...";
-"Quit macshot" = "Τερματισμός macshot";
+"Quit MShot" = "Τερματισμός MShot";
 "No recent captures" = "Δεν υπάρχουν πρόσφατες λήψεις";
 "Clear History" = "Εκκαθάριση ιστορικού";
 
@@ -203,7 +203,7 @@
 "Copy to clipboard" = "Αντιγραφή στο πρόχειρο";
 
 /* Preferences - General */
-"macshot Preferences" = "Προτιμήσεις macshot";
+"MShot Preferences" = "Προτιμήσεις MShot";
 "General" = "Γενικά";
 "Tools" = "Εργαλεία";
 "Recording" = "Εγγραφή";
@@ -231,7 +231,7 @@
 "Custom symbol" = "Προσαρμοσμένο σύμβολο";
 "Default" = "Προεπιλογή";
 "Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Εισαγάγετε οποιοδήποτε όνομα SF Symbol (π.χ. camera.fill) ή επιλέξτε μια προεπιλογή. Περιηγηθείτε στα ονόματα στην εφαρμογή SF Symbols της Apple. Τα μη έγκυρα ονόματα επιστρέφουν στο προεπιλεγμένο εικονίδιο.";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "Τα πλήκτρα συντόμευσης λειτουργούν ακόμα. Για εμφάνιση του εικονιδίου, επανεκκινήστε το macshot.";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "Τα πλήκτρα συντόμευσης λειτουργούν ακόμα. Για εμφάνιση του εικονιδίου, επανεκκινήστε το MShot.";
 "Thumbnail" = "Μικρογραφία";
 "  Dismiss after:" = "  Απόκρυψη μετά από:";
 "seconds before auto-dismiss (0 = never)" = "δευτερόλεπτα πριν την αυτόματη απόκρυψη (0 = ποτέ)";
@@ -240,7 +240,7 @@
 "Stack (keep all)" = "Στοίβαξη (διατήρηση όλων)";
 "Replace (show only latest)" = "Αντικατάσταση (εμφάνιση μόνο τελευταίου)";
 "Menu Bar Order" = "Σειρά γραμμής μενού";
-"Choose the order of capture actions in the macshot menu bar menu." = "Επιλέξτε τη σειρά των ενεργειών λήψης στο μενού της γραμμής μενού του macshot.";
+"Choose the order of capture actions in the MShot menu bar menu." = "Επιλέξτε τη σειρά των ενεργειών λήψης στο μενού της γραμμής μενού του MShot.";
 "Move up" = "Μετακίνηση πάνω";
 "Move down" = "Μετακίνηση κάτω";
 "Output" = "Έξοδος";
@@ -349,9 +349,8 @@
 "API key:" = "Κλειδί API:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "Έκδοση %@ (%@)";
-"Made by" = "Δημιουργήθηκε από";
 "Licensed under the GPLv3" = "Με άδεια GPLv3";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "Ένα δωρεάν εργαλείο στιγμιοτύπων και εγγραφής οθόνης ανοιχτού κώδικα για macOS.\nΠλήρως εγγενές, κατασκευασμένο με Swift και AppKit.";
 
@@ -362,22 +361,22 @@
 "Copy an image or text to the clipboard first, then try again." = "Αντιγράψτε πρώτα μια εικόνα ή κείμενο στο πρόχειρο και δοκιμάστε ξανά.";
 "OK" = "OK";
 "Accessibility Access Required" = "Απαιτείται πρόσβαση προσβασιμότητας";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Το macshot χρειάζεται άδεια προσβασιμότητας για αυτόματη κύλιση άλλων εφαρμογών. Παραχωρήστε πρόσβαση στις Ρυθμίσεις συστήματος και δοκιμάστε ξανά.";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Το macshot χρειάζεται άδεια Προσβασιμότητας για λήψη κύλισης. Παραχωρήστε πρόσβαση στις Ρυθμίσεις Συστήματος και δοκιμάστε ξανά.";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Το MShot χρειάζεται άδεια προσβασιμότητας για αυτόματη κύλιση άλλων εφαρμογών. Παραχωρήστε πρόσβαση στις Ρυθμίσεις συστήματος και δοκιμάστε ξανά.";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Το MShot χρειάζεται άδεια Προσβασιμότητας για λήψη κύλισης. Παραχωρήστε πρόσβαση στις Ρυθμίσεις Συστήματος και δοκιμάστε ξανά.";
 "Open Settings" = "Άνοιγμα ρυθμίσεων";
 "Cancel" = "Ακύρωση";
 "Microphone Access Required" = "Απαιτείται πρόσβαση μικροφώνου";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "Το macshot χρειάζεται άδεια μικροφώνου για εγγραφή φωνητικού ήχου. Ανοίξτε τις Ρυθμίσεις συστήματος για παραχώρηση πρόσβασης.";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "Το MShot χρειάζεται άδεια μικροφώνου για εγγραφή φωνητικού ήχου. Ανοίξτε τις Ρυθμίσεις συστήματος για παραχώρηση πρόσβασης.";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "Καλώς ήρθατε στο macshot";
-"Welcome back to macshot" = "Καλώς ήρθατε ξανά στο macshot";
+"Welcome to MShot" = "Καλώς ήρθατε στο MShot";
+"Welcome back to MShot" = "Καλώς ήρθατε ξανά στο MShot";
 "Turn Screen Recording back on" = "Ενεργοποιήστε ξανά την εγγραφή οθόνης";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "Μετά από ορισμένες ενημερώσεις, το macOS σάς ζητά να επιτρέψετε ξανά το macshot. Οι ρυθμίσεις και οι λήψεις σας είναι ασφαλείς. Αν το macshot υπάρχει ήδη στη λίστα, επιλέξτε το, πατήστε το κουμπί μείον (−) για να το αφαιρέσετε, έπειτα πατήστε το κουμπί συν (+) και προσθέστε ξανά το macshot.";
-"macshot needs one permission" = "Το macshot χρειάζεται μία άδεια";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "Μετά από ορισμένες ενημερώσεις, το macOS σάς ζητά να επιτρέψετε ξανά το MShot. Οι ρυθμίσεις και οι λήψεις σας είναι ασφαλείς. Αν το MShot υπάρχει ήδη στη λίστα, επιλέξτε το, πατήστε το κουμπί μείον (−) για να το αφαιρέσετε, έπειτα πατήστε το κουμπί συν (+) και προσθέστε ξανά το MShot.";
+"MShot needs one permission" = "Το MShot χρειάζεται μία άδεια";
 "Screen Recording not yet granted" = "Η εγγραφή οθόνης δεν έχει παραχωρηθεί ακόμα";
 "Screen Recording granted!" = "Η εγγραφή οθόνης παραχωρήθηκε!";
-"Enable macshot, then try taking a screenshot" = "Ενεργοποιήστε το macshot και δοκιμάστε να τραβήξετε στιγμιότυπο";
+"Enable MShot, then try taking a screenshot" = "Ενεργοποιήστε το MShot και δοκιμάστε να τραβήξετε στιγμιότυπο";
 "Open Screen Recording Settings" = "Άνοιγμα ρυθμίσεων εγγραφής οθόνης";
 "Continue" = "Συνέχεια";
 
@@ -404,7 +403,7 @@
 "Path copied!" = "Η διαδρομή αντιγράφηκε!";
 
 /* Video Editor */
-"macshot Video Editor" = "Επεξεργαστής βίντεο macshot";
+"MShot Video Editor" = "Επεξεργαστής βίντεο MShot";
 "%@ selected" = "%@ επιλεγμένο";
 "Exporting..." = "Εξαγωγή...";
 "Export failed" = "Αποτυχία εξαγωγής";
@@ -452,7 +451,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Απαιτείται παρακολούθηση εισόδου";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "Το macshot χρειάζεται άδεια Προσβασιμότητας για προσκόλληση σε μεμονωμένα στοιχεία της διεπαφής. Παραχωρήστε πρόσβαση στις Ρυθμίσεις Συστήματος και δοκιμάστε ξανά.";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "Το MShot χρειάζεται άδεια Προσβασιμότητας για προσκόλληση σε μεμονωμένα στοιχεία της διεπαφής. Παραχωρήστε πρόσβαση στις Ρυθμίσεις Συστήματος και δοκιμάστε ξανά.";
 
 /* Recording — Keystroke Overlay */
 
@@ -465,7 +464,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "Επικάλυψη κάμερας";
 "Camera Access Required" = "Απαιτείται πρόσβαση κάμερας";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "Το macshot χρειάζεται άδεια κάμερας για την επικάλυψη κάμερας. Ανοίξτε τις Ρυθμίσεις συστήματος για παραχώρηση πρόσβασης.";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "Το MShot χρειάζεται άδεια κάμερας για την επικάλυψη κάμερας. Ανοίξτε τις Ρυθμίσεις συστήματος για παραχώρηση πρόσβασης.";
 "Webcam" = "Κάμερα";
 "Bottom Right" = "Κάτω δεξιά";
 "Bottom Left" = "Κάτω αριστερά";
@@ -486,7 +485,7 @@
 /* Settings */
 "Settings" = "Ρυθμίσεις";
 "Settings..." = "Ρυθμίσεις...";
-"macshot Settings" = "Ρυθμίσεις macshot";
+"MShot Settings" = "Ρυθμίσεις MShot";
 "Also open in Editor" = "Άνοιγμα και σε επεξεργαστή";
 "Open in Editor right after selection" = "Άνοιγμα σε επεξεργαστή αμέσως μετά την επιλογή";
 "Close editor after copying" = "Κλείσιμο του επεξεργαστή μετά την αντιγραφή";
@@ -542,7 +541,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "Άνοιγμα βίντεο...";
-"Choose a video to open in macshot editor" = "Επιλέξτε ένα βίντεο για άνοιγμα στον επεξεργαστή του macshot";
+"Choose a video to open in MShot editor" = "Επιλέξτε ένα βίντεο για άνοιγμα στον επεξεργαστή του MShot";
 "Click to add effects" = "Κάντε κλικ για προσθήκη εφέ";
 "Add Zoom" = "Προσθήκη ζουμ";
 "Add Censor" = "Προσθήκη λογοκρισίας";
@@ -608,7 +607,7 @@
 "Re-capture the last selected area" = "Επανάληψη λήψης της τελευταίας επιλεγμένης περιοχής";
 "Captured window title (screenshots only, blank otherwise)" = "Μόνο στιγμιότυπα, τίτλος παραθύρου λήψης (κενό διαφορετικά)";
 "Show available filename tokens" = "Εμφάνιση διαθέσιμων διακριτικών ονόματος αρχείου";
-"Enable macshot:// URL scheme" = "Ενεργοποίηση URL scheme macshot://";
+"Enable mshot:// URL scheme" = "Ενεργοποίηση URL scheme mshot://";
 "Show supported URL scheme commands" = "Εμφάνιση υποστηριζόμενων εντολών URL scheme";
 "Start area capture" = "Έναρξη λήψης περιοχής";
 "Start area recording" = "Έναρξη εγγραφής περιοχής";
@@ -617,7 +616,7 @@
 "Stop the current recording" = "Διακοπή της τρέχουσας εγγραφής";
 "Supported URL Scheme Commands" = "Υποστηριζόμενες εντολές URL Scheme";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Η επέκταση αρχείου προστίθεται αυτόματα. Οι κάθετοι και οι άνω κάτω τελείες στο {window} γίνονται παύλες.";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Ενεργοποιήστε το macshot από το Raycast, το Alfred, τα Shortcuts ή οποιοδήποτε εργαλείο ανοίγει URLs.";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Ενεργοποιήστε το MShot από το Raycast, το Alfred, τα Shortcuts ή οποιοδήποτε εργαλείο ανοίγει URLs.";
 "URL scheme info" = "Πληροφορίες URL scheme";
 "sec (0 = never)" = "δευτ. (0 = ποτέ)";
 
@@ -626,7 +625,7 @@
 "Export Settings…" = "Εξαγωγή ρυθμίσεων…";
 "Import Settings…" = "Εισαγωγή ρυθμίσεων…";
 "Reveal Settings File in Finder" = "Εμφάνιση αρχείου ρυθμίσεων στο Finder";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "Εξαγωγή ρυθμίσεων";
 "Import Settings" = "Εισαγωγή ρυθμίσεων";
 "Import failed" = "Η εισαγωγή απέτυχε";
@@ -637,12 +636,12 @@
 "Relaunch Now" = "Επανεκκίνηση τώρα";
 "Replace your current settings?" = "Αντικατάσταση των τρεχουσών ρυθμίσεων;";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "Εφαρμόστηκαν %d ρυθμίσεις. Κάντε επανεκκίνηση του macshot για να εφαρμοστούν όλες οι αλλαγές.";
+"%d settings were applied. Relaunch MShot to apply all changes." = "Εφαρμόστηκαν %d ρυθμίσεις. Κάντε επανεκκίνηση του MShot για να εφαρμοστούν όλες οι αλλαγές.";
 "A few large items were too big to include. Everything else was saved." = "Ορισμένα μεγάλα στοιχεία ήταν πολύ μεγάλα για να συμπεριληφθούν. Όλα τα υπόλοιπα αποθηκεύτηκαν.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Η προσαρμοσμένη εικόνα φόντου Beautify ήταν πολύ μεγάλη για να συμπεριληφθεί. Όλα τα υπόλοιπα αποθηκεύτηκαν.";
-"This file is not a valid macshot settings file." = "Αυτό το αρχείο δεν είναι έγκυρο αρχείο ρυθμίσεων του macshot.";
+"This file is not a valid MShot settings file." = "Αυτό το αρχείο δεν είναι έγκυρο αρχείο ρυθμίσεων του MShot.";
 "This settings file contains no settings." = "Αυτό το αρχείο ρυθμίσεων δεν περιέχει ρυθμίσεις.";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "Αυτό το αρχείο ρυθμίσεων δημιουργήθηκε από νεότερη έκδοση του macshot. Ενημερώστε πρώτα το macshot.";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "Αυτό το αρχείο ρυθμίσεων δημιουργήθηκε από νεότερη έκδοση του MShot. Ενημερώστε πρώτα το MShot.";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "Καταγράψτε, μεταφράστε και επικαλύψτε το κείμενο στην εικόνα";
@@ -687,7 +686,7 @@
 "Apply Default Zoom to All" = "Εφαρμογή προεπιλεγμένου ζουμ σε όλα";
 "Auto" = "Αυτόμ.";
 "Auto Zoom" = "Αυτόματο ζουμ";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Το αυτόματο ζουμ χρειάζεται δεδομένα δείκτη, τα οποία το macshot καταγράφει σε κάθε νέα εγγραφή. Μπορείτε ακόμα να προσθέσετε ζουμ κάνοντας διπλό κλικ στη λωρίδα ζουμ.";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Το αυτόματο ζουμ χρειάζεται δεδομένα δείκτη, τα οποία το MShot καταγράφει σε κάθε νέα εγγραφή. Μπορείτε ακόμα να προσθέσετε ζουμ κάνοντας διπλό κλικ στη λωρίδα ζουμ.";
 "Background blur" = "Θόλωμα φόντου";
 "Background color" = "Χρώμα φόντου";
 "Background, padding, rounded corners and shadow" = "Φόντο, περιθώριο, στρογγυλεμένες γωνίες και σκιά";
@@ -784,7 +783,7 @@
 "Shrink during zooms" = "Σμίκρυνση κατά το ζουμ";
 "Smoothing" = "Εξομάλυνση";
 "Snappy" = "Γρήγορο";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "Η αναγνώριση ομιλίας είναι απενεργοποιημένη για το macshot στις Ρυθμίσεις συστήματος › Απόρρητο και ασφάλεια.";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "Η αναγνώριση ομιλίας είναι απενεργοποιημένη για το MShot στις Ρυθμίσεις συστήματος › Απόρρητο και ασφάλεια.";
 "Speed" = "Ταχύτητα";
 "Spotlight" = "Προβολέας";
 "Square" = "Τετράγωνο";
@@ -794,11 +793,11 @@
 "The recording's audio could not be read." = "Δεν ήταν δυνατή η ανάγνωση του ήχου της εγγραφής.";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "Αυτή η εγγραφή δείχνει ήδη τον δείκτη στα pixel της, οπότε δεν μπορεί να αλλάξει στυλ. Τα ζουμ μπορούν ακόμα να τον ακολουθούν.";
 "This recording has no audio to transcribe." = "Αυτή η εγγραφή δεν έχει ήχο για απομαγνητοφώνηση.";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Αυτό το βίντεο δεν έχει καταγεγραμμένα δεδομένα δείκτη. Οι εγγραφές του macshot που ανοίγουν στον επεξεργαστή σάς επιτρέπουν να αλλάξετε το στυλ, την εξομάλυνση και το μέγεθος του δείκτη μετά την εγγραφή.";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Αυτό το βίντεο δεν έχει καταγεγραμμένα δεδομένα δείκτη. Οι εγγραφές του MShot που ανοίγουν στον επεξεργαστή σάς επιτρέπουν να αλλάξετε το στυλ, την εξομάλυνση και το μέγεθος του δείκτη μετά την εγγραφή.";
 "Title" = "Τίτλος";
 "Transcribing…" = "Απομαγνητοφώνηση…";
 "Transition" = "Μετάβαση";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Ενεργοποιήστε την κάμερα πριν από την εγγραφή. Το macshot την καταγράφει ξεχωριστά ώστε να μπορείτε να τη μετακινήσετε, να αλλάξετε το μέγεθος ή το στυλ της ή να την αποκρύψετε εδώ, και να τη σμικρύνετε κατά το ζουμ.";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Ενεργοποιήστε την κάμερα πριν από την εγγραφή. Το MShot την καταγράφει ξεχωριστά ώστε να μπορείτε να τη μετακινήσετε, να αλλάξετε το μέγεθος ή το στυλ της ή να την αποκρύψετε εδώ, και να τη σμικρύνετε κατά το ζουμ.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "Χρησιμοποιήστε το Συμπαγές για απόκρυψη ευαίσθητων πληροφοριών: το θόλωμα και τα εικονοστοιχεία μπορούν μερικές φορές να αντιστραφούν.";
 "Visibility" = "Ορατότητα";
 "Wallpaper" = "Ταπετσαρία";
@@ -815,4 +814,4 @@
 "Snap webcam to corners when moved" = "Προσκόλληση της κάμερας στις γωνίες κατά τη μετακίνηση";
 "Search emoji" = "Αναζήτηση emoji";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

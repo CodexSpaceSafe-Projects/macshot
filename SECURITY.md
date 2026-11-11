@@ -12,7 +12,7 @@ impact. Remove private images, recordings, tokens and personal data from example
 
 ## Supported version and distribution
 
-Only the latest release of **macshot Offline** is supported. The application has
+Only the latest release of **MShot** is supported. The application has
 no built-in updater: security fixes are distributed through this repository's
 Releases page and must be downloaded and installed manually. Use the accompanying
 `SHA256SUMS.txt` to check a download against the published release checksum.

@@ -1,17 +1,17 @@
-/* Čeština — macshot localization
+/* Čeština — MShot localization
  *
  * To add a new language:
- * 1. Create a new folder: macshot/<lang-code>.lproj/
+ * 1. Create a new folder: MShot/<lang-code>.lproj/
  * 2. Copy this file into that folder
  * 3. Translate all values (right side of = sign)
  * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
- * 5. Add the language code to knownRegions in macshot.xcodeproj/project.pbxproj
+ * 5. Add the language code to knownRegions in MShot.xcodeproj/project.pbxproj
  * 6. Submit a pull request!
  *
  * Keys use the English text. Values should be the translation.
  * Format strings use %@ for strings, %d for integers.
  * Keep keyboard shortcuts (like ⌘C) untranslated.
- * Keep brand names (macshot, Google Drive, imgbb, S3) untranslated.
+ * Keep brand names (MShot, Google Drive, imgbb, S3) untranslated.
  */
 
 /* Menu Bar */
@@ -34,7 +34,7 @@
 "Open from Clipboard" = "Otevřít ze schránky";
 "Pin from Clipboard" = "Připnout ze schránky";
 "Preferences..." = "Předvolby...";
-"Quit macshot" = "Ukončit macshot";
+"Quit MShot" = "Ukončit MShot";
 "No recent captures" = "Žádné nedávné snímky";
 "Clear History" = "Vymazat historii";
 
@@ -137,7 +137,7 @@
 "Move up" = "Přesunout nahoru";
 "Move down" = "Přesunout dolů";
 "Menu Bar Order" = "Pořadí v liště nabídek";
-"Choose the order of capture actions in the macshot menu bar menu." = "Zvolte pořadí akcí snímání v nabídce macshot v liště nabídek.";
+"Choose the order of capture actions in the MShot menu bar menu." = "Zvolte pořadí akcí snímání v nabídce MShot v liště nabídek.";
 
 /* Toolbar - Recording */
 "Start Recording" = "Spustit nahrávání";
@@ -210,7 +210,7 @@
 "Copy to clipboard" = "Kopírovat do schránky";
 
 /* Preferences - General */
-"macshot Preferences" = "Předvolby macshot";
+"MShot Preferences" = "Předvolby MShot";
 "General" = "Obecné";
 "Tools" = "Nástroje";
 "Recording" = "Nahrávání";
@@ -234,7 +234,7 @@
 "Hide capture instructions" = "Skrýt pokyny při snímání";
 "Use window title in saved filename" = "Použít název okna v uloženém souboru";
 "Hide menu bar icon" = "Skrýt ikonu v liště";
-"Hotkeys still work. To show the icon again, re-launch macshot." = "Klávesové zkratky stále fungují. Pro opětovné zobrazení ikony znovu spusťte macshot.";
+"Hotkeys still work. To show the icon again, re-launch MShot." = "Klávesové zkratky stále fungují. Pro opětovné zobrazení ikony znovu spusťte MShot.";
 "Thumbnail" = "Náhled";
 "  Dismiss after:" = "  Zavřít po:";
 "seconds before auto-dismiss (0 = never)" = "sekund před automatickým zavřením (0 = nikdy)";
@@ -349,9 +349,8 @@
 "API key:" = "API klíč:";
 
 /* Preferences - About */
-"macshot" = "macshot";
+"MShot" = "MShot";
 "Version %@ (%@)" = "Verze %@ (%@)";
-"Made by" = "Vytvořil";
 "Licensed under the GPLv3" = "Licencováno pod GPLv3";
 "A free, open-source screenshot & screen recording tool for macOS.\nFully native, built with Swift and AppKit." = "Bezplatný open-source nástroj pro snímky obrazovky a nahrávání pro macOS.\nPlně nativní, vytvořený ve Swift a AppKit.";
 
@@ -362,22 +361,22 @@
 "Copy an image or text to the clipboard first, then try again." = "Nejprve zkopírujte obrázek nebo text do schránky a zkuste to znovu.";
 "OK" = "OK";
 "Accessibility Access Required" = "Vyžadován přístup k usnadnění";
-"macshot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "macshot potřebuje oprávnění Usnadnění pro automatické posouvání jiných aplikací. Udělte přístup v Nastavení systému a zkuste to znovu.";
-"macshot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "macshot potřebuje oprávnění Zpřístupnění pro snímání posouváním. Povolte přístup v Nastavení systému a zkuste to znovu.";
+"MShot needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "MShot potřebuje oprávnění Usnadnění pro automatické posouvání jiných aplikací. Udělte přístup v Nastavení systému a zkuste to znovu.";
+"MShot needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "MShot potřebuje oprávnění Zpřístupnění pro snímání posouváním. Povolte přístup v Nastavení systému a zkuste to znovu.";
 "Open Settings" = "Otevřít nastavení";
 "Cancel" = "Zrušit";
 "Microphone Access Required" = "Vyžadován přístup k mikrofonu";
-"macshot needs microphone permission to record voice audio. Open System Settings to grant access." = "macshot potřebuje oprávnění k mikrofonu pro nahrávání hlasu. Otevřete Nastavení systému pro udělení přístupu.";
+"MShot needs microphone permission to record voice audio. Open System Settings to grant access." = "MShot potřebuje oprávnění k mikrofonu pro nahrávání hlasu. Otevřete Nastavení systému pro udělení přístupu.";
 
 /* Permission Onboarding */
-"Welcome to macshot" = "Vítejte v macshot";
-"Welcome back to macshot" = "Vítejte zpět v macshotu";
+"Welcome to MShot" = "Vítejte v MShot";
+"Welcome back to MShot" = "Vítejte zpět v MShotu";
 "Turn Screen Recording back on" = "Znovu zapněte nahrávání obrazovky";
-"After some updates, macOS asks you to allow macshot again. Your settings and captures are safe. If macshot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add macshot again." = "Po některých aktualizacích vás macOS požádá, abyste macshotu znovu udělili oprávnění. Vaše nastavení a snímky jsou v bezpečí. Pokud už je macshot v seznamu, vyberte ho, klikněte na tlačítko minus (−) a odstraňte ho, potom klikněte na tlačítko plus (+) a macshot znovu přidejte.";
-"macshot needs one permission" = "macshot potřebuje jedno oprávnění";
+"After some updates, macOS asks you to allow MShot again. Your settings and captures are safe. If MShot is already in the list, select it, click the minus button (−) to remove it, then click the plus button (+) and add MShot again." = "Po některých aktualizacích vás macOS požádá, abyste MShotu znovu udělili oprávnění. Vaše nastavení a snímky jsou v bezpečí. Pokud už je MShot v seznamu, vyberte ho, klikněte na tlačítko minus (−) a odstraňte ho, potom klikněte na tlačítko plus (+) a MShot znovu přidejte.";
+"MShot needs one permission" = "MShot potřebuje jedno oprávnění";
 "Screen Recording not yet granted" = "Nahrávání obrazovky zatím nebylo povoleno";
 "Screen Recording granted!" = "Nahrávání obrazovky povoleno!";
-"Enable macshot, then try taking a screenshot" = "Povolte macshot a zkuste pořídit snímek";
+"Enable MShot, then try taking a screenshot" = "Povolte MShot a zkuste pořídit snímek";
 "Open Screen Recording Settings" = "Otevřít nastavení nahrávání obrazovky";
 "Continue" = "Pokračovat";
 
@@ -403,7 +402,7 @@
 "Path copied!" = "Cesta zkopírována!";
 
 /* Video Editor */
-"macshot Video Editor" = "macshot Video Editor";
+"MShot Video Editor" = "MShot Video Editor";
 "%@ selected" = "%@ vybráno";
 "Exporting..." = "Exportování...";
 "Export failed" = "Export selhal";
@@ -451,7 +450,7 @@
 
 /* Recording — Input Monitoring Permission */
 "Input Monitoring Required" = "Vyžadováno monitorování vstupu";
-"macshot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "macshot potřebuje oprávnění Zpřístupnění pro přichytávání k jednotlivým prvkům rozhraní. Povolte přístup v Nastavení systému a zkuste to znovu.";
+"MShot needs Accessibility permission to snap to individual interface elements. Please grant access in System Settings, then try again." = "MShot potřebuje oprávnění Zpřístupnění pro přichytávání k jednotlivým prvkům rozhraní. Povolte přístup v Nastavení systému a zkuste to znovu.";
 
 /* Recording — Keystroke Overlay */
 
@@ -464,7 +463,7 @@
 /* Webcam Overlay */
 "Webcam Overlay" = "Překryv webkamery";
 "Camera Access Required" = "Vyžadován přístup ke kameře";
-"macshot needs camera permission for the webcam overlay. Open System Settings to grant access." = "macshot potřebuje oprávnění ke kameře pro překryv webkamery. Otevřete Nastavení systému pro udělení přístupu.";
+"MShot needs camera permission for the webcam overlay. Open System Settings to grant access." = "MShot potřebuje oprávnění ke kameře pro překryv webkamery. Otevřete Nastavení systému pro udělení přístupu.";
 "Webcam" = "Webkamera";
 "Bottom Right" = "Vpravo dole";
 "Bottom Left" = "Vlevo dole";
@@ -485,7 +484,7 @@
 /* New Strings */
 "Settings" = "Nastavení";
 "Settings..." = "Nastavení...";
-"macshot Settings" = "Nastavení macshot";
+"MShot Settings" = "Nastavení MShot";
 "Also open in Editor" = "Otevřít také v editoru";
 "Open in Editor right after selection" = "Otevřít v editoru hned po výběru";
 "Close editor after copying" = "Zavřít editor po zkopírování";
@@ -540,7 +539,7 @@
 
 /* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
 "Open Video..." = "Otevřít video...";
-"Choose a video to open in macshot editor" = "Vyberte video k otevření v editoru macshot";
+"Choose a video to open in MShot editor" = "Vyberte video k otevření v editoru MShot";
 "Click to add effects" = "Kliknutím přidejte efekty";
 "Add Zoom" = "Přidat přiblížení";
 "Add Censor" = "Přidat cenzuru";
@@ -614,8 +613,8 @@
 "Stop the current recording" = "Zastavit aktuální nahrávání";
 "Supported URL Scheme Commands" = "Podporované příkazy URL schématu";
 "The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Přípona souboru se přidá automaticky. Lomítka a dvojtečky v {window} se změní na pomlčky.";
-"Trigger macshot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Spusťte macshot z Raycast, Alfred, Shortcuts nebo jakéhokoli nástroje, který otevírá URL.";
-"Enable macshot:// URL scheme" = "Povolit URL schéma macshot://";
+"Trigger MShot from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Spusťte MShot z Raycast, Alfred, Shortcuts nebo jakéhokoli nástroje, který otevírá URL.";
+"Enable mshot:// URL scheme" = "Povolit URL schéma mshot://";
 "URL scheme info" = "Informace o URL schématu";
 "sec (0 = never)" = "s (0 = nikdy)";
 
@@ -624,7 +623,7 @@
 "Export Settings…" = "Exportovat nastavení…";
 "Import Settings…" = "Importovat nastavení…";
 "Reveal Settings File in Finder" = "Zobrazit soubor nastavení ve Finderu";
-"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside macshot's app container.";
+"Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container." = "Export your preferences to a file to move them to another Mac or a clean install. Your save folder and screenshot history are not included. Settings are stored inside MShot's app container.";
 "Export Settings" = "Exportovat nastavení";
 "Import Settings" = "Importovat nastavení";
 "Import failed" = "Import se nezdařil";
@@ -635,12 +634,12 @@
 "Relaunch Now" = "Restartovat nyní";
 "Replace your current settings?" = "Nahradit aktuální nastavení?";
 "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone." = "Importing will replace your current preferences with the ones in this file. Your save folder and screenshot history are kept. This cannot be undone.";
-"%d settings were applied. Relaunch macshot to apply all changes." = "Bylo použito %d nastavení. Restartujte macshot, aby se projevily všechny změny.";
+"%d settings were applied. Relaunch MShot to apply all changes." = "Bylo použito %d nastavení. Restartujte MShot, aby se projevily všechny změny.";
 "A few large items were too big to include. Everything else was saved." = "Několik velkých položek bylo příliš velkých na zahrnutí. Vše ostatní bylo uloženo.";
 "Your custom Beautify background image was too large to include. Everything else was saved." = "Váš vlastní obrázek pozadí Beautify byl příliš velký na zahrnutí. Vše ostatní bylo uloženo.";
-"This file is not a valid macshot settings file." = "Tento soubor není platným souborem nastavení macshot.";
+"This file is not a valid MShot settings file." = "Tento soubor není platným souborem nastavení MShot.";
 "This settings file contains no settings." = "Tento soubor nastavení neobsahuje žádná nastavení.";
-"This settings file was made by a newer version of macshot. Please update macshot first." = "Tento soubor nastavení byl vytvořen novější verzí aplikace macshot. Nejprve prosím aktualizujte macshot.";
+"This settings file was made by a newer version of MShot. Please update MShot first." = "Tento soubor nastavení byl vytvořen novější verzí aplikace MShot. Nejprve prosím aktualizujte MShot.";
 
 /* URL scheme: ocr-translate (issue #283) */
 "Capture, translate, and overlay the text on the image" = "Zachytit, přeložit a překrýt text na obrázku";
@@ -685,7 +684,7 @@
 "Apply Default Zoom to All" = "Použít výchozí přiblížení na vše";
 "Auto" = "Auto";
 "Auto Zoom" = "Automatické přiblížení";
-"Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Automatické přiblížení potřebuje data ukazatele, která macshot zaznamenává s každou novou nahrávkou. Přiblížení můžete stále přidávat dvojklikem na stopu přiblížení.";
+"Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane." = "Automatické přiblížení potřebuje data ukazatele, která MShot zaznamenává s každou novou nahrávkou. Přiblížení můžete stále přidávat dvojklikem na stopu přiblížení.";
 "Background blur" = "Rozostření pozadí";
 "Background color" = "Barva pozadí";
 "Background, padding, rounded corners and shadow" = "Pozadí, odsazení, zaoblené rohy a stín";
@@ -782,7 +781,7 @@
 "Shrink during zooms" = "Zmenšit při přiblížení";
 "Smoothing" = "Vyhlazování";
 "Snappy" = "Svižný";
-"Speech recognition is turned off for macshot in System Settings › Privacy & Security." = "Rozpoznávání řeči je pro macshot vypnuté v Nastavení systému › Soukromí a zabezpečení.";
+"Speech recognition is turned off for MShot in System Settings › Privacy & Security." = "Rozpoznávání řeči je pro MShot vypnuté v Nastavení systému › Soukromí a zabezpečení.";
 "Speed" = "Rychlost";
 "Spotlight" = "Reflektor";
 "Square" = "Čtverec";
@@ -792,11 +791,11 @@
 "The recording's audio could not be read." = "Zvuk nahrávky nelze přečíst.";
 "This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it." = "Tato nahrávka už obsahuje ukazatel v obrazu, takže jeho styl nelze změnit. Přiblížení jej však mohou sledovat.";
 "This recording has no audio to transcribe." = "Tato nahrávka nemá žádný zvuk k přepisu.";
-"This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Toto video neobsahuje zaznamenaná data ukazatele. Nahrávky pořízené v macshotu, které se otevřou v editoru, umožňují po nahrání měnit styl, vyhlazení a velikost ukazatele.";
+"This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording." = "Toto video neobsahuje zaznamenaná data ukazatele. Nahrávky pořízené v MShotu, které se otevřou v editoru, umožňují po nahrání měnit styl, vyhlazení a velikost ukazatele.";
 "Title" = "Nadpis";
 "Transcribing…" = "Přepisování…";
 "Transition" = "Přechod";
-"Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Před nahráváním zapněte kameru. macshot ji zaznamená zvlášť, takže ji zde můžete přesouvat, měnit její velikost a styl, skrýt ji, a zmenšit ji během přiblížení.";
+"Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms." = "Před nahráváním zapněte kameru. MShot ji zaznamená zvlášť, takže ji zde můžete přesouvat, měnit její velikost a styl, skrýt ji, a zmenšit ji během přiblížení.";
 "Use Solid to hide sensitive information: blur and pixelation can sometimes be reversed." = "K skrytí citlivých údajů použijte Plná: rozostření a pixelizaci lze někdy zvrátit.";
 "Visibility" = "Viditelnost";
 "Wallpaper" = "Tapeta";
@@ -813,4 +812,4 @@
 "Snap webcam to corners when moved" = "Přichytávat webkameru k rohům při přesouvání";
 "Search emoji" = "Hledat emoji";
 
-"macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "macshot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";
+"MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again." = "MShot needs Input Monitoring permission to highlight mouse clicks during recording. Please grant access in System Settings, then try again.";

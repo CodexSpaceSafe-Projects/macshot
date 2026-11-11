@@ -434,7 +434,7 @@ final class VideoInspectorView: NSView {
             if document.hasPointerData {
                 add(note(L("This recording already shows the pointer in its pixels, so it can't be restyled. Zooms can still follow it.")))
             } else {
-                add(note(L("This video has no recorded pointer data. Recordings made with macshot that open in the editor let you restyle, smooth and resize the pointer after recording.")))
+                add(note(L("This video has no recorded pointer data. Recordings made with MShot that open in the editor let you restyle, smooth and resize the pointer after recording.")))
             }
             return
         }
@@ -489,7 +489,7 @@ final class VideoInspectorView: NSView {
         add(auto)
         add(note(document.hasPointerData
                  ? L("Creates zooms that follow the pointer wherever you click or type. Adjust or delete them on the timeline.")
-                 : L("Auto Zoom needs pointer data, which macshot records with every new recording. You can still add zooms by double-clicking the zoom lane."),
+                 : L("Auto Zoom needs pointer data, which MShot records with every new recording. You can still add zooms by double-clicking the zoom lane."),
                  symbol: "sparkles"))
         if document.project.zooms.contains(where: { $0.isAutomatic }) {
             add(button(L("Remove Automatic Zooms"), symbol: "trash", action: #selector(removeAutoZooms)))
@@ -544,7 +544,7 @@ final class VideoInspectorView: NSView {
 
     private func buildCameraPanel() {
         guard document.cameraURL != nil else {
-            add(note(L("Turn on the camera before recording. macshot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms.")))
+            add(note(L("Turn on the camera before recording. MShot records it separately so you can move, resize, restyle or hide it here, and shrink it during zooms.")))
             return
         }
         add(toggle(L("Show camera"), get: { [unowned self] in self.look.camera.show }) { p, on in p.look.camera.show = on })
